@@ -1,0 +1,1175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>
+
+COMP2041 Week 05 Tutorial Sample Answers
+
+</title>
+
+
+
+<link href="/~cs2041/flask.cgi/static/bootstrap.min.css?121200" rel="stylesheet">
+<link href="/~cs2041/flask.cgi/static/course.css?6554" rel="stylesheet">
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/jquery.min.js?95992"></script>
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/bootstrap.min.js?37045"></script>
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/course.js?1631"></script>
+<link rel="canonical" href="https://cgi.cse.unsw.edu.au/~cs2041/" />
+</head>
+<body>
+
+
+
+
+<div class="container">
+
+<div id="heading">
+
+
+<a class="heading_link" target="_blank" id="left_heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/">COMP[29]041 17s2</a>
+
+
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Week 05
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/02/answers">Week 02</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/03/answers">Week 03</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/04/answers">Week 04</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/05/answers">Week 05</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/06/answers">Week 06</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/07/answers">Week 07</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/08/answers">Week 08</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/09/answers">Week 09</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/10/answers">Week 10</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/11/answers">Week 11</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/12/answers">Week 12</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/13/answers">Week 13</a></li>
+        
+        
+    </ul>
+</span>
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Tutorial
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/05/answers">Tutorial
+                
+            </a></li>
+            
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/05/answers">Laboratory
+                
+            </a></li>
+            
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/05/answers">Weekly Test
+                
+            </a></li>
+            
+        
+    </ul>
+</span>
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Sample Answers
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/05/questions">Questions
+            
+            </a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/05/answers">Sample Answers
+            
+            </a></li>
+        
+        
+    </ul>
+</span>
+
+
+
+
+<a class="heading_link" target="_blank" id="right_heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/">Software Construction</a>
+
+</div>
+
+</div>
+
+
+<div class="tutlab tut">
+<ol>
+
+<ol>
+<li>
+<p>
+What is the difference in value/type of the following Perl expressions:
+<p>
+<ol type="a">
+<li> <code>"a"</code> &nbsp; <small>vs</small> &nbsp; <code>'a'</code>
+<div class="answer">
+no difference - both are strings containing a single 'a' character
+</div>
+<li> <code>"A"</code> &nbsp; <small>vs</small> &nbsp; <code>A</code>
+<div class="answer">
+no difference - both are strings containing a single 'A' character
+</div>
+<li> <code>"abc"</code> &nbsp; <small>vs</small> &nbsp; <code>'abc'</code>
+<div class="answer">
+no difference - both are strings containing the three characters 'a','b','c'
+</div>
+<li> <code>"it\'s"</code> &nbsp; <small>vs</small> &nbsp; <code>'it\'s'</code>
+<div class="answer">
+no difference - both are strings containing the four characters 'i','t',apostrophe,'s'
+</div>
+<li> <code>42</code> &nbsp; <small>vs</small> &nbsp; <code>"42"</code>
+<div class="answer">
+no difference - both are strings containing two characters, '4' and '2'
+</div>
+<li> <code>3</code> &nbsp; <small>vs</small> &nbsp; <code>3.0</code>
+<div class="answer">
+the first is a string containing one character and the second contains three characters,
+if evaluated in a numeric context they are the same: <code>3 ne 3.0</code> but <code>3 == 3.0</code>
+</div>
+<li> <code>"$2.50"</code> &nbsp; <small>vs</small> &nbsp; <code>'$2.50'</code>
+<div class="answer">
+in the first case, the value of the Perl internal variable <code>$2</code>
+    is interpolated into the string; since most likely this will be the
+    empty string, the resulting string will be the three-character
+    string ".50" <br>
+    in the second case, the <code>$</code> is not treated specially
+    and so the result is the literal five-character string "$2.50"
+</div>
+</ol>
+<li>
+
+Write a Perl program, <code>nargs.pl</code> which prints how many arguments it has been
+given. For example:
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./nargs.pl the quick brown fox</kbd>
+4
+</pre>
+
+<div class="answer">
+Sample Perl solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+print $#ARGV+1, &#34;\n&#34;;
+
+</pre>
+
+
+
+Sample Python solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/env python
+import sys
+print(len(sys.argv))
+
+</pre>
+
+
+</div>
+<li>
+
+Write a Perl program, <code>devowel.pl</code> which filters any
+vowels from its input. For example:
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./devowel.pl</kbd>
+<kbd>The quick brown fox
+jumped over the lazy dog.
+</kbd><span class="eof"></span>
+Th qck brwn fx
+jmpd vr th lzy dg.
+</pre>
+
+<div class="answer">
+Sample Perl solution - simple code
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+while ($line = &lt;&gt;) {
+    $line =~ s/[aeiou]//gi;
+    print $line;
+}
+
+</pre>
+
+
+
+Sample Perl solution - using $_
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+while (&lt;&gt;) {
+    s/[aeiou]//gi;
+    print;
+}
+
+</pre>
+
+
+
+Sample Perl solution - using $_ and -p switch
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w -p
+s/[aeiou]//gi;
+
+</pre>
+
+
+
+Perl also makes it convenient to perform operations like this from the command line,
+for example:
+
+<pre class="command_line">
+<kbd class="shell">perl -p -e 's/[aeiou]//gi'</kbd>
+</pre>
+
+Note that the <code>gi</code> above means <b>g</b>lobally (i.e. all occurrences)
+and case-<b>i</b>nsensitive.
+<p>
+Sample Python solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python
+import fileinput, re
+for line in fileinput.input():
+    sys.out.write(re.sub(r&#39;[aeiou]&#39;, &#39;&#39;, line, flags=re.I))
+
+</pre>
+
+
+</div>
+<li>
+Write a simple version of the <code>head</code> command in Perl, that
+accepts an optional command line argument in the form
+<code>-<i>n</i></code>, where <code><i>n</i></code> is a number,
+and displays the first <code><i>n</i></code> lines from its standard
+input.
+If the <code>-<i>n</i></code> option is not used, then the program
+simply displays the first ten lines from its standard input.
+<p>
+Examples of use:
+<pre class="command_line">
+<kbd class="shell">perl head.pl &lt;file2</kbd>        # display first ten lines of file2
+...
+<kbd class="shell">perl head.pl -10 &lt;file2</kbd>     # same as previous command
+...
+<kbd class="shell">perl head.pl -5 &lt;file2</kbd>      # display first five lines of file2
+...
+</pre>
+
+<div class="answer">
+Perl solution with while loop
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+$n_lines = 10;
+if (@ARGV &amp;&amp; $ARGV[0] =~ /-[0-9]+/) {
+    $n_lines = $ARGV[0];
+    $n_lines =~ s/-//;
+    shift @ARGV;
+}
+$n = 1;
+while (&lt;STDIN&gt;) {
+    if ($n++ &gt; $n_lines) {
+        last;
+    }
+    print;
+}
+
+</pre>
+
+
+
+Perl solution reading all input into an array
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+$n_lines = 10;
+if (@ARGV &amp;&amp; $ARGV[0] =~ /-[0-9]+/) {
+    $n_lines = shift @ARGV;
+    $n_lines =~ s/-//;
+}
+@lines = &lt;STDIN&gt;;
+print @lines[0..$n_lines-1];
+
+</pre>
+
+
+
+Cryptic  One-line Perl solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+print ((&lt;STDIN&gt;)[0..(@ARGV&amp;&amp;-$ARGV[0]||10)-1]);
+
+</pre>
+
+
+
+Python solution with while loop
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python
+
+import re, sys
+
+n_lines = 10
+
+if len(sys.argv) &gt; 1 and re.match(r&#39;-[0-9]+&#39;, sys.argv[1]):
+    arg = sys.argv[1]
+    arg = arg[1:] # remove first character
+    n_lines = int(arg)
+
+n = 1
+for line in sys.stdin:
+    if n &gt; n_lines:
+        break
+    sys.stdout.write(line)
+    n += 1
+
+</pre>
+
+
+
+Python solution reading all input into an array
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python
+
+import re, sys
+
+
+n_lines = 10
+if len(sys.argv) &gt; 1 and re.match(r&#39;-[0-9]+&#39;, sys.argv[1]):
+    n_lines = int(sys.argv.pop(1)[1:])
+
+# inefficient - reads entire file
+sys.stdout.write(&#34;&#34;.join(sys.stdin.readlines()[0:n_lines]))
+
+</pre>
+
+
+
+Python solution using an iterator
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python
+
+import re, sys, itertools
+
+n_lines = 10
+if len(sys.argv) &gt; 1 and re.match(r&#39;-[0-9]+&#39;, sys.argv[1]):
+    n_lines = int(sys.argv.pop(1)[1:])
+
+for line in itertools.islice(sys.stdin, n_lines):
+    sys.stdout.write(line)
+
+</pre>
+
+
+</div>
+
+<li>
+Modify the <code>head</code> program from the previous question so that,
+as well as handling an optional <code>-<i>n</i></code> argument to
+specify how many lines, it also handles multiple files on the command
+line and displays the first <code><i>n</i></code> lines from each file,
+separating them by a line of the form <code>==> <i>FileName</i> &lt;===</code>.
+<p>
+Examples of use:
+<pre class="command_line">
+<kbd class="shell">perl head.pl file1 file2 file3</kbd>  # display first ten lines of each file
+...
+<kbd class="shell">perl head.pl -3 file1 file2</kbd>   # display first three lines of each file
+...
+</pre>
+<p>
+
+<div class="answer">
+Sample Perl solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+if ($ARGV[0] =~ /-[0-9]+/) {
+    $max = shift @ARGV;
+    $max =~ s/-//;
+} else {
+    $max = 10;
+}
+# default is stdin if no files specified
+$ARGV[0] = &#34;-&#34; if @ARGV == 0;
+foreach $file (@ARGV) {
+    open my $input, &#39;&lt;&#39;, $file or die &#34;$file: can not open: $!\n&#34;;
+    print &#34;==&gt; $file &lt;==\n&#34;;
+    @lines = &lt;$input&gt;;
+    print @lines[0..$max-1];
+    close $input;
+}
+</pre>
+
+
+
+Sample Python solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python
+
+import re, sys, itertools
+
+n_lines = 10
+
+if len(sys.argv) &gt; 1 and re.match(r&#39;-[0-9]+&#39;, sys.argv[1]):
+    n_lines = int(sys.argv.pop(1)[1:])
+
+if len(sys.argv) == 1:
+    sys.argv.append(&#34;-&#34;)
+
+for filename in sys.argv[1:]:
+    try:
+        print(&#34;==&gt; %s &lt;==&#34; % filename)
+        if filename == &#34;-&#34;:
+            stream = sys.stdin
+        else:
+            stream = open(filename)
+        for line in itertools.islice(stream, n_lines):
+            sys.stdout.write(line)
+        if filename != &#34;-&#34;:
+            stream.close()
+    except IOError as  e:
+        (errno, strerror) = e.args
+        print(&#34;%s: can not open: %s&#34; % (filename, strerror))
+
+</pre>
+
+
+</div>
+<li>
+
+Write a simple version of the <code>grep</code> command, that takes a
+regular expression as its first command line argument and then prints
+all lines in the standard input (or named files) that contain this
+pattern.
+<p>
+Examples of use:
+
+<pre class="command_line">
+<kbd class="shell">perl mygrep.pl 'a.*c' file1 file2 file3</kbd>     # all lines containing a...c
+...
+<kbd class="shell">perl mygrep.pl '[0-9]+' file1 file2 file3</kbd>   # all lines containing numbers
+...
+<kbd class="shell">perl mygrep.pl '^The' &lt;file1</kbd>          # all lines starting with "The"
+...
+</pre>
+
+<div class="answer">
+Sample Perl solution using a while loop
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+$pattern = shift @ARGV;
+while (&lt;&gt;) {
+    print if /$pattern/;
+}
+
+</pre>
+
+
+
+Sample Perl solution using an array
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+# - grep(/pattern/,@array) returns array containing
+#   just elements that match the pattern
+
+$pattern = shift @ARGV;
+print grep(/$pattern/, &lt;&gt;);
+
+# behaves like ... cat f1 f2 f3 .. | grep pattern
+# not the same as ... grep pattern f1 f2 f3 ..
+
+
+</pre>
+
+
+
+Sample Python solution using a for loop
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python
+
+import re, sys, fileinput
+
+pattern = sys.argv.pop(1)
+for line in fileinput.input():
+    if re.search(pattern, line):
+        sys.stdout.write(line)
+
+</pre>
+
+
+
+More  Python-ish (functional) solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python
+
+import re, sys, fileinput
+
+pattern = re.compile(sys.argv.pop(1))
+sys.stdout.write(&#34;&#34;.join(filter(pattern.search, fileinput.input())))
+
+
+</pre>
+
+
+</div>
+
+<li>
+Modify the <code>grep</code> command from the previous question so that
+accepts a <code>-v</code> command line option to reverse the sense of
+the test (i.e. display only lines that do <em>not</em> match the pattern).
+It should continue with its original behaviour if no <code>-v</code> is
+specified.
+
+<div class="answer">
+Sample Perl solution using a while loop
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+if ($ARGV[0] eq &#34;-v&#34;) {
+    $doOpposite = 1;
+    shift @ARGV;
+}
+$pattern = shift @ARGV;
+while (&lt;&gt;) {
+    if ($doOpposite) {
+        print if !/$pattern/;
+    }
+    else {
+        print if /$pattern/;
+    }
+}
+</pre>
+
+
+
+Sample Perl solution  using an array and xor
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+if (@ARGV &amp;&amp; $ARGV[0] eq &#34;-v&#34;) {
+    $doOpposite = 1;
+    shift @ARGV;
+}
+$pattern = shift @ARGV;
+print grep {$doOpposite^/$pattern/} &lt;&gt;;
+
+</pre>
+
+
+
+Sample Python using a for loop
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python
+
+import re, sys, fileinput
+
+do_opposite = 0
+
+if sys.argv[1] == &#34;-v&#34;:
+    do_opposite = 1;
+    sys.argv.pop(1)
+
+pattern = sys.argv.pop(1)
+
+for line in fileinput.input():
+    if re.search(pattern, line):
+        if not do_opposite:
+            sys.stdout.write(line)
+    else:
+        if do_opposite:
+            sys.stdout.write(line)
+
+</pre>
+
+
+
+Functional python solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python
+
+import re, sys, fileinput
+
+if sys.argv[1] == &#34;-v&#34;:
+    sys.argv.pop(1)
+    p = re.compile(sys.argv.pop(1))
+    f = lambda x: not p.search(x)
+else:
+    f = re.compile(sys.argv.pop(1))
+sys.stdout.write(filter(f, fileinput.input()))
+
+
+</pre>
+
+
+</div>
+
+
+<h3>Revision questions</h3>
+
+The remaining tutorial questions are primarily intended for revision - either this week
+or later in session.
+<p>
+Your tutor may still choose to cover some of the questions time permitting.
+<p>
+
+
+<li>
+<p>
+The following programs are all Perl versions of the <code>cat</code>
+program. Each of them either reads from standard input (if there are
+no command line arguments) or treats each command line argument as a
+file name, opens the file, and reads it. The final one shows just how
+concise Perl code can be. You may find the ideas in these programs
+useful in helping you solve the problems below.
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+
+# First Perl version of cat
+# Verbose, but shows exactly what&#39;s happening
+
+# if no args, read from stdin
+if (@ARGV == 0) {
+    while ($line = &lt;STDIN&gt;) {
+    	# note: line still has \n
+        print $line; 
+    }
+} else {
+    foreach $file (@ARGV) {
+        open my $input, &#39;&lt;&#39;, $file or die &#34;Can not open $file: $!\n&#34;;
+        while ($line = &lt;$input&gt;) {
+                print $line;
+        }
+        close $input;
+    }
+}
+
+</pre>
+
+
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+
+# Second Perl version of cat
+# More concise, by using special variable $_
+
+if (@ARGV == 0) {
+    while (&lt;STDIN&gt;) {
+        print $line; 
+    }
+} else {
+    foreach $file (@ARGV) {
+        open my $input, &#39;&lt;&#39;, $file or die &#34;Can not open $file: $!\n&#34;;
+        while (&lt;$input&gt;) {
+                print;
+        }
+        close $input;
+    }
+}
+
+</pre>
+
+
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+
+# Third Perl version of cat
+# places input into an array
+
+if (@ARGV == 0) {
+    @lines = &lt;STDIN&gt;;
+    print @lines;
+} else {
+    foreach $file (@ARGV) {
+        open my $input, &#39;&lt;&#39;, $file or die &#34;Can not open $file: $!\n&#34;;
+        @lines = &lt;$input&gt;;
+    	print @lines;
+        close $input;
+    }
+}
+
+</pre>
+
+
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+
+# Fourth Perl version of cat
+# More concise, but makes filtering difficult
+
+if (@ARGV == 0) {
+    print &lt;STDIN&gt;;
+} else {
+    foreach $file (@ARGV) {
+        open my $input, &#39;&lt;&#39;, $file or die &#34;Can not open $file: $!\n&#34;;
+        print &lt;$input&gt;;
+        close $input;
+    }
+}
+
+</pre>
+
+
+
+<pre class="program">
+# Other versions of cat
+# Make use of the fact that &lt;&gt; has a special meaning
+# - if no command line arguments, read standard input
+# - otherwise, open each argument as a file and read it
+# Very concise, but ...
+# - you'll need to put up with Perl's error messages
+# - you treat all files as a single stream ... which means
+#   - you can't distinguish which file each line comes from
+#   - there is no scope for doing things at file boundaries
+while (&lt;&gt;) { print; }
+#or
+@lines = &lt;&gt;;
+print @lines;
+#or
+print &lt;&gt;;
+</pre>
+<p>
+Write a new version of <code>cat</code> so that it accepts
+a <code>-n</code> command line argument and then prints a line number at
+the start of each line in a field of width 6, followed by two spaces,
+followed by the text of the line. The numbers should constantly increase
+over all of the input files (i.e. don't start renumbering at the start
+of each file). The program always reads from its standard input.
+</p>
+<p>
+Example of output:
+
+<pre class="command_line">
+<kbd class="shell">perl cat -n myFile</kbd>
+     1  This is the first line of my file
+     2  This is the second line of my file
+     3  This is the third line of my file
+         ...
+  1000  This is the thousandth line of my file
+</pre>
+
+<div class="answer">
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+
+if (@ARGV &gt; 0 &amp;&amp; $ARGV[0] eq &#34;-n&#34;) {
+    $doNumbering = 1;
+    shift;
+}
+$nlines = 1;
+while (&lt;&gt;) {
+    printf &#34;%6d  &#34;,$nlines++ if $doNumbering;
+    print;
+}
+
+</pre>
+
+
+
+
+Note that the <code>shift</code> is important. It removes the option
+from the argument list so that <code>&lt;&gt;</code> is left with the
+correct command-line arguments to process (i.e. just the file names).
+</div>
+
+<li>
+Modify the <code>cat</code> program from the previous question so that
+it also accepts a <code>-v</code> command line option to display <em>all</em>
+characters in the file in printable form. In particular, end of lines should
+be shown by a <code>$</code> symbol (useful for finding trailing whitespace
+in lines) and all control characters (ascii code less than 32) should be
+shown as <code>^<i>X</i></code> (where <code><i>X</i></code> is the
+printable character obtained by adding the code for
+'A' to the control character code).
+So, for example, tabs (ascii code 9) should display as <code>^I</code>.
+<br><I>Hint:</I> the <code>chr</code> and <code>ord</code> functions might be useful.
+Try
+<pre class="command_line">
+<kbd class="shell">perldoc -f ord</kbd>
+</pre>
+for info about functions such as these.
+<p>
+Example of output:
+<pre class="command_line">
+<kbd class="shell">perl cat -v &lt; myFile</kbd>
+This file contains a tabbed list:$
+^I- point 1$
+^I- point 2$
+^I- point 3$
+And this line has trailing spaces   $
+which would otherwise be invisible.$
+</pre>
+
+<div class="answer">
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+
+if ($ARGV[0] eq &#34;-n&#34;) {
+    $doNumbering = 1;
+    shift;
+}
+
+if ($ARGV[0] eq &#34;-v&#34;) {
+    $doVisible = 1;
+    shift;
+}
+
+$nlines = 1;
+while (&lt;&gt;) {
+    printf &#34;%6d  &#34;,$nlines++ if $doNumbering;
+    if (!$doVisible) {
+        print;
+    } else {
+        chomp;
+        foreach $c (split //) {
+            if (ord($c) &gt;= 32) {
+                print &#34;$c&#34;;
+            } else {
+                print &#34;^&#34;.chr(ord($c)+64);
+            }
+        }
+        print &#34;\$\n&#34;;
+    }
+}
+
+</pre>
+
+
+</div>
+
+<li>
+<p>
+Write a version of the <code>tac</code> command in Perl, that accepts
+a list of filenames and displays the lines from each file in reverse order.
+<div class="answer">
+
+Sample Perl solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+
+if (@ARGV == 0) { # no args, read from stdin
+    print reverse &lt;STDIN&gt;;
+}
+else {
+    foreach $file (@ARGV) {
+        open my $input, &#39;&lt;&#39;, $file or die &#34;$file:can not open: $!\n&#34;;
+        print reverse &lt;$input&gt;;
+        close $input;
+    }
+}
+</pre>
+
+
+
+The following might look attractive, but treats all files as a
+single input, and reverses that. It doesn't do it file by file
+like the real <code>tac</code>.
+
+<pre class="program">
+#!/usr/bin/perl -w
+print reverse &lt;&gt;;
+# same as ... cat f1 f2 f3 .. | tac
+# not the same as ... tac f1 f2 f3
+</pre>
+
+Sample Python solution
+
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python
+
+import sys
+
+if len(sys.argv) == 1:
+    for line in reversed(list(sys.stdin)):
+        sys.stdout.write(line)
+else:
+    for filename in sys.argv[1:]:
+        with open(filename) as f:
+            for line in reversed(list(f)):
+                sys.stdout.write(line)
+
+</pre>
+
+
+</div>
+</ol>
+
+
+</ol>
+</div>
+
+
+
+
+
+</div>
+
+
+<!--
+public_html_session_directory=/web/cs2041/17s2
+base_directory=/web/cs2041/17s2
+public_html_directory=/web/cs2041
+scripts_directory=/web/cs2041/17s2/scripts
+home_directory=/home/cs2041
+bin_directory=/home/cs2041/bin
+course_account=cs2041
+course_code=COMP2041
+course_number=2041
+postgraduate_course_code=COMP9041
+course_name=Software Construction
+unsw_session=17s2
+canonical_url=https://cgi.cse.unsw.edu.au/~cs2041/
+github_repo_url=https://github.com/COMP2041UNSW/course_materials
+course_forum_url=https://piazza.com/class/j5ji4vjjra62a3
+lecture_recordings_url=https://moodle.telt.unsw.edu.au/course/view.php?id=27708
+WORK=/web/cs2041/17s2/work
+OUT=/web/cs2041/17s2/work/.out
+MARKED=/web/cs2041/17s2/work/.out/.marked
+SMSDB=/web/cs2041/17s2/work/17s2db.sms
+tlb_directory=/web/cs2041/17s2/tlb
+lecture_directory=/web/cs2041/17s2/lec
+flask_cache_directory=/web/cs2041/17s2/flask_cache
+testing_results_file=/web/cs2041/17s2/work/testing_results.json
+enrollments_file=/web/cs2041/17s2/work/enrollments.json
+unsw_ldap_password_file=/web/cs2041/.unsw_ldap_password
+autotest_upload_url=https://cgi.cse.unsw.edu.au/~cs2041/cgi/autotest_upload.cgi
+PATH=/web/cs2041/17s2/scripts:/home/cs2041/bin:/bin/:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/home/class/bin:/home/give/stable/bin.:/bin:/usr/bin:/usr/local/bin
+directory_relative_pathname=tlb/05
+url=https://cgi.cse.unsw.edu.au/~cs2041/flask.cgi/tut/05/answers
+directory_url=https://cgi.cse.unsw.edu.au/~cs2041/tut/05/
+url_root=https://cgi.cse.unsw.edu.au/~cs2041/
+script_root=/~cs2041/flask.cgi
+current_lecture_topic=exam
+current_week=13
+week=05
+exercise_name=tut05
+tut_or_lab_or_test=tut
+questions_or_answers=answers
+programs=&lt;programs&gt;
+
+-->
+
+</body>
+</html>

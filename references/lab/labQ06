@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>
+
+COMP2041 Week 06 Laboratory Exercises
+
+</title>
+<link href="/~cs2041/flask.cgi/static/bootstrap.min.css?121200" rel="stylesheet"/>
+<link href="/~cs2041/flask.cgi/static/course.css?6554" rel="stylesheet"/>
+<script src="/~cs2041/flask.cgi/static/jquery.min.js?95992" type="text/javascript"></script>
+<script src="/~cs2041/flask.cgi/static/bootstrap.min.js?37045" type="text/javascript"></script>
+<script src="/~cs2041/flask.cgi/static/course.js?1631" type="text/javascript"></script>
+<link href="https://cgi.cse.unsw.edu.au/~cs2041/" rel="canonical"/>
+</head>
+<body>
+<div class="container">
+<div id="heading">
+<a class="heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/" id="left_heading_link" target="_blank">COMP[29]041 17s2</a>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Week 06
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/02/questions">Week 02</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/03/questions">Week 03</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/04/questions">Week 04</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/05/questions">Week 05</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/06/questions">Week 06</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/07/questions">Week 07</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/08/questions">Week 08</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/09/questions">Week 09</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/10/questions">Week 10</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/11/questions">Week 11</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/12/questions">Week 12</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/13/questions">Week 13</a></li>
+</ul>
+</span>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Laboratory
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/06/questions">Tutorial
+                
+            </a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/06/questions">Laboratory
+                
+            </a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/test/06/questions">Weekly Test
+                
+            </a></li>
+</ul>
+</span>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Exercises
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/06/questions">Exercises
+            
+            </a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/06/answers">Sample Solutions
+            
+            </a></li>
+</ul>
+</span>
+<a class="heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/" id="right_heading_link" target="_blank">Software Construction</a>
+</div>
+</div>
+<div class="tutlab lab">
+<h3>Submission Summary</h3>
+Due
+
+Sunday midnight
+
+
+<pre class="command_line">
+<kbd class="shell">give cs2041 lab06 whale.pl all_whales.pl prereq.pl recursive_prereq.pl digits.py echon.py simple_tail.py whale.py all_whales.py</kbd>
+</pre>
+<h3>Objectives</h3>
+
+
+Get used to more Perl features.
+
+
+
+
+
+<h3>Getting Started</h3>
+
+
+Create a new directory for this lab called <code>lab06</code> by typing:
+
+<pre class="command_line">
+<kbd class="shell">mkdir lab06</kbd>
+</pre>
+
+Change to this directory by typing:
+
+<pre class="command_line">
+<kbd class="shell">cd lab06</kbd>
+</pre>
+<h3>Background</h3>
+
+We have covered only a small amount of Perl in lectures. In fact, to
+cover the whole language in detail would take a whole semester, so
+we're going to rely on you finding out about the language yourself
+in tutes, labs and assignments. A good place to start is
+the Perl documentation &amp; tutorial links on the class home page
+For example you might find these useful:
+<ul>
+<li> <a href="http://search.cpan.org/dist/perl/pod/perlsyn.pod" target="doc">Perl language syntax</a>
+</li><li> <a href="http://search.cpan.org/dist/perl/pod/perlsub.pod" target="doc">Perl functions</a>
+</li><li> <a href="http://search.cpan.org/dist/perl/pod/perlop.pod" target="doc">Perl operators</a>
+</li></ul>
+<h3>Input Data</h3>
+
+A biologist needs your help counting migrating whales.
+As pods of migrating whales swim past the biologist's boat,
+the biologist types the number and species of whales in the pod.
+<p>
+Here is an example of the input the biologist will provide:
+
+</p><pre class="command_line">
+<kbd>15 humpback
+2 orca
+2 sperm whale
+19 beluga
+2 humpback
+2 sperm whale
+4 orca
+4 pygmy right whale
+7 humpback
+1 orca</kbd>
+</pre>
+<h3>Exercise: Counting One Whale Species</h3>
+
+Write a Perl script <code>whale.pl</code> which given a whale name as a command line argument,
+reads whale observations in the above format until the end-of-input is reached and then prints the
+number of pods of the specified whale and the total numbers of whales in those pods.
+For example:
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./whale.pl 'sperm whale'</kbd>
+<kbd>15 humpback
+2 orca
+2 sperm whale
+19 beluga
+2 humpback
+2 sperm whale
+4 orca
+4 pygmy right whale
+7 humpback
+1 orca
+</kbd><span class="eof"></span>
+sperm whale observations: 2 pods, 4 individuals
+</pre>
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./whale.pl "cuvier's beaked whale"</kbd>
+<kbd>3 orca
+673 beluga
+2 sperm whale
+123 pilot whale
+2 cuvier's beaked whale
+19 beluga
+2 north atlantic right whale
+2 humpback
+5 cuvier's beaked whale
+2 sperm whale
+1 north atlantic right whale
+1119 beluga
+7 orca
+4 pygmy right whale
+7 humpback
+1 false orca
+3 beluga
+4 pilot whale
+1 orca
+</kbd><span class="eof"></span>
+cuvier's beaked whale observations: 2 pods, 7 individuals
+</pre>
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+</p><pre class="command_line">
+<kbd class="shell">2041 autotest lab06 whale.pl</kbd>
+</pre>
+<div class="autotest_results">
+<h4>Automarking Results</h4>
+<span class="autotest_results_emphasis">99%</span>
+        
+        of <span class="autotest_results_emphasis">431</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">whale.pl</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+<ul>
+<li><span class="autotest_results_emphasis">100%</span>
+                    
+                    passed test <i>whale_1</i>
+</li><li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>whale_2</i>
+</li><li><span class="autotest_results_emphasis">100%</span>
+                    
+                    passed test <i>whale_3</i>
+</li><li><span class="autotest_results_emphasis">100%</span>
+                    
+                    passed test <i>whale_4</i>
+</li></ul>
+</div>
+</div>
+<p></p>
+<h3>Exercise: Counting All Whale Species</h3>
+
+Write a Perl script <code>all_whales.pl</code> that
+reads whale obsevatiions in the above format until the end-of-input is reached and
+for all species of whale observed prints the
+number of pods of the specified whale and the total numbers of whales in those pods.
+For example:
+
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./all_whales.pl</kbd>
+<kbd>15 humpback
+2 orcas
+2 sperm whales
+19 belugas
+2 humpbacks
+2 sperm  whales
+4 Orcas
+4  pygmy right whale
+7 humpbacks
+1 orca
+3 ORCAS
+673 belugas
+2 sperm whales
+123 pilot whale
+2 cuvier's beaked whales
+19 beluga
+2 north atlantic right whale
+2 humpbacks
+5 cuvier's BEAKED whale
+2 Sperm Whales
+1 north atlantic right whales
+1119              belugas
+7 orcas
+4 pygmy right whales
+7 humpbacks
+1 False Orca
+3 belugas
+4 pilot whaleS
+1 orca
+</kbd><span class="eof"></span>
+beluga observations: 5 pods, 1833 individuals
+cuvier's beaked whale observations: 2 pods, 7 individuals
+false orca observations: 1 pods, 1 individuals
+humpback observations: 5 pods, 33 individuals
+north atlantic right whale observations: 2 pods, 3 individuals
+orca observations: 6 pods, 18 individuals
+pilot whale observations: 2 pods, 127 individuals
+pygmy right whale observations: 2 pods, 8 individuals
+sperm whale observations: 4 pods, 8 individuals
+</pre>
+
+The whales should be listed in alphabetical order.
+<p>
+All whale names should be converted to lower case.
+</p><p>
+All whale names should be converted from plural to singular - assume this can be done safely by deleting a trailing 's' if it is present.
+</p><p>
+Any extra white space should be ignored.
+</p><p>
+You can make no assumptions about possible whale names.
+</p><p>
+No mention of particular whale names can appear in your program.
+</p><p>
+</p><p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+</p><pre class="command_line">
+<kbd class="shell">2041 autotest lab06 all_whales.pl</kbd>
+</pre>
+<div class="autotest_results">
+<h4>Automarking Results</h4>
+<span class="autotest_results_emphasis">95%</span>
+        
+        of <span class="autotest_results_emphasis">416</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">all_whales.pl</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+<ul>
+<li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>all_whales_1</i>
+</li><li><span class="autotest_results_emphasis">96%</span>
+                    
+                    passed test <i>all_whales_2</i>
+</li><li><span class="autotest_results_emphasis">95%</span>
+                    
+                    passed test <i>all_whales_3</i>
+</li></ul>
+</div>
+</div>
+<p></p>
+<h3>Exercise: Prerequisites</h3>
+
+Write a Perl script which prints courses which can be used to meet prerequisite
+requirements for a UNSW course. For example:
+
+<pre class="command_line">
+<kbd class="shell">./prereq.pl COMP2041</kbd>
+COMP1511
+COMP1917
+COMP1921
+<kbd class="shell">./prereq.pl COMP9041</kbd>
+COMP9021
+<kbd class="shell">./prereq.pl COMP9242</kbd>
+COMP3231
+COMP3891
+COMP9201
+COMP9283
+<kbd class="shell">./prereq.pl HESC3641</kbd>
+HESC2501
+</pre>
+
+Your script must download the UNSW handbook web pages and extract the information from them when it is run.
+<p>
+You should print the courses in alphabetic order.
+
+<b>Hints</b>
+
+The UNSW handbook uses separate web pages for  undergraduate and postgraduate handbooks and you may need
+to extract prerequisites from either or both.
+</p><p>
+A simple way (but not the best way) to access a web page from Perl is like this:
+
+</p><pre class="command_line">
+$url = "http://www.handbook.unsw.edu.au/postgraduate/courses/2017/COMP9041.html";
+open F, "wget -q -O- $url|" or die;
+while ($line = &lt;F&gt;) {
+    print $line;
+}
+</pre>
+
+You'll have to make some assumptions about the handbook pages.
+<p>
+It's easy in Perl to skip lines until you find one specifying prerequisites.
+</p><p>
+It's easy in Perl to remove part of a line.
+</p><p>
+It's easy in Perl to remove HTML tags.
+
+</p><p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+</p><pre class="command_line">
+<kbd class="shell">2041 autotest lab06 prereq.pl</kbd>
+</pre>
+<div class="autotest_results">
+<h4>Automarking Results</h4>
+<span class="autotest_results_emphasis">71%</span>
+        
+        of <span class="autotest_results_emphasis">399</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">prereq.pl</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+<ul>
+<li><span class="autotest_results_emphasis">94%</span>
+                    
+                    passed test <i>prereq_1</i>
+</li><li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>prereq_2</i>
+</li><li><span class="autotest_results_emphasis">93%</span>
+                    
+                    passed test <i>prereq_3</i>
+</li><li><span class="autotest_results_emphasis">73%</span>
+                    
+                    passed test <i>prereq_4</i>
+</li><li><span class="autotest_results_emphasis">93%</span>
+                    
+                    passed test <i>prereq_5</i>
+</li></ul>
+</div>
+</div>
+<p></p>
+<h3>Challenge Exercise: Recursive Prerequisites</h3>
+
+Add a -r (for recursive ) flag to <code>prereq.pl</code> so it also lists all courses which can be used
+to meet a prerequisites requirement of any course that can be used to meet prerequisite
+requirements and so on.
+<p>
+Call your new program <code>recursive_prereq.pl</code>.
+</p><p>
+For example:
+</p><p>
+</p><pre class="command_line">
+<kbd class="shell">./recursive_prereq.pl -r COMP9243</kbd>
+COMP1511
+COMP1521
+COMP1911
+COMP1917
+COMP1921
+COMP1927
+COMP2121
+COMP2521
+COMP3231
+COMP3331
+COMP3891
+COMP9021
+COMP9024
+COMP9032
+COMP9201
+COMP9283
+COMP9331
+MTRN2500
+MTRN3500
+TELE3018
+</pre>
+<p>
+You may find courses listed as prerequisites which are no longer offered and
+are not in the current handbook - you should include them but you
+don't need to find their prerequisites (don't look up old handbooks).
+</p><p>
+Beware infinite loops!
+
+</p><p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+</p><pre class="command_line">
+<kbd class="shell">2041 autotest lab06 recursive_prereq.pl</kbd>
+</pre>
+<div class="autotest_results">
+<h4>Automarking Results</h4>
+<span class="autotest_results_emphasis">83%</span>
+        
+        of <span class="autotest_results_emphasis">168</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">recursive_prereq.pl</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+<ul>
+<li><span class="autotest_results_emphasis">90%</span>
+                    
+                    passed test <i>challenge_prereq_1</i>
+</li><li><span class="autotest_results_emphasis">93%</span>
+                    
+                    passed test <i>challenge_prereq_2</i>
+</li><li><span class="autotest_results_emphasis">87%</span>
+                    
+                    passed test <i>challenge_prereq_3</i>
+</li><li><span class="autotest_results_emphasis">87%</span>
+                    
+                    passed test <i>challenge_prereq_4</i>
+</li><li><span class="autotest_results_emphasis">89%</span>
+                    
+                    passed test <i>challenge_prereq_5</i>
+</li></ul>
+</div>
+</div>
+<p></p>
+<h3>Python Challenge Questions</h3>
+
+Python will be introduced later in the course for students who haven't learnt it previously,
+students coping well with Perl are encouraged to try teaching themself some Python now.
+<p>
+Studets who have learnt Python previously and encouraged to do these exercises to
+refresh their skills.  Solving the same task in Python and in Perl (and in some cases Shell!)
+is an excellent way to compare the syntax, semantics and design principles of the languages.
+</p><p>
+The <a href="../../code/python">example Python scripts</a> and links
+to external Python resources should help - but you may need more info - Google is your friend.
+
+</p><h3>Challenge Exercise: Mapping Digits in Python</h3>
+
+Write a Python script <code>digits.py</code> that reads from standard input and writes to standard output
+mapping all digit characters whose values are
+less than 5 into the character '<code>&lt;</code>' and all digit characters
+whose values are greater than 5 into the character '<code>&gt;</code>'.
+The digit character '5' should be left unchanged.
+<p>
+</p><table border="1" cellpadding="6">
+<tr><th>Sample Input Data</th><th>Corresponding Output</th></tr>
+<tr valign="top"><td>
+<pre>
+1 234 5 678 9
+</pre>
+</td><td>
+<pre>
+&lt; &lt;&lt;&lt; 5 &gt;&gt;&gt; &gt;
+</pre>
+</td></tr><tr valign="top"><td>
+<pre>
+I can think of 100's
+of other things I'd rather
+be doing than these 3 questions
+</pre>
+</td><td>
+<pre>
+I can think of &lt;&lt;&lt;'s
+of other things I'd rather
+be doing than these &lt; questions
+</pre>
+</td></tr>
+<tr valign="top"><td>
+<pre>
+A line with lots of numbers:
+123456789123456789123456789
+A line with all zeroes
+000000000000000000000000000
+A line with blanks at the end
+1 2 3
+</pre>
+</td><td>
+<pre>
+A line with lots of numbers:
+&lt;&lt;&lt;&lt;5&gt;&gt;&gt;&gt;&lt;&lt;&lt;&lt;5&gt;&gt;&gt;&gt;&lt;&lt;&lt;&lt;5&gt;&gt;&gt;&gt;
+A line with all zeroes
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+A line with blanks at the end
+&lt; &lt; &lt;
+</pre>
+</td></tr>
+<tr valign="top"><td>
+<pre>
+Input with absolutely 0 digits in it
+Well ... apart from that one ...
+</pre>
+</td><td>
+<pre>
+Input with absolutely &lt; digits in it
+Well ... apart from that one ...
+</pre>
+</td></tr>
+<tr valign="top"><td>
+<pre>
+1 2 4 8 16 32 64 128 256 512 1024
+2048 4096 8192 16384 32768 65536
+</pre>
+</td><td>
+<pre>
+&lt; &lt; &lt; &gt; &lt;&gt; &lt;&lt; &gt;&lt; &lt;&lt;&gt; &lt;5&gt; 5&lt;&lt; &lt;&lt;&lt;&lt;
+&lt;&lt;&lt;&gt; &lt;&lt;&gt;&gt; &gt;&lt;&gt;&lt; &lt;&gt;&lt;&gt;&lt; &lt;&lt;&gt;&gt;&gt; &gt;55&lt;&gt;
+</pre>
+</td></tr>
+</table>
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+</p><pre class="command_line">
+<kbd class="shell">2041 autotest lab06 digits.py</kbd>
+</pre>
+<div class="autotest_results">
+<h4>Automarking Results</h4>
+<span class="autotest_results_emphasis">97%</span>
+        
+        of <span class="autotest_results_emphasis">226</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">digits.py</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+<ul>
+<li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>challenge_digits_1</i>
+</li><li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>challenge_digits_2</i>
+</li><li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>challenge_digits_3</i>
+</li><li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>challenge_digits_4</i>
+</li><li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>challenge_digits_5</i>
+</li></ul>
+</div>
+</div>
+<p></p>
+<p></p>
+<h3>Challenge Exercise:  Repeated Echo in Python</h3>
+
+Write a Python script <code>echon.py</code> which given exactly two arguments, an integer <i>n</i>
+and a string, prints the string <i>n</i> times. For example:
+
+<pre class="command_line">
+<kbd class="shell">./echon.py 5 hello</kbd>
+hello
+hello
+hello
+hello
+hello
+<kbd class="shell">./echon.py 0 nothing</kbd>
+<kbd class="shell">./echon.py 1 goodbye</kbd>
+goodbye
+</pre>
+<p>
+Your script should print exactly the error message below
+if it is not given exactly 2 arguments:
+</p><p>
+</p><pre class="command_line">
+<kbd class="shell">./echon.py </kbd>
+Usage: ./echon.py &lt;number of lines&gt; &lt;string&gt;
+<kbd class="shell">./echon.py 1 2 3</kbd>
+Usage: ./echon.py &lt;number of lines&gt; &lt;string&gt;
+</pre>
+<p>
+Also get your script to print this error message if
+its first argument isn't a non-negative integer:
+</p><p>
+</p><pre class="command_line">
+<kbd class="shell">./echon.py hello world</kbd>
+./echon.py: argument 1 must be a non-negative integer
+<kbd class="shell">./echon.py -42 lines</kbd>
+./echon.py: argument 1 must be a non-negative integer
+</pre>
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+</p><pre class="command_line">
+<kbd class="shell">2041 autotest lab06 echon.py</kbd>
+</pre>
+<div class="autotest_results">
+<h4>Automarking Results</h4>
+<span class="autotest_results_emphasis">92%</span>
+        
+        of <span class="autotest_results_emphasis">210</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">echon.py</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+<ul>
+<li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>challenge_echon_1</i>
+</li><li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>challenge_echon_3</i>
+</li><li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>challenge_echon_4</i>
+</li><li><span class="autotest_results_emphasis">95%</span>
+                    
+                    passed test <i>challenge_echon_5</i>
+</li><li><span class="autotest_results_emphasis">96%</span>
+                    
+                    passed test <i>challenge_echon_6</i>
+</li><li><span class="autotest_results_emphasis">93%</span>
+                    
+                    passed test <i>challenge_echon_7</i>
+</li><li><span class="autotest_results_emphasis">95%</span>
+                    
+                    passed test <i>challenge_echon_8</i>
+</li></ul>
+</div>
+</div>
+<p></p>
+<h3>Challenge Exercise:  Tail in Python</h3>
+
+Write a Python script <code>simple_tail.py</code> to implement the Unix <code>tail</code> command.
+It does not need to implement any command line options.
+It will be always be given one or more files on the command line.
+It does not have to read from stdin or handle errors.
+<p>
+To assist with testing your solution, there are three small data
+files: <a href="t1.txt">t1.txt</a>, <a href="t2.txt">t2.txt</a>, and
+<a href="t3.txt">t3.txt</a>. Copy these files to your current directory.
+
+</p><pre class="command_line">
+<kbd class="shell">cp /home/cs2041/public_html/tlb/06/t?.txt .</kbd>
+</pre>
+<pre class="command_line">
+<kbd class="shell">./simple_tail.py t1.txt t2.txt t3.txt</kbd>
+</pre>
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+</p><pre class="command_line">
+<kbd class="shell">2041 autotest lab06 simple_tail.py</kbd>
+</pre>
+<div class="autotest_results">
+<h4>Automarking Results</h4>
+<span class="autotest_results_emphasis">96%</span>
+        
+        of <span class="autotest_results_emphasis">159</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">simple_tail.py</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+<ul>
+<li><span class="autotest_results_emphasis">96%</span>
+                    
+                    passed test <i>challenge_tail_1</i>
+</li><li><span class="autotest_results_emphasis">96%</span>
+                    
+                    passed test <i>challenge_tail_12</i>
+</li><li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>challenge_tail_2</i>
+</li><li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>challenge_tail_3</i>
+</li></ul>
+</div>
+</div>
+<p></p>
+<h3>Challenge Exercise:  Whales in Python</h3>
+
+Implement Python scripts <code>whale.py</code> and <code>all_whales.py</code> which count whales as described in the first two lab questions.
+
+
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+</p><pre class="command_line">
+<kbd class="shell">2041 autotest lab06 whale.py</kbd>
+</pre>
+<div class="autotest_results">
+<h4>Automarking Results</h4>
+<span class="autotest_results_emphasis">92%</span>
+        
+        of <span class="autotest_results_emphasis">154</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">whale.py</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+<ul>
+<li><span class="autotest_results_emphasis">95%</span>
+                    
+                    passed test <i>challenge_whale_1</i>
+</li><li><span class="autotest_results_emphasis">92%</span>
+                    
+                    passed test <i>challenge_whale_2</i>
+</li><li><span class="autotest_results_emphasis">95%</span>
+                    
+                    passed test <i>challenge_whale_3</i>
+</li><li><span class="autotest_results_emphasis">95%</span>
+                    
+                    passed test <i>challenge_whale_4</i>
+</li></ul>
+</div>
+</div>
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+</p><pre class="command_line">
+<kbd class="shell">2041 autotest lab06 all_whales.py</kbd>
+</pre>
+<div class="autotest_results">
+<h4>Automarking Results</h4>
+<span class="autotest_results_emphasis">95%</span>
+        
+        of <span class="autotest_results_emphasis">132</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">all_whales.py</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+<ul>
+<li><span class="autotest_results_emphasis">96%</span>
+                    
+                    passed test <i>challenge_all_whales_1</i>
+</li><li><span class="autotest_results_emphasis">95%</span>
+                    
+                    passed test <i>challenge_all_whales_2</i>
+</li><li><span class="autotest_results_emphasis">95%</span>
+                    
+                    passed test <i>challenge_all_whales_3</i>
+</li></ul>
+</div>
+</div>
+<p></p>
+<h3>Submission</h3>
+
+When you are finished submit your work by running:
+<pre class="command_line">
+<kbd class="shell">give cs2041 lab06 whale.pl all_whales.pl prereq.pl recursive_prereq.pl digits.py echon.py simple_tail.py whale.py all_whales.py</kbd>
+</pre>
+<p>
+Don't submit any exercises you haven't attempted.
+
+If you are working at home, you may find it more convenient
+to upload your work via
+ <a href="https://cgi.cse.unsw.edu.au/~give/code/login.php?app=/~give/Student/give.php&amp;debug=get_authuser">give's web interface</a>.
+</p><p>
+Remember you have until
+
+Sunday midnight
+
+
+to submit your work.
+
+
+
+
+</p><h3>Assessment</h3>
+
+This lab exercises is worth 1 mark.
+<p>
+Labs exercise are either automarked or peer assessed.
+This is to allow tutors' time to be used to assist students.
+</p><p>
+After the automarking is complete you should be able to view it by running
+this command on a CSE machine:
+
+</p><pre class="command_line">
+<kbd class="shell">2041 classrun -collect lab06
+</kbd></pre>
+
+You can inspect marks for this lab and other assessment components via <a href="https://cgi.cse.unsw.edu.au/~give/code/login.php?app=/~give/Student/give.php&amp;debug=get_authuser">give's web interface</a> or by running
+
+<pre class="command_line">
+<kbd class="shell">2041 classrun -sturec
+</kbd></pre>
+<p>
+Reminder: lab marks contribute 9% to your final COMP[29]041 final mark.
+</p><p>
+The 11 lab marks will be summed at the end of session and the sum capped at 9 marks.
+</p><p>
+Hence you can obtain full marks for the 9% lab component without obtaining full marks every week.
+
+
+
+</p></div>
+<!--
+public_html_session_directory=/web/cs2041/17s2
+base_directory=/web/cs2041/17s2
+public_html_directory=/web/cs2041
+scripts_directory=/web/cs2041/17s2/scripts
+home_directory=/home/cs2041
+bin_directory=/home/cs2041/bin
+course_account=cs2041
+course_code=COMP2041
+course_number=2041
+postgraduate_course_code=COMP9041
+course_name=Software Construction
+unsw_session=17s2
+canonical_url=https://cgi.cse.unsw.edu.au/~cs2041/
+github_repo_url=https://github.com/COMP2041UNSW/course_materials
+course_forum_url=https://piazza.com/class/j5ji4vjjra62a3
+lecture_recordings_url=https://moodle.telt.unsw.edu.au/course/view.php?id=27708
+WORK=/web/cs2041/17s2/work
+OUT=/web/cs2041/17s2/work/.out
+MARKED=/web/cs2041/17s2/work/.out/.marked
+SMSDB=/web/cs2041/17s2/work/17s2db.sms
+tlb_directory=/web/cs2041/17s2/tlb
+lecture_directory=/web/cs2041/17s2/lec
+flask_cache_directory=/web/cs2041/17s2/flask_cache
+testing_results_file=/web/cs2041/17s2/work/testing_results.json
+enrollments_file=/web/cs2041/17s2/work/enrollments.json
+unsw_ldap_password_file=/web/cs2041/.unsw_ldap_password
+autotest_upload_url=https://cgi.cse.unsw.edu.au/~cs2041/cgi/autotest_upload.cgi
+PATH=/web/cs2041/17s2/scripts:/home/cs2041/bin:/bin/:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/home/class/bin:/home/give/stable/bin.:/bin:/usr/bin:/usr/local/bin
+directory_relative_pathname=tlb/06
+url=https://cgi.cse.unsw.edu.au/~cs2041/flask.cgi/lab/06/questions
+directory_url=https://cgi.cse.unsw.edu.au/~cs2041/lab/06/
+url_root=https://cgi.cse.unsw.edu.au/~cs2041/
+script_root=/~cs2041/flask.cgi
+current_lecture_topic=exam
+current_week=13
+week=06
+exercise_name=lab06
+tut_or_lab_or_test=lab
+questions_or_answers=questions
+programs=&lt;programs&gt;
+
+-->
+</body>
+</html>

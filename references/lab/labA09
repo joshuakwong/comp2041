@@ -1,0 +1,1049 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<title>
+
+COMP2041 Week 09 Laboratory Sample Solutions
+
+</title>
+
+
+
+<link href="/~cs2041/flask.cgi/static/bootstrap.min.css?121200" rel="stylesheet">
+<link href="/~cs2041/flask.cgi/static/course.css?6554" rel="stylesheet">
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/jquery.min.js?95992"></script>
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/bootstrap.min.js?37045"></script>
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/course.js?1631"></script>
+<link rel="canonical" href="https://cgi.cse.unsw.edu.au/~cs2041/" />
+</head>
+<body>
+
+
+
+
+<div class="container">
+
+<div id="heading">
+
+
+<a class="heading_link" target="_blank" id="left_heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/">COMP[29]041 17s2</a>
+
+
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Week 09
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/02/answers">Week 02</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/03/answers">Week 03</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/04/answers">Week 04</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/05/answers">Week 05</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/06/answers">Week 06</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/07/answers">Week 07</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/08/answers">Week 08</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/09/answers">Week 09</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/10/answers">Week 10</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/11/answers">Week 11</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/13/answers">Week 13</a></li>
+        
+        
+    </ul>
+</span>
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Laboratory
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/09/answers">Tutorial
+                
+            </a></li>
+            
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/09/answers">Laboratory
+                
+            </a></li>
+            
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/09/answers">Weekly Test
+                
+            </a></li>
+            
+        
+    </ul>
+</span>
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Sample Solutions
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/09/questions">Exercises
+            
+            </a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/09/answers">Sample Solutions
+            
+            </a></li>
+        
+        
+    </ul>
+</span>
+
+
+
+
+<a class="heading_link" target="_blank" id="right_heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/">Software Construction</a>
+
+</div>
+
+</div>
+
+
+<div class="tutlab lab">
+
+
+
+<h3>Submission Summary</h3>
+Due
+
+Sunday midnight
+
+
+<pre class="command_line">
+<kbd class="shell">give cs2041 lab09 bashpl.pl printpy.pl iterated_printpy.pl</kbd>
+</pre>
+
+
+
+
+<h3>Objectives</h3>
+
+
+<ul>
+<li> Developing Perl skills
+<li> Translating Bash to Perl
+<li> Getting started with Assignment 1
+</ul>
+
+
+
+
+
+<h3>Getting Started</h3>
+
+
+Create a new directory for this lab called <code>lab09</code> by typing:
+
+<pre class="command_line">
+<kbd class="shell">mkdir lab09</kbd>
+</pre>
+
+Change to this directory by typing:
+
+<pre class="command_line">
+<kbd class="shell">cd lab09</kbd>
+</pre>
+
+
+
+
+
+<h3>Background</h3>
+
+We have covered only a small amount of Perl in lectures. In fact, to
+cover the whole language in detail would take a whole semester, so
+we're going to rely on you finding out about the language yourself
+in tutes, labs and assignments. A good place to start is
+the Perl documentation & tutorial links on the class home page
+For example you might find these useful:
+
+<ul>
+<li> <a target="doc" href="http://search.cpan.org/dist/perl/pod/perlsyn.pod">Perl language syntax</a>
+<li> <a target="doc" href="http://search.cpan.org/dist/perl/pod/perlsub.pod">Perl functions</a>
+<li> <a target="doc" href="http://search.cpan.org/dist/perl/pod/perlop.pod">Perl operators</a>
+</ul>
+
+<h3>Exercise: Translating Bash Scripts </h3>
+
+We have some Shell (Bash) scripts which do arithmetic calculations which we need to
+translate to Perl.
+<p>
+Write a Perl program <code>bashpl.pl</code> which takes such a Bash script as input
+and outputs an equivalent Perl program.
+<p>
+The scripts use the arithmetic syntax supported by Bash (and
+several other shells).  Fortunately the scripts only use a very limited set of shell features.
+<p>
+You can assume all the  features you need to translate
+are present in the following 4 examples.
+<p>
+<ul>
+<li> <a href="sum.sh">sum.sh</a> sums a series of integers:
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">cat sum.sh</kbd>
+#!/bin/bash
+
+# sum the integers $start .. $finish
+
+start=1
+finish=100
+sum=0
+
+i=1
+while ((i &lt;= finish))
+do
+    sum=$((sum + i))
+    i=$((i + 1))
+done
+
+echo Sum of the integers $start .. $finish = $sum
+<kbd class="shell">./sum.sh</kbd>
+Sum of the integers 1 .. 100 = 5050
+<kbd class="shell">./bashpl.pl sum.sh</kbd>
+#!/usr/bin/perl -w
+
+# sum the integers $start .. $finish
+
+$start = 1;
+$finish = 100;
+$sum = 0;
+
+$i = 1;
+while ($i &lt;= $finish) {
+    $sum = $sum + $i;
+    $i = $i + 1;
+}
+
+print &#34;Sum of the integers $start .. $finish = $sum\n&#34;;
+<kbd class="shell">./bashpl.pl sum.sh|perl</kbd>
+Sum of the integers 1 .. 100 = 5050
+</pre>
+
+Or you can put the Perl in a file and run it:
+
+<pre class="command_line">
+<kbd class="shell">./bashpl.pl sum.sh >sum.pl</kbd>
+<kbd class="shell">chmod 700 ./sum.pl</kbd>
+<kbd class="shell">./sum.pl</kbd>
+Sum of the integers 1 .. 100 = 5050
+</pre>
+
+
+<li> <a href="double.sh">double.sh</a> prints powers of two:
+
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">cat double.sh</kbd>
+#!/bin/bash
+
+# calculate powers of 2 by repeated addition
+
+i=1
+j=1
+while ((i &lt; 31))
+do
+    j=$((j + j))
+    i=$((i + 1))
+    echo $i $j
+done
+<kbd class="shell">./bashpl.pl double.sh</kbd>
+#!/usr/bin/perl -w
+
+# calculate powers of 2 by repeated addition
+
+$i = 1;
+$j = 1;
+while ($i &lt; 31) {
+    $j = $j + $j;
+    $i = $i + 1;
+    print &#34;$i $j\n&#34;;
+}
+<kbd class="shell">./bashpl.pl double.sh|perl</kbd>
+2 2
+3 4
+4 8
+5 16
+6 32
+7 64
+8 128
+9 256
+10 512
+11 1024
+12 2048
+13 4096
+14 8192
+15 16384
+16 32768
+17 65536
+18 131072
+19 262144
+20 524288
+21 1048576
+22 2097152
+23 4194304
+24 8388608
+25 16777216
+26 33554432
+27 67108864
+28 134217728
+29 268435456
+30 536870912
+31 1073741824
+</pre>
+
+<li> <a href="pythagorean_triple.sh">pythagorean_triple.sh</a> searches for Pythagorean triples:
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">cat pythagorean_triple.sh</kbd>
+#!/bin/bash
+
+max=42
+a=1 
+while ((a &lt; max))
+do
+	b=$a 
+	while ((b &lt; max))
+	do
+		c=$b 
+		while ((c &lt; max))
+		do
+			if ((a * a + b * b == c * c))
+			then
+			    echo $a $b $c is a Pythagorean Triple
+			fi
+			c=$((c + 1))
+		done
+		b=$((b + 1))
+	done
+	a=$((a + 1))
+done
+<kbd class="shell">./bashpl.pl pythagorean_triple.sh</kbd>
+#!/usr/bin/perl -w
+
+$max = 42;
+$a = 1 ;
+while ($a &lt; $max) {
+	$b = $a ;
+	while ($b &lt; $max) {
+		$c = $b ;
+		while ($c &lt; $max) {
+			if ($a * $a + $b * $b == $c * $c) {
+			    print &#34;$a $b $c is a Pythagorean Triple\n&#34;;
+			}
+			$c = $c + 1;
+		}
+		$b = $b + 1;
+	}
+	$a = $a + 1;
+}
+<kbd class="shell">./bashpl.pl pythagorean_triple.sh|perl</kbd>
+3 4 5 is a Pythagorean Triple
+5 12 13 is a Pythagorean Triple
+6 8 10 is a Pythagorean Triple
+7 24 25 is a Pythagorean Triple
+8 15 17 is a Pythagorean Triple
+9 12 15 is a Pythagorean Triple
+9 40 41 is a Pythagorean Triple
+10 24 26 is a Pythagorean Triple
+12 16 20 is a Pythagorean Triple
+12 35 37 is a Pythagorean Triple
+15 20 25 is a Pythagorean Triple
+15 36 39 is a Pythagorean Triple
+16 30 34 is a Pythagorean Triple
+18 24 30 is a Pythagorean Triple
+20 21 29 is a Pythagorean Triple
+21 28 35 is a Pythagorean Triple
+24 32 40 is a Pythagorean Triple
+</pre>
+
+<li> <a href="collatz.sh">collatz.sh</a> prints an interetsing series:
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">cat collatz.sh</kbd>
+#!/bin/bash
+
+# https://en.wikipedia.org/wiki/Collatz_conjecture
+# https://xkcd.com/710/
+
+n=65535
+while ((n != 1))
+do
+	if ((n % 2 == 0))
+	then
+		n=$((n / 2))
+	else
+		n=$((3 * n + 1))
+	fi
+	echo $n
+done
+<kbd class="shell">./bashpl.pl collatz.sh</kbd>
+#!/usr/bin/perl -w
+
+# https://en.wikipedia.org/wiki/Collatz_conjecture
+# https://xkcd.com/710/
+
+$n = 65535;
+while ($n != 1) {
+	if ($n % 2 == 0) {
+		$n = $n / 2;
+	} else {
+		$n = 3 * $n + 1;
+	}
+	print &#34;$n\n&#34;;
+}
+<kbd class="shell">./bashpl.pl collatz.sh|perl</kbd>
+196606
+98303
+294910
+147455
+442366
+221183
+663550
+331775
+995326
+497663
+1492990
+746495
+2239486
+1119743
+3359230
+1679615
+5038846
+2519423
+7558270
+3779135
+11337406
+5668703
+17006110
+8503055
+25509166
+12754583
+38263750
+19131875
+57395626
+28697813
+86093440
+43046720
+21523360
+10761680
+5380840
+2690420
+1345210
+672605
+2017816
+1008908
+504454
+252227
+756682
+378341
+1135024
+567512
+283756
+141878
+70939
+212818
+106409
+319228
+159614
+79807
+239422
+119711
+359134
+179567
+538702
+269351
+808054
+404027
+1212082
+606041
+1818124
+909062
+454531
+1363594
+681797
+2045392
+1022696
+511348
+255674
+127837
+383512
+191756
+95878
+47939
+143818
+71909
+215728
+107864
+53932
+26966
+13483
+40450
+20225
+60676
+30338
+15169
+45508
+22754
+11377
+34132
+17066
+8533
+25600
+12800
+6400
+3200
+1600
+800
+400
+200
+100
+50
+25
+76
+38
+19
+58
+29
+88
+44
+22
+11
+34
+17
+52
+26
+13
+40
+20
+10
+5
+16
+8
+4
+2
+1
+</pre>
+</ul>
+
+Note: you must translate the scripts to Perl not just embed the shell of the script in a Perl system call.
+
+
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+<pre class="command_line">
+<kbd class="shell">2041 autotest lab09 bashpl.pl</kbd>
+</pre>
+
+
+    
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Automarking Results</h4>
+        <span class="autotest_results_emphasis">46%</span>
+        
+        of <span class="autotest_results_emphasis">356</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">bashpl.pl</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+                <ul>
+                
+                    <li><span class="autotest_results_emphasis">94%</span>
+                    
+                    passed test <i>bashpl_0</i>
+                
+                    <li><span class="autotest_results_emphasis">96%</span>
+                    
+                    passed test <i>bashpl_1</i>
+                
+                    <li><span class="autotest_results_emphasis">82%</span>
+                    
+                    passed test <i>bashpl_2</i>
+                
+                    <li><span class="autotest_results_emphasis">95%</span>
+                    
+                    passed test <i>bashpl_3</i>
+                
+                    <li><span class="autotest_results_emphasis">52%</span>
+                    
+                    passed test <i>bashpl_4</i>
+                
+                    <li><span class="autotest_results_emphasis">90%</span>
+                    
+                    passed test <i>bashpl_5</i>
+                
+                    <li><span class="autotest_results_emphasis">90%</span>
+                    
+                    passed test <i>bashpl_6</i>
+                
+                </ul>
+                </div>
+            
+        
+    </div>
+
+
+<div class="answer">
+
+Reasonable readable Perl solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+
+while ($line = &lt;&gt;) {
+
+	if ($. == 1 &amp;&amp; $line =~ /^#!/) {
+		print &#34;#!/usr/bin/perl -w\n&#34;;
+		next;
+	}
+	
+	# remove trailing white space
+	$line =~ s/\s*$//;
+
+	# remove and save leading white space
+	$line =~ s/^(\s*)//;
+	my ($indent) = $1;
+	
+	# remove and save any comment
+	$line =~ s/(\s*#.*)//;
+	my ($comment) = $1;
+	
+	my $perl = &#34;&#34;;
+	if ($line =~ /^(do|then)$/) {
+		$perl = &#34;&#34;; 
+	} elsif ($line =~ /^(done|fi)$/) {
+		$perl = &#34;}&#34;; 
+	} elsif ($line =~ /^else$/) {
+		$perl = &#34;} else {&#34;; 
+	} elsif ($line =~ /^echo\s+(.*)$/) {
+		$perl = &#34;print \&#34;$1\\n\&#34;;&#34;;
+	} elsif ($line =~ /^(if|while)\s+\(\((.*)\)\)$/) {
+		my $keyword = $1;
+		my $expression = $2;
+		# add $ in front of any variable that don&#39;t already have a $
+		$expression =~ s/(^|[^\$])([a-zA-Z]\w*)/$1\$$2/g;
+		$perl = &#34;$keyword ($expression) {&#34;;
+	} elsif ($line =~ /(.*?)=\$\(\((.*)\)\)/) {
+		my $lhs = $1;
+		my $expression = $2;
+		$expression =~ s/(^|[^\$])([a-zA-Z]\w*)/$1\$$2/g;
+		$perl = &#34;\$$lhs = $expression;&#34;;
+	} elsif ($line =~ /(.*?)=(.*)/) {
+		my $lhs = $1;
+		my $rhs = $2;
+		$rhs =~ s/(^|[^\$])([a-zA-Z]\w*)/$1\$$2/g;
+		$perl = &#34;\$$1 = $2;&#34;;
+	}
+	
+	print &#34;$indent$perl$comment\n&#34; if &#34;$perl$comment&#34;;
+}
+
+</pre>
+
+
+
+Very terse Perl solution using $_ and Perl's -p command line option.
+<p>
+Good example of how you can use Perl to produce code quickly
+at the cost of readability and maintainability.
+<p>
+This is also a much less general approach - it makes it difficult to
+account for edge cases using clever (yet naive) substitutions.
+<p>
+Good approach for one-off/throwaway code - not in assignment 1!
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -pw
+
+s?^#!.*?#!/usr/bin/perl -w? &amp;&amp; next if $. == 1;
+/^\s*#/ &amp;&amp; next;
+s/^(\s*)(do|then)\b.*\n// &amp;&amp; next;
+s/^(\s*)(done|fi)\b/$1}/ &amp;&amp; next;
+s/^(\s*)(else)\b/$1} else {/ &amp;&amp; next;
+s/^(\s*)echo\s+(.*)/$1print &#34;$2\\n&#34;;/ &amp;&amp; next;
+s/\$\(\((.*)\)\)/$1/;
+s/(^|[^\$])([a-zA-Z]\w*)/$1\$$2/g;
+s/^(\s*)\$(if|while)\s+\(\((.*)\)\)/$1$2 ($3) {/ &amp;&amp; next;
+s/(.*\w)=(.*)/$1 = $2;/;
+
+</pre>
+
+
+</div>
+
+
+<h3>Challenge Exercise: printpy</h3>
+
+Write a Perl program  <code>printpy.pl</code>  which is given a single argument.
+It should output a Python program which prints this string.  For example:
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./printpy.pl &#39;Perl that print Python - yay&#39; |python3</kbd>
+Perl that print Python - yay
+</pre>
+
+You can assume the string contains only ASCII characters.
+You can not make other assumptions about the characters in the string.
+
+
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+<pre class="command_line">
+<kbd class="shell">2041 autotest lab09 printpy.pl</kbd>
+</pre>
+
+
+    
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Automarking Results</h4>
+        <span class="autotest_results_emphasis">0%</span>
+        
+        of <span class="autotest_results_emphasis">199</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">printpy.pl</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+        
+    </div>
+
+
+<div class="answer">
+
+Simple solution which encodes all the characters in the string as hex escapes.
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+
+print &#34;#!/usr/bin/python3\n\n&#34;;
+print &#34;print(\&#34;&#34;;
+for $c (split //, $ARGV[0]) {
+	printf &#34;\\x%02x&#34;, ord($c);
+}
+print &#34;\&#34;);\n&#34;;
+
+
+</pre>
+
+
+</div>
+
+
+<h3>Challenge Exercise: iterated printpy</h3>
+
+Write a Perl program  <code>iterated_printpy.pl</code>  which is given a two arguments,
+an integer <b>n</b> and a string.
+<p>
+If <b>n</b> is 0 it should  output a Python program which prints the string - in other words the same behaviour as    <code>printpy.pl</code>.
+<p>
+If <b>n</b> is 1 it should  output a Python program which prints a Perl program which prints a Python program which prints the string.
+<p>
+If <b>n</b> is 2 it should  output a Python program which prints a Perl program which prints a Python program which prints a Perl program which prints a Python program which prints the string.
+<p>
+And so on for larger values of <b>n</b>.
+<p>
+For example:
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./iterated_printpy.pl 0 'Perl that prints Python'|python3</kbd>
+Perl that prints Python
+<kbd class="shell">./iterated_printpy.pl 1 'Perl that prints Python that Prints Perl that print Python'|python3|perl|python3</kbd>
+Perl that prints Python that Prints Perl that print Python
+<kbd class="shell">./iterated_printpy.pl 2 'Perl that ....'|python3|perl|python3|perl|python3</kbd>
+Perl that ....
+<kbd class="shell">./iterated_printpy.pl 4 'Andrew Rocks!'|python3|perl|python3|perl|python3|perl|python3|perl|python3</kbd>
+Andrew Rocks!
+<kbd class="shell">./iterated_printpy.pl 10 'I love COMP[29]041!'|python3|perl|python3|perl|python3|perl|python3|perl|python3|perl|python3|perl|python3|perl|python3|perl|python3|perl|python3|perl|python3</kbd>
+I love COMP[29]041!
+</pre>
+
+You can assume the string contains only ASCII characters.
+You can not make other assumptions about the characters in the string.
+
+
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+<pre class="command_line">
+<kbd class="shell">2041 autotest lab09 iterated_printpy.pl</kbd>
+</pre>
+
+
+    
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Automarking Results</h4>
+        <span class="autotest_results_emphasis">0%</span>
+        
+        of <span class="autotest_results_emphasis">86</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">iterated_printpy.pl</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+        
+    </div>
+
+
+<div class="answer">
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+
+$code = $ARGV[1];
+for (0 .. 2*$ARGV[0]) {
+	my $escaped_chars = &#34;&#34;;
+	for $c (split //, $code) {
+		# Converts double-quotes, backslash and non-printing characters except space &amp; tab
+		# into hex escape sequences (if we escape all characters generated program size explodes)
+		if ($c =~ /[^[:print:] \t]/ || $c eq &#39;&#34;&#39; || $c eq &#39;\\&#39;) {
+			$escaped_chars .= sprintf &#34;\\x%02x&#34;, ord($c);
+		} else {
+			$escaped_chars .= $c;
+		}
+	}
+	$code = &#34;print(\&#34;$escaped_chars\&#34;)\n&#34;;
+}
+
+print &#34;#!/usr/bin/python3\n\n&#34;;
+print $code;
+
+</pre>
+
+
+</div>
+
+
+
+
+
+
+
+
+<h3>Submission</h3>
+
+When you are finished submit your work by running:
+<pre class="command_line">
+<kbd class="shell">give cs2041 lab09 bashpl.pl printpy.pl iterated_printpy.pl</kbd>
+</pre>
+<p>
+Don't submit any exercises you haven't attempted.
+
+If you are working at home, you may find it more convenient
+to upload your work via
+ <a href="https://cgi.cse.unsw.edu.au/~give/code/login.php?app=/~give/Student/give.php&amp;debug=get_authuser">give's web interface</a>.
+<p>
+Remember you have until
+
+Sunday midnight
+
+
+to submit your work.
+
+
+
+
+<h3>Assessment</h3>
+
+This lab exercises is worth 1 mark.
+<p>
+Labs exercise are either automarked or peer assessed.
+This is to allow tutors' time to be used to assist students.
+<p>
+After the automarking is complete you should be able to view it by running
+this command on a CSE machine:
+
+<pre class="command_line">
+<kbd class="shell">2041 classrun -collect lab09
+</pre>
+
+You can inspect marks for this lab and other assessment components via <a href="https://cgi.cse.unsw.edu.au/~give/code/login.php?app=/~give/Student/give.php&amp;debug=get_authuser">give's web interface</a> or by running
+
+<pre class="command_line">
+<kbd class="shell">2041 classrun -sturec
+</pre>
+
+<p>
+Reminder: lab marks contribute 9% to your final COMP[29]041 final mark.
+<p>
+The 11 lab marks will be summed at the end of session and the sum capped at 9 marks.
+<p>
+Hence you can obtain full marks for the 9% lab component without obtaining full marks every week.
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+<!--
+public_html_session_directory=/web/cs2041/17s2
+base_directory=/web/cs2041/17s2
+public_html_directory=/web/cs2041
+scripts_directory=/web/cs2041/17s2/scripts
+home_directory=/home/cs2041
+bin_directory=/home/cs2041/bin
+course_account=cs2041
+course_code=COMP2041
+course_number=2041
+postgraduate_course_code=COMP9041
+course_name=Software Construction
+unsw_session=17s2
+canonical_url=https://cgi.cse.unsw.edu.au/~cs2041/
+github_repo_url=https://github.com/COMP2041UNSW/course_materials
+course_forum_url=https://piazza.com/class/j5ji4vjjra62a3
+lecture_recordings_url=https://moodle.telt.unsw.edu.au/course/view.php?id=27708
+WORK=/web/cs2041/17s2/work
+OUT=/web/cs2041/17s2/work/.out
+MARKED=/web/cs2041/17s2/work/.out/.marked
+SMSDB=/web/cs2041/17s2/work/17s2db.sms
+tlb_directory=/web/cs2041/17s2/tlb
+lecture_directory=/web/cs2041/17s2/lec
+flask_cache_directory=/web/cs2041/17s2/flask_cache
+testing_results_file=/web/cs2041/17s2/work/testing_results.json
+enrollments_file=/web/cs2041/17s2/work/enrollments.json
+unsw_ldap_password_file=/web/cs2041/.unsw_ldap_password
+autotest_upload_url=https://cgi.cse.unsw.edu.au/~cs2041/cgi/autotest_upload.cgi
+PATH=/web/cs2041/17s2/scripts:/home/cs2041/bin:/bin/:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/home/class/bin:/home/give/stable/bin.:/bin:/usr/bin:/usr/local/bin
+directory_relative_pathname=tlb/09
+url=https://cgi.cse.unsw.edu.au/~cs2041/flask.cgi/lab/09/answers
+directory_url=https://cgi.cse.unsw.edu.au/~cs2041/lab/09/
+url_root=https://cgi.cse.unsw.edu.au/~cs2041/
+script_root=/~cs2041/flask.cgi
+current_lecture_topic=exam
+current_week=13
+week=09
+exercise_name=lab09
+tut_or_lab_or_test=lab
+questions_or_answers=answers
+programs=&lt;programs&gt;
+
+-->
+
+</body>
+</html>

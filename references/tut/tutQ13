@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>
+
+COMP2041 Week 13 Tutorial Questions
+
+</title>
+<link href="/~cs2041/flask.cgi/static/bootstrap.min.css?121200" rel="stylesheet"/>
+<link href="/~cs2041/flask.cgi/static/course.css?6554" rel="stylesheet"/>
+<script src="/~cs2041/flask.cgi/static/jquery.min.js?95992" type="text/javascript"></script>
+<script src="/~cs2041/flask.cgi/static/bootstrap.min.js?37045" type="text/javascript"></script>
+<script src="/~cs2041/flask.cgi/static/course.js?1631" type="text/javascript"></script>
+<link href="https://cgi.cse.unsw.edu.au/~cs2041/" rel="canonical"/>
+</head>
+<body>
+<div class="container">
+<div id="heading">
+<a class="heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/" id="left_heading_link" target="_blank">COMP[29]041 17s2</a>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Week 13
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/02/questions">Week 02</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/03/questions">Week 03</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/04/questions">Week 04</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/05/questions">Week 05</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/06/questions">Week 06</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/07/questions">Week 07</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/08/questions">Week 08</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/09/questions">Week 09</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/10/questions">Week 10</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/11/questions">Week 11</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/12/questions">Week 12</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/13/questions">Week 13</a></li>
+</ul>
+</span>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Tutorial
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/13/questions">Tutorial
+                
+            </a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/13/questions">Laboratory
+                
+            </a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/test/13/questions">Weekly Test
+                
+            </a></li>
+</ul>
+</span>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Questions
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/13/questions">Questions
+            
+            </a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/13/answers">Sample Answers
+            
+            </a></li>
+</ul>
+</span>
+<a class="heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/" id="right_heading_link" target="_blank">Software Construction</a>
+</div>
+</div>
+<div class="tutlab tut">
+<ol>
+<ol>
+<li>
+
+How is assignment 2 going?
+<p>
+Do students who've made progress with the assignment have advice for students not so far along?
+</p><p>
+Do students have questions that other may be able to answer?
+
+</p></li><li>
+
+In the context of computing, a <i>shell</i> is
+<ol type="a">
+<li> <p> part of the Unix operating system </p>
+</li><li> <p> a program that arranges the execution of other programs </p>
+</li><li> <p> a component of a window manager such as <code>fvwm</code> </p>
+</li><li> <p> an object-oriented wrapper for a procedural program </p>
+</li></ol>
+<p></p>
+</li><li>
+Which one of the following regular expressions would match a
+non-empty string consisting only of the letters <code>x</code>,
+<code>y</code> and <code>z</code>, in any order?
+<ol type="a">
+<li> <p> <code>[xyz]+</code> </p>
+</li><li> <p> <code>x+y+z+</code> </p>
+</li><li> <p> <code>(xyz)*</code> </p>
+</li><li> <p> <code>x*y*z*</code> </p>
+</li></ol>
+<p></p>
+</li><li><p>
+Which one of the following commands would extract the student id
+field from a file in the following format:
+</p><pre class="command_line">
+COMP3311;2122987;David Smith;95
+COMP3231;2233445;John Smith;51
+COMP3311;2233445;John Smith;76
+</pre>
+<ol type="a">
+<li> <p> <code>cut -f 2</code> </p>
+</li><li> <p> <code>cut -d; -f 2</code> </p>
+</li><li> <p> <code>sed -e 's/.*;//'</code> </p>
+</li><li> <p> None of the above. </p>
+</li></ol>
+<p></p>
+</li><li><p>
+Which one of the following Perl commands would acheive the same
+effect as in the previous question (i.e. extract the student id
+field)?
+</p><ol type="a">
+<li> <p> <code>perl -e '{while (&lt;&gt;) { split /;/; print;}}'</code> </p>
+</li><li> <p> <code>perl -e '{while (&lt;&gt;) { split /;/; print $2;}}'</code> </p>
+</li><li> <p> <code>perl -e '{while (&lt;&gt;) { @x = split /;/; print "$x[1]\n";}}'</code> </p>
+</li><li> <p> <code>perl -e '{while (&lt;&gt;) { @x = split /;/; print "$x[2]\n";}}'</code> </p>
+</li></ol>
+<p></p>
+</li><li>
+Consider the following Perl program that processes its standard input:
+
+<pre class="command_line">
+#!/usr/bin/perl -w
+while (&lt;STDIN&gt;) {
+    @marks = split;
+    $studentID = $marks[0];
+    for (i = 0; i &lt; $#marks; i++) {
+        $totalMark += $marks[$i];
+    }
+    printf "%s %d\n", $studentID, $totalMark;
+}
+</pre>
+<p>
+This program has several common mistakes in it. Indicate and describe
+the nature of each of these mistakes, and say what the program is
+attempting to do.
+</p>
+<p></p>
+</li><li>
+
+Write a <i>shell script</i> called <code>rmall.sh</code> that removes all of the
+files and directories below the directory supplied as its single
+command-line argument.
+The script should prompt the user with <code>Delete</code> <i>X</i><code>?</code>
+before it starts deleting the contents of any directory <i>X</i>.
+If the user responds <code>yes</code> to the prompt, <code>rmall</code>
+should remove all of the plain files in the directory, and then
+check whether the contents of the subdirectories should be removed.
+The script should also check the validity of its command-line arguments.
+
+<p></p>
+</li><li>
+
+Write a <i>shell script</i> called <code>check</code> that looks for duplicated
+student ids in a file of marks for a particular subject.
+The file consists of lines in the following format:
+
+<pre class="command_line">
+2233445 David Smith 80
+2155443 Peter Smith 73
+2244668 Anne Smith 98
+2198765 Linda Smith 65
+</pre>
+
+The output should be a list of student ids that occur 2+ times, separated by newlines.
+(i.e. any student id that occurs more than once should be displayed on a line by itself on the standard output).
+
+<p></p>
+</li><li>
+
+Write a <i>Perl script</i> <b>revline.pl</b> that reverses the fields on each line
+of its standard input.
+<p>
+Assume that the fields are separated by spaces, and that only one space
+is required between fields in the output.
+</p><p>
+For example
+
+
+    
+        
+    
+
+
+
+
+
+
+</p><pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./revline.pl</kbd>
+<kbd>hi how are you
+i'm great thank you
+</kbd><span class="eof"></span>
+you are how hi
+you thank great i'm
+</pre>
+<p></p>
+</li><li>
+
+Write a <i>Python script</i> <b>revline.py</b> that reverses the fields on each line
+of its standard input.  See the previous question for details.
+
+</li><li>
+
+Consider the following table of student enrolment data:
+
+<center>
+<table>
+<tr><th>StudentID</th><th>Course</th><th>Year</th><th>Session</th><th>Mark</th><th>Grade</th></tr>
+<tr><td>2201440</td><td>COMP1011</td><td>1999</td><td>S1</td><td>57</td><td>PS</td></tr>
+<tr><td>2201440</td><td>MATH1141</td><td>1999</td><td>S1</td><td>51</td><td>PS</td></tr>
+<tr><td>2201440</td><td>MATH1081</td><td>1999</td><td>S1</td><td>60</td><td>PS</td></tr>
+<tr><td>2201440</td><td>PHYS1131</td><td>1999</td><td>S1</td><td>52</td><td>PS</td></tr>
+<tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+</table>
+</center>
+
+A file containing a large data set in this format for the years 1999
+to 2001 and ordered by student ID is available in the file <i>data</i>.
+
+<p>
+Write a program that computes the average mark for a specified course
+for each of the sessions that it has run.
+The course code is specified as a command-line argument, and the
+data is read from standard input.
+All output from the program should be written to the standard output.
+</p>
+<p>
+If no command-line argument is given, the program should write the
+following message and quit:
+</p>
+<pre class="command_line">
+    Usage: ex3 Course
+</pre>
+<p>
+The program does <em>not</em> have to check whether the argument is
+valid (i.e. whether it looks like a real course code). However,
+if the specified course code (<i>CCODE</i>) does not appear anywhere
+in the data file, the program should write the following message:
+</p>
+<pre class="command_line">
+    No marks for course CCODE
+</pre>
+<p>
+Otherwise, it should write one line for each session that the
+course was offered. The line should contain the course code, the
+year, the session and the average mark for the course
+(with one digit after the decimal point).
+You can assume that a course will not be offered more than 100 times.
+The entries should be written in chronological order.
+</p>
+<p>
+The following shows an example input/output pair for this program:
+</p>
+<center>
+<table border="1" cellpadding="5">
+<tr><td><b>Sample Input Data</b></td><td><b>Corresponding Output</b></td></tr>
+<tr valign="top">
+<td>
+<pre class="command_line">
+COMP1011
+</pre>
+</td><td>
+<pre class="command_line">
+COMP1011 1999 S1 62.5
+COMP1011 2000 S1 69.1
+COMP1011 2001 S1 66.8
+</pre>
+</td>
+</tr>
+</table>
+</center>
+<p></p>
+</li><li>
+Write a Perl program <b>frequencies.pl</b> that prints a count of how often each letter ('a'..'z'
+and 'A'..'Z') and digit ('0'..'9') occurs in its input.  Your program
+should follow the output format indicated in the examples below exactly.
+<p>
+No count
+should be printed for letters or digits which do not occur in the input.
+</p><p>
+The counts should be printed in dictionary order ('0'..'9','A'..'Z','a'..'z').
+</p><p>
+Characters other than
+letters and digits should be ignored.
+</p><p>
+The following shows an example input/output pair for this program:
+
+
+    
+        
+    
+
+
+
+
+
+
+</p><pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./frequencies.pl</kbd>
+<kbd>The  Mississippi is
+1800 miles long!
+</kbd><span class="eof"></span>
+'0' occurred 2 times
+'1' occurred 1 times
+'8' occurred 1 times
+'M' occurred 1 times
+'T' occurred 1 times
+'e' occurred 2 times
+'g' occurred 1 times
+'h' occurred 1 times
+'i' occurred 6 times
+'l' occurred 2 times
+'m' occurred 1 times
+'n' occurred 1 times
+'o' occurred 1 times
+'p' occurred 2 times
+'s' occurred 6 times
+</pre>
+<p></p>
+</li><li>
+Write a  program <b>frequencies.py</b> - see previous question for details.
+
+</li><li>
+
+Write a Perl program that maps all lower-case vowels (a,e,i,o,u) in
+its standard input into their upper-case equivalents and, at the
+same time, maps all upper-case vowels (A, E, I, O, U) into their
+lower-case equivalents.
+<p>
+The following shows an example input/output pair for this program:
+</p>
+<center>
+<table border="1" cellpadding="5">
+<tr><td><b>Sample Input Data</b></td><td><b>Corresponding Output</b></td></tr>
+<tr valign="top">
+<td>
+<pre class="command_line">
+This is some boring text.
+A little foolish perhaps?
+</pre>
+</td><td>
+<pre class="command_line">
+ThIs Is sOmE bOrIng tExt.
+a lIttlE fOOlIsh pErhAps?
+</pre>
+</td>
+</tr>
+</table>
+</center>
+<p></p>
+</li><li>
+
+A "hill vector" is structured as an <em>ascent</em>,
+followed by an <em>apex</em>, followed by a <em>descent</em>, where
+<p>
+</p><ul>
+<li> the <em>ascent</em> is a non-empty strictly ascending sequence that ends with the apex
+</li><li> the <em>apex</em> is the maximum value, and must occur only once
+</li><li> the <em>descent</em> is a non-empty strictly descending sequence that starts with the apex
+</li></ul>
+<p>
+For example, [1,2,3,4,3,2,1] is a hill vector (with apex=4) and
+[2,4,6,8,5] is a hill vector (with apex=8).
+The following vectors are not hill vectors:
+[1,1,2,3,3,2,1] (not strictly ascending and multiple apexes),
+[1,2,3,4] (no descent), and
+[2,6,3,7,8,4] (not ascent then descent).
+No vector with less than three elements is considered to be a hill.
+
+</p><p>
+Write a Perl program <b>hill_vector.pl</b> that determines whether a sequence of numbers (integers)
+read from standard input forms a "hill vector".
+The program should write "hill" if the input <i>does</i>  form a hill
+vector and write "not hill" otherwise.
+</p><p>
+Your program's input will only contain digits and white space.
+Any amount of whitespace may precede or follow integers.
+</p><p>
+Multiple integers may occur on the same line.
+</p><p>
+A line may contain no integers.
+</p><p>
+You can assume all the integers are positive.
+The following shows example input/output pairs for this program:
+</p><p></p><center>
+<table border="1" cellpadding="5">
+<tr><td><b>Sample Input Data</b></td><td><b>Corresponding Output</b></td></tr>
+<tr valign="top">
+<td>
+<pre class="command_line">
+1 2 4 8 5 3 2
+</pre>
+</td><td>
+<pre class="command_line">
+hill
+</pre>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<pre class="command_line">
+1 2
+</pre>
+</td><td>
+<pre class="command_line">
+not hill
+</pre>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<pre class="command_line">
+1 3 1
+</pre>
+</td><td>
+<pre class="command_line">
+hill
+</pre>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<pre class="command_line">
+  3
+1   1
+</pre>
+</td><td>
+<pre class="command_line">
+not hill
+</pre>
+</td>
+</tr>
+<tr valign="top">
+<td>
+<pre class="command_line">
+2 4 6 8 10 10 9 7 5 3 1
+</pre>
+</td><td>
+<pre class="command_line">
+not hill
+</pre>
+</td>
+</tr>
+</table>
+</center>
+<p></p>
+</li><li>
+Write a Python program <b>hill_vector.py</b> see the previous question for details.
+
+</li><li>
+
+A list  <b>a<sub>1</sub></b>, <b>a<sub>2</sub></b>, ... <b>a<sub>n</sub></b> is said to be <b>converging</b> if
+<p>
+</p><pre>
+<b>a<sub>1</sub></b> &gt; <b>a<sub>2</sub></b> &gt; ... &gt; <b>a<sub>n</sub></b>
+</pre>
+<p>
+and
+</p><p>
+</p><pre>
+<p>
+for all i <b>a<sub>i - 1</sub></b> - <b>a<sub>i</sub></b> &gt; <b>a<sub>i</sub></b> - <b>a<sub>i + 1</sub></b>
+</p></pre>
+<p>
+In other words, the list is strictly decreasing and the difference between consecuctive list elements
+always decreases as you go down the list.
+</p><p>
+Write a Perl program <b>converging.pl</b> that determines whether a sequence of positive integers
+read from standard input is converging.
+The program should write "converging" if the input is converging
+and write "not converging" otherwise.
+It should produce no other output.
+</p><p>
+</p><div align="CENTER">
+<table border="1" cellpadding="3">
+<tr><th align="LEFT"><span class="textbf">Sample Input Data</span></th>
+<th align="LEFT"><span class="textbf">Corresponding Output</span></th>
+</tr>
+<tr><td align="LEFT"><table width="227">
+<tr><td>
+<pre class="command_line">
+2010 6 4 3
+</pre></td></tr>
+</table></td>
+<td align="LEFT"><table width="227">
+<tr><td>
+<pre class="command_line">
+converging
+</pre></td></tr>
+</table></td>
+</tr>
+<tr><td align="LEFT"><table width="227">
+<tr><td>
+<pre class="command_line">
+20
+15
+9
+</pre></td></tr>
+</table></td>
+<td align="LEFT"><table width="227">
+<tr><td>
+<pre class="command_line">
+not converging
+</pre></td></tr>
+</table></td>
+</tr>
+<tr><td align="LEFT"><table width="227">
+<tr><td>
+<pre class="command_line">
+1000
+     100   10
+     1
+</pre></td></tr>
+</table></td>
+<td align="LEFT"><table width="227">
+<tr><td>
+<pre class="command_line">
+converging
+</pre></td></tr>
+</table></td>
+</tr>
+<tr><td align="LEFT"><table width="227">
+<tr><td>
+<pre class="command_line">
+  6
+  5
+2 2
+</pre></td></tr>
+</table></td>
+<td align="LEFT"><table width="227">
+<tr><td>
+<pre class="command_line">
+not converging
+</pre></td></tr>
+</table></td>
+</tr>
+<tr><td align="LEFT"><table width="227">
+<tr><td>
+<pre class="command_line">
+  1 2 4 8
+</pre></td></tr>
+</table></td>
+<td align="LEFT"><table width="227">
+<tr><td>
+<pre class="command_line">
+not converging
+</pre></td></tr>
+</table></td>
+</tr>
+</table>
+</div>
+<p>
+
+Your program's input will only contain digits and white space.
+Any amount of whitespace may precede or follow integers.
+</p><p>
+Multiple integers may occur on the same line.
+</p><p>
+A line may contain no integers.
+</p><p>
+You can assume your input contains at least 2 integers.
+</p><p>
+You can assume all the integers are positive.
+
+</p><p></p>
+</li><li>
+Write a Python program <b>converging.py</b> - see the previous question for details.
+
+</li><li>
+
+The <i>weight</i> of a number in a list is its value multiplied by
+how many times it occurs in the list.
+Consider the list <code> 1 6 4 7 3 4 6 3 3]</code>.
+The number 7 occurs once so it has weight 7. The number 3 occurs 3 times so it has weight 9.
+The number 4 occurs twice so it has weight 8.
+<p>
+Write a Perl program <b>heaviest.pl</b> which takes 1 or more positive integers as arguments and prints the heaviest.
+</p><p>
+Your Perl program should print one integer and no other output.
+</p><p>
+Your Perl program can assume it it is given only positive integers as arguments
+</p><p>
+</p><pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./heaviest.pl 1 6 4 7 3 4 6 3 3</kbd>
+6
+<kbd class="shell">./heaviest.pl 1 6 4 7 3 4 3 3</kbd>
+3
+<kbd class="shell">./heaviest.pl 1 6 4 7 3 4 3</kbd>
+4
+<kbd class="shell">./heaviest.pl 1 6 4 7 3 3</kbd>
+7
+</pre>
+<p></p>
+</li><li>
+Write a Python program <b>heaviest.py</b> - see the previous question for details.
+
+
+
+
+<h3>Revision questions</h3>
+
+The remaining tutorial questions are primarily intended for revision - either this week
+or later in session.
+<p>
+Your tutor may still choose to cover some of the questions time permitting.
+</p><p>
+</p></li><li>
+
+We wish to create a web site named myAddressBook where users can stores their address book.
+<p>
+After users login to the web site it should show them their current addressbook.
+</p><p>
+Then should be able to add and delete name/address pairs from their addressbook.
+</p><p>
+Write a CGI script <code>myAddressBook.cgi</code> to perform this task.
+</p><p>
+Here is an  <a href="http://cgi.cse.unsw.edu.au/~cs2041cgi/tlb/13/address-reference.cgi">example implementation</a>.
+
+</p><p></p>
+</li><li>
+
+Modify the CGI script to store the user's login in a cookie and log them in automatically on future visits.
+
+<p></p>
+</li></ol>
+</ol></div>
+<!--
+public_html_session_directory=/web/cs2041/17s2
+base_directory=/web/cs2041/17s2
+public_html_directory=/web/cs2041
+scripts_directory=/web/cs2041/17s2/scripts
+home_directory=/home/cs2041
+bin_directory=/home/cs2041/bin
+course_account=cs2041
+course_code=COMP2041
+course_number=2041
+postgraduate_course_code=COMP9041
+course_name=Software Construction
+unsw_session=17s2
+canonical_url=https://cgi.cse.unsw.edu.au/~cs2041/
+github_repo_url=https://github.com/COMP2041UNSW/course_materials
+course_forum_url=https://piazza.com/class/j5ji4vjjra62a3
+lecture_recordings_url=https://moodle.telt.unsw.edu.au/course/view.php?id=27708
+WORK=/web/cs2041/17s2/work
+OUT=/web/cs2041/17s2/work/.out
+MARKED=/web/cs2041/17s2/work/.out/.marked
+SMSDB=/web/cs2041/17s2/work/17s2db.sms
+tlb_directory=/web/cs2041/17s2/tlb
+lecture_directory=/web/cs2041/17s2/lec
+flask_cache_directory=/web/cs2041/17s2/flask_cache
+testing_results_file=/web/cs2041/17s2/work/testing_results.json
+enrollments_file=/web/cs2041/17s2/work/enrollments.json
+unsw_ldap_password_file=/web/cs2041/.unsw_ldap_password
+autotest_upload_url=https://cgi.cse.unsw.edu.au/~cs2041/cgi/autotest_upload.cgi
+PATH=/web/cs2041/17s2/scripts:/home/cs2041/bin:/bin/:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/home/class/bin:/home/give/stable/bin.:/bin:/usr/bin:/usr/local/bin
+directory_relative_pathname=tlb/13
+url=https://cgi.cse.unsw.edu.au/~cs2041/flask.cgi/tut/13/questions
+directory_url=https://cgi.cse.unsw.edu.au/~cs2041/tut/13/
+url_root=https://cgi.cse.unsw.edu.au/~cs2041/
+script_root=/~cs2041/flask.cgi
+current_lecture_topic=exam
+current_week=13
+week=13
+exercise_name=tut13
+tut_or_lab_or_test=tut
+questions_or_answers=questions
+programs=&lt;programs&gt;
+
+-->
+</body>
+</html>

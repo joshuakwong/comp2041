@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>
+
+COMP2041 Week 11 Laboratory Exercises
+
+</title>
+<link href="/~cs2041/flask.cgi/static/bootstrap.min.css?121200" rel="stylesheet"/>
+<link href="/~cs2041/flask.cgi/static/course.css?6554" rel="stylesheet"/>
+<script src="/~cs2041/flask.cgi/static/jquery.min.js?95992" type="text/javascript"></script>
+<script src="/~cs2041/flask.cgi/static/bootstrap.min.js?37045" type="text/javascript"></script>
+<script src="/~cs2041/flask.cgi/static/course.js?1631" type="text/javascript"></script>
+<link href="https://cgi.cse.unsw.edu.au/~cs2041/" rel="canonical"/>
+</head>
+<body>
+<div class="container">
+<div id="heading">
+<a class="heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/" id="left_heading_link" target="_blank">COMP[29]041 17s2</a>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Week 11
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/02/questions">Week 02</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/03/questions">Week 03</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/04/questions">Week 04</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/05/questions">Week 05</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/06/questions">Week 06</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/07/questions">Week 07</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/08/questions">Week 08</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/09/questions">Week 09</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/10/questions">Week 10</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/11/questions">Week 11</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/12/questions">Week 12</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/13/questions">Week 13</a></li>
+</ul>
+</span>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Laboratory
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/11/questions">Tutorial
+                
+            </a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/11/questions">Laboratory
+                
+            </a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/test/11/questions">Weekly Test
+                
+            </a></li>
+</ul>
+</span>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Exercises
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/11/questions">Exercises
+            
+            </a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/11/answers">Sample Solutions
+            
+            </a></li>
+</ul>
+</span>
+<a class="heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/" id="right_heading_link" target="_blank">Software Construction</a>
+</div>
+</div>
+<div class="tutlab lab">
+<h3>Submission Summary</h3>
+Due
+
+<b>Sunday 22 October 23:59</b>
+<pre class="command_line">
+<kbd class="shell">give cs2041 lab11 game.py game_success.html peer.py peer_assessments.html</kbd>
+</pre>
+<h3>Objectives</h3>
+<ul>
+<li> Understanding Webservers built with Python and Flask
+</li></ul>
+<h3>Getting Started</h3>
+
+
+Create a new directory for this lab inside your public_html directory
+called <code>lab11</code> by typing:
+
+<pre class="command_line">
+<kbd class="shell">mkdir -p ~/public_html/lab11</kbd>
+<kbd class="shell">chmod 755 ~/public_html ~/public_html/lab11</kbd>
+</pre>
+
+Change to this directory by typing:
+
+<pre class="command_line">
+<kbd class="shell">cd ~/public_html/lab11</kbd>
+</pre>
+<h3>Exercise: A Flask Guessing Game</h3>
+
+In this exercise you will finish  a Python program <b>game.py</b>
+which uses Flask to provide a web server which allows users to
+play the simple number guessing game from last week.
+
+
+<h4>Reference Implementation</h4>
+
+
+Your finished <b>game.py</b> should match the behaviour of this <a href="https://cgi.cse.unsw.edu.au/~cs2041cgi/lab/11/game.cgi/start">reference implementation</a>
+<p>
+To help you understand what you need to do
+
+</p><ul>
+<li> the left window below shows the rendered output from <code>game.cgi</code>
+</li><li> and the right window shows the raw HTML
+</li></ul>
+<p>
+</p><hr/>
+<div class="cgi_display">
+<div class="cgi_display_title">
+<a href="https://cgi.cse.unsw.edu.au/~cs2041cgi/lab/11/game.cgi/start" target="_blank">start</a>
+</div>
+<div class="cgi_output_panel">
+<iframe class="cgi_output_display" onload="show_html_source(this)" src="https://cgi.cse.unsw.edu.au/~cs2041cgi/lab/11/game.cgi/start">
+</iframe>
+</div>
+<div class="html_source_panel">
+<div class="html_source_display">
+</div>
+</div>
+</div>
+<hr/>
+<p>
+</p><h4>Starting Code</h4>
+
+To help you get started here is <a href="game.zip">zip file</a> containing most of the application.
+
+
+These commands will copy the starting code into an appropriate
+place in your CSE account.
+
+
+<pre class="command_line">
+<kbd class="shell">mkdir -p ~/public_html/lab11</kbd>
+<kbd class="shell">cd ~/public_html/lab11</kbd>
+<kbd class="shell">chmod 755 . ..</kbd>
+<kbd class="shell">wget https://cgi.cse.unsw.edu.au/~cs2041/lab/11/game.zip</kbd>
+<kbd class="shell">unzip game.zip</kbd>
+Archive:  game.zip
+  inflating: game.cgi
+  inflating: game.py
+  inflating: game_base.html
+  inflating: game_guess.html
+  inflating: game_start.html
+<kbd class="shell">chmod 700 *.py *.cgi</kbd>
+<kbd class="shell">chmod 600 *.html</kbd>
+</pre>
+
+Now start <b>game.py</b> as a webserver (you will need to do this on a lab machine not a CSE login server):
+
+<pre class="command_line">
+<kbd class="shell">./game.py</kbd>
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 204-542-564
+</pre>
+
+If you visit <a href="http://127.0.0.1:5000/start">http://127.0.0.1:5000/start</a>
+you should be able to play the HTML guessing game.
+<p>
+But note that when you play the game it doesn't stop when you
+guess the number - <b>your task is to fix this</b>.
+
+</p><h4>Jinja files</h4>
+
+Look at the contents of <code>game_base.html</code>, <code>game_guess.html</code> and  <code>game_start.html</code>
+<p>
+Hopefully the discussion in the tute  has helped you understand their contents.
+</p><p>
+You don't need to change these files.
+</p><p>
+You do need to add a similar file (call it <b>game_success.html</b>) for the page to show
+at the finish of the game.
+
+</p><h4>Hints</h4>
+<b>DO NOT</b>: change the the files <code> game.cgi</code>, <code>game_base.html</code>,  <code>game_guess.html</code> or  <code>game_start.html</code>.
+<p>
+<b>Hint:</b> you need to add a few lines of code to <code>game.py</code>.
+</p><p>
+<b>Hint:</b> you need to create a new template file (<b>game_success.html</b>) for the page to show when the game is over.
+</p><p>
+</p><h4>Running game.py as a CGI Script</h4>
+<b>game.cgi</b> allows you to also run <b>game.py</b> as a CGI script by entering this URL in a browser <code>http://cgi.cse.unsw.edu.au/~<i>z5555555</i>/lab11/game.cgi/start</code>.
+<p>
+You don't need to use <b>game.cgi</b> for this exercise - you can just run <code>game.py</code> as a webserver - so you can ignore it.
+
+</p><h4>Peer Assessment</h4>
+
+There is no autotest and no automarking of this question.
+<p>
+When you have completed demonstrate your work to another COMP[29]041 student in your lab
+and ask them to enter a
+<a href="https://cgi.cse.unsw.edu.au/~cs2041//peer_assess/lab11">peer assessment here</a>
+It is prefered you do this during your lab, but if this is not possible
+you may demonstrate your work to any COMP[29]041  student before the due date.
+
+
+
+</p><p></p>
+<h3>Exercise: Peer Assessment in Flask</h3>
+
+In this exercise you will finish  a Python program <b>peer.py</b>
+which uses Flask to provide a web server which allows COMP[29]041 students to
+assess each others work.
+
+
+<h4>Reference Implementation</h4>
+
+
+Match the behaviour of this <a href="https://cgi.cse.unsw.edu.au/~cs2041cgi/lab/11/peer.cgi/">reference implementation</a>
+<p>
+To help you understand what you need to do
+
+</p><ul>
+<li> the left window below shows the rendered output from <code>peer.cgi</code>
+</li><li> and the right window shows the raw HTML
+</li></ul>
+<p>
+</p><hr/>
+<div class="cgi_display">
+<div class="cgi_display_title">
+<a href="https://cgi.cse.unsw.edu.au/~cs2041cgi/lab/11/peer.cgi/" target="_blank"></a>
+</div>
+<div class="cgi_output_panel">
+<iframe class="cgi_output_display" onload="show_html_source(this)" src="https://cgi.cse.unsw.edu.au/~cs2041cgi/lab/11/peer.cgi/">
+</iframe>
+</div>
+<div class="html_source_panel">
+<div class="html_source_display">
+</div>
+</div>
+</div>
+<hr/>
+<p>
+</p><h4>Starting Code</h4>
+
+To help you get started here is <a href="peer.zip">zip file</a> containing most of the application.
+
+
+These commands will copy the starting code into an appropriate
+place in your CSE account.
+
+
+<pre class="command_line">
+<kbd class="shell">mkdir -p ~/public_html/lab11</kbd>
+<kbd class="shell">cd ~/public_html/lab11</kbd>
+<kbd class="shell">chmod 755 . ..</kbd>
+<kbd class="shell">wget https://cgi.cse.unsw.edu.au/~cs2041/lab/11/peer.zip</kbd>
+<kbd class="shell">unzip peer.zip</kbd>
+unzip peer.zip
+Archive:  peer.zip
+  inflating: peer.cgi
+  inflating: peer.py
+  inflating: peer_base.html
+  inflating: peer_enter_grade.html
+  inflating: peer_login.html
+  inflating: peer_select_student.html
+   creating: assessments/
+ extracting: assessments/5013618.5029865
+....
+<kbd class="shell">chmod 700 *.py *.cgi</kbd>
+<kbd class="shell">chmod 600 *.html</kbd>
+<kbd class="shell">head students.txt</kbd>
+5077990:Deng, Angela Linda:hunter
+5013618:Bai, Sean Adam:crystal
+5013181:Zhou, Amanda:bulldog
+5091184:Zheng, Qian:alexis
+5023198:Cheng, Xinyi:heather
+5052818:Luong, Yao Gordon:iceman
+5091036:Xiao, Ka Xinyi Ka:123456
+5009429:Park, Harry:redsox
+5002779:Zhu, Helen:5150
+5042480:Kaur, Ying Ka:tiger
+</pre>
+
+Now start <b>peer.py</b> as a webserver (you will need to do this on a lab machine not a CSE login server):
+
+<pre class="command_line">
+<kbd class="shell">./peer.py</kbd>
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 204-542-564
+</pre>
+
+If you visit <a href="http://127.0.0.1:5000/">http://127.0.0.1:5000/</a>
+you should be able to assess students.
+
+<h4>Jinja files</h4>
+
+Look at the contents of <code>peer_base.html</code>,  <code>peer_login.html</code>,  <code>peer_select_student.html </code> or <code>peer_enter_grade.html</code>
+<p>
+Hopefully the discussion in the tute has helped you understand their contents.
+</p><p>
+Don't panic if there are parts you don't understand.
+You can figure out as much as you need to know.
+</p><p>
+You don't need to change these files.
+</p><p>
+The reference implementation has a button "See Other Students Assessment of Your Work"
+which shows a student a summary of how they have been assessed by other students including a median grade.
+</p><p>
+Your task is to add this missing page. Note: calculating the median grade will be a challenge excercise.
+</p><p>
+You will need to add code to <code>peer.py</code> and create a new template file.
+Call this template file <b>peer_assessments.html</b>
+</p><p>
+Don't change <code>peer.cgi</code>, <code>peer_base.html</code>,  <code>peer_login.html</code>,  <code>peer_select_student.html </code> or <code>peer_enter_grade.html</code>
+</p><p>
+<b>Hint</b>: check out how assessments are stored in files in the sub-directory <code>assessments</code>.
+<b>peer.zip</b> already contains some pre-entered assessments - and you can enter more.
+</p><p>
+<b>Hint</b>: look at the other Jinja files for the syntax you need to use in <b>peer_assessments.html</b>
+</p><h3>Exercise: Adding Authentication</h3>
+
+You will note that the code you have been given is missing code to
+authenticate the user.
+<p>
+It will let you login in with any zid or password.
+</p><p>
+Change this to behave the same as the reference implementation.
+</p><p>
+You need to fix this by adding some lines of code to <b>peer.py</b>
+</p><p>
+Don't change <code>peer.cgi</code>, <code>peer_base.html</code>,  <code>peer_login.html</code>,  <code>peer_select_student.html </code> or <code>peer_enter_grade.html</code>
+</p><p>
+<b>Hint:</b> check out how how the reference implementation behaves when given
+the wrong password and how it behaves when given a zid that doesn't exist.
+
+
+<b>Hint:</b> <b>peer.py</b> already contains code which reads the zids
+and passwords in <a href="students.txt">students.txt</a> into a dict.
+
+
+</p><h3>Challenge Exercise: Showing Students How They Have Been Assesed</h3>
+
+The reference implementation has a button "See Other Students Assessment of Your Work"
+which shows a student a summary of how they have been assessed by other students including a median grade.
+<p>
+Your task is to calculate and display the median grade.
+</p><p>
+You will need to add code to <code>peer.py</code> and update the template file <b>peer_assessments.html</b>
+</p><p>
+Don't change <code>peer.cgi</code>, <code>peer_base.html</code>,  <code>peer_login.html</code>,  <code>peer_select_student.html </code> or <code>peer_enter_grade.html</code>
+</p><p>
+<b>Hint</b> calculating a median grade can be awkward when there is an even number
+number of assessments.  Check out what the reference implementation does.
+</p><p>
+Side note: for the lab exercises we have had just one assessor, for assignment 2 you will
+have ~5 assessors and you will get the median of their grades for each part of the assignment 2 assessment.
+
+
+</p><h4>Running peer.py as a CGI Script</h4>
+<b>peer.cgi</b> allows you to also run <b>peer.py</b> as a CGI script by entering this URL in a browser <code>http://cgi.cse.unsw.edu.au/~<i>z5555555</i>/lab11/peer.cgi/</code>.
+<p>
+You don't need to use <b>peer.cgi</b> for this exercise - you can just run <code>peer.py</code> as a webserver.
+
+</p><h4>Peer Assessment</h4>
+
+There is no autotest and no automarking of this question.
+<p>
+When you have completed demonstrate your work to another COMP[29]041 student in your lab
+and ask them to enter a
+<a href="https://cgi.cse.unsw.edu.au/~cs2041//peer_assess/lab11">peer assessment here</a>
+It is prefered you do this during your lab, but if this is not possible
+you may demonstrate your work to any COMP[29]041  student before the due date.
+
+</p><p></p>
+<h3>Challenge Exercise: Cheating in the Guessing Game</h3>
+
+Can you figure out how to extract the number from the session cookie for the guessing game?
+<p>
+Sorry no marks for this exercise but you'll learn a lot figuring it out.
+<!-- yuk -->
+<a href="game.cgi"></a><a href="peer.cgi"></a>
+</p><h3>Submission</h3>
+
+When you are finished submit your work by running:
+<pre class="command_line">
+<kbd class="shell">give cs2041 lab11 game.py game_success.html peer.py peer_assessments.html</kbd>
+</pre>
+<p>
+Don't submit any exercises you haven't attempted.
+
+If you are working at home, you may find it more convenient
+to upload your work via
+ <a href="https://cgi.cse.unsw.edu.au/~give/code/login.php?app=/~give/Student/give.php&amp;debug=get_authuser">give's web interface</a>.
+</p><p>
+Remember you have until
+
+<b>Sunday 22 October 23:59</b>
+
+
+to submit your work.
+
+
+
+
+</p><h3>Assessment</h3>
+
+This lab exercises is worth 1 mark.
+<p>
+Labs exercise are either automarked or peer assessed.
+This is to allow tutors' time to be used to assist students.
+</p><p>
+After the automarking is complete you should be able to view it by running
+this command on a CSE machine:
+
+</p><pre class="command_line">
+<kbd class="shell">2041 classrun -collect lab11
+</kbd></pre>
+
+You can inspect marks for this lab and other assessment components via <a href="https://cgi.cse.unsw.edu.au/~give/code/login.php?app=/~give/Student/give.php&amp;debug=get_authuser">give's web interface</a> or by running
+
+<pre class="command_line">
+<kbd class="shell">2041 classrun -sturec
+</kbd></pre>
+<p>
+Reminder: lab marks contribute 9% to your final COMP[29]041 final mark.
+</p><p>
+The 11 lab marks will be summed at the end of session and the sum capped at 9 marks.
+</p><p>
+Hence you can obtain full marks for the 9% lab component without obtaining full marks every week.
+
+
+
+</p></div>
+<!--
+public_html_session_directory=/web/cs2041/17s2
+base_directory=/web/cs2041/17s2
+public_html_directory=/web/cs2041
+scripts_directory=/web/cs2041/17s2/scripts
+home_directory=/home/cs2041
+bin_directory=/home/cs2041/bin
+course_account=cs2041
+course_code=COMP2041
+course_number=2041
+postgraduate_course_code=COMP9041
+course_name=Software Construction
+unsw_session=17s2
+canonical_url=https://cgi.cse.unsw.edu.au/~cs2041/
+github_repo_url=https://github.com/COMP2041UNSW/course_materials
+course_forum_url=https://piazza.com/class/j5ji4vjjra62a3
+lecture_recordings_url=https://moodle.telt.unsw.edu.au/course/view.php?id=27708
+WORK=/web/cs2041/17s2/work
+OUT=/web/cs2041/17s2/work/.out
+MARKED=/web/cs2041/17s2/work/.out/.marked
+SMSDB=/web/cs2041/17s2/work/17s2db.sms
+tlb_directory=/web/cs2041/17s2/tlb
+lecture_directory=/web/cs2041/17s2/lec
+flask_cache_directory=/web/cs2041/17s2/flask_cache
+testing_results_file=/web/cs2041/17s2/work/testing_results.json
+enrollments_file=/web/cs2041/17s2/work/enrollments.json
+unsw_ldap_password_file=/web/cs2041/.unsw_ldap_password
+autotest_upload_url=https://cgi.cse.unsw.edu.au/~cs2041/cgi/autotest_upload.cgi
+PATH=/web/cs2041/17s2/scripts:/home/cs2041/bin:/bin/:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/home/class/bin:/home/give/stable/bin.:/bin:/usr/bin:/usr/local/bin
+directory_relative_pathname=tlb/11
+url=https://cgi.cse.unsw.edu.au/~cs2041/flask.cgi/lab/11/questions
+directory_url=https://cgi.cse.unsw.edu.au/~cs2041/lab/11/
+url_root=https://cgi.cse.unsw.edu.au/~cs2041/
+script_root=/~cs2041/flask.cgi
+current_lecture_topic=exam
+current_week=13
+week=11
+exercise_name=lab11
+tut_or_lab_or_test=lab
+questions_or_answers=questions
+programs=&lt;programs&gt;
+
+-->
+</body>
+</html>

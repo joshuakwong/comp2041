@@ -1,0 +1,894 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>
+
+COMP2041 Week 04 Tutorial Sample Answers
+
+</title>
+
+
+
+<link href="/~cs2041/flask.cgi/static/bootstrap.min.css?121200" rel="stylesheet">
+<link href="/~cs2041/flask.cgi/static/course.css?6554" rel="stylesheet">
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/jquery.min.js?95992"></script>
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/bootstrap.min.js?37045"></script>
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/course.js?1631"></script>
+<link rel="canonical" href="https://cgi.cse.unsw.edu.au/~cs2041/" />
+</head>
+<body>
+
+
+
+
+<div class="container">
+
+<div id="heading">
+
+
+<a class="heading_link" target="_blank" id="left_heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/">COMP[29]041 17s2</a>
+
+
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Week 04
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/02/answers">Week 02</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/03/answers">Week 03</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/04/answers">Week 04</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/05/answers">Week 05</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/06/answers">Week 06</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/07/answers">Week 07</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/08/answers">Week 08</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/09/answers">Week 09</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/10/answers">Week 10</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/11/answers">Week 11</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/12/answers">Week 12</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/13/answers">Week 13</a></li>
+        
+        
+    </ul>
+</span>
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Tutorial
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/04/answers">Tutorial
+                
+            </a></li>
+            
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/04/answers">Laboratory
+                
+            </a></li>
+            
+        
+            
+        
+    </ul>
+</span>
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Sample Answers
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/04/questions">Questions
+            
+            </a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/04/answers">Sample Answers
+            
+            </a></li>
+        
+        
+    </ul>
+</span>
+
+
+
+
+<a class="heading_link" target="_blank" id="right_heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/">Software Construction</a>
+
+</div>
+
+</div>
+
+
+<div class="tutlab tut">
+<ol>
+
+<ol>
+<li>
+<!-- question courtesy Nelson Rigby  -->
+Cletus has an extreme phobia of two periods ('..') appearing
+consecutively anywhere, stemming from an early childhood trauma too
+embarrassing to relate. He decided to write a shell script 'cd_up.sh'
+aimed at changing the working directory to the level up, so he didn't
+have to go through the distress of regularly seeing '..':
+<p>
+<pre class="command_line">
+#!/bin/sh
+cd ..
+</pre>
+<p>
+But when he ran his script, it didn't seem to work:
+<p>
+<pre class="command_line">
+<kbd class="shell">pwd</kbd>
+/home/cletus
+<kbd class="shell">./cd_up.sh</kbd>
+<kbd class="shell">pwd</kbd>
+/home/cletus
+</pre>
+<p>
+Why not, and can you fix Cletus' shell script?
+</p>
+<div class="answer">
+A shell script is executed by a separate shell so
+changes to its working directory don't affect its parent shell.
+<p>
+Similarly the shell script 'set_var.sh' contains this:
+<p>
+<pre class="command_line answer">
+#!/bin/sh
+variable=42
+</pre>
+<p>
+It won't change the variable in the parent shell, for example:
+<p>
+<pre class="command_line answer">
+<kbd class="shell">variable=21</kbd>
+<kbd class="shell">./set_var.sh</kbd>
+<kbd class="shell">echo $variable</kbd>
+21
+</pre>
+<p>
+You can indicate that the commands in a shell script are
+to be run by the parent shell, like this:
+<p>
+<pre class="command_line answer">
+<kbd class="shell">variable=21</kbd>
+<kbd class="shell">. ./set_var.sh</kbd>
+<kbd class="shell">echo $variable</kbd>
+42
+</pre>
+<p>
+</div>
+<li>
+The course code for COMP2041 has been changed to COMP2042 and
+the course code for COMP9041 has been changed to COMP9042.
+Write a shell script, <code>update_course_code.sh</code> which
+appropriately changes the course_code in all the files it is given as argument.
+<div class="answer">
+Sample solution for update_course_code.sh
+
+
+
+
+
+<pre class="program">
+
+#!/bin/sh
+
+for file in &#34;$@&#34;
+do
+    temporary_file=&#34;$file.tmp.$$&#34;
+    if test -e &#34;$temporary_file&#34;
+    then
+        echo &#34;$temporary_file&#34; already exists
+        exit 1
+    fi
+    sed &#39;s/COMP2041/COMP2042/g;s/COMP9041/COMP9042/g&#39; $file &gt;$temporary_file &amp;&amp;
+    mv $temporary_file $file
+done
+</pre>
+
+
+Alternatively a single line Perl solution:
+
+<pre class="command_line">
+<kbd class="shell">perl -pi -e 's/(COMP[29]04)1/${1}2/ig'</kbd> <i>file1 file2 ...</i>
+</pre>
+</div>
+<li>
+Modify  <code>update_course_code.sh</code> so if given a directory as
+argument it updates the course codes in files found in that directory and  its sub-directories.
+
+<div class="answer">
+
+Sample solution for update_course_code.sh
+
+
+
+
+
+<pre class="program">
+
+#!/bin/sh
+
+# doesn&#39;t handle pathnames containing white space
+for file in `find &#34;$@&#34; -type f`
+do
+    temporary_file=&#34;$file.tmp.$$&#34;
+    if test -e &#34;$temporary_file&#34;
+    then
+        echo &#34;$temporary_file&#34; already exists
+        exit 1
+    fi
+    sed &#39;s/COMP2041/COMP2042/g;s/COMP9041/COMP9042/g&#39; $file &gt;$temporary_file &amp;&amp;
+    mv $temporary_file $file
+done
+
+</pre>
+
+
+
+Sample solution for update_course_code.sh
+
+
+
+
+
+<pre class="program">
+
+#!/bin/sh
+# doesn&#39;t hande pathnames containing new lines
+find &#34;$@&#34; -type f|
+while read file
+do
+    temporary_file=&#34;$file.tmp.$$&#34;
+    if test -e &#34;$temporary_file&#34;
+    then
+        echo &#34;$temporary_file&#34; already exists
+        exit 1
+    fi
+    sed &#39;s/COMP2041/COMP2042/g;s/COMP9041/COMP9042/g&#39; $file &gt;$temporary_file &amp;&amp;
+    mv $temporary_file $file
+done
+
+</pre>
+
+
+
+</div>
+<li>
+Write a shell script, <code>is_business_hours</code> which exits with a status of 0
+if the current time is between 9am & 5pm, and otherwise  exits with a status of 1.
+<p>
+Hint: the date command prints the current time in a format like this:
+<pre class="command_line">
+<kbd class="shell">date</kbd>
+Sun Mar 18 12:57:08 EST 2012
+</pre>
+<div class="answer">
+<div class="program_description">
+Sample solution for is_business_hours.sh
+</div>
+
+
+
+
+
+<pre class="program">
+
+#!/bin/sh
+# exits with a status of 0  if the current time is between 9am &amp; 5pm
+# otherwise exit with a status 1
+#
+# date format looks like this Sun Mar 18 12:57:08 EST 2012
+
+current_hour=`date|cut -d\  -f4|cut -d: -f1`
+if test $current_hour -ge 9 -a $current_hour -lt 17
+then
+    exit 0
+else
+    exit 1
+fi
+
+</pre>
+
+
+
+Another sample solution for is_business_hours.sh
+
+
+
+
+
+<pre class="program">
+
+#!/bin/sh
+# exits with a status of 0  if the current time is between 9am &amp; 5pm
+# otherwise exit with a status 1
+# date output looks like this &#39;Sun Mar 18 12:57:08 EST 2012&#39;
+# relies on the exit status being the exit status of last command
+# when there isn&#39;t an explicit exit
+
+current_hour=`date|cut -d\  -f4|cut -d: -f1`
+test $current_hour -ge 9 -a $current_hour -lt 17
+
+</pre>
+
+
+</div>
+<!-- Questions below courtesy Michael Zhou -->
+<li>
+CSE systems have a command, <code>mlalias</code>, which
+prints information about a specified mail alias.  For example:
+<p>
+<pre class="command_line">
+<kbd class="shell">mlalias COMP2041-list</kbd>
+        alias: COMP2041-list
+  description: Udb alias list
+    addresses:
+               blix573
+               mhuz728
+               .......
+               sngx602
+               andrewt
+       owners: udb, cs2041
+authorised posters: @Employee, @Subject_Utility, @Wheel
+    Moderator: udb
+       Status: system, closed, moderated, virtual, and public
+</pre>
+Convert the output of the mlalias command into a new line separated list
+of CSE usernames, like this:
+<p>
+<pre class="command_line">
+blix573
+mhuz728
+.......
+sngx602
+andrewt
+</pre>
+<p>
+<div class="answer">
+<pre class="answer">
+mlalias COMP2041-list|grep -v :|sed 's/^ *//'
+</pre>
+</div>
+<li>
+CSE system have a command, <code>acc</code>, which
+prints information about a specified user.  For example:
+<p>
+<pre class="command_line">
+<kbd class="shell">acc mzhou</kbd>
+            User Name : mzhou              Aliases : myzh046
+                  Uid : 25068
+               Groups : cs1917
+              Expires : 31 Aug 2012
+         User classes : 3978_Student, COMP2041_Student[15jul2012]
+                      : COMP2121_Student[15jul2012], COMP2911_Student[15jul2012]
+                      : COMP1917_Tutor[16jul2012], COMP3901_Student[15jul2012]
+         Misc classes : WirelessAccess[23jun2012]
+                 Name : Michael Yang Zhou
+Password last changed : 2011/03/02.21:23:19
+       Home Directory : /import/adams/1/mzhou
+     Waste Basket UID : 65619
+ Printer Usage Status : Pre-census Allocation       2045 (More will be available after HECS census)
+                      : Used                          35
+                      : Available                   2010
+                      : set at 12:05 AM 19/Mar/2012
+       Daily IP Quota : 350.0MB
+     Session IP Quota : 700.0MB (more will be available from 31 March, 2012)
+     Session IP Usage : 275.3MB
+</pre>
+<p>
+Write a pipeline which converts the output of acc into a new line separated list of
+courses the person is enrolled in, like this:
+<p>
+<pre class="command_line">
+COMP2041
+COMP2121
+COMP2911
+COMP3901
+</pre>
+<p>
+<p>
+<div class="answer">
+<pre class="answer">
+acc mzhou | tr -s ', ' '\n' | grep '[A-Z][A-Z][A-Z][A-Z][0-9][0-9][0-9][0-9]_Student' | cut -c1-8
+</pre>
+</div>
+<li><p>
+Use the pipeines from the above 2 questions to write shell commands which
+print a list of courses taken by COMP2041 students with counts of how
+many COMP2041 students take each, like this:
+<p>
+<pre class="command_line">
+     55 COMP2911
+     37 COMP2121
+     17 COMP3311
+     10 COMP2111
+      9 COMP3331
+      ..........
+</pre>
+<div class="answer">
+<pre class="answer">
+mlalias COMP2041-list|
+grep -v :|
+sed 's/^ *//'|
+while read cseusername
+do
+    acc $cseusername|
+    tr -s ', ' '\n' |
+    grep '[A-Z][A-Z][A-Z][A-Z][0-9][0-9][0-9][0-9]_Student'|
+    cut -c1-8
+done|
+sort|
+uniq -c|sort -rn
+</pre>
+</div>
+<li>
+<!-- question courtesy Nelson Rigby  -->
+COMP2041 student Shruti has a 'friends' subdirectory in her home directory
+that contains images of her many friends.  Shruti likes to view these images
+often and would like to have them appear in other directories within
+her CSE account so she has written a shell script to symbolically link
+them to the current directory:
+<p>
+<pre class="command_line">
+for image_file in `ls ~/friends`
+do
+    ln -s "~/friends/$image_file" .
+done
+</pre>
+<p>
+The links created by Shruti's script are broken.
+Why? How can she fix her script?
+<p>
+<div class="answer">
+The shell does not replace tilde (~) with the user's home directory
+inside double-quotes, and does not handle spaces in filenames correctly. For example:
+<p>
+<pre class="command_line answer">
+<kbd class="shell">echo ~</kbd>
+/home/shruti
+<kbd class="shell">echo "~"</kbd>
+~
+<kbd class="shell">touch a\ b</kbd>
+<kbd class="shell">for f in `ls`; do echo $f; done</kbd>
+a
+b
+</pre>
+<p>
+This should work for Shruti:
+<p>
+<pre class="command_line answer">
+for image_file in ~/friends/*
+do
+    ln -s "$image_file" .
+done
+</pre>
+</div>
+<li>
+Implement a shell script called <code>iseq</code> for writing sequences
+of integers onto its standard output, with one integer per line.
+The script can take up to three arguments, and behaves as follows:
+<ul>
+<li> <code>iseq <i>n</i></code>
+    &nbsp; writes all numbers from 1 up to <code><i>n</i></code>, inclusive
+<li> <code>iseq <i>m n</i></code>
+    &nbsp; writes all numbers from <code><i>m</i></code> up to <code><i>n</i></code> inclusive
+<li> <code>iseq <i>k m n</i></code>
+    &nbsp; writes the sequence <code><i>k</i></code>, <code><i>m</i></code>, <code><i>m+(m-k)</i></code>, <code><i>m+2(m-k)</i></code> up to <code><i>p</i></code> <br>
+    (where <code><i>p</i></code> is the largest integer in this sequence
+         that is less than or equal to <code><i>n</i></code>)
+</ul>
+<p>
+Examples of output:
+<pre class="command_line">
+<kbd class="shell"><b>iseq 5</b>           $ <b>iseq 2 6</b>          $ <b>iseq 3 3 16</b></kbd>
+    1                  2                   3
+    2                  3                   6
+    3                  4                   9
+    4                  5                   12
+    5                  6                   15
+</pre>
+<div class="answer">
+<div class="program_description">
+Sample solution for iseq.sh
+</div>
+
+
+
+
+
+<pre class="program">
+
+#!/bin/sh
+# Write the sequence of integers specified by command-line arguments
+# Check and handle command-line args
+
+case $# in
+1) lo=1   hi=$1  inc=1 ;;
+2) lo=$1  hi=$2  inc=1 ;;
+3) lo=$1  hi=$3  inc=`expr $2 - $1` ;;
+*) cat &lt;&lt;EOI
+Usage:
+  $0 hi         ... prints numbers in range 1..hi
+  $0 lo hi      ... prints numbers in range lo..hi
+  $0 lo 2nd hi  ... prints numbers lo,2nd,..hi
+                    (using difference between lo and
+                     2nd as the increment)
+EOI
+   exit 1 ;;
+esac
+
+# Generate integer sequence
+
+i=$lo
+while test $i -le $hi
+do
+    echo $i
+    i=`expr $i + $inc`
+done
+
+</pre>
+
+
+</div>
+<p>
+<div class="answer">
+
+Another sample solution for iseq.sh
+
+
+
+
+
+<pre class="program">
+
+#!/bin/sh
+# Write the sequence of integers specified by command-line arguments
+# The bash-specific syntax ((..)) is used for arithmetic
+
+if (($# == 1))
+then
+    lo=1
+    hi=$1
+    inc=1
+elif (($# == 2))
+then
+    lo=$1
+    hi=$2
+    inc=1
+elif (($# == 3))
+then
+    lo=$1
+    hi=$3
+    inc=$(($2 - $1))
+else
+    cat &lt;&lt;EOI
+Usage:
+  $0 hi         ... prints numbers in range 1..hi
+  $0 lo hi      ... prints numbers in range lo..hi
+  $0 lo 2nd hi  ... prints numbers lo,2nd,..hi
+                    (using difference between lo and
+                     2nd as the increment)
+EOI
+   exit 1
+fi
+
+i=$lo
+while (($i &lt;= $hi))
+do
+    echo $i
+    i=$(($i + $inc))
+done
+
+</pre>
+
+
+</div>
+<li>
+Write a shell script named <code>isprime</code>
+which given an integer as argment, tests whether
+it is prime and prints a suitable message:
+<pre class="command_line">
+<kbd class="shell">isprime 42</kbd>
+42 is not prime
+<kbd class="shell">isprime 113</kbd>
+113 is prime
+</pre>
+Your script should  exit with a non-zero exit status if its
+argument is not prime.
+<p>
+Write a second script named <code>primes</code> which uses the first
+script to print all primes less than a specified value, e.g:
+<p>
+<pre class="command_line">
+<kbd class="shell">primes 100</kbd>
+2
+3
+5
+7
+11
+13
+17
+...
+79
+83
+89
+97
+</pre>
+<div class="answer">
+Another sample solution for isprime.sh
+
+
+
+
+
+<pre class="program">
+
+#!/bin/sh
+# test whether the specified integer is prime
+
+if test $# != 1
+then
+    echo &#34;Usage: $0 &lt;number&gt;&#34;
+    exit 1
+fi
+
+n=$1
+
+i=2
+while test $i -lt $n
+do
+    if test `expr $n % $i` -eq 0
+    then
+        echo &#34;$n is not prime&#34;
+        exit 1
+    fi
+    i=`expr $i + 1`
+done
+echo &#34;$n is prime&#34;
+
+</pre>
+
+
+
+Yet another solution for isprime.sh
+
+
+
+
+
+<pre class="program">
+
+#!/bin/sh
+# test whether the specified integer is prime
+# written by Han Zhao
+
+if test $# != 1
+then
+        echo &#34;Usage: $0 &lt;number&gt;&#34;
+        exit 1
+fi
+
+n=$1
+if [ $1 -eq 1 ]
+then
+        echo &#34;$n is not prime&#34;
+        exit 1
+fi
+
+i=2
+while test $(expr $i \* $i) -le $n
+do
+        if test `expr $n % $i` -eq 0
+        then
+                echo &#34;$n is not prime&#34;
+                exit 1
+        fi
+        i=`expr $i + 1`
+done
+echo &#34;$n is prime&#34;
+exit 0
+
+</pre>
+
+
+
+Sample solution for primes.sh
+
+
+
+
+
+<pre class="program">
+
+#!/bin/sh
+# print the prime numbers less than the specified argument
+
+case $# in
+1) ;;
+*) echo &#34;Usage: $0 &lt;number&gt;&#34;; exit 1
+esac
+limit=$1
+
+p=2
+while test $p -lt $limit
+do
+    if isprime.sh $p &gt;/dev/null
+    then
+        echo $p
+    fi
+    p=`expr $p + 1`
+done
+exit 0
+
+</pre>
+
+
+</div>
+<li>
+Write a shell script, <code>list_include_files</code>, which given a list of C source files (<code>.c</code> files)
+as arguments, prints the names of the files they include  (<code>.h</code> files),
+reporting each file only once, e.g.:
+<p>
+<pre class="command_line">
+<kbd class="shell">list_include_files count_words.c get_word.c map.c</kbd>
+ctype.h
+get_word.h
+map.h
+stdio.h
+stdlib.h
+time.h
+</pre>
+<div class="answer">
+<div class="program_description">
+Sample solution for list_include_files.sh
+</div>
+
+
+
+
+
+<pre class="program">
+
+#!/bin/sh
+# list the files included by the C sources files included as arguments
+if test $# = 0
+then
+    echo &#34;Usage: $0 &lt;files&gt;&#34;
+    exit 1
+fi
+
+egrep &#39;^#include&#39; &#34;$@&#34;|  # find &#39;#include lines
+sed &#39;s/[&#34;&gt;][^&#34;&gt;]*$//&#39;|  # remove the last &#39;&#34;&#39; or &#39;&gt;&#39; and anything after it
+sed &#39;s/^.*[&#34;&lt;]//&#39;|      # remove the last &#39;&#34;&#39; or &#39;&gt;&#39; and anything before it
+sort|                   # sort the file names
+uniq                    # remove any duplicates
+
+</pre>
+
+
+</div>
+
+
+<h3>Revision questions</h3>
+
+The remaining tutorial questions are primarily intended for revision - either this week
+or later in session.
+<p>
+Your tutor may still choose to cover some of the questions time permitting.
+<p>
+
+
+<li>
+<!-- question courtesy Nelson Rigby  -->
+COMP2041 student  Big Bad Barry tries to impress a girl
+at a party by betting her she can't work out what this shell script:
+<p>
+<pre class="command_line">
+#!/bin/sh
+IFS=abc
+echo "$*"
+</pre>
+<p>
+prints when run like this:
+<pre class="command_line">
+<kbd class="shell">./script.sh mount inside</kbd>
+</pre><p>
+What does the script print?
+<p>
+Will the girl go out with  Big Bad Barry?
+<p>
+<div class="answer">
+The script will do this:
+<pre class="command_line answer">
+<kbd class="shell">./script.sh mount inside</kbd>
+mountainside
+</pre>
+<p>
+This is because <code>IFS</code> is a special internal shell variable which
+indicates the argument separators.  The first character from IFS is uses to separate
+the argument when expanding $*.
+<p>
+Big Bad Barry won't get a date.  No one is impressed by knowledge of hacky&amp;obscure
+shell features.  Good programmers avoid quirky little-known language features.
+<p>
+</div>
+</ol>
+
+</ol>
+</div>
+
+
+
+
+
+</div>
+
+
+<!--
+public_html_session_directory=/web/cs2041/17s2
+base_directory=/web/cs2041/17s2
+public_html_directory=/web/cs2041
+scripts_directory=/web/cs2041/17s2/scripts
+home_directory=/home/cs2041
+bin_directory=/home/cs2041/bin
+course_account=cs2041
+course_code=COMP2041
+course_number=2041
+postgraduate_course_code=COMP9041
+course_name=Software Construction
+unsw_session=17s2
+canonical_url=https://cgi.cse.unsw.edu.au/~cs2041/
+github_repo_url=https://github.com/COMP2041UNSW/course_materials
+course_forum_url=https://piazza.com/class/j5ji4vjjra62a3
+lecture_recordings_url=https://moodle.telt.unsw.edu.au/course/view.php?id=27708
+WORK=/web/cs2041/17s2/work
+OUT=/web/cs2041/17s2/work/.out
+MARKED=/web/cs2041/17s2/work/.out/.marked
+SMSDB=/web/cs2041/17s2/work/17s2db.sms
+tlb_directory=/web/cs2041/17s2/tlb
+lecture_directory=/web/cs2041/17s2/lec
+flask_cache_directory=/web/cs2041/17s2/flask_cache
+testing_results_file=/web/cs2041/17s2/work/testing_results.json
+enrollments_file=/web/cs2041/17s2/work/enrollments.json
+unsw_ldap_password_file=/web/cs2041/.unsw_ldap_password
+autotest_upload_url=https://cgi.cse.unsw.edu.au/~cs2041/cgi/autotest_upload.cgi
+PATH=/web/cs2041/17s2/scripts:/home/cs2041/bin:/bin/:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/home/class/bin:/home/give/stable/bin.:/bin:/usr/bin:/usr/local/bin
+directory_relative_pathname=tlb/04
+url=https://cgi.cse.unsw.edu.au/~cs2041/flask.cgi/tut/04/answers
+directory_url=https://cgi.cse.unsw.edu.au/~cs2041/tut/04/
+url_root=https://cgi.cse.unsw.edu.au/~cs2041/
+script_root=/~cs2041/flask.cgi
+current_lecture_topic=exam
+current_week=13
+week=04
+exercise_name=tut04
+tut_or_lab_or_test=tut
+questions_or_answers=answers
+programs=&lt;programs&gt;
+
+-->
+
+</body>
+</html>

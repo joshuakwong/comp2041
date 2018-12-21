@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>
+
+COMP2041 Week 04 Tutorial Questions
+
+</title>
+<link href="/~cs2041/flask.cgi/static/bootstrap.min.css?121200" rel="stylesheet"/>
+<link href="/~cs2041/flask.cgi/static/course.css?6554" rel="stylesheet"/>
+<script src="/~cs2041/flask.cgi/static/jquery.min.js?95992" type="text/javascript"></script>
+<script src="/~cs2041/flask.cgi/static/bootstrap.min.js?37045" type="text/javascript"></script>
+<script src="/~cs2041/flask.cgi/static/course.js?1631" type="text/javascript"></script>
+<link href="https://cgi.cse.unsw.edu.au/~cs2041/" rel="canonical"/>
+</head>
+<body>
+<div class="container">
+<div id="heading">
+<a class="heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/" id="left_heading_link" target="_blank">COMP[29]041 17s2</a>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Week 04
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/02/questions">Week 02</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/03/questions">Week 03</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/04/questions">Week 04</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/05/questions">Week 05</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/06/questions">Week 06</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/07/questions">Week 07</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/08/questions">Week 08</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/09/questions">Week 09</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/10/questions">Week 10</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/11/questions">Week 11</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/12/questions">Week 12</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/13/questions">Week 13</a></li>
+</ul>
+</span>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Tutorial
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/04/questions">Tutorial
+                
+            </a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/04/questions">Laboratory
+                
+            </a></li>
+</ul>
+</span>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Questions
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/04/questions">Questions
+            
+            </a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/04/answers">Sample Answers
+            
+            </a></li>
+</ul>
+</span>
+<a class="heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/" id="right_heading_link" target="_blank">Software Construction</a>
+</div>
+</div>
+<div class="tutlab tut">
+<ol>
+<ol>
+<li>
+<!-- question courtesy Nelson Rigby  -->
+Cletus has an extreme phobia of two periods ('..') appearing
+consecutively anywhere, stemming from an early childhood trauma too
+embarrassing to relate. He decided to write a shell script 'cd_up.sh'
+aimed at changing the working directory to the level up, so he didn't
+have to go through the distress of regularly seeing '..':
+<p>
+</p><pre class="command_line">
+#!/bin/sh
+cd ..
+</pre>
+<p>
+But when he ran his script, it didn't seem to work:
+</p><p>
+</p><pre class="command_line">
+<kbd class="shell">pwd</kbd>
+/home/cletus
+<kbd class="shell">./cd_up.sh</kbd>
+<kbd class="shell">pwd</kbd>
+/home/cletus
+</pre>
+<p>
+Why not, and can you fix Cletus' shell script?
+</p>
+<p></p>
+</li><li>
+The course code for COMP2041 has been changed to COMP2042 and
+the course code for COMP9041 has been changed to COMP9042.
+Write a shell script, <code>update_course_code.sh</code> which
+appropriately changes the course_code in all the files it is given as argument.
+<p></p>
+</li><li>
+Modify  <code>update_course_code.sh</code> so if given a directory as
+argument it updates the course codes in files found in that directory and  its sub-directories.
+
+<p></p>
+</li><li>
+Write a shell script, <code>is_business_hours</code> which exits with a status of 0
+if the current time is between 9am &amp; 5pm, and otherwise  exits with a status of 1.
+<p>
+Hint: the date command prints the current time in a format like this:
+</p><pre class="command_line">
+<kbd class="shell">date</kbd>
+Sun Mar 18 12:57:08 EST 2012
+</pre>
+<p></p>
+<!-- Questions below courtesy Michael Zhou -->
+</li><li>
+CSE systems have a command, <code>mlalias</code>, which
+prints information about a specified mail alias.  For example:
+<p>
+</p><pre class="command_line">
+<kbd class="shell">mlalias COMP2041-list</kbd>
+        alias: COMP2041-list
+  description: Udb alias list
+    addresses:
+               blix573
+               mhuz728
+               .......
+               sngx602
+               andrewt
+       owners: udb, cs2041
+authorised posters: @Employee, @Subject_Utility, @Wheel
+    Moderator: udb
+       Status: system, closed, moderated, virtual, and public
+</pre>
+Convert the output of the mlalias command into a new line separated list
+of CSE usernames, like this:
+<p>
+</p><pre class="command_line">
+blix573
+mhuz728
+.......
+sngx602
+andrewt
+</pre>
+<p>
+</p><p></p>
+</li><li>
+CSE system have a command, <code>acc</code>, which
+prints information about a specified user.  For example:
+<p>
+</p><pre class="command_line">
+<kbd class="shell">acc mzhou</kbd>
+            User Name : mzhou              Aliases : myzh046
+                  Uid : 25068
+               Groups : cs1917
+              Expires : 31 Aug 2012
+         User classes : 3978_Student, COMP2041_Student[15jul2012]
+                      : COMP2121_Student[15jul2012], COMP2911_Student[15jul2012]
+                      : COMP1917_Tutor[16jul2012], COMP3901_Student[15jul2012]
+         Misc classes : WirelessAccess[23jun2012]
+                 Name : Michael Yang Zhou
+Password last changed : 2011/03/02.21:23:19
+       Home Directory : /import/adams/1/mzhou
+     Waste Basket UID : 65619
+ Printer Usage Status : Pre-census Allocation       2045 (More will be available after HECS census)
+                      : Used                          35
+                      : Available                   2010
+                      : set at 12:05 AM 19/Mar/2012
+       Daily IP Quota : 350.0MB
+     Session IP Quota : 700.0MB (more will be available from 31 March, 2012)
+     Session IP Usage : 275.3MB
+</pre>
+<p>
+Write a pipeline which converts the output of acc into a new line separated list of
+courses the person is enrolled in, like this:
+</p><p>
+</p><pre class="command_line">
+COMP2041
+COMP2121
+COMP2911
+COMP3901
+</pre>
+<p>
+</p><p>
+</p><p></p>
+</li><li><p>
+Use the pipeines from the above 2 questions to write shell commands which
+print a list of courses taken by COMP2041 students with counts of how
+many COMP2041 students take each, like this:
+</p><p>
+</p><pre class="command_line">
+     55 COMP2911
+     37 COMP2121
+     17 COMP3311
+     10 COMP2111
+      9 COMP3331
+      ..........
+</pre>
+<p></p>
+</li><li>
+<!-- question courtesy Nelson Rigby  -->
+COMP2041 student Shruti has a 'friends' subdirectory in her home directory
+that contains images of her many friends.  Shruti likes to view these images
+often and would like to have them appear in other directories within
+her CSE account so she has written a shell script to symbolically link
+them to the current directory:
+<p>
+</p><pre class="command_line">
+for image_file in `ls ~/friends`
+do
+    ln -s "~/friends/$image_file" .
+done
+</pre>
+<p>
+The links created by Shruti's script are broken.
+Why? How can she fix her script?
+</p><p>
+</p><p></p>
+</li><li>
+Implement a shell script called <code>iseq</code> for writing sequences
+of integers onto its standard output, with one integer per line.
+The script can take up to three arguments, and behaves as follows:
+<ul>
+<li> <code>iseq <i>n</i></code>
+      writes all numbers from 1 up to <code><i>n</i></code>, inclusive
+</li><li> <code>iseq <i>m n</i></code>
+      writes all numbers from <code><i>m</i></code> up to <code><i>n</i></code> inclusive
+</li><li> <code>iseq <i>k m n</i></code>
+      writes the sequence <code><i>k</i></code>, <code><i>m</i></code>, <code><i>m+(m-k)</i></code>, <code><i>m+2(m-k)</i></code> up to <code><i>p</i></code> <br/>
+    (where <code><i>p</i></code> is the largest integer in this sequence
+         that is less than or equal to <code><i>n</i></code>)
+</li></ul>
+<p>
+Examples of output:
+</p><pre class="command_line">
+<kbd class="shell"><b>iseq 5</b>           $ <b>iseq 2 6</b>          $ <b>iseq 3 3 16</b></kbd>
+    1                  2                   3
+    2                  3                   6
+    3                  4                   9
+    4                  5                   12
+    5                  6                   15
+</pre>
+<p></p>
+<p>
+</p><p></p>
+</li><li>
+Write a shell script named <code>isprime</code>
+which given an integer as argment, tests whether
+it is prime and prints a suitable message:
+<pre class="command_line">
+<kbd class="shell">isprime 42</kbd>
+42 is not prime
+<kbd class="shell">isprime 113</kbd>
+113 is prime
+</pre>
+Your script should  exit with a non-zero exit status if its
+argument is not prime.
+<p>
+Write a second script named <code>primes</code> which uses the first
+script to print all primes less than a specified value, e.g:
+</p><p>
+</p><pre class="command_line">
+<kbd class="shell">primes 100</kbd>
+2
+3
+5
+7
+11
+13
+17
+...
+79
+83
+89
+97
+</pre>
+<p></p>
+</li><li>
+Write a shell script, <code>list_include_files</code>, which given a list of C source files (<code>.c</code> files)
+as arguments, prints the names of the files they include  (<code>.h</code> files),
+reporting each file only once, e.g.:
+<p>
+</p><pre class="command_line">
+<kbd class="shell">list_include_files count_words.c get_word.c map.c</kbd>
+ctype.h
+get_word.h
+map.h
+stdio.h
+stdlib.h
+time.h
+</pre>
+<p></p>
+<h3>Revision questions</h3>
+
+The remaining tutorial questions are primarily intended for revision - either this week
+or later in session.
+<p>
+Your tutor may still choose to cover some of the questions time permitting.
+</p><p>
+</p></li><li>
+<!-- question courtesy Nelson Rigby  -->
+COMP2041 student  Big Bad Barry tries to impress a girl
+at a party by betting her she can't work out what this shell script:
+<p>
+</p><pre class="command_line">
+#!/bin/sh
+IFS=abc
+echo "$*"
+</pre>
+<p>
+prints when run like this:
+</p><pre class="command_line">
+<kbd class="shell">./script.sh mount inside</kbd>
+</pre><p>
+What does the script print?
+</p><p>
+Will the girl go out with  Big Bad Barry?
+</p><p>
+</p><p></p>
+</li></ol>
+</ol>
+</div>
+<!--
+public_html_session_directory=/web/cs2041/17s2
+base_directory=/web/cs2041/17s2
+public_html_directory=/web/cs2041
+scripts_directory=/web/cs2041/17s2/scripts
+home_directory=/home/cs2041
+bin_directory=/home/cs2041/bin
+course_account=cs2041
+course_code=COMP2041
+course_number=2041
+postgraduate_course_code=COMP9041
+course_name=Software Construction
+unsw_session=17s2
+canonical_url=https://cgi.cse.unsw.edu.au/~cs2041/
+github_repo_url=https://github.com/COMP2041UNSW/course_materials
+course_forum_url=https://piazza.com/class/j5ji4vjjra62a3
+lecture_recordings_url=https://moodle.telt.unsw.edu.au/course/view.php?id=27708
+WORK=/web/cs2041/17s2/work
+OUT=/web/cs2041/17s2/work/.out
+MARKED=/web/cs2041/17s2/work/.out/.marked
+SMSDB=/web/cs2041/17s2/work/17s2db.sms
+tlb_directory=/web/cs2041/17s2/tlb
+lecture_directory=/web/cs2041/17s2/lec
+flask_cache_directory=/web/cs2041/17s2/flask_cache
+testing_results_file=/web/cs2041/17s2/work/testing_results.json
+enrollments_file=/web/cs2041/17s2/work/enrollments.json
+unsw_ldap_password_file=/web/cs2041/.unsw_ldap_password
+autotest_upload_url=https://cgi.cse.unsw.edu.au/~cs2041/cgi/autotest_upload.cgi
+PATH=/web/cs2041/17s2/scripts:/home/cs2041/bin:/bin/:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/home/class/bin:/home/give/stable/bin.:/bin:/usr/bin:/usr/local/bin
+directory_relative_pathname=tlb/04
+url=https://cgi.cse.unsw.edu.au/~cs2041/flask.cgi/tut/04/questions
+directory_url=https://cgi.cse.unsw.edu.au/~cs2041/tut/04/
+url_root=https://cgi.cse.unsw.edu.au/~cs2041/
+script_root=/~cs2041/flask.cgi
+current_lecture_topic=exam
+current_week=13
+week=04
+exercise_name=tut04
+tut_or_lab_or_test=tut
+questions_or_answers=questions
+programs=&lt;programs&gt;
+
+-->
+</body>
+</html>

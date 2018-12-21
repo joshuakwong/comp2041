@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>
+
+COMP2041 Week 02 Tutorial Questions
+
+</title>
+<link href="/~cs2041/flask.cgi/static/bootstrap.min.css?121200" rel="stylesheet"/>
+<link href="/~cs2041/flask.cgi/static/course.css?6554" rel="stylesheet"/>
+<script src="/~cs2041/flask.cgi/static/jquery.min.js?95992" type="text/javascript"></script>
+<script src="/~cs2041/flask.cgi/static/bootstrap.min.js?37045" type="text/javascript"></script>
+<script src="/~cs2041/flask.cgi/static/course.js?1631" type="text/javascript"></script>
+<link href="https://cgi.cse.unsw.edu.au/~cs2041/" rel="canonical"/>
+</head>
+<body>
+<div class="container">
+<div id="heading">
+<a class="heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/" id="left_heading_link" target="_blank">COMP[29]041 17s2</a>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Week 02
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/02/questions">Week 02</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/03/questions">Week 03</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/04/questions">Week 04</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/05/questions">Week 05</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/06/questions">Week 06</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/07/questions">Week 07</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/08/questions">Week 08</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/09/questions">Week 09</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/10/questions">Week 10</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/11/questions">Week 11</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/12/questions">Week 12</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/13/questions">Week 13</a></li>
+</ul>
+</span>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Tutorial
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/02/questions">Tutorial
+                
+            </a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/02/questions">Laboratory
+                
+            </a></li>
+</ul>
+</span>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Questions
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/02/questions">Questions
+            
+            </a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/02/answers">Sample Answers
+            
+            </a></li>
+</ul>
+</span>
+<a class="heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/" id="right_heading_link" target="_blank">Software Construction</a>
+</div>
+</div>
+<div class="tutlab tut">
+<ol>
+<li>
+What is your tutor's name, e-mail, how long have they been at UNSW, what are they studying, what is 1 interesting thing about them?
+
+<p></p>
+</li><li>
+What are your class mates's names, what are they each studying, what is 1 interesting thing about each of them?
+
+<p></p>
+</li><li>
+Are there marks for attending lectures, tutorials or labs?
+
+<p></p>
+</li><li>
+
+What is an operating system? What operating systems are running in your tute room? What operating system do CSE lab computers run?
+
+<p></p>
+</li><li>
+<ol type="a">
+<li> Write a regexp to match C preprocessor commands in a C program.
+</li><li> Write a regexp to match all the lines in a C program except preprocessor commands
+</li><li> Write a regexp to find line in a C program with trailing white space - one or white space at the end of line
+</li><li> Write a regexp to match the names Barry, Harry, Larry and Parry
+</li><li> Write a regexp to match a string containing the word <code>hello</code> followed later by the word <code>world</code>
+</li><li> Write regexp to match the word <code>calendar</code> and all mis-spellings with 'a' replaced 'e' or vice-versa
+</li><li> Write regexp to match a list of positive integers separated by commas, e.g.  <code>2,4,8,16,32</code>
+</li><li> Write regexp to match a C string whose last character is newline
+</li></ol>
+<p></p>
+</li><li>
+Give five reasons why this attempt to search a  file for
+HTML paragraph and break tags may fail.
+<pre class="command_line">
+<kbd class="shell">grep &lt;p&gt;|&lt;br&gt; /tmp/index.html</kbd>
+</pre>
+<p>
+Give egrep commands that will work.
+</p><p></p>
+</li><li>
+For each of the regular expression below indicate how many different
+strings the pattern matches and give some example of the strings it matches.
+If possible these example should include the shortest string and the longest string.
+<ol type="a">
+<li> <pre class="command_line">Perl</pre>
+</li><li> <pre class="command_line">Pe*r*l</pre>
+</li><li> <pre class="command_line">Full-stop.</pre>
+</li><li> <pre class="command_line">[1-9][0-9][0-9][0-9]</pre>
+</li><li> <pre class="command_line">I (love|hate) programming in (Perl|Python) and (Java|C)</pre>
+</li></ol>
+<p></p>
+</li><li>
+This regular expression [0-9]*.[0-9]* is intended to match floating point
+numbers such as '42.5'. Is it appropriate?
+<p></p>
+</li><li>
+What does the command <code>egrep -v .</code> print and why?
+<p>
+Give an equivalent egrep command with no options, in other words without the -v and with a different pattern.
+</p><p></p>
+</li><li>
+Write an egrep command which will print any lines in a file <code>ips.txt</code> containing
+an IP addresses in the
+range 129.94.172.1 to 129.94.172.25
+
+<p></p>
+</li><li>
+For each of the scenarios below
+<ul>
+<li> describe the strings being matched using an English sentence
+</li><li> give a POSIX regular expression to match this class of strings
+</li></ul>
+In the examples, the expected matches are highlighted in bold.
+<ol type="a">
+<li>
+encrypted password fields (including the surrounding colons)
+in a Unix password file entry, e.g.
+<pre>
+root<b>:ZHolHAHZw8As2:</b>0:0:root:/root:/bin/bash
+jas<b>:nJz3ru5a/44Ko:</b>100:100:John Shepherd:/home/jas:/bin/bash
+</pre>
+<p></p>
+</li><li>
+positive real numbers at the start of a line
+(using normal fixed-point notation for reals,
+<em>not</em> the kind of scientific notation you find in
+programming languages), e.g.
+<pre>
+<b>3.141</b> value of Pi
+<b>90.57</b> maximum hits/sec
+half of the time, life is silly
+<b>0.05</b>% is the legal limit
+<b>42</b> - the meaning of life
+this 1.333 is not at the start
+</pre>
+<p></p>
+</li><li>
+Names as represented in this file containing details of tute/lab
+enrolments:
+
+<pre>
+    2134389|Wang, Duved Seo Ken         |fri15-spoons|
+    2139656|Undirwaad, Giaffriy Jumis   |tue13-kazoo|
+    2154877|Ng, Hinry                   |tue17-kazoo|
+    2174328|Zhung, Yung                 |thu17-spoons|
+    2234136|Hso, Men-Tsun               |tue09-harp|
+    2254148|Khorme, Saneu               |tue09-harp|
+    2329667|Mahsin, Zumel               |tue17-kazoo|
+    2334348|Trun, Toyin Hong Recky      |mon11-leaf|
+    2336212|Sopuvunechyunant, Sopuchue  |mon11-leaf|
+    2344749|Chung, Wue Sun              |fri09-harp|
+    ...
+</pre>
+<p>
+</p><p></p>
+</li><li>
+Names as above, but without the trailing spaces (difficult).
+<i>Hint:</i> what are given names composed of, and how many of these
+things can there be?
+<p></p>
+</li></ol>
+</li><li>
+Consider the following columnated (space-delimited) data file
+containing marks information for a single subject:
+<p>
+</p><pre>
+2111321 37 FL
+2166258 67 CR
+2168678 84 DN
+2186565 77 DN
+2190546 78 DN
+2210109 50 PS
+2223455 95 HD
+2266365 55 PS
+...
+</pre>
+<p>
+Assume that the student number occurs at the beginning of the
+line, that the file is sorted on student number, and that nobody
+scores 100.
+
+</p><ol type="a">
+<li>
+Give calls to the <code>sort</code> filter to display the data:
+<ol type="i">
+<li> in order on student number
+
+<p></p>
+</li><li> in ascending order on mark
+
+<p></p>
+</li><li> in descending order on mark
+
+<p></p>
+</li></ol>
+</li><li>
+Write calls to the <code>grep</code> filter to select details of:
+<ol type="i">
+<li> students who failed
+
+<p></p>
+</li><li> students who scored above 90
+
+<p></p>
+</li><li> students with even student numbers
+
+<p></p>
+</li></ol>
+</li><li>
+Write a pipeline to print:
+<ol type="i">
+<li> the details for the top 10 students (ordered by mark)
+
+<p></p>
+</li><li> the details for the bottom 5 students (ordered by mark)
+
+<p></p>
+</li></ol>
+</li><li>
+Assuming that the command <code>cut -d' ' -f 3</code> can extract
+just the grades (<code>PS</code>, etc.), write a pipeline to show
+how many people achieved each grade (i.e. the grade distribution).
+E.g. for the above data:
+<pre>
+    1 CR
+    3 DN
+    1 FL
+    1 HD
+    2 PS
+</pre>
+<p></p>
+</li></ol>
+</li><li>
+Consider the following text file containing details of tute/lab
+enrolments:
+
+<pre>
+    2134389|Wang, Duved Seo Ken         |fri15-spoons|
+    2139656|Undirwaad, Giaffriy Jumis   |tue13-kazoo|
+    2154877|Ng, Hinry                   |tue17-kazoo|
+    2174328|Zhung, Yung                 |thu17-spoons|
+    2234136|Hso, Men-Tsun               |tue09-harp|
+    2254148|Khorme, Saneu               |tue09-harp|
+    2329667|Mahsin, Zumel               |tue17-kazoo|
+    2334348|Trun, Toyin Hong Recky      |mon11-leaf|
+    2336212|Sopuvunechyunant, Sopuchue  |mon11-leaf|
+    2344749|Chung, Wue Sun              |fri09-harp|
+    ...
+</pre>
+<p>
+Assuming that the file is called <code>enrolments</code>,
+write pipelines to answer each of the following queries:
+
+</p><ol type="a">
+<li> Which tute is Hinry Ng enrolled in?
+
+<p></p>
+</li><li> How many different tutorials are there?
+
+<p></p>
+</li><li> What is the number of students in each tute?
+
+<p></p>
+</li><li> Are any students enrolled in multiple tutes?
+
+<p></p>
+</li></ol>
+</li></ol>
+</div>
+<!--
+public_html_session_directory=/web/cs2041/17s2
+base_directory=/web/cs2041/17s2
+public_html_directory=/web/cs2041
+scripts_directory=/web/cs2041/17s2/scripts
+home_directory=/home/cs2041
+bin_directory=/home/cs2041/bin
+course_account=cs2041
+course_code=COMP2041
+course_number=2041
+postgraduate_course_code=COMP9041
+course_name=Software Construction
+unsw_session=17s2
+canonical_url=https://cgi.cse.unsw.edu.au/~cs2041/
+github_repo_url=https://github.com/COMP2041UNSW/course_materials
+course_forum_url=https://piazza.com/class/j5ji4vjjra62a3
+lecture_recordings_url=https://moodle.telt.unsw.edu.au/course/view.php?id=27708
+WORK=/web/cs2041/17s2/work
+OUT=/web/cs2041/17s2/work/.out
+MARKED=/web/cs2041/17s2/work/.out/.marked
+SMSDB=/web/cs2041/17s2/work/17s2db.sms
+tlb_directory=/web/cs2041/17s2/tlb
+lecture_directory=/web/cs2041/17s2/lec
+flask_cache_directory=/web/cs2041/17s2/flask_cache
+testing_results_file=/web/cs2041/17s2/work/testing_results.json
+enrollments_file=/web/cs2041/17s2/work/enrollments.json
+unsw_ldap_password_file=/web/cs2041/.unsw_ldap_password
+autotest_upload_url=https://cgi.cse.unsw.edu.au/~cs2041/cgi/autotest_upload.cgi
+PATH=/web/cs2041/17s2/scripts:/home/cs2041/bin:/bin/:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/home/class/bin:/home/give/stable/bin.:/bin:/usr/bin:/usr/local/bin
+directory_relative_pathname=tlb/02
+url=https://cgi.cse.unsw.edu.au/~cs2041/flask.cgi/tut/02/questions
+directory_url=https://cgi.cse.unsw.edu.au/~cs2041/tut/02/
+url_root=https://cgi.cse.unsw.edu.au/~cs2041/
+script_root=/~cs2041/flask.cgi
+current_lecture_topic=exam
+current_week=13
+week=02
+exercise_name=tut02
+tut_or_lab_or_test=tut
+questions_or_answers=questions
+programs=&lt;programs&gt;
+
+-->
+</body>
+</html>

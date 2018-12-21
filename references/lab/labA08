@@ -1,0 +1,1541 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<title>
+
+COMP2041 Week 08 Laboratory Sample Solutions
+
+</title>
+
+
+
+<link href="/~cs2041/flask.cgi/static/bootstrap.min.css?121200" rel="stylesheet">
+<link href="/~cs2041/flask.cgi/static/course.css?6554" rel="stylesheet">
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/jquery.min.js?95992"></script>
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/bootstrap.min.js?37045"></script>
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/course.js?1631"></script>
+<link rel="canonical" href="https://cgi.cse.unsw.edu.au/~cs2041/" />
+</head>
+<body>
+
+
+
+
+<div class="container">
+
+<div id="heading">
+
+
+<a class="heading_link" target="_blank" id="left_heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/">COMP[29]041 17s2</a>
+
+
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Week 08
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/02/answers">Week 02</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/03/answers">Week 03</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/04/answers">Week 04</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/05/answers">Week 05</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/06/answers">Week 06</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/07/answers">Week 07</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/08/answers">Week 08</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/09/answers">Week 09</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/10/answers">Week 10</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/11/answers">Week 11</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/13/answers">Week 13</a></li>
+        
+        
+    </ul>
+</span>
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Laboratory
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/08/answers">Tutorial
+                
+            </a></li>
+            
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/08/answers">Laboratory
+                
+            </a></li>
+            
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/08/answers">Weekly Test
+                
+            </a></li>
+            
+        
+    </ul>
+</span>
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Sample Solutions
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/08/questions">Exercises
+            
+            </a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/08/answers">Sample Solutions
+            
+            </a></li>
+        
+        
+    </ul>
+</span>
+
+
+
+
+<a class="heading_link" target="_blank" id="right_heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/">Software Construction</a>
+
+</div>
+
+</div>
+
+
+<div class="tutlab lab">
+
+
+
+<h3>Submission Summary</h3>
+Due
+
+Sunday midnight
+
+
+<pre class="command_line">
+<kbd class="shell">give cs2041 lab08 courses.pl lectures0.pl lectures1.pl lectures2.pl tags.py shortest_path.py</kbd>
+</pre>
+
+
+
+
+<h3>Objectives</h3>
+
+
+<ul>
+<li> Developing Perl skills
+<li> Exploring a simple approach to scraping data from the web
+</ul>
+
+
+
+
+
+<h3>Getting Started</h3>
+
+
+Create a new directory for this lab called <code>lab08</code> by typing:
+
+<pre class="command_line">
+<kbd class="shell">mkdir lab08</kbd>
+</pre>
+
+Change to this directory by typing:
+
+<pre class="command_line">
+<kbd class="shell">cd lab08</kbd>
+</pre>
+
+
+
+
+
+<h3>Background</h3>
+
+We have covered only a small amount of Perl in lectures. In fact, to
+cover the whole language in detail would take a whole semester, so
+we're going to rely on you finding out about the language yourself
+in tutes, labs and assignments. A good place to start is
+the Perl documentation & tutorial links on the class home page
+For example you might find these useful:
+
+<ul>
+<li> <a target="doc" href="http://search.cpan.org/dist/perl/pod/perlsyn.pod">Perl language syntax</a>
+<li> <a target="doc" href="http://search.cpan.org/dist/perl/pod/perlsub.pod">Perl functions</a>
+<li> <a target="doc" href="http://search.cpan.org/dist/perl/pod/perlop.pod">Perl operators</a>
+</ul>
+
+<h3>Exercise: Scraping Course Codes</h3>
+Write a Perl script <code>courses.pl</code> which prints the course codes with a given prefix of all UNSW courses with lectures on the
+Kensington Campus this session.  For example:
+
+<pre class="command_line">
+<kbd class="shell">./courses.pl VISN</kbd>
+VISN1101
+VISN1111
+VISN1221
+VISN2111
+VISN2211
+VISN2231
+VISN3111
+VISN3211
+VISN4003
+</pre>
+
+<b>Hints:</b> The course codes with prefix <code>VISN</code> can be found in this web page:
+<a href="http://www.timetable.unsw.edu.au/current/VISNKENS.html"><code>http://www.timetable.unsw.edu.au/current/VISNKENS.html</code></a>.  You can assume this is the case
+for all prefixes.  You saw how to retrieve a web page using wget in a previous lab.
+So you can perform this task in less than 10 lines of Perl.
+
+
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+<pre class="command_line">
+<kbd class="shell">2041 autotest lab08 courses.pl</kbd>
+</pre>
+
+
+    
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Automarking Results</h4>
+        <span class="autotest_results_emphasis">61%</span>
+        
+        of <span class="autotest_results_emphasis">408</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">courses.pl</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+                <ul>
+                
+                    <li><span class="autotest_results_emphasis">100%</span>
+                    
+                    passed test <i>courses_0</i>
+                
+                    <li><span class="autotest_results_emphasis">81%</span>
+                    
+                    passed test <i>courses_1</i>
+                
+                    <li><span class="autotest_results_emphasis">82%</span>
+                    
+                    passed test <i>courses_2</i>
+                
+                    <li><span class="autotest_results_emphasis">61%</span>
+                    
+                    passed test <i>courses_3</i>
+                
+                    <li><span class="autotest_results_emphasis">82%</span>
+                    
+                    passed test <i>courses_4</i>
+                
+                    <li><span class="autotest_results_emphasis">74%</span>
+                    
+                    passed test <i>courses_5</i>
+                
+                </ul>
+                </div>
+            
+        
+    </div>
+
+
+<div class="answer">
+Sample Perl solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+
+foreach $prefix (@ARGV) {
+    open my $f, &#39;-|&#39;, &#34;wget -q -O- http://www.timetable.unsw.edu.au/current/${prefix}KENS.html&#34; or die;
+    while (&lt;$f&gt;) {
+        print &#34;$1\n&#34; if /&gt;($prefix\d\d\d\d)&lt;/;
+    }
+    close $f;
+}
+
+</pre>
+
+
+
+Sample Shell solution
+
+
+
+
+
+<pre class="program">
+
+#!/bin/sh
+
+for course in &#34;$@&#34;
+do
+    wget -q -O- http://www.timetable.unsw.edu.au/current/${course}KENS.html|
+    egrep -oP &#34;$course\d\d\d\d&#34;|
+    sort|
+    uniq
+done
+
+</pre>
+
+
+</div>
+
+<h3>Exercise: Scraping Lecture Times</h3>
+
+Write a Perl script <code>lectures0.pl</code> which given course codes as arguments prints details of their
+lectures.
+
+<pre class="command_line">
+<kbd class="shell">./lectures0.pl COMP2041</kbd>
+COMP2041: S2 Wed 16:00 - 18:00 (Weeks:1-9,10-12), Fri 14:00 - 15:00 (Weeks:1-9,10-12)
+<kbd class="shell">./lectures0.pl PSYC1011 COMP9024 COMP3231</kbd>
+PSYC1011: S2 Mon 13:00 - 14:00 (Weeks:1-9,10-12), Wed 11:00 - 12:00 (Weeks:1-9,10-12), Thu 12:00 - 13:00 (Weeks:1-9,10-12)
+PSYC1011: S2 Mon 18:00 - 19:00 (Weeks:1-9,10-12), Wed 18:00 - 19:00 (Weeks:1-9,10-12), Thu 18:00 - 19:00 (Weeks:1-9,10-12)
+COMP9024: S1 Tue 18:00 - 21:00 (Weeks:1-7,8-12), Tue 18:00 - 21:00 (Weeks:13)
+COMP9024: S2 Thu 18:00 - 21:00 (Weeks:1-9,10-12)
+COMP3231: S1 Mon 14:00 - 16:00 (Weeks:1-7,8-12), Thu 15:00 - 16:00 (Weeks:1-7,8-12)
+</pre>
+
+Don't print identical lecture streams (where times & weeks are identical) multiple times.
+<p>
+Some timetable entries include the same stream twice, in other cases there is a parallel stream -
+but for simplicity if times & weeks are identical don't print the stream twice (hint: use a hash).
+<p>
+<b>Hint:</b> You can assume that a course's lecture times will be found in a web page equivalent to:
+<a href="http://timetable.unsw.edu.au/current/COMP2041.html">http://timetable.unsw.edu.au/current/COMP2041.html</a>.
+Its difficult to use a regexp to match the line containing the lecture description but you
+match a previous line, then skip a certain number of lines.
+<p>
+You can also get the teaching period this way.  Don't panic if you can't get this quite right
+your tutor will be generous  with hints.
+<p>
+<b>Hint:</b> a hash can be easily used to avoid repeated output.
+<p>
+<b>Hint:</b> make sure you have the URL exactly as above - e.g. don't have repeated slashes (the timetable website uses fragile rewriting rules).
+
+
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+<pre class="command_line">
+<kbd class="shell">2041 autotest lab08 lectures0.pl</kbd>
+</pre>
+
+
+    
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Automarking Results</h4>
+        <span class="autotest_results_emphasis">86%</span>
+        
+        of <span class="autotest_results_emphasis">394</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">lectures0.pl</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+                <ul>
+                
+                    <li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>lectures0_0</i>
+                
+                    <li><span class="autotest_results_emphasis">96%</span>
+                    
+                    passed test <i>lectures0_1</i>
+                
+                    <li><span class="autotest_results_emphasis">94%</span>
+                    
+                    passed test <i>lectures0_2</i>
+                
+                    <li><span class="autotest_results_emphasis">90%</span>
+                    
+                    passed test <i>lectures0_3</i>
+                
+                    <li><span class="autotest_results_emphasis">96%</span>
+                    
+                    passed test <i>lectures0_4</i>
+                
+                    <li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>lectures0_5</i>
+                
+                    <li><span class="autotest_results_emphasis">96%</span>
+                    
+                    passed test <i>lectures0_6</i>
+                
+                    <li><span class="autotest_results_emphasis">93%</span>
+                    
+                    passed test <i>lectures0_7</i>
+                
+                </ul>
+                </div>
+            
+        
+    </div>
+
+
+<div class="answer">
+
+Sample solution for lectures0.pl
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+
+$base_url = &#34;http://timetable.unsw.edu.au/current&#34;;
+
+foreach $course (@ARGV) {
+    my %lectures_seen;
+    open my $f, &#39;-|&#39;, &#34;wget -q -O- $base_url/$course.html&#34; or die &#34;Can not fetch web page for $course: $!&#34;;
+    while ($line = &lt;$f&gt;) {
+        next if $line !~ /href.*&gt;Lecture&lt;/;
+
+        my $session = &#34;&#34;;
+        $line = &lt;$f&gt;;
+        $session = $&amp; if $line =~ /[A-Z][0-9]/;
+
+        &lt;$f&gt; foreach 1..4; # skip 4 lines
+
+        $line = &lt;$f&gt;;
+        chomp $line;
+        $line =~ s/&lt;.*?&gt;//g;
+        $line =~ s/^\s*//g;
+        $line =~ s/\s*$//g;
+
+        next if !$line;
+        next if $lectures_seen{$line}++;
+        print &#34;$course: $session $line\n&#34;;
+    }
+    close $f;
+}
+
+</pre>
+
+
+
+
+</div>
+
+<h3>Semi-Challenge Exercise: Lecture Times as Tuples</h3>
+
+The output from <code>lectures0.pl</code> is (more or less) human readable but is less convenient for other uses.
+Copy <code>lectures0.pl</code> to <code>lectures1.pl</code> and
+modify it so that if a -d option is specified it prints the
+hourly details of lectures in the format shown in the examples below:
+
+<pre class="command_line">
+<kbd class="shell">./lectures1.pl COMP2041</kbd>
+COMP2041: S2 Wed 16:00 - 18:00 (Weeks:1-9,10-12), Fri 14:00 - 15:00 (Weeks:1-9,10-12)
+<kbd class="shell">./lectures1.pl -d COMP2041</kbd>
+S2 COMP2041 Wed 16
+S2 COMP2041 Wed 17
+S2 COMP2041 Fri 14
+<kbd class="shell">./lectures1.pl -d COMP4121</kbd>
+S2 COMP4121 Tue 9
+S2 COMP4121 Tue 10
+S2 COMP4121 Thu 10
+S2 COMP4121 Thu 11
+<kbd class="shell">./lectures1.pl -d COMP1521</kbd>
+S2 COMP1521 Mon 12
+S2 COMP1521 Mon 13
+S2 COMP1521 Thu 13
+S2 COMP1521 Wed 9
+S2 COMP1521 Wed 10
+S2 COMP1521 Fri 12
+<kbd class="shell">./lectures1.pl -d PSYC1011 COMP9024 COMP3231</kbd>
+S2 PSYC1011 Mon 13
+S2 PSYC1011 Wed 11
+S2 PSYC1011 Thu 12
+S2 PSYC1011 Mon 18
+S2 PSYC1011 Wed 18
+S2 PSYC1011 Thu 18
+S1 COMP9024 Tue 18
+S1 COMP9024 Tue 19
+S1 COMP9024 Tue 20
+S2 COMP9024 Thu 18
+S2 COMP9024 Thu 19
+S2 COMP9024 Thu 20
+S1 COMP3231 Mon 14
+S1 COMP3231 Mon 15
+S1 COMP3231 Thu 15
+</pre>
+
+Getting this exercise completely correct is difficult - again your tutor will be generous with
+hints.
+
+
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+<pre class="command_line">
+<kbd class="shell">2041 autotest lab08 lectures1.pl</kbd>
+</pre>
+
+
+    
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Automarking Results</h4>
+        <span class="autotest_results_emphasis">9%</span>
+        
+        of <span class="autotest_results_emphasis">330</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">lectures1.pl</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+                <ul>
+                
+                    <li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>lectures1_0</i>
+                
+                    <li><span class="autotest_results_emphasis">91%</span>
+                    
+                    passed test <i>lectures1_1</i>
+                
+                    <li><span class="autotest_results_emphasis">90%</span>
+                    
+                    passed test <i>lectures1_2</i>
+                
+                    <li><span class="autotest_results_emphasis">86%</span>
+                    
+                    passed test <i>lectures1_3</i>
+                
+                    <li><span class="autotest_results_emphasis">92%</span>
+                    
+                    passed test <i>lectures1_4</i>
+                
+                    <li><span class="autotest_results_emphasis">92%</span>
+                    
+                    passed test <i>lectures1_5</i>
+                
+                    <li><span class="autotest_results_emphasis">89%</span>
+                    
+                    passed test <i>lectures1_6</i>
+                
+                    <li><span class="autotest_results_emphasis">10%</span>
+                    
+                    passed test <i>lectures1_7</i>
+                
+                </ul>
+                </div>
+            
+        
+    </div>
+
+
+
+<div class="answer">
+
+See sample solution for lectures2.pl
+
+</div>
+
+<h3>Semi-Challenge Exercise: Lecture Times as a Table</h3>
+
+Copy <code>lectures1.pl</code> to <code>lectures2.pl</code> and
+modify itso that when a -t option is specified it prints a
+count of many lectures occur at each day/time in an ASCII table in the format
+shown in the example below.
+
+<pre class="command_line">
+<kbd class="shell">./lectures2.pl COMP9020 COMP9021 COMP9024</kbd>
+COMP9020: S1 Fri 14:00 - 17:00 (Weeks:1-6,8-13)
+COMP9020: S2 Thu 15:00 - 18:00 (Weeks:1-9,10-12)
+COMP9021: S1 Tue 18:00 - 21:00 (Weeks:1-7,8-12)
+COMP9021: S1 Fri 11:00 - 14:00 (Weeks:1-7,8-12)
+COMP9021: S2 Mon 15:00 - 16:00 (Weeks:1-9,10-12), Thu 18:00 - 21:00 (Weeks:1-9,10-12)
+COMP9024: S1 Tue 18:00 - 21:00 (Weeks:1-7,8-12), Tue 18:00 - 21:00 (Weeks:13)
+COMP9024: S2 Thu 18:00 - 21:00 (Weeks:1-9,10-12)
+<kbd class="shell">./lectures2.pl -d COMP9020 COMP9021 COMP9024</kbd>
+S1 COMP9020 Fri 14
+S1 COMP9020 Fri 15
+S1 COMP9020 Fri 16
+S2 COMP9020 Thu 15
+S2 COMP9020 Thu 16
+S2 COMP9020 Thu 17
+S1 COMP9021 Tue 18
+S1 COMP9021 Tue 19
+S1 COMP9021 Tue 20
+S1 COMP9021 Fri 11
+S1 COMP9021 Fri 12
+S1 COMP9021 Fri 13
+S2 COMP9021 Mon 15
+S2 COMP9021 Thu 18
+S2 COMP9021 Thu 19
+S2 COMP9021 Thu 20
+S1 COMP9024 Tue 18
+S1 COMP9024 Tue 19
+S1 COMP9024 Tue 20
+S2 COMP9024 Thu 18
+S2 COMP9024 Thu 19
+S2 COMP9024 Thu 20
+<kbd class="shell">./lectures2.pl -t COMP9020 COMP9021 COMP9024</kbd>
+S1       Mon   Tue   Wed   Thu   Fri
+09:00
+10:00
+11:00                             1
+12:00                             1
+13:00                             1
+14:00                             1
+15:00                             1
+16:00                             1
+17:00
+18:00           2
+19:00           2
+20:00           2
+S2       Mon   Tue   Wed   Thu   Fri
+09:00
+10:00
+11:00
+12:00
+13:00
+14:00
+15:00     1                 1
+16:00                       1
+17:00                       1
+18:00                       2
+19:00                       2
+20:00                       2
+<kbd class="shell">./lectures2.pl -t COMP1911 COMP2041 COMP2121 COMP3121 COMP3311 COMP3331 COMP4121 COMP3421 COMP9020 COMP9021 COMP9024</kbd>
+S1       Mon   Tue   Wed   Thu   Fri
+09:00     1
+10:00     1
+11:00     2           2           1
+12:00     1           2           1
+13:00                 1           1
+14:00                             2
+15:00                 1     1     1
+16:00           1     1           1
+17:00           1
+18:00           2
+19:00           2
+20:00           2
+S2       Mon   Tue   Wed   Thu   Fri
+09:00           1
+10:00           1           1
+11:00                       1
+12:00           1           1
+13:00           1           1
+14:00                       1     1
+15:00     2                 1
+16:00     2           1     1
+17:00     1           1     1
+18:00                       2
+19:00                       2
+20:00                       2
+</pre>
+
+Getting this exercise completely correct is difficult - again your tutor will generous with hints.
+
+
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+<pre class="command_line">
+<kbd class="shell">2041 autotest lab08 lectures2.pl</kbd>
+</pre>
+
+
+    
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Automarking Results</h4>
+        <span class="autotest_results_emphasis">11%</span>
+        
+        of <span class="autotest_results_emphasis">247</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">lectures2.pl</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+                <ul>
+                
+                    <li><span class="autotest_results_emphasis">91%</span>
+                    
+                    passed test <i>challenge_lectures2_0</i>
+                
+                    <li><span class="autotest_results_emphasis">86%</span>
+                    
+                    passed test <i>challenge_lectures2_1</i>
+                
+                    <li><span class="autotest_results_emphasis">83%</span>
+                    
+                    passed test <i>challenge_lectures2_2</i>
+                
+                    <li><span class="autotest_results_emphasis">86%</span>
+                    
+                    passed test <i>challenge_lectures2_3</i>
+                
+                    <li><span class="autotest_results_emphasis">82%</span>
+                    
+                    passed test <i>challenge_lectures2_4</i>
+                
+                    <li><span class="autotest_results_emphasis">80%</span>
+                    
+                    passed test <i>challenge_lectures2_5</i>
+                
+                    <li><span class="autotest_results_emphasis">87%</span>
+                    
+                    passed test <i>challenge_lectures2_6</i>
+                
+                    <li><span class="autotest_results_emphasis">87%</span>
+                    
+                    passed test <i>challenge_lectures2_7</i>
+                
+                    <li><span class="autotest_results_emphasis">85%</span>
+                    
+                    passed test <i>challenge_lectures2_8</i>
+                
+                    <li><span class="autotest_results_emphasis">12%</span>
+                    
+                    passed test <i>challenge_lectures2_9</i>
+                
+                </ul>
+                </div>
+            
+        
+    </div>
+
+
+<div class="answer">
+
+Sample solution for lectures2.pl
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+$option_day_time = 0;
+$option_table = 0;
+$base_url = &#34;http://timetable.unsw.edu.au/current&#34;;
+$debug = 0;
+foreach $arg (@ARGV) {
+    if ($arg eq &#34;-d&#34;) {
+        $option_day_time = 1;
+    } elsif ($arg eq &#34;-t&#34;) {
+        $option_table = 1;
+    } elsif ($arg eq &#34;--debug&#34;) {
+        $debug = 1;
+    } else {
+        push @courses, $arg;
+    }
+}
+foreach $course (@courses) {
+    my %lectures_seen;
+    open my $f, &#39;-|&#39;, &#34;wget -q -O- $base_url/$course.html&#34; or die &#34;Can not fetch web page for $course: $!&#34;;
+    while ($line = &lt;$f&gt;) {
+        next if $line !~ /href.*&gt;Lecture/;
+        print &#34;found line: &#39;$line&#39;\n&#34; if $debug;
+        my $session = &#34;&#34;;
+        $line = &lt;$f&gt;;
+        $session = $&amp; if $line =~ /[A-Z][0-9]/;
+        &lt;$f&gt; foreach 1..4; # skip 5 lines
+        $line = &lt;$f&gt;;
+        chomp $line;
+        print &#34;raw line = &#39;$line&#39;\n&#34; if $debug;
+        $line =~ s/&lt;.*?&gt;//g;
+        $line =~ s/^\s*//g;
+        $line =~ s/\s*$//g;
+
+        next if !$line;
+        next if $lectures_seen{$line}++;
+
+        print &#34;$course: $session $line\n&#34; if !$option_day_time &amp;&amp; !$option_table;
+
+        foreach $lecture (split /\), /, $line) {
+            print &#34;lecture=&#39;$lecture&#39;\n&#34; if $debug;
+            my @days = $lecture =~ /\b([a-z]{3})\b/gi ;
+            print &#34;\@days=&#39;@days&#39;\n&#34; if $debug;
+
+            my ($start_hour,$finish_hour,$finish_minute) = $lecture =~ /(\d\d):\d\d - (\d\d):(\d\d)/ or next;
+            $finish_hour++ if $finish_minute ne &#34;00&#34;;
+            print &#34;start_hour=$start_hour finish_hour=$finish_hour\n&#34; if $debug;
+
+            foreach $day (@days) {
+                foreach $time ($start_hour..$finish_hour-1) {
+                    if (!$lecture{$session}{$day}{$time}{$course}++ and $option_day_time) {
+                        print &#34;$session $course $day $time\n&#34;;
+                    }
+                }
+            }
+        }
+    }
+    close $f;
+}
+
+if ($option_table) {
+    foreach $session (sort keys %lecture) {
+        my @days =qw/Mon Tue Wed Thu Fri/;
+        my $width = 6;
+        printf &#34;%-${width}s&#34;, $session;
+        printf &#34;%${width}s&#34;,$_ foreach @days;
+        print &#34;\n&#34;;
+        foreach $time (9..20) {
+            printf &#34;%02d:00&#34;, $time;
+            foreach $day (@days) {
+                my $n_lectures =  keys %{$lecture{$session}{$day}{$time}};
+                printf &#34;%${width}s&#34;, $n_lectures || &#34;&#34;;
+            }
+            print &#34;\n&#34;;
+        }
+    }
+}
+</pre>
+
+
+
+</div>
+
+<h3>Challenge Exercise: Extracting Tags in Python</h3>
+
+The  introduction to Python in lectures will come later.
+<p>
+The <a href="/~cs2041/lec/python/examples.index.html">example Python scripts</a> and links
+to external Python resources should help - but you may need more info - Google is your friend.
+
+Write a Python program, <code>tags.py</code> which given the URL of a web
+page fetches it by running <i>wget</i> and prints the HTML tags it uses.
+<p>
+Don't count closing tags (e.g. <code>&lt;/a&gt;</code>)
+<p>
+The tag should be converted to lower case and printed in sorted order
+with a count of often each is used.
+<p>
+You are expected (not required) to use regexes but there are problems processing HTML
+this way - don't be surprised if its hard to get right.
+<p>
+<b>Hint:</b> make sure you don't print tags within HTML comments.
+<p>
+For example:
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./tags.py http://www.cse.unsw.edu.au/~cs2041/outline.html</kbd>
+a 30
+b 1
+body 1
+br 17
+code 1
+div 17
+em 2
+h2 15
+h3 7
+head 1
+hr 2
+html 1
+li 62
+link 3
+ol 5
+p 47
+script 3
+small 15
+strong 8
+table 3
+tbody 1
+td 35
+th 3
+title 1
+tr 17
+ul 12
+<kbd class="shell">./tags.py http://www.cse.unsw.edu.au</kbd>
+a 153
+body 1
+br 2
+div 427
+fieldset 1
+form 1
+h2 27
+h3 1
+head 1
+html 1
+iframe 1
+img 24
+input 6
+label 2
+legend 1
+li 83
+link 9
+meta 11
+noscript 1
+p 15
+script 10
+span 39
+title 1
+ul 13
+</pre>
+
+Add an <code>-f</code> option to <code>tags.py</code> which indicates the tags are to printed
+in order of frequency.  For example:
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./tags.py -f http://www.cse.unsw.edu.au/~cs2041/outline.html</kbd>
+b 1
+body 1
+code 1
+head 1
+html 1
+tbody 1
+title 1
+em 2
+hr 2
+link 3
+script 3
+table 3
+th 3
+ol 5
+h3 7
+strong 8
+ul 12
+h2 15
+small 15
+br 17
+div 17
+tr 17
+a 30
+td 35
+p 47
+li 62
+</pre>
+
+Note tags which occur with equal frequency should ordered alphabetically.
+
+
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+<pre class="command_line">
+<kbd class="shell">2041 autotest lab08 tags.py</kbd>
+</pre>
+
+
+    
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Automarking Results</h4>
+        <span class="autotest_results_emphasis">66%</span>
+        
+        of <span class="autotest_results_emphasis">135</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">tags.py</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+                <ul>
+                
+                    <li><span class="autotest_results_emphasis">83%</span>
+                    
+                    passed test <i>challenge_tags_0</i>
+                
+                    <li><span class="autotest_results_emphasis">70%</span>
+                    
+                    passed test <i>challenge_tags_1</i>
+                
+                    <li><span class="autotest_results_emphasis">81%</span>
+                    
+                    passed test <i>challenge_tags_2</i>
+                
+                    <li><span class="autotest_results_emphasis">67%</span>
+                    
+                    passed test <i>challenge_tags_3</i>
+                
+                </ul>
+                </div>
+            
+        
+    </div>
+
+
+<div class="answer">
+
+Sample solution using wget
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python
+# written by andrewt@cse.unsw.edu.au as a COMP2041 example
+# fetch specified web pages and count the HTML tags in them
+#
+# There are python libraries which provide a  better way to fetch web pages
+#
+# subprocess.check_output was introduced in Python 2.7.
+# In previous version you might use:
+# webpage = subprocess.Popen([&#34;wget&#34;,&#34;-q&#34;,&#34;-O-&#34;,url], stdout=subprocess.PIPE).communicate()[0]
+#
+#
+# The regex code below doesn&#39;t handle a number of cases.  It is often
+# better to use a library to properly parse HTML before processing it.
+# But beware illegal HTML is common &amp; often causes problems for parsers.
+
+import sys, re, subprocess, collections
+tag_count = collections.defaultdict(lambda:0)
+
+for url in sys.argv[1:]:
+    webpage = subprocess.check_output([&#34;wget&#34;,&#34;-q&#34;,&#34;-O-&#34;,url], universal_newlines=True)
+    webpage = re.sub(r&#39;&lt;!--.*?--&gt;&#39;,&#39;&#39;, webpage) # remove comments
+    webpage = webpage.lower()
+    for tag in re.findall(r&#39;&lt;\s*(\w+)&#39;, webpage):
+        if tag:
+            tag_count[tag] += 1
+for tag in sorted(tag_count.keys()):
+    print(&#34;%s %d&#34;%(tag, tag_count[tag]))
+
+</pre>
+
+
+
+Sample solution using urllib & adding -f option
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python
+
+# writen by andrewt@cse.unsw.edu.au as a COMP2041 example
+# fetch a web page remove HTML tags, constants,
+# text between script blank lines
+# and print non-empty lines
+
+# The regex code below doesn&#39;t handle a number of cases.  It is often
+# better to use a library to properly parse HTML before processing it.
+# But beware illegal HTML is common &amp; often causes problems for parsers.
+
+import sys, re, collections
+
+# urllib package names changed in Python 3
+try:
+    from urllib import urlopen # Python 2
+except ImportError:
+    from urllib.request import urlopen # Python 3
+
+if len(sys.argv) &gt; 1 and sys.argv[1] == &#34;-f&#34;:
+    sort_by_frequency = 1
+    urls = sys.argv[2:]
+else:
+    sort_by_frequency = 0
+    urls = sys.argv[1:]
+
+tag_count = collections.defaultdict(lambda:0)
+for url in urls:
+    webpage = urlopen(url).read().decode(&#39;utf-8&#39;)  # would be better to check encoding rather than assume utf-8
+    webpage = re.sub(r&#39;&lt;!--.*?--&gt;&#39;,&#39;&#39;, webpage)    # remove comments
+    webpage = webpage.lower()
+    for tag in re.findall(r&#39;&lt;\s*(\w+)&#39;, webpage):
+        if tag:
+            tag_count[tag] += 1
+
+if sort_by_frequency:
+    # sort on a tuple of (tag frequency, tag name)
+    ordered_tags = sorted(list(tag_count.keys()), key=lambda t: (tag_count[t],t))
+else:
+    ordered_tags = sorted(tag_count.keys())
+for tag in ordered_tags:
+    print(&#34;%s %d&#34;%(tag, tag_count[tag]))
+
+</pre>
+
+
+
+Sample solution using Beautiful soup to parse HTML
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python2
+# writen by andrewt@cse.unsw.edu.au as a COMP2041 example
+# fetch a web page remove HTML tags, constants,
+# text between script blank lines
+# and print non-empty lines
+
+import sys, re, collections
+
+from urllib import urlopen
+import BeautifulSoup
+
+# on Python 3 instead do
+# from urllib.request import urlopen # Python 3
+# import bs4 as BeautifulSoup
+# and change BeautifulSoup(webpage) to BeautifulSoup(webpage, &#34;lxml&#34;)
+
+if len(sys.argv) &gt; 1 and sys.argv[1] == &#34;-f&#34;:
+    sort_by_frequency = 1
+    urls = sys.argv[2:]
+else:
+    sort_by_frequency = 0
+    urls = sys.argv[1:]
+
+tag_count = collections.defaultdict(lambda:0)
+for url in urls:
+    webpage = urlopen(url).read()
+    soup = BeautifulSoup.BeautifulSoup(webpage)
+    for tag in soup.findAll():
+        tag_count[tag.name] += 1
+
+if sort_by_frequency:
+    # sort on a tuple of (tag frequency, tag name)
+    # so tags are order first by frequency then by name
+    ordered_tags = sorted(tag_count.keys(), key=lambda t: (tag_count[t],t))
+else:
+    ordered_tags = sorted(tag_count.keys())
+for tag in ordered_tags:
+    print(&#34;%s %d&#34;%(tag, tag_count[tag]))
+
+</pre>
+
+
+
+
+</div>
+
+<b>Hint:</b> see last week's tute for a sample solution in Perl.
+
+
+<h3>Challenge Exercise: Finding the Shortest Journey in Python</h3>
+
+Write a Python program shortest_path.py that given the road distances between
+a number of towns (on standard input) calculates the shortest journey
+between two towns specified as arguments.
+Here is an example of how your program should behave.
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./shortest_path.py Parkes Gilgandra</kbd>
+<kbd>Bourke Dubbo          23
+Bourke Gilgandra      62
+Bourke Parkes         71
+Canowindra Dubbo      35
+Canowindra Gilgandra  13
+Canowindra Parkes    112
+Dubbo Gilgandra       91
+Dubbo Parkes          57
+</kbd><span class="eof"></span>
+Shortest route is length = 105: Parkes Dubbo Canowindra Gilgandra.
+</pre>
+
+<p>
+Hints: Python's strings have a
+<a href="http://en.wikibooks.org/wiki/Python_Programming/Strings#split.2C_splitlines">split method</a> which can
+break up input lines. Its easy to implement <a href="http://en.wikibooks.org/wiki/Python_Programming/Sets">Sets in python</a>.
+
+
+
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+<pre class="command_line">
+<kbd class="shell">2041 autotest lab08 shortest_path.py</kbd>
+</pre>
+
+
+    
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Automarking Results</h4>
+        <span class="autotest_results_emphasis">84%</span>
+        
+        of <span class="autotest_results_emphasis">95</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">shortest_path.py</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+                <ul>
+                
+                    <li><span class="autotest_results_emphasis">85%</span>
+                    
+                    passed test <i>challenge_shortest_path_0</i>
+                
+                    <li><span class="autotest_results_emphasis">84%</span>
+                    
+                    passed test <i>challenge_shortest_path_1</i>
+                
+                    <li><span class="autotest_results_emphasis">85%</span>
+                    
+                    passed test <i>challenge_shortest_path_2</i>
+                
+                    <li><span class="autotest_results_emphasis">85%</span>
+                    
+                    passed test <i>challenge_shortest_path_3</i>
+                
+                    <li><span class="autotest_results_emphasis">85%</span>
+                    
+                    passed test <i>challenge_shortest_path_4</i>
+                
+                </ul>
+                </div>
+            
+        
+    </div>
+
+
+<div class="answer">
+Python sample solution translated from Perl
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python
+
+import sys
+
+(start,finish) = sys.argv[1:]
+
+distance = {}
+for line in sys.stdin:
+    (town1,town2,dist) = line.split()
+    distance[(town1,town2)] = int(dist)
+    distance[(town2,town1)] = int(dist)
+
+shortest_journey = {start:0}
+route = {start:&#39;&#39;}
+unprocessed_towns = set(d[0] for d in distance.keys())
+next_town = start
+while next_town and next_town != finish:
+    unprocessed_towns.remove(next_town)
+    for town in unprocessed_towns:
+        if (next_town,town) in distance:
+            d = shortest_journey[next_town] + distance[(next_town,town)]
+            if town not in shortest_journey or shortest_journey[town] &gt; d:
+                shortest_journey[town] = d
+                route[town] = route[next_town] + &#34; &#34; + next_town
+    min_distance = 1e99  # must be larger than any possible distance
+    next_town = &#34;&#34;
+    for town in unprocessed_towns:
+        if town in shortest_journey and shortest_journey[town] &lt; min_distance:
+            min_distance = shortest_journey[town]
+            next_town = town
+
+if finish not in shortest_journey:
+    print(&#34;No route from %s to %s&#34; % (start, finish))
+else:
+    print(&#34;Shortest route is length = %s:%s %s.&#34; % (shortest_journey[finish], route[finish], finish))
+
+
+</pre>
+
+
+
+More python-ish sample solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python
+
+import fileinput, re, sys, collections
+
+(start,finish) = sys.argv[1:]
+distance = {}
+for line in sys.stdin:
+    (town1,town2,dist) = line.split()
+    distance[(town1,town2)] = int(dist)
+    distance[(town2,town1)] = int(dist)
+
+shortest_journey = {start:0}
+route = {start:&#39;&#39;}
+unprocessed_towns = set(d[0] for d in distance.keys())
+next_town = start
+while next_town and next_town != finish:
+    unprocessed_towns.remove(next_town)
+    for town in unprocessed_towns:
+        if (next_town,town) in distance:
+            d = shortest_journey[next_town] + distance[(next_town,town)]
+            if town not in shortest_journey or shortest_journey[town] &gt; d:
+                shortest_journey[town] = d
+                route[town] = route[next_town] + &#34; &#34; + next_town
+    next_town = min((shortest_journey[town],town) for town in unprocessed_towns if town in shortest_journey)[1]
+
+if finish not in shortest_journey:
+    print(&#34;No route from %s to %s&#34; % (start, finish))
+else:
+    print(&#34;Shortest route is length = %s: %s %s.&#34; % (shortest_journey[finish], route[finish], finish))
+
+
+</pre>
+
+
+
+Slightly different python-ish sample solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python
+
+import fileinput, re, sys, collections
+
+(start,finish) = sys.argv[1:]
+
+distance = {}
+for line in sys.stdin:
+    (town1,town2,dist) = line.split()
+    distance[(town1,town2)] = int(dist)
+    distance[(town2,town1)] = int(dist)
+
+shortest_journey = {start:0}
+route = {start:&#39;&#39;}
+unprocessed_towns = set(d[0] for d in distance.keys())
+next_town = start
+while next_town and next_town != finish:
+    unprocessed_towns.remove(next_town)
+    for town in unprocessed_towns:
+        if (next_town,town) in distance:
+            d = shortest_journey[next_town] + distance[(next_town,town)]
+            if town not in shortest_journey or shortest_journey[town] &gt; d:
+                shortest_journey[town] = d
+                route[town] = route[next_town] + &#34; &#34; + next_town
+    next_town = min(unprocessed_towns&amp;set(shortest_journey.keys()), key=shortest_journey.get)
+
+if finish not in shortest_journey:
+    print(&#34;No route from %s to %s&#34; % (start, finish))
+else:
+    print(&#34;Shortest route is length = %s: %s %s.&#34; % (shortest_journey[finish], route[finish], finish))
+
+
+</pre>
+
+
+
+</div>
+
+
+
+
+
+<h3>Submission</h3>
+
+When you are finished submit your work by running:
+<pre class="command_line">
+<kbd class="shell">give cs2041 lab08 courses.pl lectures0.pl lectures1.pl lectures2.pl tags.py shortest_path.py</kbd>
+</pre>
+<p>
+Don't submit any exercises you haven't attempted.
+
+If you are working at home, you may find it more convenient
+to upload your work via
+ <a href="https://cgi.cse.unsw.edu.au/~give/code/login.php?app=/~give/Student/give.php&amp;debug=get_authuser">give's web interface</a>.
+<p>
+Remember you have until
+
+Sunday midnight
+
+
+to submit your work.
+
+
+
+
+<h3>Assessment</h3>
+
+This lab exercises is worth 1 mark.
+<p>
+Labs exercise are either automarked or peer assessed.
+This is to allow tutors' time to be used to assist students.
+<p>
+After the automarking is complete you should be able to view it by running
+this command on a CSE machine:
+
+<pre class="command_line">
+<kbd class="shell">2041 classrun -collect lab08
+</pre>
+
+You can inspect marks for this lab and other assessment components via <a href="https://cgi.cse.unsw.edu.au/~give/code/login.php?app=/~give/Student/give.php&amp;debug=get_authuser">give's web interface</a> or by running
+
+<pre class="command_line">
+<kbd class="shell">2041 classrun -sturec
+</pre>
+
+<p>
+Reminder: lab marks contribute 9% to your final COMP[29]041 final mark.
+<p>
+The 11 lab marks will be summed at the end of session and the sum capped at 9 marks.
+<p>
+Hence you can obtain full marks for the 9% lab component without obtaining full marks every week.
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+<!--
+public_html_session_directory=/web/cs2041/17s2
+base_directory=/web/cs2041/17s2
+public_html_directory=/web/cs2041
+scripts_directory=/web/cs2041/17s2/scripts
+home_directory=/home/cs2041
+bin_directory=/home/cs2041/bin
+course_account=cs2041
+course_code=COMP2041
+course_number=2041
+postgraduate_course_code=COMP9041
+course_name=Software Construction
+unsw_session=17s2
+canonical_url=https://cgi.cse.unsw.edu.au/~cs2041/
+github_repo_url=https://github.com/COMP2041UNSW/course_materials
+course_forum_url=https://piazza.com/class/j5ji4vjjra62a3
+lecture_recordings_url=https://moodle.telt.unsw.edu.au/course/view.php?id=27708
+WORK=/web/cs2041/17s2/work
+OUT=/web/cs2041/17s2/work/.out
+MARKED=/web/cs2041/17s2/work/.out/.marked
+SMSDB=/web/cs2041/17s2/work/17s2db.sms
+tlb_directory=/web/cs2041/17s2/tlb
+lecture_directory=/web/cs2041/17s2/lec
+flask_cache_directory=/web/cs2041/17s2/flask_cache
+testing_results_file=/web/cs2041/17s2/work/testing_results.json
+enrollments_file=/web/cs2041/17s2/work/enrollments.json
+unsw_ldap_password_file=/web/cs2041/.unsw_ldap_password
+autotest_upload_url=https://cgi.cse.unsw.edu.au/~cs2041/cgi/autotest_upload.cgi
+PATH=/web/cs2041/17s2/scripts:/home/cs2041/bin:/bin/:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/home/class/bin:/home/give/stable/bin.:/bin:/usr/bin:/usr/local/bin
+directory_relative_pathname=tlb/08
+url=https://cgi.cse.unsw.edu.au/~cs2041/flask.cgi/lab/08/answers
+directory_url=https://cgi.cse.unsw.edu.au/~cs2041/lab/08/
+url_root=https://cgi.cse.unsw.edu.au/~cs2041/
+script_root=/~cs2041/flask.cgi
+current_lecture_topic=exam
+current_week=13
+week=08
+exercise_name=lab08
+tut_or_lab_or_test=lab
+questions_or_answers=answers
+programs=&lt;programs&gt;
+
+-->
+
+</body>
+</html>

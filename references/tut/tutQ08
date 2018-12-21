@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>
+
+COMP2041 Week 08 Tutorial Questions
+
+</title>
+<link href="/~cs2041/flask.cgi/static/bootstrap.min.css?121200" rel="stylesheet"/>
+<link href="/~cs2041/flask.cgi/static/course.css?6554" rel="stylesheet"/>
+<script src="/~cs2041/flask.cgi/static/jquery.min.js?95992" type="text/javascript"></script>
+<script src="/~cs2041/flask.cgi/static/bootstrap.min.js?37045" type="text/javascript"></script>
+<script src="/~cs2041/flask.cgi/static/course.js?1631" type="text/javascript"></script>
+<link href="https://cgi.cse.unsw.edu.au/~cs2041/" rel="canonical"/>
+</head>
+<body>
+<div class="container">
+<div id="heading">
+<a class="heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/" id="left_heading_link" target="_blank">COMP[29]041 17s2</a>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Week 08
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/02/questions">Week 02</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/03/questions">Week 03</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/04/questions">Week 04</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/05/questions">Week 05</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/06/questions">Week 06</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/07/questions">Week 07</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/08/questions">Week 08</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/09/questions">Week 09</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/10/questions">Week 10</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/11/questions">Week 11</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/12/questions">Week 12</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/13/questions">Week 13</a></li>
+</ul>
+</span>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Tutorial
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/08/questions">Tutorial
+                
+            </a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/08/questions">Laboratory
+                
+            </a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/test/08/questions">Weekly Test
+                
+            </a></li>
+</ul>
+</span>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Questions
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/08/questions">Questions
+            
+            </a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/08/answers">Sample Answers
+            
+            </a></li>
+</ul>
+</span>
+<a class="heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/" id="right_heading_link" target="_blank">Software Construction</a>
+</div>
+</div>
+<div class="tutlab tut">
+<ol>
+<li>
+
+Write a Perl program, <code>tags.pl</code> which given the URL of a web
+page fetches it by running <i>wget</i> and prints the HTML tags it uses.
+<p>
+The tag should be converted to lower case and printed in sorted order
+with a count of often each is used.
+</p><p>
+Don't count closing tags.
+</p><p>
+Make sure you don't print tags within HTML comments.
+</p><p>
+For example:
+
+</p><pre class="command_line">
+<kbd class="shell">./tags.pl http://www.cse.unsw.edu.au</kbd>
+a 141
+body 1
+br 14
+div 161
+em 3
+footer 1
+form 1
+h2 2
+h4 3
+h5 3
+head 1
+header 1
+hr 3
+html 1
+img 12
+input 5
+li 99
+link 3
+meta 4
+noscript 1
+p 18
+script 14
+small 3
+span 3
+strong 4
+title 1
+ul 25
+</pre>
+
+Note the  counts in the above example will not be current - the CSE pages change almost daily.
+
+<p></p>
+</li><li>
+
+Add an -f option to tags.pl which indicates the tags are to printed
+in order of frequency.
+<p>
+</p><pre class="command_line">
+<kbd class="shell">tags.pl -f http://www.cse.unsw.edu.au</kbd>
+head 1
+noscript 1
+html 1
+form 1
+title 1
+footer 1
+header 1
+body 1
+h2 2
+hr 3
+h4 3
+span 3
+link 3
+small 3
+h5 3
+em 3
+meta 4
+strong 4
+input 5
+img 12
+br 14
+script 14
+p 18
+ul 25
+li 99
+a 141
+div 161
+</pre>
+<p></p>
+</li><li>
+
+Write a Perl function which takes an integer argument <b>n</b>
+and reads the next <b>n</b> lines of input and returns them
+as a string.
+
+<p></p>
+</li><li>
+Write a Perl program which given the name of a C function
+searches the C source files (*.c) in the current directory
+for calls of the function, declarations &amp; definitons of the function
+and prints a summary indicating the file and line number, in the format below.
+<p>
+You can assume functions are defined with the type, name and paramaters on a single
+non-indented line.  You can assume function bodies are always indented.
+</p><p>
+You don't have to handle multi line comments.
+Try to avoid matching the function name in strings or single line comments.
+For example:
+
+
+    
+        
+    
+
+
+
+
+
+
+</p><pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">cat half.c</kbd>
+double half(double x) {
+    return  x/2;
+}
+<kbd class="shell">cat main.c</kbd>
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+double half(double x);
+
+int main(int argc, char *argv[]) {
+    return  half(atoi(argv[1]));
+}
+<kbd class="shell">./print_function_uses.pl half</kbd>
+a.c:1 function half defined
+half.c:1 function half defined
+main.c:4 function half declared
+main.c:7 function half used
+</pre>
+<p></p>
+</li><li>
+
+Write a Perl program which  given a  C program as input
+finds the definitions of single parameter functions and prints
+separately the function's type, name and the parameters name &amp; type.
+Assume all these occur on a single non-indented line in the C source code.
+You can assume function bodies are always indented.
+Allow for white space occuring anywhere in the function header.
+You can assume that types in the program don't contain square or round brackets.
+For example:
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">cat a.c</kbd>
+double half(int *x) {
+    return  *x/2.0;
+}
+<kbd class="shell">./print_function_types.pl a.c</kbd>
+function type='double'
+function name='half'
+parameter type='int *'
+parameter name='x'
+</pre>
+<p></p>
+</li><li>
+Write a Perl script C_include.pl which given the name of a C source file
+prints the file replacing any '#include' lines with the contents
+of the included file, if the included file itself contains
+a #include line these should also be processed.
+<p>
+Assume the source files contain only quoted ("") include directives
+which contain the files's actual path name. For example:
+
+
+    
+        
+    
+
+
+
+
+
+
+</p><pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">cat f.c</kbd>
+#include "true.h"
+
+int main(int argc, char *argv[]) {
+    return  TRUE || FALSE;
+}
+<kbd class="shell">cat true.h</kbd>
+#define TRUE 1
+#include "false.h"
+<kbd class="shell">cat false.h</kbd>
+#define FALSE 0
+<kbd class="shell">./C_include.pl f.c</kbd>
+#define TRUE 1
+#define FALSE 0
+
+int main(int argc, char *argv[]) {
+    return  TRUE || FALSE;
+}
+</pre>
+<p></p>
+</li><li>
+Modify C_include.pl so that it handles both <code>""</code> and <code>&lt;&gt;</code> directives.
+It should search the directories <code>/usr/include/</code>, <code>/usr/local/include</code>
+and /<code>usr/include/x86_64-linux-gnu</code> for include files specified in <code>&lt;&gt;</code> directives
+and for files specified in <code>""</code> directives which do not exist locally. For example:
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">cat g.c</kbd>
+#include &lt;stdio.h&gt;
+
+int main(int argc, char *argv[]) {
+    printf("hello world\n");
+    exit(0);
+}
+<kbd class="shell">./C_include.pl g.c|head</kbd>
+./C_include.pl: can not find: bits/libc-header-start.h
+/* Define ISO C stdio on top of C++ iostreams.
+   Copyright (C) 1991-2017 Free Software Foundation, Inc.
+   This file is part of the GNU C Library.
+
+   The GNU C Library is free software; you can redistribute it and/or
+   modify it under the terms of the GNU Lesser General Public
+   License as published by the Free Software Foundation; either
+   version 2.1 of the License, or (at your option) any later version.
+
+   The GNU C Library is distributed in the hope that it will be useful,
+</pre>
+<p></p>
+<h3>Revision questions</h3>
+
+The remaining tutorial questions are primarily intended for revision - either this week
+or later in session.
+<p>
+Your tutor may still choose to cover some of the questions time permitting.
+</p><p>
+</p></li><li>
+
+Write a Perl program, <code>times.pl</code> which prints a table of multiplications.
+<p>
+Your program will be given the dimension of the table and the width of
+the columns to be printed. For example:
+
+
+    
+        
+    
+
+
+
+
+
+
+</p><pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./times.pl 4 5 3</kbd>
+  1  1  2  3  4  5
+  2  2  4  6  8 10
+  3  3  6  9 12 15
+  4  4  8 12 16 20
+</pre>
+<p></p>
+</li><li>
+<p>
+Write a Perl program which deletes blank lines from each
+of the files specified as arguments. For example, if run like this:
+
+</p><pre class="command_line">
+<kbd class="shell">deblank.pl file1 file2 file3</kbd>
+</pre>
+
+your program should delete any blank lines in <code>file1</code>,
+<code>file2</code> and <code>file3</code>.
+Note that this program <em>changes</em> the files, it doesn't
+just write the "de-blanked" versions to standard output.
+
+<p></p>
+</li><li>
+
+Write a Perl function <code>listToHTML()</code> that given a list of values
+returns a string
+of HTML code as an unordered list. For example
+
+<pre class="program">
+$out = listToHTML('The', 'Quick', 'Brown', 'Fox');
+</pre>
+
+would result in <code>$out</code> having the value ...
+
+<pre class="program">
+&lt;ul&gt;
+&lt;li&gt;The
+&lt;li&gt;Quick
+&lt;li&gt;Brown
+&lt;li&gt;Fox
+&lt;/ul&gt;
+</pre>
+
+As part of an HTML page, this would display as:
+
+<ul>
+<li>The
+</li><li>Quick
+</li><li>Brown
+</li><li>Fox
+</li></ul>
+
+P.S. A Perl syntactic short cut can be used to construct the list above:
+
+<pre class="program">
+$out = listToHTML(qw/The Quick Brown Fox/);
+</pre>
+<p></p>
+</li><li>
+
+Write a Perl function <code>hashToHTML()</code> that returns a string
+of HTML code that could be used to display a Perl associative array
+(hash) as an HTML table, e.g.
+
+<pre class="program">
+# the hash table ...
+%colours = ("John"=&gt;"blue", "Anne"=&gt;"red", "Andrew"=&gt;"green");
+# and the function call ...
+$out = hashToHTML(%colours);
+</pre>
+
+would result in <code>$out</code> having the value ...
+
+<pre class="program">
+&lt;table border="1" cellpadding="5"&gt;
+&lt;tr&gt;&lt;th&gt; Key &lt;/th&gt;&lt;th&gt; Value &lt;/th&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt; Andrew &lt;/td&gt;&lt;td&gt; green &lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt; Anne &lt;/td&gt;&lt;td&gt; red &lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td&gt; John &lt;/td&gt;&lt;td&gt; blue &lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+</pre>
+As part of an HTML page, this would display as:
+
+<table border="1" cellpadding="5">
+<tr><th> Key </th><th> Value </th></tr>
+<tr><td> Andrew </td><td> green </td></tr>
+<tr><td> Anne </td><td> red </td></tr>
+<tr><td> John </td><td> blue </td></tr>
+</table>
+
+Note that the hash should be displayed in ascending alphabetical order
+on key values.
+
+<p></p>
+</li><li>
+
+Write a Perl program that will read in a HTML document and output a new HTML document that contains a table with two cells (in one row). In the left cell should be a copy of the complete original HTML document inside &lt;pre&gt; tags so we can see the raw HTML. You will need to replace all "&lt;" characters with the sequence "&amp;lt;" and all "&gt;" characters with the sequence "&amp;gt;", otherwise the browser will think they are HTML tags (and we want to see the tags in the left cell). In the right cell just include the HTML body of the document, so we can see what it will look like when rendered by a browser.
+<!-- courtesy http://www.cs.rpi.edu/~hollingd/eiw.old/5-Perl/ex6.htm -->
+<p></p>
+</li><li>
+
+Write a Perl program that reads in data about student performance in a
+Prac Exam consisting of 3 exercises and computes the overall result for each student.
+The program takes a <em>single command line argument</em>, which is the name
+of a file containing space-separated text records of the form:
+
+<pre>
+<i>studentID</i>  <i>exerciseID</i>  <i>testsPassed</i>  <i>numWarnings</i>
+</pre>
+
+There will be one line in the file for each exercise submitted by a student,
+so a given student may have one, two or three lines of data.
+<p>
+The output should be ordered by student ID and should contain a single line for
+each student, in the format:
+</p>
+<pre>
+<i>studentID</i>  <i>totalMark</i>  <i>passOrFail</i>
+</pre>
+<p>
+The <i>totalMark</i> value is computed as follows:
+</p>
+<ul>
+<li> if an exercise passes all 5 tests, it is awarded a mark of 10 and is <em>correct</em>
+</li><li> if an exercise passes less than 5 tests, it is awarded a mark of <i>testsPassed/2</i> and is <em>incorrect</em>
+</li><li> if there are <em>any</em> warnings on an exercise, the mark is reduced by 2
+</li><li> the minimum mark for a given exercise is zero
+</li><li> the <i>totalMark</i> is the sum of the marks for the individual exercises
+</li></ul>
+
+The <i>totalMark</i> value should be display using the <code>printf</code>
+format <code>"%4.1f"</code>.
+
+A student is awarded a <code>PASS</code> if they have 2 or 3 <em>correct</em>
+exercises and is awarded a <code>FAIL</code> otherwise.
+Note that warnings do not cause an exercise to be treated as incorrect.
+<p>
+</p><table border="1" cellpadding="6">
+<tr><th>Sample Marks File</th><th>Corresponding Output</th></tr>
+<tr><td colspan="2">Command line argument: <code>marks1</code></td></tr>
+<tr valign="top">
+<td>
+<pre>
+2121211 ex1 5 0
+2121211 ex2 5 0
+2121211 ex3 5 0
+2233455 ex1 5 0
+2233455 ex2 5 1
+2233455 ex3 0 1
+2277688 ex1 4 0
+2277688 ex2 3 0
+2277688 ex3 2 1
+2277689 ex1 5 0
+2277689 ex2 5 0
+2277689 ex3 1 1
+</pre>
+</td><td>
+<pre>
+2121211 30.0 PASS
+2233455 18.0 PASS
+2277688  3.5 FAIL
+2277689 20.0 PASS
+</pre>
+</td></tr></table>
+<p></p>
+</li><li>
+
+What does this Perl print and why?
+
+<pre class="program">
+@a = (1..5);
+@b = grep { $_ = $_ - 3; $_ &gt; 0} @a;
+print "@a\n";
+print "@b\n";
+</pre>
+<p></p>
+</li><li>
+
+What does this Perl print?
+
+<pre class="program">
+@vec = map { $_ ** 2 } (1,2,3,4,5);
+print "@vec\n";
+</pre>
+<p></p>
+</li></ol>
+</div>
+<!--
+public_html_session_directory=/web/cs2041/17s2
+base_directory=/web/cs2041/17s2
+public_html_directory=/web/cs2041
+scripts_directory=/web/cs2041/17s2/scripts
+home_directory=/home/cs2041
+bin_directory=/home/cs2041/bin
+course_account=cs2041
+course_code=COMP2041
+course_number=2041
+postgraduate_course_code=COMP9041
+course_name=Software Construction
+unsw_session=17s2
+canonical_url=https://cgi.cse.unsw.edu.au/~cs2041/
+github_repo_url=https://github.com/COMP2041UNSW/course_materials
+course_forum_url=https://piazza.com/class/j5ji4vjjra62a3
+lecture_recordings_url=https://moodle.telt.unsw.edu.au/course/view.php?id=27708
+WORK=/web/cs2041/17s2/work
+OUT=/web/cs2041/17s2/work/.out
+MARKED=/web/cs2041/17s2/work/.out/.marked
+SMSDB=/web/cs2041/17s2/work/17s2db.sms
+tlb_directory=/web/cs2041/17s2/tlb
+lecture_directory=/web/cs2041/17s2/lec
+flask_cache_directory=/web/cs2041/17s2/flask_cache
+testing_results_file=/web/cs2041/17s2/work/testing_results.json
+enrollments_file=/web/cs2041/17s2/work/enrollments.json
+unsw_ldap_password_file=/web/cs2041/.unsw_ldap_password
+autotest_upload_url=https://cgi.cse.unsw.edu.au/~cs2041/cgi/autotest_upload.cgi
+PATH=/web/cs2041/17s2/scripts:/home/cs2041/bin:/bin/:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/home/class/bin:/home/give/stable/bin.:/bin:/usr/bin:/usr/local/bin
+directory_relative_pathname=tlb/08
+url=https://cgi.cse.unsw.edu.au/~cs2041/flask.cgi/tut/08/questions
+directory_url=https://cgi.cse.unsw.edu.au/~cs2041/tut/08/
+url_root=https://cgi.cse.unsw.edu.au/~cs2041/
+script_root=/~cs2041/flask.cgi
+current_lecture_topic=exam
+current_week=13
+week=08
+exercise_name=tut08
+tut_or_lab_or_test=tut
+questions_or_answers=questions
+programs=&lt;programs&gt;
+
+-->
+</body>
+</html>

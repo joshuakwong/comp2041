@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>
+
+COMP2041 Week 11 Weekly Test Questions
+
+</title>
+<link href="/~cs2041/flask.cgi/static/bootstrap.min.css?121200" rel="stylesheet"/>
+<link href="/~cs2041/flask.cgi/static/course.css?6554" rel="stylesheet"/>
+<script src="/~cs2041/flask.cgi/static/jquery.min.js?95992" type="text/javascript"></script>
+<script src="/~cs2041/flask.cgi/static/bootstrap.min.js?37045" type="text/javascript"></script>
+<script src="/~cs2041/flask.cgi/static/course.js?1631" type="text/javascript"></script>
+<link href="https://cgi.cse.unsw.edu.au/~cs2041/" rel="canonical"/>
+</head>
+<body>
+<div class="container">
+<div id="heading">
+<a class="heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/" id="left_heading_link" target="_blank">COMP[29]041 17s2</a>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Week 11
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/test/05/questions">Week 05</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/test/06/questions">Week 06</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/test/07/questions">Week 07</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/test/08/questions">Week 08</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/test/09/questions">Week 09</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/test/10/questions">Week 10</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/test/11/questions">Week 11</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/test/13/questions">Week 13</a></li>
+</ul>
+</span>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Weekly Test
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/11/questions">Tutorial
+                
+            </a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/11/questions">Laboratory
+                
+            </a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/test/11/questions">Weekly Test
+                
+            </a></li>
+</ul>
+</span>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Questions
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/test/11/questions">Questions
+            
+            </a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/test/11/answers">Sample Solutions
+            
+            </a></li>
+</ul>
+</span>
+<a class="heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/" id="right_heading_link" target="_blank">Software Construction</a>
+</div>
+</div>
+<div class="tutlab lab">
+<h3>Test Conditions</h3>
+
+These questions must be completed under self-administered exam-like conditions.
+
+<ul>
+<li> You may complete this test in CSE labs or elsewhere using your own machine
+</li><li> You may complete this test at any time before 
+</li><li> The maximum time allowed for this test is 1 hour
+</li><li> After starting this test you must complete the test within 1 hour and submit your
+answers with give.
+</li><li> you must complete the questions alone - you can not get help in any way from any person
+</li><li> you can not access web pages or use the internet in any way
+</li><li> you can not access books, notes or other written or online materials
+</li><li> you can not access your own files, programs, code ...
+</li><li> you can not access COMP[29]041 course materials except for language documentation linked above.
+</li></ul>
+<hr/>
+You may access this <b>language documentation</b> while attemting this test:
+<ul>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041//exam/shell_perl_cheatsheet.pdf">Shell/Regex/Perl quick reference</a>
+</li><li><a href="https://cgi.cse.unsw.edu.au/~cs2041//exam/python_cheatsheet.pdf">Python quick reference</a>
+</li><li><a href="https://cgi.cse.unsw.edu.au/~cs2041//exam/C_cheatsheet.pdf">C quick reference</a>
+</li><li><a href="https://cgi.cse.unsw.edu.au/~cs2041//exam/java_cheatsheet.pdf">Java quick reference</a>
+</li><li><a href="https://cgi.cse.unsw.edu.au/~cs2041//doc/perldoc-html-5.14.0/index.html">full Perl documentation</a>
+</li><li><a href="https://cgi.cse.unsw.edu.au/~cs2041//doc/python-3.5.2-docs-html/index.html">full Python 3.5 documentation</a>
+</li><li><a href="https://cgi.cse.unsw.edu.au/~cs2041//doc/python-2.7.2-docs-html/index.html">full Python 2.7 documentation</a>
+</li></ul>
+<hr/>
+
+You may also access manual entries (the man command)
+
+<p>
+Any violation of the test conditions will results in a mark of zero for the entire weekly test component.
+
+
+
+</p><h3>Exercise: Median Number</h3>
+
+Write a Perl program <b>median_number.pl</b> that given positive
+integers as command line arguments prints the median (middle) value.
+<p>
+Your program can assume is given an odd number of arguments.
+</p><p>
+Your program can assume all its arguments are positive integers.
+</p><p>
+For example:
+
+
+    
+        
+    
+
+
+
+
+
+
+</p><pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./median_number.pl 1 333 42</kbd>
+42
+<kbd class="shell">./median_number.pl 3 4 2 1 7 6 5</kbd>
+4
+<kbd class="shell">./median_number.pl 15 15 8 11 8</kbd>
+11
+<kbd class="shell">./median_number.pl 42 42 244 244 42</kbd>
+42
+</pre>
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+</p><pre class="command_line">
+<kbd class="shell">2041 autotest test11 median_number.pl</kbd>
+</pre>
+<div class="autotest_results">
+<h4>Automarking Results</h4>
+<span class="autotest_results_emphasis">97%</span>
+        
+        of <span class="autotest_results_emphasis">321</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">median_number.pl</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+<ul>
+<li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>median_number_pl_0</i>
+</li><li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>median_number_pl_1</i>
+</li><li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>median_number_pl_10</i>
+</li><li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>median_number_pl_11</i>
+</li><li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>median_number_pl_12</i>
+</li><li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>median_number_pl_13</i>
+</li><li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>median_number_pl_14</i>
+</li><li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>median_number_pl_15</i>
+</li><li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>median_number_pl_2</i>
+</li><li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>median_number_pl_3</i>
+</li><li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>median_number_pl_4</i>
+</li><li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>median_number_pl_5</i>
+</li><li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>median_number_pl_6</i>
+</li><li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>median_number_pl_7</i>
+</li><li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>median_number_pl_8</i>
+</li><li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>median_number_pl_9</i>
+</li></ul>
+</div>
+</div>
+<p></p>
+<h3>Exercise: Median Number Filter in Python</h3>
+
+Write a Python program <b>median_number.py</b> which performs the same task
+as the above question. For example:
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./median_number.py 1 333 42</kbd>
+42
+<kbd class="shell">./median_number.py 3 4 2 1 7 6 5</kbd>
+4
+<kbd class="shell">./median_number.py 15 15 8 11 8</kbd>
+11
+<kbd class="shell">./median_number.py 42 42 244 244 42</kbd>
+42
+</pre>
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+</p><pre class="command_line">
+<kbd class="shell">2041 autotest test11 median_number.py</kbd>
+</pre>
+<div class="autotest_results">
+<h4>Automarking Results</h4>
+<span class="autotest_results_emphasis">94%</span>
+        
+        of <span class="autotest_results_emphasis">309</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">median_number.py</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+<ul>
+<li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>median_number_py_0</i>
+</li><li><span class="autotest_results_emphasis">94%</span>
+                    
+                    passed test <i>median_number_py_1</i>
+</li><li><span class="autotest_results_emphasis">94%</span>
+                    
+                    passed test <i>median_number_py_10</i>
+</li><li><span class="autotest_results_emphasis">94%</span>
+                    
+                    passed test <i>median_number_py_11</i>
+</li><li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>median_number_py_12</i>
+</li><li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>median_number_py_13</i>
+</li><li><span class="autotest_results_emphasis">94%</span>
+                    
+                    passed test <i>median_number_py_14</i>
+</li><li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>median_number_py_15</i>
+</li><li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>median_number_py_2</i>
+</li><li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>median_number_py_3</i>
+</li><li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>median_number_py_4</i>
+</li><li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>median_number_py_5</i>
+</li><li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>median_number_py_6</i>
+</li><li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>median_number_py_7</i>
+</li><li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>median_number_py_8</i>
+</li><li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>median_number_py_9</i>
+</li></ul>
+</div>
+</div>
+<p></p>
+<h3>Exercise: Devowelling a File</h3>
+
+Write a Perl program, <code>devowel_file.pl</code> which removes any
+vowels from a specified file.
+<p>
+Your program can assume vowels are there are 5 vowel {'a', 'e', 'i', 'o', 'u'}
+and their upper-case equivalents {'a', 'e', 'i', 'o', 'u'}
+</p><p>
+Your program can assume it is given one argument which is the name of a file.
+</p><p>
+Your program can assume the file exists.
+</p><p>
+Your program should not print anything to stdout.  The only thing it should do is change
+the file.
+</p><p>
+For example:
+
+</p><pre class="command_line">
+<kbd class="shell">cat frost.txt</kbd>
+I shall be telling this with a sigh
+Somewhere ages and ages hence:
+Two roads diverged in a wood, and I --
+I took the one less traveled by,
+And that has made all the difference.
+<kbd class="shell">./devowel_file.pl frost.txt</kbd>
+<kbd class="shell">cat frost.txt</kbd>
+ shll b tllng ths wth  sgh
+Smwhr gs nd gs hnc:
+Tw rds dvrgd n  wd, nd  --
+ tk th n lss trvld by,
+nd tht hs md ll th dffrnc.
+</pre>
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+</p><pre class="command_line">
+<kbd class="shell">2041 autotest test11 devowel_file.pl</kbd>
+</pre>
+<div class="autotest_results">
+<h4>Automarking Results</h4>
+<span class="autotest_results_emphasis">92%</span>
+        
+        of <span class="autotest_results_emphasis">312</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">devowel_file.pl</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+<ul>
+<li><span class="autotest_results_emphasis">95%</span>
+                    
+                    passed test <i>devowel_file0_pl</i>
+</li><li><span class="autotest_results_emphasis">92%</span>
+                    
+                    passed test <i>devowel_file1_pl</i>
+</li></ul>
+</div>
+</div>
+<p></p>
+<h3>Exercise: Devowelling a File in Python </h3>
+
+
+Write a Python program, <code>devowel_file.py</code> which performs the same task
+as the previous question.
+
+
+
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+</p><pre class="command_line">
+<kbd class="shell">2041 autotest test11 devowel_file.py</kbd>
+</pre>
+<div class="autotest_results">
+<h4>Automarking Results</h4>
+<span class="autotest_results_emphasis">94%</span>
+        
+        of <span class="autotest_results_emphasis">286</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">devowel_file.py</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+<ul>
+<li><span class="autotest_results_emphasis">95%</span>
+                    
+                    passed test <i>devowel_file0_py</i>
+</li><li><span class="autotest_results_emphasis">94%</span>
+                    
+                    passed test <i>devowel_file1_py</i>
+</li></ul>
+</div>
+</div>
+<p></p>
+<h3>Exercise: Devowelling a File in Shell </h3>
+
+
+Write a Shell program, <code>devowel.sh</code> which performs the same task
+as the previous question.
+<p>
+Your Shell program can not use Perl or Python.
+</p><p>
+Your shell program may create a temporary file.
+
+
+</p><p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+</p><pre class="command_line">
+<kbd class="shell">2041 autotest test11 devowel_file.sh</kbd>
+</pre>
+<div class="autotest_results">
+<h4>Automarking Results</h4>
+<span class="autotest_results_emphasis">66%</span>
+        
+        of <span class="autotest_results_emphasis">268</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">devowel_file.sh</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+<ul>
+<li><span class="autotest_results_emphasis">90%</span>
+                    
+                    passed test <i>devowel_file0_sh</i>
+</li><li><span class="autotest_results_emphasis">66%</span>
+                    
+                    passed test <i>devowel_file1_sh</i>
+</li></ul>
+</div>
+</div>
+<p></p>
+<h3>Submission</h3>
+
+
+When you are finished submit your work by running:
+
+<pre class="command_line">
+<kbd class="shell">give cs2041 test11 median_number.pl median_number.py devowel_file.pl devowel_file.py devowel_file.sh</kbd>
+</pre>
+<p>
+Don't submit any exercises you haven't attempted.
+
+If you are working at home, you may find it more convenient
+to upload your work via
+ <a href="https://cgi.cse.unsw.edu.au/~give/code/login.php?app=/~give/Student/give.php&amp;debug=get_authuser">give's web interface</a>.
+</p><p>
+Remember you have until <b>Sunday 22 October 23:59</b> to submit your work.
+
+
+
+
+</p><h3>Assessment</h3>
+
+This test is worth 1 mark. It will be automarked.
+<p>
+After the automarking is complete you should be able to view it by running
+this command on a CSE machine:
+
+</p><pre class="command_line">
+<kbd class="shell">2041 classrun -collect test11
+</kbd></pre>
+
+You can inspect marks for this lab and other assessment components via <a href="https://cgi.cse.unsw.edu.au/~give/code/login.php?app=/~give/Student/give.php&amp;debug=get_authuser">give's web interface</a> or by running
+
+<pre class="command_line">
+<kbd class="shell">2041 classrun -sturec
+</kbd></pre>
+<p>
+Reminder: weekly tests contribute 6% to your final COMP[29]041 final mark.
+</p><p>
+Your mark for the test component will be the sum of your best 6 of 8 test marks.
+</p><p>
+Hence you can obtain full marks for the 6% weekly test component without obtaining full marks every week.
+</p><p>
+Reminder: any violation of the test conditions will results in a mark of zero for the entire programming test component.
+
+
+</p></div>
+<!--
+public_html_session_directory=/web/cs2041/17s2
+base_directory=/web/cs2041/17s2
+public_html_directory=/web/cs2041
+scripts_directory=/web/cs2041/17s2/scripts
+home_directory=/home/cs2041
+bin_directory=/home/cs2041/bin
+course_account=cs2041
+course_code=COMP2041
+course_number=2041
+postgraduate_course_code=COMP9041
+course_name=Software Construction
+unsw_session=17s2
+canonical_url=https://cgi.cse.unsw.edu.au/~cs2041/
+github_repo_url=https://github.com/COMP2041UNSW/course_materials
+course_forum_url=https://piazza.com/class/j5ji4vjjra62a3
+lecture_recordings_url=https://moodle.telt.unsw.edu.au/course/view.php?id=27708
+WORK=/web/cs2041/17s2/work
+OUT=/web/cs2041/17s2/work/.out
+MARKED=/web/cs2041/17s2/work/.out/.marked
+SMSDB=/web/cs2041/17s2/work/17s2db.sms
+tlb_directory=/web/cs2041/17s2/tlb
+lecture_directory=/web/cs2041/17s2/lec
+flask_cache_directory=/web/cs2041/17s2/flask_cache
+testing_results_file=/web/cs2041/17s2/work/testing_results.json
+enrollments_file=/web/cs2041/17s2/work/enrollments.json
+unsw_ldap_password_file=/web/cs2041/.unsw_ldap_password
+autotest_upload_url=https://cgi.cse.unsw.edu.au/~cs2041/cgi/autotest_upload.cgi
+PATH=/web/cs2041/17s2/scripts:/home/cs2041/bin:/bin/:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/home/class/bin:/home/give/stable/bin.:/bin:/usr/bin:/usr/local/bin
+directory_relative_pathname=tlb/11
+url=https://cgi.cse.unsw.edu.au/~cs2041/flask.cgi/test/11/questions
+directory_url=https://cgi.cse.unsw.edu.au/~cs2041/test/11/
+url_root=https://cgi.cse.unsw.edu.au/~cs2041/
+script_root=/~cs2041/flask.cgi
+current_lecture_topic=exam
+current_week=13
+week=11
+exercise_name=test11
+tut_or_lab_or_test=test
+questions_or_answers=questions
+programs=&lt;programs&gt;
+
+-->
+</body>
+</html>

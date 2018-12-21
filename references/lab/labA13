@@ -1,0 +1,1585 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>
+
+COMP2041 Week 13 Laboratory Sample Solutions
+
+</title>
+
+
+
+<link href="/~cs2041/flask.cgi/static/bootstrap.min.css?121200" rel="stylesheet">
+<link href="/~cs2041/flask.cgi/static/course.css?6554" rel="stylesheet">
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/jquery.min.js?95992"></script>
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/bootstrap.min.js?37045"></script>
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/course.js?1631"></script>
+<link rel="canonical" href="https://cgi.cse.unsw.edu.au/~cs2041/" />
+</head>
+<body>
+
+
+
+
+<div class="container">
+
+<div id="heading">
+
+
+<a class="heading_link" target="_blank" id="left_heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/">COMP[29]041 17s2</a>
+
+
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Week 13
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/02/answers">Week 02</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/03/answers">Week 03</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/04/answers">Week 04</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/05/answers">Week 05</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/06/answers">Week 06</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/07/answers">Week 07</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/08/answers">Week 08</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/09/answers">Week 09</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/10/answers">Week 10</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/11/answers">Week 11</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/13/answers">Week 13</a></li>
+        
+        
+    </ul>
+</span>
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Laboratory
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/13/answers">Tutorial
+                
+            </a></li>
+            
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/13/answers">Laboratory
+                
+            </a></li>
+            
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/13/answers">Weekly Test
+                
+            </a></li>
+            
+        
+    </ul>
+</span>
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Sample Solutions
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/13/questions">Exercises
+            
+            </a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/13/answers">Sample Solutions
+            
+            </a></li>
+        
+        
+    </ul>
+</span>
+
+
+
+
+<a class="heading_link" target="_blank" id="right_heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/">Software Construction</a>
+
+</div>
+
+</div>
+
+
+In this  lab you will complete some questions under exam-style conditions.
+which means you can't communicate with other students
+and the tutor can only clarify requirements,
+fix any setup problems, and confirm the tests.
+They will not help you solve the tasks.
+<p>
+You will use the same exam environment as the final exam and
+submit your work within the exam environment during the lab.
+<p>
+Your tutor will setup the exam environment, provide the exam questions
+and explain more.
+
+<h3>Practice Exam: Version 1</h3>
+
+<ol>
+
+<h3>Part 1</h3>
+<li>
+These shell statements are executed:
+<p>
+<pre>
+cat numbers|sed 's/[a-j].*/ /g'|sort
+</pre>
+<p>
+The file <b>numbers</b> contains these 4 lines:
+<p>
+<pre>
+2nd 3rd
+4th 5th 6th
+7th 8th 9th 10th
+11th
+</pre>
+<p>
+The shell statements execute without errors or warnings. Exactly what output does it produce?
+<p>
+Note: the file <b>numbers</b> contains only 4 lines.  It contains no blank lines and no leading or trailing white space.
+<p>
+<div class="answer">
+<pre>
+11t
+2n
+4t
+7t
+</pre>
+</div>
+</li>
+<h3>Part 2</h3>
+
+<li>
+We have student enrolment data in this familiar format:
+<p>
+<pre>
+COMP1011|3360379|Costner, Kevin                   |3978/1|M
+COMP1011|3360582|Neeson, Liam                     |3711/1|M
+COMP2920|3860539|Spears, Brittney                 |3978/3|F
+COMP1021|3360582|Neeson, Liam                     |3711/1|M
+COMP3411|3860538|Klum, Heidi                      |3978/3|F
+COMP3141|3383025|Thorpe, Ian                      |3978/3|M
+COMP3891|3860544|Klum, Heidi                      |3978/3|F
+</pre>
+<p>
+Write a shell pipeline that given input in this format
+outputs the student numbers of
+all female students.
+<p>
+The student numbers should be printed one per line and each student number should
+be printed once.  Only the student numbers should be printed.
+<p>
+For example, given the above input your
+pipeline should output this:
+<p>
+<pre>
+3860538
+3860539
+3860544
+</pre>
+<p>
+Your answer must be a shell pipeline. You may not use `while`, `for` or other loops.
+You may not use perl or python.  You may use the usual Unix filters.
+<p>
+Place your answer to this question in a file named q2.sh
+<p>
+Submit your answer to this question using the command: `give q2  q2.sh
+<div class="answer">
+<pre>
+grep 'F$'|cut -d\| -f2|sort|uniq
+</pre>
+</div>
+</li>
+
+<h3>Part 3</h3>
+
+<li>
+Write a program which takes 0 or more arguments and prints some of
+those arguments.
+<p>
+The first occurrence and only the first occurrence of any argument should be printed.
+<p>
+The arguments should be printed on a single line.  A single space should separate
+each argument.
+<p>
+Your program  can <b>NOT</b> assume the arguments with be in any particular order.
+<p>
+Make your program behave <b>exactly</b> as indicated by the examples
+below.
+<p>
+It must produce <b>exactly</b> the same output as below,
+except you may print an extra space at the end of the line if you wish.
+<p>
+Your program must be either Shell, Perl or Python.
+<p>
+Name your program <b>q3.sh</b> <b>q3.pl</b> or <b>q3.py</b>.
+<p>
+In the examples below replace  <b>q3.py</b> with  <b>q3.sh</b> or  <b>q3.pl</b> if
+you attempt this question in Shell or Perl.
+<p>
+For example:
+<p>
+<pre class="command_line">
+<kbd class="shell">q3.py </kbd>
+<p>
+<kbd class="shell">q3.py bird</kbd>
+bird
+<kbd class="shell">q3.py bird cow fish</kbd>
+bird cow fish
+<kbd class="shell">q3.py echo echo echo</kbd>
+echo
+<kbd class="shell">q3.py bird cow fish bird cow fish bird</kbd>
+bird cow fish
+<kbd class="shell">q3.py how much wood would a woodchuck chuck</kbd>
+how much wood would a woodchuck chuck
+<kbd class="shell">q3.py</kbd>
+<p>
+<kbd class="shell">q3.py a a a a b a</kbd>
+a b
+<kbd class="shell">q3.py a b c d c b a</kbd>
+a b c d
+<kbd class="shell">q3.py d c b d c a a d</kbd>
+d c b a
+</pre>
+<p>
+You can test your program using the <b>autotest</b> command.
+<pre>
+$ autotest 3 q3.py
+</pre>
+Also do your own testing!
+<p>
+Once you are satisfied with your solution, submit it by running
+<pre>
+$ give 3 q3.py
+</pre>
+
+<div class="answer">
+Simple obvious/readable Perl solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+foreach $arg (@ARGV) {
+    next if $seen{$arg};
+    print &#34;$arg &#34;;
+    $seen{$arg} = 1;
+}
+print &#34;\n&#34;;
+
+</pre>
+
+
+
+One line Perl solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl
+print join(&#34; &#34;,grep(!$seen{$_}++, @ARGV)), &#34;\n&#34;;
+
+</pre>
+
+
+
+Simple obvious/readable Python solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+foreach $arg (@ARGV) {
+    next if $seen{$arg};
+    print &#34;$arg &#34;;
+    $seen{$arg} = 1;
+}
+print &#34;\n&#34;;
+
+</pre>
+
+
+
+Terse Python solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl
+print join(&#34; &#34;,grep(!$seen{$_}++, @ARGV)), &#34;\n&#34;;
+
+</pre>
+
+
+</div>
+
+<li>
+Write a program that copies its standard input to standard output
+but maps all numbers to their nearest whole number equivalent.
+For example, <b>0.667</b> would be mapped to <b>1</b>,
+<b>99.5</b> would be mapped to <b>100</b>, <b>16.35</b> would be
+mapped to <b>16</b>, and so on.
+All other text in the input should be transferred to the output
+unchanged.
+<p>
+A <i>number</i> is defined as a string containing
+some digit characters with an optional decimal point (<b>'.'</b>)
+followed by zero or more additional digit characters.
+<p>
+For example <b>0</b>, <b>100</b>, <b>3.14159</b>, <b>1000.0</b>,
+<b>0.999</b> and <b>12345.</b> are all valid numbers.
+<p>
+For example, given this input:
+<p>
+<pre>
+I spent $15.50 for 3.3kg of apples yesterday.
+Pi is approximately 3.141592653589793
+2000 is a leap year, 2001 is not.
+</pre>
+<p>
+your program should produce this output:
+<p>
+<pre>
+I spent $16 for 3kg of apples yesterday.
+Pi is approximately 3
+2000 is a leap year, 2001 is not.
+</pre>
+<p>
+Your program must be either Shell, Perl or Python.
+<p>
+Name your program <b>q4.sh</b> <b>q4.pl</b> or <b>q4.py</b>.
+<p>
+In the examples below replace  <b>q4.py</b> with  <b>q4.sh</b> or  <b>q4.pl</b> if
+you attempt this question in Shell or Perl.
+<p>
+<pre class="command_line">
+<kbd class="shell">cat q4_input.txt</kbd>
+I spent $15.50 for 3.3kg of apples yesterday.
+Pi is approximately 3.141592653589793
+2000 is a leap year, 2001 is not.
+<kbd class="shell">q4.py &lt;q4_input.txt</kbd>
+I spent $16 for 3kg of apples yesterday.
+Pi is approximately 3
+2000 is a leap year, 2001 is not.
+</pre>
+<p>
+For example:
+<p>
+You can test your program using the <b>autotest</b> command:
+<pre>
+$ autotest 4 q4.py
+</pre>
+Also do your own testing!
+<p>
+Once you are satisfied with your solution, submit it by running
+<pre>
+$ give 4 q4.py
+</pre>
+<p>
+<div class="answer">
+Obvious Perl solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+
+while ($line = &lt;&gt;) {
+    my @numbers = $line =~ /(\d+\.\d+)/g;
+    foreach $number (@numbers) {
+        my $rounded_number = int($number + 0.5);
+        $line =~ s/\b$number\b/$rounded_number/;
+    }
+    print $line;
+}
+
+</pre>
+
+
+
+Obvious Perl solution with different approach
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+
+while ($line = &lt;&gt;) {
+    while ($line =~ /(\d+\.\d+)/) {
+        my $number = $1;
+        $number =~ /^(\d+)/;
+        my $rounded_number = $1;
+        if ($number =~ /\.[5-9]/) {
+            $rounded_number++;
+        }
+        $line =~ s/$number/$rounded_number/;
+    }
+    print $line;
+}
+
+</pre>
+
+
+
+Concise Perl solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -wp
+s/(\d+\.\d+)/int($&amp;+0.5)/eg;
+
+</pre>
+
+
+</div>
+Write a program that reads lines of text from its standard input
+and prints them to its standard output.
+Except for lines which contain with a # character followed by a positive integer.
+<p>
+Lines of the form <b>#</b><b>n</b> (where <b>n</b> is an
+integer value), should be replaced this by the <b>n</b>'th line of input.
+<p>
+This transformation only applies to lines which start with a # character, followed by the digits of a positive integer
+and then the newline character.  No other characters appear on such lines.
+<p>
+You may assume:
+<p>
+Lines are numbered starting from 1,
+<p>
+There are no more than 100 lines in the input,
+<p>
+No line is more than 80 characters long,
+<p>
+All <b>n</b> values are valid input line numbers,
+<p>
+No <b>n</b> values refer to other #<b>n</b> lines.
+<p>
+Your program must be either Shell, Perl or Python.
+<p>
+Name your program <b>q5.sh</b> <b>q5.pl</b> or <b>q5.py</b>.
+<p>
+In the examples below replace  <b>q5.py</b> with  <b>q5.sh</b> or  <b>q5.pl</b> if
+you attempt this question in Shell or Perl.
+<p>
+For example:
+<p>
+<pre class="command_line">
+<kbd class="shell">cat q5_input.txt</kbd>
+line A
+line B
+line C
+#7
+line D
+#2
+line E
+<kbd class="shell">q5.py &lt;q5_input.txt</kbd>
+line A
+line B
+line C
+line E
+line D
+line B
+line E
+</pre>
+<p>
+You can test your program using the <b>autotest</b> command:
+<p>
+<pre>
+$ autotest 5 q5.py
+</pre>
+Also do your own testing!
+<p>
+Once you are satisfied with your solution, submit it by running
+<pre>
+$ give 5 q5.py
+</pre>
+
+<li>
+Write a program that reads lines of text from its standard input
+and prints them to its standard output.
+Except for lines which contain with a # character followed by a positive integer.
+<p>
+Lines of the form <b>#</b><b>n</b> (where <b>n</b> is an
+integer value), should be replaced this by the <b>n</b>'th line of input.
+<p>
+This transformation only applies to lines which start with a # character, followed by the digits of a positive integer
+and then the newline character.  No other characters appear on such lines.
+<p>
+You may assume:
+<p>
+Lines are numbered starting from 1,
+<p>
+There are no more than 100 lines in the input,
+<p>
+No line is more than 80 characters long,
+<p>
+All <b>n</b> values are valid input line numbers,
+<p>
+No <b>n</b> values refer to other #<b>n</b> lines.
+<p>
+Your program must be either Shell, Perl or Python.
+<p>
+Name your program <b>q5.sh</b> <b>q5.pl</b> or <b>q5.py</b>.
+<p>
+In the examples below replace  <b>q5.py</b> with  <b>q5.sh</b> or  <b>q5.pl</b> if
+you attempt this question in Shell or Perl.
+<p>
+For example:
+<p>
+<pre class="command_line">
+<kbd class="shell">cat q5_input.txt</kbd>
+line A
+line B
+line C
+#7
+line D
+#2
+line E
+<kbd class="shell">q5.py &lt;q5_input.txt</kbd>
+line A
+line B
+line C
+line E
+line D
+line B
+line E
+</pre>
+<p>
+You can test your program using the <b>autotest</b> command:
+<p>
+<pre>
+$ autotest 5 q5.py
+</pre>
+Also do your own testing!
+<p>
+Once you are satisfied with your solution, submit it by running
+<pre>
+$ give 5 q5.py
+</pre>
+
+<div class="answer">
+Sample Perl solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+@a = &lt;STDIN&gt;;
+foreach $i (0..$#a) {
+    if ($a[$i] =~ /^#(\d+)/) {
+        $a[$i] = $a[$1 - 1];
+    }
+}
+print @a;
+
+</pre>
+
+
+
+Terse Perl solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+@a = &lt;STDIN&gt;;
+/^#(\d+)/ and $_ = $a[$1 - 1] foreach @a;
+print @a;
+
+</pre>
+
+
+</div>
+</ol>
+
+<hr>
+
+<h3>Practice Exam: Version 2</h3>
+
+<ol>
+
+<h3>Part 1</h3>
+<li>
+This Perl code is executed:
+<p>
+<pre>
+while (<>) {
+    chomp;
+    @a = split;
+    $h{$a[0]} .= $a[1];
+}
+print "$h{a}\n";
+</pre>
+<p>
+with these 6 lines of input:
+<p>
+<pre>
+a 6
+b 5
+c 4
+a 3
+b 2
+c 1
+</pre>
+<p>
+The Perl executes without errors or warnings. What output does it produce?
+<p>
+Note: there are 6 lines of input.  There are no blank lines and no leading or trailing white space.
+<p>
+<div class="answer">
+<pre>
+63
+</pre>
+</div>
+</li>
+<h3>Part 2</h3>
+
+<li>
+We have student enrolment data in this familiar format:
+<p>
+<pre>
+COMP1011|3360379|Costner, Kevin                   |3978/1|M
+COMP1011|3364562|Carey, Mary                      |3711/1|M
+COMP3311|3383025|Thorpe, Ian                      |3978/3|M
+COMP2920|3860448|Steenburgen, Mary                |3978/3|F
+COMP1021|3360582|Neeson, Liam                     |3711/1|M
+COMP3411|3860538|Klum, Heidi                      |3978/3|F
+COMP3141|3383025|Thorpe, Ian                      |3978/3|M
+COMP3891|3860544|Klum, Heidi                      |3978/3|F
+....
+</pre>
+<p>
+Write a shell pipeline that given input in this format
+outputs the student number of all students enrolled in only one course.
+<p>
+The student numbers should be printed one per line and each student's  number
+should be printed once.  The student numbers should be printed in sorted order.
+<p>
+For example, given the above input your
+pipeline should output this:
+<p>
+<pre>
+3360379
+3360582
+3364562
+3860448
+3860538
+3860544
+</pre>
+<p>
+Your answer must be a shell pipeline. You may not use <b>while</b>, <b>for</b> or other loops.
+You may not use perl or python.  You may use the usual Unix filters.
+<p>
+<div class="answer">
+<pre>
+cut -d\| -f2|sort|uniq -c|grep '^ *1 '|sed 's/.* //'
+</pre>
+<p>
+or
+<p>
+<pre>
+cut -d\| -f2|sort|uniq -u
+</pre>
+</div>
+</li>
+
+<h3>Part 3</h3>
+
+<li>
+Write a program which takes 0 or more arguments and prints the argumnent that occurs
+most frequently.
+<p>
+If several arguments  occur equally frequently. It should
+print the first occuring of these.
+<p>
+Make your program behave <b>exactly</b> as indicated by the examples
+below.
+<p>
+It must produce <b>exactly</b> the same output as below.
+<p>
+Your program must be either Shell, Perl or Python.
+<p>
+Name your program <b>q3.sh</b> <b>q3.pl</b> or <b>q3.py</b>.
+<p>
+In the examples below replace  <b>q3.py</b> with  <b>q3.sh</b> or  <b>q3.pl</b> if
+you attempt this question in Shell or Perl.
+<p>
+For example:
+<p>
+<pre>
+$ q3.py
+$ q3.py bird
+bird
+$ q3.py bird cow fish
+bird
+$ q3.py echo echo echo
+echo
+$ q3.py hello echo echo echo hello
+echo
+$ q3.py bird cow fish bird cow fish
+bird
+$ q3.py 1 2 2 3 3 3 4 4 4 4 5 5 5 5 5
+5
+$ q3.py a a a a b a
+a
+$ q3.py a b c d c b a
+a
+</pre>
+<p>
+You can test your program using the <b>autotest</b> command.
+<pre>
+$ autotest 3 q3.py
+</pre>
+Also do your own testing!
+<p>
+Once you are satisfied with your solution, submit it by running
+<pre>
+$ give 3 q3.py
+</pre>
+
+<div class="answer">
+Sample Perl solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+my $max_arg_repetition = 0;
+foreach $arg (@ARGV) {
+    $arg_count{$arg}++;
+    if ($arg_count{$arg} &gt; $max_arg_repetition) {
+            $max_arg_repetition = $arg_count{$arg};
+    }
+}
+foreach $arg (@ARGV) {
+    if ($arg_count{$arg} == $max_arg_repetition) {
+        print &#34;$arg\n&#34;;
+        last;
+    }
+}
+</pre>
+
+
+</div>
+
+<li>
+Write a program that reads lines from STDIN containing times in 24-hour format and converts
+the time to 12-hour (am/pm) form.
+<p>
+You can assume input lines contain a single time in the format produced by the standard Unix command <b>date</b>.
+<p>
+Consider the examples given below carefully.  They should clarify the format and the conversion required.
+<p>
+You should match behaviour in the examples below exactly.
+<p>
+You do not have to handle any other input format.
+<p>
+Given this input:
+<p>
+<pre>
+<p>
+Thu Jan  1 00:00:00 UTC 1970
+Tue Dec 31 00:19:21 PDT 2011
+Sun Apr  9 07:30:24 CHAST 2015
+Fri Jun 12 11:19:21 EST 2009
+Wed Aug 12 12:00:00 BST 2000
+Mon Oct 29 12:49:07 EDT 2009
+Sat Nov 30 14:30:24 MST 1999
+Sat Sep 30 17:30:24 PDT 2007
+Mon Feb 15 23:19:11 WST 2002
+Mon Jun 15 23:59:59 MSD 2009
+<p>
+</pre>
+<p>
+Your program should produce this output:
+<p>
+<pre>
+<p>
+Thu Jan  1 12:00:00am UTC 1970
+Tue Dec 31 12:19:21am PDT 2011
+Sun Apr  9 07:30:24am CHAST 2015
+Fri Jun 12 11:19:21am EST 2009
+Wed Aug 12 12:00:00pm BST 2000
+Mon Oct 29 12:49:07pm EDT 2009
+Sat Nov 30 02:30:24pm MST 1999
+Sat Sep 30 05:30:24pm PDT 2007
+Mon Feb 15 11:19:11pm WST 2002
+Mon Jun 15 11:59:59pm MSD 2009
+<p>
+</pre>
+<p>
+Your program must be either Shell, Perl or Python.
+<p>
+Name your program <b>q4.sh</b> <b>q4.pl</b> or <b>q4.py</b>.
+<p>
+In the examples below replace  <b>q4.py</b> with  <b>q4.sh</b> or  <b>q4.pl</b> if
+you attempt this question in Shell or Perl.
+<p>
+<pre class="command_line">
+<kbd class="shell">cat q4_input.txt</kbd>
+Thu Jan  1 00:00:00 UTC 1970
+Tue Dec 31 00:19:21 PDT 2011
+Sun Apr  9 07:30:24 CHAST 2015
+Fri Jun 12 11:19:21 EST 2009
+Wed Aug 12 12:00:00 BST 2000
+Mon Oct 29 12:49:07 EDT 2009
+Sat Nov 30 14:30:24 MST 1999
+Sat Sep 30 17:30:24 PDT 2007
+Mon Feb 15 23:19:11 WST 2002
+Mon Jun 15 23:59:59 MSD 2009
+<kbd class="shell">q4.py &lt;q4_input.txt</kbd>
+Thu Jan  1 12:00:00am UTC 1970
+Tue Dec 31 12:19:21am PDT 2011
+Sun Apr  9 07:30:24am CHAST 2015
+Fri Jun 12 11:19:21am EST 2009
+Wed Aug 12 12:00:00pm BST 2000
+Mon Oct 29 12:49:07pm EDT 2009
+Sat Nov 30 02:30:24pm MST 1999
+Sat Sep 30 05:30:24pm PDT 2007
+Mon Feb 15 11:19:11pm WST 2002
+Mon Jun 15 11:59:59pm MSD 2009
+</pre>
+<p>
+For example:
+<p>
+You can test your program using the <b>autotest</b> command:
+<pre>
+$ autotest 4 q4.py
+</pre>
+Also do your own testing!
+<p>
+Once you are satisfied with your solution, submit it by running
+<pre>
+$ give 4 q4.py
+</pre>
+<div class="answer">
+Sample Perl solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+
+while (&lt;&gt;) {
+    /\s(\d\d):/ or next;
+    my $hour = $1;
+    $hour1 = sprintf &#34;%02d&#34;, $hour - 12;
+    s/$hour:/$hour1:/ if $hour &gt; 12;
+    s/00:/12:/ if $hour == 0;
+    my $suffix = &#39;am&#39;;
+    $suffix = &#39;pm&#39; if $hour &gt; 11;
+    s/:(\d\d) /:$1$suffix /;
+    print;
+}
+
+</pre>
+
+
+</div>
+
+<li>
+Write a program that copies its standard input to its standard output
+processing embedded commands as described below.
+<p>
+Strings of the form <b><pathname></b> should be replaced  with the contents of the file named <b>pathname</b>.
+<p>
+<p>
+Strings of the form <b><!command></b> should be replaced by the output of running <b>command</b>
+<p>
+Multiple embedded commands may appear on a single line.
+<p>
+You may assume that pathnames do not start with an <b>!</b> character.
+<p>
+You may assume that pathnames and commands do not contain the character <b>></b>.
+For example:
+
+Sample Input
+
+<pre>
+Hello, &lt;!echo how> are you
+I am in the &lt;/etc/timezone>timezone.
+</pre>
+
+Corresponding Output
+
+<pre>
+Hello, how
+ are you
+I am in the Australia/Sydney
+timezone.
+</pre>
+
+Sample Input
+
+<pre>
+Lines may have no embedded commands
+or several: &lt;!date>&lt;!date>&lt;!date>
+Here is the contents of q5_file.txt
+&lt;q5_file.txt>
+1 empty file's contents: &lt;/dev/null>
+3 empty files:
+&lt;/dev/null> &lt;/dev/null> &lt;/dev/null>
+/bin/true prints nothing:
+&lt;!/bin/true>
+Some commands print &lt;!echo -n no> newlines.
+>>> The end. &lt;&lt;&lt;&lt;
+</pre>
+
+Corresponding Output
+
+<pre>
+Lines may have no embedded commands
+or several: Wed 25 Oct 13:44:56 AEDT 2017
+Wed 25 Oct 13:44:56 AEDT 2017
+Wed 25 Oct 13:44:56 AEDT 2017
+
+Here is the contents of q5_file.txt
+contents
+of an
+example file
+
+1 empty file's contents:
+3 empty files:
+
+/bin/true prints nothing:
+
+Some commands print no newlines.
+>>> The end. &lt;&lt;&lt;&lt;
+</pre>
+
+<pre class="command_line">
+<kbd class="shell">cat q5_input.txt</kbd>
+Lines may have no embedded commands
+or several: <!date><!date><!date>
+Here is the contents of q5_file.txt
+<q5_file.txt>
+1 empty file's contents: </dev/null>
+3 empty files:
+</dev/null> </dev/null> </dev/null>
+/bin/true prints nothing:
+<!/bin/true>
+Some commands print <!echo -n no> newlines.
+>>> The end. <<<<
+<kbd class="shell">q5.py &lt;q5_input.txt</kbd>
+Lines may have no embedded commands
+or several: Wed 25 Oct 13:44:56 AEDT 2017
+Wed 25 Oct 13:44:56 AEDT 2017
+Wed 25 Oct 13:44:56 AEDT 2017
+
+Here is the contents of q5_file.txt
+contents
+of an
+example file
+
+1 empty file's contents:
+3 empty files:
+
+/bin/true prints nothing:
+
+Some commands print no newlines.
+>>> The end. <<<<
+</pre>
+
+Your program must be either Shell, Perl or Python.
+<p>
+Name your program <b>q5.sh</b> <b>q5.pl</b> or <b>q5.py</b>.
+<p>
+In the examples below replace  <b>q5.py</b> with  <b>q5.sh</b> or  <b>q5.pl</b> if
+you attempt this question in Shell or Perl.
+<p>
+<p>
+You can test your program using the <b>autotest</b> command:
+<p>
+<pre>
+$ autotest 5 q5.py
+</pre>
+Also do your own testing!
+<p>
+Once you are satisfied with your solution, submit it by running
+<pre>
+$ give 5 q5.py
+</pre>
+
+<div class="answer">
+Obvious/readable Perl solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+
+while ($line = &lt;STDIN&gt;) {
+    while ($line =~ s/&lt;!([^&gt;]+)&gt;/&lt;!&gt;/g) {
+        $s = `$1`;
+        $line =~ s/&lt;!&gt;/$s/;
+    }
+    while ($line =~ s/&lt;([^&gt;]+)&gt;/&lt;&gt;/g) {
+        $s = `cat $1`;
+        $line =~ s/&lt;&gt;/$s/;
+    }
+    print $line;
+}
+
+</pre>
+
+
+
+One-line/unreadable Perl solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -wp
+s/&lt;(!?)([^&gt;]+)&gt;/{$1 eq &#34;!&#34; ? `$2` : `cat $2`}/eg;
+
+</pre>
+
+
+</div>
+</ol>
+
+
+<hr>
+
+<h3>Practice Exam: Version 3</h3>
+
+<ol>
+
+<h3>Part 1</h3>
+<li>
+These shell statements are executed:
+<p>
+<pre>
+cat numbers|sed 's/[a-j].*/ /g'|sort
+</pre>
+<p>
+The file <b>numbers</b> contains these 4 lines:
+<p>
+<pre>
+2nd 3rd
+4th 5th 6th
+7th 8th 9th 10th
+11th
+</pre>
+<p>
+The shell statements execute without errors or warnings. Exactly what output does it produce?
+<p>
+Note: the file <b>numbers</b> contains only 4 lines.  It contains no blank lines and no leading or trailing white space.
+<div class="answer">
+<pre>
+11t
+2n
+4t
+7t
+</pre>
+</div>
+</li>
+<h3>Part 2</h3>
+
+<li>
+We have student enrolment data in this familiar format:
+<p>
+<pre>
+COMP1011|3360379|Costner, Kevin                   |3978/1|M
+COMP1011|3364562|Carey, Mary                      |3711/1|M
+COMP3311|3383025|Thorpe, Ian                      |3978/3|M
+COMP2920|3860448|Steenburgen, Mary                |3978/3|F
+COMP1021|3360582|Neeson, Liam                     |3711/1|M
+COMP3411|3860538|Klum, Heidi                      |3978/3|F
+COMP3141|3383025|Thorpe, Ian                      |3978/3|M
+COMP3891|3860544|Klum, Heidi                      |3978/3|F
+....
+</pre>
+<p>
+Write a shell pipeline that given input in this format
+outputs the student number of all students enrolled in only one course.
+<p>
+The student numbers should be printed one per line and each student's  number
+should be printed once.  The student numbers should be printed in sorted order.
+<p>
+For example, given the above input your
+pipeline should output this:
+<p>
+<pre>
+3360379
+3360582
+3364562
+3860448
+3860538
+3860544
+</pre>
+<p>
+Your answer must be a shell pipeline. You may not use <b>while</b>, <b>for</b> or other loops.
+You may not use perl or python.  You may use the usual Unix filters.
+<p>
+<div class="answer">
+<pre>
+cut -d\| -f2|sort|uniq -c|grep '^ *1 '|sed 's/.* //'
+</pre>
+<p>
+or
+<p>
+<pre>
+cut -d\| -f2|sort|uniq -u
+</pre>
+</div>
+</li>
+
+<h3>Part 3</h3>
+
+<li>
+Write a program that takes two command-line arguments, a string and a filename.
+<p>
+It should print all the lines in the file that contain the string.
+<p>
+When the lines are printed the occurrences of the string in the line should be surrounded by parentheses.
+<p>
+In other words, the program should behave like a very simple grep (no regexp) but add brackets.
+<p>
+You can assume the file exists and it is readable.
+<p>
+You can assume the string contains only alphanumeric characters, i.e. <b>[a-zA-Z0-9]</b>.
+<p>
+Your program must be either Shell, Perl or Python.
+<p>
+Name your program <b>q3.sh</b> <b>q3.pl</b> or <b>q3.py</b>.
+<p>
+In the examples below replace  <b>q3.py</b> with  <b>q3.sh</b> or  <b>q3.pl</b> if
+you attempt this question in Shell or Perl.
+<p>
+For example:
+
+<pre class="command_line">
+<kbd class="shell">cat q3_input.txt</kbd>
+the
+quick brown
+fox jumps over the
+lazy dog
+How much wood would a woodchuck chuck
+if a woodchuck could chuck wood?
+<kbd class="shell">q3.py q3_input.txt e</kbd>
+th(e)
+fox jumps ov(e)r th(e)
+<kbd class="shell">q3.py  q3_input.txt wood</kbd>
+How much (wood) would a (wood)chuck chuck
+if a (wood)chuck could chuck (wood)?
+<kbd class="shell">q3.py q3_input.txt h</kbd>
+t(h)e
+fox jumps over t(h)e
+How muc(h) wood would a woodc(h)uck c(h)uck
+if a woodc(h)uck could c(h)uck wood?
+<kbd class="shell">q3.py q3_input.txt o</kbd>
+quick br(o)wn
+f(o)x jumps (o)ver the
+lazy d(o)g
+H(o)w much w(o)(o)d w(o)uld a w(o)(o)dchuck chuck
+if a w(o)(o)dchuck c(o)uld chuck w(o)(o)d?
+<kbd class="shell">q3.py q3_input.txt How</kbd>
+(How) much wood would a woodchuck chuck
+<kbd class="shell">q3.py q3_input.txt how</kbd>
+<kbd class="shell"></kbd>
+</pre>
+
+You can test your program using the <b>autotest</b> command.
+<pre>
+$ autotest 3 q3.py
+</pre>
+Also do your own testing!
+<p>
+Once you are satisfied with your solution, submit it by running
+<pre>
+$ give 3 q3.py
+</pre>
+<p>
+<div class="answer">
+Sample Perl solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+die &#34;Usage: bgrep &lt;file&gt; &lt;string&gt;&#34; if @ARGV != 2;
+open F, &#34;&lt;$ARGV[0]&#34; or die &#34;Can open $ARGV[0]: $!&#34;;
+while ($line = &lt;F&gt;) {
+    # depends on $ARGV[1] not containing regex characters  (see \Q)
+    if ($line =~ /$ARGV[1]/) {
+        $line =~ s/$ARGV[1]/($&amp;)/g;
+        print $line;
+    }
+}
+
+
+
+
+</pre>
+
+
+
+Terse Perl solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+open F, &#34;&lt;$ARGV[0]&#34; or die;
+s/\Q$ARGV[1]/($&amp;)/g &amp;&amp; print while &lt;F&gt;;
+
+
+
+</pre>
+
+
+</div>
+
+<li>
+We  have enrollment data where each line has this format:
+<p>
+<pre>
+    CourseCode|StudentID|FamilyName, GivenNames|Program|Gender
+</pre>
+<p>
+We wish to convert the data to this format:
+<p>
+<pre>
+    CourseCode|StudentID|GivenNames FamilyName|Program|Gender
+</pre>
+<p>
+Write a program which reads data in the first format from its
+standard input and writes it in the second format to its standard output.
+<p>
+<p>
+For example, given this input:
+<p>
+<pre>
+COMP2511|3713452|Ahmad, Warren|3645/2|M
+COMP1711|3819596|Hernando, Justin Yeong|3979/1|M
+COMP1511|3953441|Noble, Albert Ka Chuen|4075/3|F
+COMP1521|3487324|Goolam, Mohammad|3643/2|M
+COMP9901|3857456|Tinoco, Ling Ling Rachel|2665|F
+COMP9902|3407207|Rhee, Paul Myung-Won|1650|F
+COMP4001|3916726|Kota, Tsz Kin|8685/1|M
+</pre>
+<p>
+your program should produce this output:
+<p>
+<pre>
+COMP2511|3713452|Ahmad, Warren|3645/2|M
+COMP1711|3819596|Hernando, Justin Yeong|3979/1|M
+COMP1511|3953441|Noble, Albert Ka Chuen|4075/3|F
+COMP1521|3487324|Goolam, Mohammad|3643/2|M
+COMP9901|3857456|Tinoco, Ling Ling Rachel|2665|F
+COMP9902|3407207|Rhee, Paul Myung-Won|1650|F
+COMP4001|3916726|Kota, Tsz Kin|8685/1|M
+</pre>
+<p>
+Your program must be either Shell, Perl or Python.
+<p>
+Name your program <b>q4.sh</b> <b>q4.pl</b> or <b>q4.py</b>.
+<p>
+In the examples below replace  <b>q4.py</b> with  <b>q4.sh</b> or  <b>q4.pl</b> if
+you attempt this question in Shell or Perl.
+
+<pre class="command_line">
+<kbd class="shell">cat q4_input.txt</kbd>
+COMP2511|3713452|Ahmad, Warren|3645/2|M
+COMP1711|3819596|Hernando, Justin Yeong|3979/1|M
+COMP1511|3953441|Noble, Albert Ka Chuen|4075/3|F
+COMP1521|3487324|Goolam, Mohammad|3643/2|M
+COMP9901|3857456|Tinoco, Ling Ling Rachel|2665|F
+COMP9902|3407207|Rhee, Paul Myung-Won|1650|F
+COMP4001|3916726|Kota, Tsz Kin|8685/1|M
+<kbd class="shell">q4.py &lt;q4_input.txt</kbd>
+COMP2511|3713452|Ahmad, Warren|3645/2|M
+COMP1711|3819596|Hernando, Justin Yeong|3979/1|M
+COMP1511|3953441|Noble, Albert Ka Chuen|4075/3|F
+COMP1521|3487324|Goolam, Mohammad|3643/2|M
+COMP9901|3857456|Tinoco, Ling Ling Rachel|2665|F
+COMP9902|3407207|Rhee, Paul Myung-Won|1650|F
+COMP4001|3916726|Kota, Tsz Kin|8685/1|M
+</pre>
+
+For example:
+<p>
+You can test your program using the <b>autotest</b> command:
+<pre>
+$ autotest 4 q4.py
+</pre>
+Also do your own testing!
+<p>
+Once you are satisfied with your solution, submit it by running
+<pre>
+$ give 4 q4.py
+</pre>
+
+<div class="answer">
+Sample Perl solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+
+while (&lt;&gt;) {
+    chomp;
+    @f = split /\|/;
+    $f[2] =~ s/(.*), (.*\S)/$2 $1/;
+    print join(&#34;|&#34;, @f), &#34;\n&#34;;
+}
+
+</pre>
+
+
+
+One Line Perl solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+# courtesy aek@cse.unsw.EDU.AU
+# split line on &#39;|&#39; and reverse first name and surname in the 3rd field
+
+while (&lt;&gt;) {
+        chomp;
+
+        # separate the fields according to the &#39;|&#39; delimiter
+        @fields = split /\|/;
+
+        # dump line if not enough fields given
+        if ($#fields &lt; 2) { print; next; }
+
+        # process name
+        $namefield = $fields[2];
+        @nameparts = split &#39;,&#39;, $namefield; #seperate surname and first names
+
+        # trim leading and trailing space from names
+        $nameparts[0] =~ s/^\s+//;
+        $nameparts[0] =~ s/\s+$//;
+        $nameparts[1] =~ s/^\s+//;
+        $nameparts[1] =~ s/\s+$//;
+
+        # construct new name, and put it back in the array of fields
+        $fields[2] = &#34;$nameparts[1] $nameparts[0]&#34;;
+
+        # give output.  join fields array with the delimiter
+        print join &#39;|&#39;, @fields;
+        print &#34;\n&#34;;
+}
+
+</pre>
+
+
+</div>
+<li>
+A university has a problem with students accumulating large misconduct fines.
+The vice-chancellor has decided to expel the student with the largest
+total misconduct fine.  We need a program which tallies the misconduct fines
+of students and prints the name of the student with the largest total
+misconduct fine.
+<p>
+The input to this program will be a series of pairs of student names
+and misconduct fines.
+<p>
+The output of this program  will be a single student name and a total
+misconduct fine.
+<p>
+At this university, students are identified by their given names, which are
+unique and consist only of lower case alphabetic letters.
+<p>
+At this university, misconduct fines are always a small positive integer
+number of dollars.
+<p>
+Write a program which reads a series of pairs of student names
+and misconduct fines from its standard input.
+<p>
+When the end of input is reached your program should print the student
+with the largest total misconduct fine.
+<p>
+Your program should place no limit on the number of students and  no limit on the number of fines.
+<p>
+Your program must be either Shell, Perl or Python.
+<p>
+Name your program <b>q5.sh</b> <b>q5.pl</b> or <b>q5.py</b>.
+<p>
+In the examples below replace  <b>q5.py</b> with  <b>q5.sh</b> or  <b>q5.pl</b> if
+you attempt this question in Shell or Perl.
+<p>
+For example:
+
+<pre class="command_line">
+<kbd class="shell">cat q5_input.txt</kbd>
+fred 3
+mary 7
+fred 2
+john 4
+mary 1
+fred 4
+<kbd class="shell">q5.py &lt;q5_input.txt</kbd>
+Expel fred whose library fines total<kbd class="shell">9</kbd>
+</pre>
+
+You can test your program using the <b>autotest</b> command:
+<p>
+<pre>
+$ autotest 5 q5.py
+</pre>
+Also do your own testing!
+<p>
+Once you are satisfied with your solution, submit it by running
+<pre>
+$ give 5 q5.py
+</pre>
+<div class="answer">
+Sample Perl solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+
+while ($line = &lt;STDIN&gt;) {
+    ($name, $fine) = split /\s+/, $line;
+    $total_fine{$name} += $fine;
+}
+exit if !%total_fine;
+$student_to_expel = (keys %total_fine)[0];
+foreach $student (keys %total_fine) {
+    if ($total_fine{$student} &gt; $total_fine{$student_to_expel}) {
+        $student_to_expel = $student;
+    }
+}
+print &#34;Expel $student_to_expel whose library fines total \$$total_fine{$student_to_expel}\n&#34;;
+
+</pre>
+
+
+</div>
+</ol>
+
+
+
+
+
+</div>
+
+
+<!--
+public_html_session_directory=/web/cs2041/17s2
+base_directory=/web/cs2041/17s2
+public_html_directory=/web/cs2041
+scripts_directory=/web/cs2041/17s2/scripts
+home_directory=/home/cs2041
+bin_directory=/home/cs2041/bin
+course_account=cs2041
+course_code=COMP2041
+course_number=2041
+postgraduate_course_code=COMP9041
+course_name=Software Construction
+unsw_session=17s2
+canonical_url=https://cgi.cse.unsw.edu.au/~cs2041/
+github_repo_url=https://github.com/COMP2041UNSW/course_materials
+course_forum_url=https://piazza.com/class/j5ji4vjjra62a3
+lecture_recordings_url=https://moodle.telt.unsw.edu.au/course/view.php?id=27708
+WORK=/web/cs2041/17s2/work
+OUT=/web/cs2041/17s2/work/.out
+MARKED=/web/cs2041/17s2/work/.out/.marked
+SMSDB=/web/cs2041/17s2/work/17s2db.sms
+tlb_directory=/web/cs2041/17s2/tlb
+lecture_directory=/web/cs2041/17s2/lec
+flask_cache_directory=/web/cs2041/17s2/flask_cache
+testing_results_file=/web/cs2041/17s2/work/testing_results.json
+enrollments_file=/web/cs2041/17s2/work/enrollments.json
+unsw_ldap_password_file=/web/cs2041/.unsw_ldap_password
+autotest_upload_url=https://cgi.cse.unsw.edu.au/~cs2041/cgi/autotest_upload.cgi
+PATH=/web/cs2041/17s2/scripts:/home/cs2041/bin:/bin/:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/home/class/bin:/home/give/stable/bin.:/bin:/usr/bin:/usr/local/bin
+directory_relative_pathname=tlb/13
+url=https://cgi.cse.unsw.edu.au/~cs2041/flask.cgi/lab/13/answers
+directory_url=https://cgi.cse.unsw.edu.au/~cs2041/lab/13/
+url_root=https://cgi.cse.unsw.edu.au/~cs2041/
+script_root=/~cs2041/flask.cgi
+current_lecture_topic=exam
+current_week=13
+week=13
+exercise_name=lab13
+tut_or_lab_or_test=lab
+questions_or_answers=answers
+programs=&lt;programs&gt;
+
+-->
+
+</body>
+</html>

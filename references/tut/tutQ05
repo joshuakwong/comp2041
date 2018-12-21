@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>
+
+COMP2041 Week 05 Tutorial Questions
+
+</title>
+<link href="/~cs2041/flask.cgi/static/bootstrap.min.css?121200" rel="stylesheet"/>
+<link href="/~cs2041/flask.cgi/static/course.css?6554" rel="stylesheet"/>
+<script src="/~cs2041/flask.cgi/static/jquery.min.js?95992" type="text/javascript"></script>
+<script src="/~cs2041/flask.cgi/static/bootstrap.min.js?37045" type="text/javascript"></script>
+<script src="/~cs2041/flask.cgi/static/course.js?1631" type="text/javascript"></script>
+<link href="https://cgi.cse.unsw.edu.au/~cs2041/" rel="canonical"/>
+</head>
+<body>
+<div class="container">
+<div id="heading">
+<a class="heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/" id="left_heading_link" target="_blank">COMP[29]041 17s2</a>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Week 05
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/02/questions">Week 02</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/03/questions">Week 03</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/04/questions">Week 04</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/05/questions">Week 05</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/06/questions">Week 06</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/07/questions">Week 07</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/08/questions">Week 08</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/09/questions">Week 09</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/10/questions">Week 10</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/11/questions">Week 11</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/12/questions">Week 12</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/13/questions">Week 13</a></li>
+</ul>
+</span>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Tutorial
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/05/questions">Tutorial
+                
+            </a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/05/questions">Laboratory
+                
+            </a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/test/05/questions">Weekly Test
+                
+            </a></li>
+</ul>
+</span>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Questions
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/05/questions">Questions
+            
+            </a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/05/answers">Sample Answers
+            
+            </a></li>
+</ul>
+</span>
+<a class="heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/" id="right_heading_link" target="_blank">Software Construction</a>
+</div>
+</div>
+<div class="tutlab tut">
+<ol>
+<ol>
+<li>
+<p>
+What is the difference in value/type of the following Perl expressions:
+</p><p>
+</p><ol type="a">
+<li> <code>"a"</code>   <small>vs</small>   <code>'a'</code>
+<p></p>
+</li><li> <code>"A"</code>   <small>vs</small>   <code>A</code>
+<p></p>
+</li><li> <code>"abc"</code>   <small>vs</small>   <code>'abc'</code>
+<p></p>
+</li><li> <code>"it\'s"</code>   <small>vs</small>   <code>'it\'s'</code>
+<p></p>
+</li><li> <code>42</code>   <small>vs</small>   <code>"42"</code>
+<p></p>
+</li><li> <code>3</code>   <small>vs</small>   <code>3.0</code>
+<p></p>
+</li><li> <code>"$2.50"</code>   <small>vs</small>   <code>'$2.50'</code>
+<p></p>
+</li></ol>
+</li><li>
+
+Write a Perl program, <code>nargs.pl</code> which prints how many arguments it has been
+given. For example:
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./nargs.pl the quick brown fox</kbd>
+4
+</pre>
+<p></p>
+</li><li>
+
+Write a Perl program, <code>devowel.pl</code> which filters any
+vowels from its input. For example:
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./devowel.pl</kbd>
+<kbd>The quick brown fox
+jumped over the lazy dog.
+</kbd><span class="eof"></span>
+Th qck brwn fx
+jmpd vr th lzy dg.
+</pre>
+<p></p>
+</li><li>
+Write a simple version of the <code>head</code> command in Perl, that
+accepts an optional command line argument in the form
+<code>-<i>n</i></code>, where <code><i>n</i></code> is a number,
+and displays the first <code><i>n</i></code> lines from its standard
+input.
+If the <code>-<i>n</i></code> option is not used, then the program
+simply displays the first ten lines from its standard input.
+<p>
+Examples of use:
+</p><pre class="command_line">
+<kbd class="shell">perl head.pl &lt;file2</kbd>        # display first ten lines of file2
+...
+<kbd class="shell">perl head.pl -10 &lt;file2</kbd>     # same as previous command
+...
+<kbd class="shell">perl head.pl -5 &lt;file2</kbd>      # display first five lines of file2
+...
+</pre>
+<p></p>
+</li><li>
+Modify the <code>head</code> program from the previous question so that,
+as well as handling an optional <code>-<i>n</i></code> argument to
+specify how many lines, it also handles multiple files on the command
+line and displays the first <code><i>n</i></code> lines from each file,
+separating them by a line of the form <code>==&gt; <i>FileName</i> &lt;===</code>.
+<p>
+Examples of use:
+</p><pre class="command_line">
+<kbd class="shell">perl head.pl file1 file2 file3</kbd>  # display first ten lines of each file
+...
+<kbd class="shell">perl head.pl -3 file1 file2</kbd>   # display first three lines of each file
+...
+</pre>
+<p>
+</p><p></p>
+</li><li>
+
+Write a simple version of the <code>grep</code> command, that takes a
+regular expression as its first command line argument and then prints
+all lines in the standard input (or named files) that contain this
+pattern.
+<p>
+Examples of use:
+
+</p><pre class="command_line">
+<kbd class="shell">perl mygrep.pl 'a.*c' file1 file2 file3</kbd>     # all lines containing a...c
+...
+<kbd class="shell">perl mygrep.pl '[0-9]+' file1 file2 file3</kbd>   # all lines containing numbers
+...
+<kbd class="shell">perl mygrep.pl '^The' &lt;file1</kbd>          # all lines starting with "The"
+...
+</pre>
+<p></p>
+</li><li>
+Modify the <code>grep</code> command from the previous question so that
+accepts a <code>-v</code> command line option to reverse the sense of
+the test (i.e. display only lines that do <em>not</em> match the pattern).
+It should continue with its original behaviour if no <code>-v</code> is
+specified.
+
+<p></p>
+<h3>Revision questions</h3>
+
+The remaining tutorial questions are primarily intended for revision - either this week
+or later in session.
+<p>
+Your tutor may still choose to cover some of the questions time permitting.
+</p><p>
+</p></li><li>
+<p>
+The following programs are all Perl versions of the <code>cat</code>
+program. Each of them either reads from standard input (if there are
+no command line arguments) or treats each command line argument as a
+file name, opens the file, and reads it. The final one shows just how
+concise Perl code can be. You may find the ideas in these programs
+useful in helping you solve the problems below.
+
+
+
+
+
+</p><pre class="program">
+
+#!/usr/bin/perl -w
+
+# First Perl version of cat
+# Verbose, but shows exactly what's happening
+
+# if no args, read from stdin
+if (@ARGV == 0) {
+    while ($line = &lt;STDIN&gt;) {
+    	# note: line still has \n
+        print $line; 
+    }
+} else {
+    foreach $file (@ARGV) {
+        open my $input, '&lt;', $file or die "Can not open $file: $!\n";
+        while ($line = &lt;$input&gt;) {
+                print $line;
+        }
+        close $input;
+    }
+}
+
+</pre>
+<pre class="program">
+
+#!/usr/bin/perl -w
+
+# Second Perl version of cat
+# More concise, by using special variable $_
+
+if (@ARGV == 0) {
+    while (&lt;STDIN&gt;) {
+        print $line; 
+    }
+} else {
+    foreach $file (@ARGV) {
+        open my $input, '&lt;', $file or die "Can not open $file: $!\n";
+        while (&lt;$input&gt;) {
+                print;
+        }
+        close $input;
+    }
+}
+
+</pre>
+<pre class="program">
+
+#!/usr/bin/perl -w
+
+# Third Perl version of cat
+# places input into an array
+
+if (@ARGV == 0) {
+    @lines = &lt;STDIN&gt;;
+    print @lines;
+} else {
+    foreach $file (@ARGV) {
+        open my $input, '&lt;', $file or die "Can not open $file: $!\n";
+        @lines = &lt;$input&gt;;
+    	print @lines;
+        close $input;
+    }
+}
+
+</pre>
+<pre class="program">
+
+#!/usr/bin/perl -w
+
+# Fourth Perl version of cat
+# More concise, but makes filtering difficult
+
+if (@ARGV == 0) {
+    print &lt;STDIN&gt;;
+} else {
+    foreach $file (@ARGV) {
+        open my $input, '&lt;', $file or die "Can not open $file: $!\n";
+        print &lt;$input&gt;;
+        close $input;
+    }
+}
+
+</pre>
+<pre class="program">
+# Other versions of cat
+# Make use of the fact that &lt;&gt; has a special meaning
+# - if no command line arguments, read standard input
+# - otherwise, open each argument as a file and read it
+# Very concise, but ...
+# - you'll need to put up with Perl's error messages
+# - you treat all files as a single stream ... which means
+#   - you can't distinguish which file each line comes from
+#   - there is no scope for doing things at file boundaries
+while (&lt;&gt;) { print; }
+#or
+@lines = &lt;&gt;;
+print @lines;
+#or
+print &lt;&gt;;
+</pre>
+<p>
+Write a new version of <code>cat</code> so that it accepts
+a <code>-n</code> command line argument and then prints a line number at
+the start of each line in a field of width 6, followed by two spaces,
+followed by the text of the line. The numbers should constantly increase
+over all of the input files (i.e. don't start renumbering at the start
+of each file). The program always reads from its standard input.
+</p>
+<p>
+Example of output:
+
+</p><pre class="command_line">
+<kbd class="shell">perl cat -n myFile</kbd>
+     1  This is the first line of my file
+     2  This is the second line of my file
+     3  This is the third line of my file
+         ...
+  1000  This is the thousandth line of my file
+</pre>
+<p></p>
+</li><li>
+Modify the <code>cat</code> program from the previous question so that
+it also accepts a <code>-v</code> command line option to display <em>all</em>
+characters in the file in printable form. In particular, end of lines should
+be shown by a <code>$</code> symbol (useful for finding trailing whitespace
+in lines) and all control characters (ascii code less than 32) should be
+shown as <code>^<i>X</i></code> (where <code><i>X</i></code> is the
+printable character obtained by adding the code for
+'A' to the control character code).
+So, for example, tabs (ascii code 9) should display as <code>^I</code>.
+<br/><i>Hint:</i> the <code>chr</code> and <code>ord</code> functions might be useful.
+Try
+<pre class="command_line">
+<kbd class="shell">perldoc -f ord</kbd>
+</pre>
+for info about functions such as these.
+<p>
+Example of output:
+</p><pre class="command_line">
+<kbd class="shell">perl cat -v &lt; myFile</kbd>
+This file contains a tabbed list:$
+^I- point 1$
+^I- point 2$
+^I- point 3$
+And this line has trailing spaces   $
+which would otherwise be invisible.$
+</pre>
+<p></p>
+</li><li>
+<p>
+Write a version of the <code>tac</code> command in Perl, that accepts
+a list of filenames and displays the lines from each file in reverse order.
+</p><p></p>
+</li></ol>
+</ol>
+</div>
+<!--
+public_html_session_directory=/web/cs2041/17s2
+base_directory=/web/cs2041/17s2
+public_html_directory=/web/cs2041
+scripts_directory=/web/cs2041/17s2/scripts
+home_directory=/home/cs2041
+bin_directory=/home/cs2041/bin
+course_account=cs2041
+course_code=COMP2041
+course_number=2041
+postgraduate_course_code=COMP9041
+course_name=Software Construction
+unsw_session=17s2
+canonical_url=https://cgi.cse.unsw.edu.au/~cs2041/
+github_repo_url=https://github.com/COMP2041UNSW/course_materials
+course_forum_url=https://piazza.com/class/j5ji4vjjra62a3
+lecture_recordings_url=https://moodle.telt.unsw.edu.au/course/view.php?id=27708
+WORK=/web/cs2041/17s2/work
+OUT=/web/cs2041/17s2/work/.out
+MARKED=/web/cs2041/17s2/work/.out/.marked
+SMSDB=/web/cs2041/17s2/work/17s2db.sms
+tlb_directory=/web/cs2041/17s2/tlb
+lecture_directory=/web/cs2041/17s2/lec
+flask_cache_directory=/web/cs2041/17s2/flask_cache
+testing_results_file=/web/cs2041/17s2/work/testing_results.json
+enrollments_file=/web/cs2041/17s2/work/enrollments.json
+unsw_ldap_password_file=/web/cs2041/.unsw_ldap_password
+autotest_upload_url=https://cgi.cse.unsw.edu.au/~cs2041/cgi/autotest_upload.cgi
+PATH=/web/cs2041/17s2/scripts:/home/cs2041/bin:/bin/:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/home/class/bin:/home/give/stable/bin.:/bin:/usr/bin:/usr/local/bin
+directory_relative_pathname=tlb/05
+url=https://cgi.cse.unsw.edu.au/~cs2041/flask.cgi/tut/05/questions
+directory_url=https://cgi.cse.unsw.edu.au/~cs2041/tut/05/
+url_root=https://cgi.cse.unsw.edu.au/~cs2041/
+script_root=/~cs2041/flask.cgi
+current_lecture_topic=exam
+current_week=13
+week=05
+exercise_name=tut05
+tut_or_lab_or_test=tut
+questions_or_answers=questions
+programs=&lt;programs&gt;
+
+-->
+</body>
+</html>

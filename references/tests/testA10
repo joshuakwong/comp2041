@@ -1,0 +1,595 @@
+
+
+<!doctype html>
+<html lang="en">
+<head>
+<title>
+
+COMP2041 Week 10 Weekly Test Sample Solutions
+
+</title>
+
+
+
+<link href="/~cs2041/flask.cgi/static/bootstrap.min.css?121200" rel="stylesheet">
+<link href="/~cs2041/flask.cgi/static/course.css?6554" rel="stylesheet">
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/jquery.min.js?95992"></script>
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/bootstrap.min.js?37045"></script>
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/course.js?1631"></script>
+<link rel="canonical" href="https://cgi.cse.unsw.edu.au/~cs2041/" />
+</head>
+<body>
+
+
+
+
+<div class="container">
+
+<div id="heading">
+
+
+<a class="heading_link" target="_blank" id="left_heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/">COMP[29]041 17s2</a>
+
+
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Week 10
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/05/answers">Week 05</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/06/answers">Week 06</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/07/answers">Week 07</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/08/answers">Week 08</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/09/answers">Week 09</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/10/answers">Week 10</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/11/answers">Week 11</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/13/answers">Week 13</a></li>
+        
+        
+    </ul>
+</span>
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Weekly Test
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/10/answers">Tutorial
+                
+            </a></li>
+            
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/10/answers">Laboratory
+                
+            </a></li>
+            
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/10/answers">Weekly Test
+                
+            </a></li>
+            
+        
+    </ul>
+</span>
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Sample Solutions
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/10/questions">Questions
+            
+            </a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/10/answers">Sample Solutions
+            
+            </a></li>
+        
+        
+    </ul>
+</span>
+
+
+
+
+<a class="heading_link" target="_blank" id="right_heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/">Software Construction</a>
+
+</div>
+
+</div>
+
+
+<div class="tutlab lab">
+
+
+
+<h3>Test Conditions</h3>
+
+These questions must be completed under self-administered exam-like conditions.
+
+<ul>
+<li> You may complete this test in CSE labs or elsewhere using your own machine
+<li> You may complete this test at any time before 
+<li> The maximum time allowed for this test is 1 hour
+<li> After starting this test you must complete the test within 1 hour and submit your
+answers with give.
+<li> you must complete the questions alone - you can not get help in any way from any person
+<li> you can not access web pages or use the internet in any way
+<li> you can not access books, notes or other written or online materials
+<li> you can not access your own files, programs, code ...
+<li> you can not access COMP[29]041 course materials except for language documentation linked above.
+</ul>
+
+<hr>
+You may access this <b>language documentation</b> while attemting this test:
+<ul>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041//exam/shell_perl_cheatsheet.pdf">Shell/Regex/Perl quick reference</a>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041//exam/python_cheatsheet.pdf">Python quick reference</a>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041//exam/C_cheatsheet.pdf">C quick reference</a>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041//exam/java_cheatsheet.pdf">Java quick reference</a>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041//doc/perldoc-html-5.14.0/index.html">full Perl documentation</a>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041//doc/python-3.5.2-docs-html/index.html">full Python 3.5 documentation</a>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041//doc/python-2.7.2-docs-html/index.html">full Python 2.7 documentation</a>
+</ul>
+<hr>
+
+You may also access manual entries (the man command)
+
+<p>
+Any violation of the test conditions will results in a mark of zero for the entire weekly test component.
+
+
+
+<h3>Exercise: Equi-Letter Filter</h3>
+
+Write a Perl program <b>equi_filter.pl</b> that reads lines of text from its standard input
+and prints them to its standard output with the words which are not equi-lettered removed.
+<p>
+A word is equi-lettered if every character in the word occurs exactly <b>n</b> times (for some n).
+Case should be ignored when considering whether a word is equi-lettered.
+<p>
+For example: <b>Gaga</b> is equi-lettered because '<b>g</b>' occurs twice and 'a' occurs twice.
+<p>
+For example: <b>gauge</b> is not equi-lettered because '<b>g</b>' occurs twice but '<b>u</b>', '<b>a</b>' and <b>e</b> occur once
+<p>
+Assume that a word is any sequence of non-whitespace characters.
+<p>
+You should print the words separated by a single space character.
+<p>
+For example:
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./equi_filter.pl</kbd>
+<kbd>Equi: duck bulbul Gaga tocktocktock wwwwweeeee
+Not-equi: goose baboon bonobo Guage tock-tock wwwwweee
+Equi: xerophytic Deeded sestettes zZz teammate horseshoer happenchance
+Not-equi: elephant decorator agaga teammates horseshoe
+</kbd><span class="eof"></span>
+Equi: duck bulbul Gaga tocktocktock wwwwweeeee
+Not-equi:
+Equi: xerophytic Deeded sestettes zZz teammate horseshoer happenchance
+Not-equi:
+</pre>
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./equi_filter.pl</kbd>
+<kbd>I shall be telling this with a sigh
+Somewhere     ages and ages hence
+Two roads diverged in a   wood and I
+I took   the one   less traveled by
+And that has made all the difference
+</kbd><span class="eof"></span>
+I be this with a sigh
+ages and ages
+Two roads in a and I
+I the one by
+And has made the
+</pre>
+
+
+
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+<pre class="command_line">
+<kbd class="shell">2041 autotest test10 equi_filter.pl</kbd>
+</pre>
+
+
+    
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Automarking Results</h4>
+        <span class="autotest_results_emphasis">87%</span>
+        
+        of <span class="autotest_results_emphasis">378</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">equi_filter.pl</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+                <ul>
+                
+                    <li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>equi_filter_pl_0</i>
+                
+                    <li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>equi_filter_pl_1</i>
+                
+                    <li><span class="autotest_results_emphasis">93%</span>
+                    
+                    passed test <i>equi_filter_pl_2</i>
+                
+                    <li><span class="autotest_results_emphasis">95%</span>
+                    
+                    passed test <i>equi_filter_pl_3</i>
+                
+                    <li><span class="autotest_results_emphasis">88%</span>
+                    
+                    passed test <i>equi_filter_pl_4</i>
+                
+                    <li><span class="autotest_results_emphasis">94%</span>
+                    
+                    passed test <i>equi_filter_pl_5</i>
+                
+                </ul>
+                </div>
+            
+        
+    </div>
+
+
+<div class="answer">
+Obvious (readable) Perl solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+
+sub is_equi_word {
+	my ($word) = @_;
+	my (@letters) = split //, lc $word;
+	my %letter_count;
+	foreach $letter (@letters) {
+		$letter_count{$letter}++
+	}
+	my %count_value;
+	foreach $count (values %letter_count) {
+		$count_value{$count}++
+	}
+	return (keys %count_value) == 1;
+}
+
+while ($line = &lt;STDIN&gt;) {
+	my @words = split /\s+/, $line;
+	my @equi_words = grep {is_equi_word($_)} @words;
+	print join(&#34; &#34;, @equi_words), &#34;\n&#34;;
+}
+
+</pre>
+
+
+
+More concise (much less readable/understandable) Perl solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+
+sub is_equi_word {
+	my ($word) = @_;
+	my %letter_count;
+	$letter_count{$_}++ foreach split //, lc $word;
+	my %count_value;
+	$count_value{$_}++ foreach values %letter_count;
+	return (keys %count_value) == 1;
+}
+
+print join(&#34; &#34;, grep {is_equi_word($_)} split),&#34;\n&#34; while &lt;STDIN&gt;;
+
+</pre>
+
+
+
+</div>
+
+<h3>Exercise: Equi-Letter Filter in Python</h3>
+
+Write a Python program <b>equi_filter.py</b> which peforms the same task
+as the above question. For example:
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./equi_filter.py</kbd>
+<kbd>Equi: duck Gaga tocktocktock wwwwweeeee
+Not-equi: goose decorator agaga wwwwweeee
+</kbd><span class="eof"></span>
+Equi: duck Gaga tocktocktock wwwwweeeee
+Not-equi:
+</pre>
+
+
+
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+<pre class="command_line">
+<kbd class="shell">2041 autotest test10 equi_filter.py</kbd>
+</pre>
+
+
+    
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Automarking Results</h4>
+        <span class="autotest_results_emphasis">87%</span>
+        
+        of <span class="autotest_results_emphasis">342</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">equi_filter.py</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+                <ul>
+                
+                    <li><span class="autotest_results_emphasis">94%</span>
+                    
+                    passed test <i>equi_filter_py_0</i>
+                
+                    <li><span class="autotest_results_emphasis">94%</span>
+                    
+                    passed test <i>equi_filter_py_1</i>
+                
+                    <li><span class="autotest_results_emphasis">91%</span>
+                    
+                    passed test <i>equi_filter_py_2</i>
+                
+                    <li><span class="autotest_results_emphasis">90%</span>
+                    
+                    passed test <i>equi_filter_py_3</i>
+                
+                    <li><span class="autotest_results_emphasis">90%</span>
+                    
+                    passed test <i>equi_filter_py_4</i>
+                
+                    <li><span class="autotest_results_emphasis">92%</span>
+                    
+                    passed test <i>equi_filter_py_5</i>
+                
+                </ul>
+                </div>
+            
+        
+    </div>
+
+
+<div class="answer">
+Obvious (readable) Python solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python3
+
+import sys
+
+def is_equi_word(word):
+	letter_count = {}
+	for letter in word.lower():
+		letter_count[letter] = letter_count.get(letter, 0) + 1
+	return len(set(letter_count.values())) == 1
+
+for line in sys.stdin:
+	words = line.split()
+	equi_words = filter(is_equi_word, words)
+	print(&#39; &#39;.join(equi_words))
+
+</pre>
+
+
+
+More concise (less readable/understandable) Python solution
+but note use of Counter class.
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python3
+
+import collections, sys
+
+def is_equi_word(word):
+	return len(set(collections.Counter(word.lower()).values())) == 1 and list(collections.Counter(word.lower()).values())[0] &gt; 1
+
+for line in sys.stdin:
+	print(&#39; &#39;.join(filter(is_equi_word, line.split())))
+
+</pre>
+
+
+
+</div>
+
+
+
+
+<h3>Submission</h3>
+
+
+When you are finished submit your work by running:
+
+<pre class="command_line">
+<kbd class="shell">give cs2041 test10 equi_filter.pl equi_filter.py</kbd>
+</pre>
+<p>
+Don't submit any exercises you haven't attempted.
+
+If you are working at home, you may find it more convenient
+to upload your work via
+ <a href="https://cgi.cse.unsw.edu.au/~give/code/login.php?app=/~give/Student/give.php&amp;debug=get_authuser">give's web interface</a>.
+<p>
+Remember you have until <b>Thursday 12 October 23:59</b> to submit your work.
+
+
+
+
+<h3>Assessment</h3>
+
+This test is worth 1 mark. It will be automarked.
+<p>
+After the automarking is complete you should be able to view it by running
+this command on a CSE machine:
+
+<pre class="command_line">
+<kbd class="shell">2041 classrun -collect test10
+</pre>
+
+You can inspect marks for this lab and other assessment components via <a href="https://cgi.cse.unsw.edu.au/~give/code/login.php?app=/~give/Student/give.php&amp;debug=get_authuser">give's web interface</a> or by running
+
+<pre class="command_line">
+<kbd class="shell">2041 classrun -sturec
+</pre>
+
+<p>
+Reminder: weekly tests contribute 6% to your final COMP[29]041 final mark.
+<p>
+Your mark for the test component will be the sum of your best 6 of 8 test marks.
+<p>
+Hence you can obtain full marks for the 6% weekly test component without obtaining full marks every week.
+<p>
+Reminder: any violation of the test conditions will results in a mark of zero for the entire programming test component.
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+<!--
+public_html_session_directory=/web/cs2041/17s2
+base_directory=/web/cs2041/17s2
+public_html_directory=/web/cs2041
+scripts_directory=/web/cs2041/17s2/scripts
+home_directory=/home/cs2041
+bin_directory=/home/cs2041/bin
+course_account=cs2041
+course_code=COMP2041
+course_number=2041
+postgraduate_course_code=COMP9041
+course_name=Software Construction
+unsw_session=17s2
+canonical_url=https://cgi.cse.unsw.edu.au/~cs2041/
+github_repo_url=https://github.com/COMP2041UNSW/course_materials
+course_forum_url=https://piazza.com/class/j5ji4vjjra62a3
+lecture_recordings_url=https://moodle.telt.unsw.edu.au/course/view.php?id=27708
+WORK=/web/cs2041/17s2/work
+OUT=/web/cs2041/17s2/work/.out
+MARKED=/web/cs2041/17s2/work/.out/.marked
+SMSDB=/web/cs2041/17s2/work/17s2db.sms
+tlb_directory=/web/cs2041/17s2/tlb
+lecture_directory=/web/cs2041/17s2/lec
+flask_cache_directory=/web/cs2041/17s2/flask_cache
+testing_results_file=/web/cs2041/17s2/work/testing_results.json
+enrollments_file=/web/cs2041/17s2/work/enrollments.json
+unsw_ldap_password_file=/web/cs2041/.unsw_ldap_password
+autotest_upload_url=https://cgi.cse.unsw.edu.au/~cs2041/cgi/autotest_upload.cgi
+PATH=/web/cs2041/17s2/scripts:/home/cs2041/bin:/bin/:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/home/class/bin:/home/give/stable/bin.:/bin:/usr/bin:/usr/local/bin
+directory_relative_pathname=tlb/10
+url=https://cgi.cse.unsw.edu.au/~cs2041/flask.cgi/test/10/answers
+directory_url=https://cgi.cse.unsw.edu.au/~cs2041/test/10/
+url_root=https://cgi.cse.unsw.edu.au/~cs2041/
+script_root=/~cs2041/flask.cgi
+current_lecture_topic=exam
+current_week=13
+week=10
+exercise_name=test10
+tut_or_lab_or_test=test
+questions_or_answers=answers
+programs=&lt;programs&gt;
+
+-->
+
+</body>
+</html>

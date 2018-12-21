@@ -1,0 +1,883 @@
+
+
+<!doctype html>
+<html lang="en">
+<head>
+<title>
+
+COMP2041 Week 13 Weekly Test Sample Solutions
+
+</title>
+
+
+
+<link href="/~cs2041/flask.cgi/static/bootstrap.min.css?121200" rel="stylesheet">
+<link href="/~cs2041/flask.cgi/static/course.css?6554" rel="stylesheet">
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/jquery.min.js?95992"></script>
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/bootstrap.min.js?37045"></script>
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/course.js?1631"></script>
+<link rel="canonical" href="https://cgi.cse.unsw.edu.au/~cs2041/" />
+</head>
+<body>
+
+
+
+
+<div class="container">
+
+<div id="heading">
+
+
+<a class="heading_link" target="_blank" id="left_heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/">COMP[29]041 17s2</a>
+
+
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Week 13
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/05/answers">Week 05</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/06/answers">Week 06</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/07/answers">Week 07</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/08/answers">Week 08</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/09/answers">Week 09</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/10/answers">Week 10</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/11/answers">Week 11</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/13/answers">Week 13</a></li>
+        
+        
+    </ul>
+</span>
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Weekly Test
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/13/answers">Tutorial
+                
+            </a></li>
+            
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/13/answers">Laboratory
+                
+            </a></li>
+            
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/13/answers">Weekly Test
+                
+            </a></li>
+            
+        
+    </ul>
+</span>
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Sample Solutions
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/13/questions">Questions
+            
+            </a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/13/answers">Sample Solutions
+            
+            </a></li>
+        
+        
+    </ul>
+</span>
+
+
+
+
+<a class="heading_link" target="_blank" id="right_heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/">Software Construction</a>
+
+</div>
+
+</div>
+
+
+<div class="tutlab lab">
+
+
+
+<h3>Test Conditions</h3>
+
+These questions must be completed under self-administered exam-like conditions.
+
+<ul>
+<li> You may complete this test in CSE labs or elsewhere using your own machine
+<li> You may complete this test at any time before 
+<li> The maximum time allowed for this test is 1 hour
+<li> After starting this test you must complete the test within 1 hour and submit your
+answers with give.
+<li> you must complete the questions alone - you can not get help in any way from any person
+<li> you can not access web pages or use the internet in any way
+<li> you can not access books, notes or other written or online materials
+<li> you can not access your own files, programs, code ...
+<li> you can not access COMP[29]041 course materials except for language documentation linked above.
+</ul>
+
+<hr>
+You may access this <b>language documentation</b> while attemting this test:
+<ul>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041//exam/shell_perl_cheatsheet.pdf">Shell/Regex/Perl quick reference</a>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041//exam/python_cheatsheet.pdf">Python quick reference</a>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041//exam/C_cheatsheet.pdf">C quick reference</a>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041//exam/java_cheatsheet.pdf">Java quick reference</a>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041//doc/perldoc-html-5.14.0/index.html">full Perl documentation</a>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041//doc/python-3.5.2-docs-html/index.html">full Python 3.5 documentation</a>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041//doc/python-2.7.2-docs-html/index.html">full Python 2.7 documentation</a>
+</ul>
+<hr>
+
+You may also access manual entries (the man command)
+
+<p>
+Any violation of the test conditions will results in a mark of zero for the entire weekly test component.
+
+
+<h3>Exercise: Creating A Numbers File in Shell</h3>
+
+Write a Shell program, <code>numbers.sh</code> which takes 3 arguments which
+creates a file containing specified integers, one per line.  The first & second arguments
+will specify a range of integers. The third argument will specify the file
+to be created.  For example:
+
+<pre class="command_line">
+<kbd class="shell">./numbers.sh 40 42 fortytwo.txt</kbd>
+<kbd class="shell">cat fortytwo.txt</kbd>
+40
+41
+42
+<kbd class="shell">./numbers.sh 1 5 a.txt</kbd>
+<kbd class="shell">cat a.txt</kbd>
+1
+2
+3
+4
+5
+<kbd class="shell">./numbers.sh 1 1000  1000.txt</kbd>
+<kbd class="shell">wc 1000.txt</kbd>
+1000 1000 3893 1000.txt
+</pre>
+
+No error checking is necessary.
+
+
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+<pre class="command_line">
+<kbd class="shell">2041 autotest test13 numbers.sh</kbd>
+</pre>
+
+
+    
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Automarking Results</h4>
+        <span class="autotest_results_emphasis">99%</span>
+        
+        of <span class="autotest_results_emphasis">224</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">numbers.sh</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+                <ul>
+                
+                    <li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>numbers_0</i>
+                
+                    <li><span class="autotest_results_emphasis">100%</span>
+                    
+                    passed test <i>numbers_1</i>
+                
+                    <li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>numbers_2</i>
+                
+                    <li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>numbers_3</i>
+                
+                    <li><span class="autotest_results_emphasis">100%</span>
+                    
+                    passed test <i>numbers_4</i>
+                
+                    <li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>numbers_5</i>
+                
+                </ul>
+                </div>
+            
+        
+    </div>
+
+
+<div class="answer">
+Sample solution for <code>numbers.sh</code>
+
+
+
+
+
+<pre class="program">
+
+#!/bin/bash
+
+start=$1
+finish=$2
+filename=&#34;$3&#34;
+
+i=$start
+while ((i &lt;= finish))
+do
+	echo $i
+	i=$((i + 1))
+done &gt;$filename
+
+</pre>
+
+
+
+</div>
+
+<h3>Exercise: Testing Palindromicity in Python</h3>
+
+A palindrome is a sequence which is the same forwards
+as backwards.
+<p>
+Write a program, <code>palindrome.py</code> which take a single argument.
+<p>
+It should print True if its argument is a palindrome, False otherwise.
+<p>
+Characters which are not letters (a-z) should be ignored.
+<p>
+The difference between upper case and lower case should be ignored.
+<p>
+For example:
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./palindrome.py kayak</kbd>
+True
+<kbd class="shell">./palindrome.py canoe</kbd>
+False
+<kbd class="shell">./palindrome.py &#34;Do geese see God?&#34;</kbd>
+True
+<kbd class="shell">./palindrome.py &#34;Do ducks see God?&#34;</kbd>
+False
+<kbd class="shell">./palindrome.py &#34;Madam, I&#39;m Adam&#34;</kbd>
+True
+<kbd class="shell">./palindrome.py &#34;Madam, I&#39;m Andrew&#34;</kbd>
+False
+</pre>
+
+No error checking is necessary.
+
+
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+<pre class="command_line">
+<kbd class="shell">2041 autotest test13 palindrome.py</kbd>
+</pre>
+
+
+    
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Automarking Results</h4>
+        <span class="autotest_results_emphasis">92%</span>
+        
+        of <span class="autotest_results_emphasis">223</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">palindrome.py</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+                <ul>
+                
+                    <li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>palindrome_0</i>
+                
+                    <li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>palindrome_1</i>
+                
+                    <li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>palindrome_10</i>
+                
+                    <li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>palindrome_11</i>
+                
+                    <li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>palindrome_12</i>
+                
+                    <li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>palindrome_13</i>
+                
+                    <li><span class="autotest_results_emphasis">96%</span>
+                    
+                    passed test <i>palindrome_14</i>
+                
+                    <li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>palindrome_15</i>
+                
+                    <li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>palindrome_16</i>
+                
+                    <li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>palindrome_17</i>
+                
+                    <li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>palindrome_2</i>
+                
+                    <li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>palindrome_3</i>
+                
+                    <li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>palindrome_4</i>
+                
+                    <li><span class="autotest_results_emphasis">96%</span>
+                    
+                    passed test <i>palindrome_5</i>
+                
+                    <li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>palindrome_6</i>
+                
+                    <li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>palindrome_7</i>
+                
+                    <li><span class="autotest_results_emphasis">96%</span>
+                    
+                    passed test <i>palindrome_8</i>
+                
+                    <li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>palindrome_9</i>
+                
+                </ul>
+                </div>
+            
+        
+    </div>
+
+
+<div class="answer">
+Obvious (readable) Python solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python3
+import re, sys
+
+def is_palindrome(s):
+	s = s.lower()
+	s = re.sub(r&#39;[^a-z]&#39;, &#39;&#39;, s)
+	for i in range(len(s)//2):
+		if s[i] != s[-(i+1)]:
+			return False
+	return True
+
+print(is_palindrome(sys.argv[1]))
+
+</pre>
+
+
+
+More concise (less readable/understandable) Python solution.
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python3
+import re, sys
+s = re.sub(r&#39;[^a-z]&#39;, &#39;&#39;, sys.argv[1].lower())
+print(s == s[::-1])
+
+</pre>
+
+
+
+</div>
+
+<h3>Exercise: Indivisble Numbers in Perl</h3>
+
+Write a Perl program <b>indivisible.pl</b> which reads integers &gt; 1 from standard input
+until it reaches end-of-input.
+<p>
+It should then print the  integers read which are not exactly divisible by any other of the integers read.
+<p>
+The integers should be printed ins orted order.
+<p>
+In other words it should not print an integer if
+another integer that has been read is a factor of that number.
+<p>
+You may assume that the program's input will contain only positive integers and white-space.
+<p>
+You may assume that all integers are &gt; 1.
+<p>
+Match the the example below EXACTLY.
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./indivisible.pl</kbd>
+<kbd>42    7
+ 6 12
+</kbd><span class="eof"></span>
+6 7
+</pre>
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./indivisible.pl</kbd>
+<kbd>
+       3 4   5   6
+7
+
+    8
+
+9             10
+</kbd><span class="eof"></span>
+3 4 5 7
+</pre>
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./indivisible.pl</kbd>
+<kbd>5 6 5
+</kbd><span class="eof"></span>
+6
+</pre>
+
+
+
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+<pre class="command_line">
+<kbd class="shell">2041 autotest test13 indivisible.pl</kbd>
+</pre>
+
+
+    
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Automarking Results</h4>
+        <span class="autotest_results_emphasis">51%</span>
+        
+        of <span class="autotest_results_emphasis">203</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">indivisible.pl</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+                <ul>
+                
+                    <li><span class="autotest_results_emphasis">89%</span>
+                    
+                    passed test <i>indivisible_0</i>
+                
+                    <li><span class="autotest_results_emphasis">90%</span>
+                    
+                    passed test <i>indivisible_1</i>
+                
+                    <li><span class="autotest_results_emphasis">89%</span>
+                    
+                    passed test <i>indivisible_10</i>
+                
+                    <li><span class="autotest_results_emphasis">87%</span>
+                    
+                    passed test <i>indivisible_11</i>
+                
+                    <li><span class="autotest_results_emphasis">70%</span>
+                    
+                    passed test <i>indivisible_12</i>
+                
+                    <li><span class="autotest_results_emphasis">83%</span>
+                    
+                    passed test <i>indivisible_13</i>
+                
+                    <li><span class="autotest_results_emphasis">84%</span>
+                    
+                    passed test <i>indivisible_14</i>
+                
+                    <li><span class="autotest_results_emphasis">88%</span>
+                    
+                    passed test <i>indivisible_15</i>
+                
+                    <li><span class="autotest_results_emphasis">69%</span>
+                    
+                    passed test <i>indivisible_16</i>
+                
+                    <li><span class="autotest_results_emphasis">71%</span>
+                    
+                    passed test <i>indivisible_17</i>
+                
+                    <li><span class="autotest_results_emphasis">88%</span>
+                    
+                    passed test <i>indivisible_18</i>
+                
+                    <li><span class="autotest_results_emphasis">81%</span>
+                    
+                    passed test <i>indivisible_19</i>
+                
+                    <li><span class="autotest_results_emphasis">88%</span>
+                    
+                    passed test <i>indivisible_2</i>
+                
+                    <li><span class="autotest_results_emphasis">80%</span>
+                    
+                    passed test <i>indivisible_20</i>
+                
+                    <li><span class="autotest_results_emphasis">81%</span>
+                    
+                    passed test <i>indivisible_21</i>
+                
+                    <li><span class="autotest_results_emphasis">67%</span>
+                    
+                    passed test <i>indivisible_22</i>
+                
+                    <li><span class="autotest_results_emphasis">67%</span>
+                    
+                    passed test <i>indivisible_23</i>
+                
+                    <li><span class="autotest_results_emphasis">68%</span>
+                    
+                    passed test <i>indivisible_24</i>
+                
+                    <li><span class="autotest_results_emphasis">66%</span>
+                    
+                    passed test <i>indivisible_25</i>
+                
+                    <li><span class="autotest_results_emphasis">69%</span>
+                    
+                    passed test <i>indivisible_26</i>
+                
+                    <li><span class="autotest_results_emphasis">66%</span>
+                    
+                    passed test <i>indivisible_27</i>
+                
+                    <li><span class="autotest_results_emphasis">84%</span>
+                    
+                    passed test <i>indivisible_28</i>
+                
+                    <li><span class="autotest_results_emphasis">85%</span>
+                    
+                    passed test <i>indivisible_29</i>
+                
+                    <li><span class="autotest_results_emphasis">86%</span>
+                    
+                    passed test <i>indivisible_3</i>
+                
+                    <li><span class="autotest_results_emphasis">80%</span>
+                    
+                    passed test <i>indivisible_30</i>
+                
+                    <li><span class="autotest_results_emphasis">73%</span>
+                    
+                    passed test <i>indivisible_31</i>
+                
+                    <li><span class="autotest_results_emphasis">81%</span>
+                    
+                    passed test <i>indivisible_4</i>
+                
+                    <li><span class="autotest_results_emphasis">87%</span>
+                    
+                    passed test <i>indivisible_5</i>
+                
+                    <li><span class="autotest_results_emphasis">90%</span>
+                    
+                    passed test <i>indivisible_6</i>
+                
+                    <li><span class="autotest_results_emphasis">68%</span>
+                    
+                    passed test <i>indivisible_7</i>
+                
+                    <li><span class="autotest_results_emphasis">70%</span>
+                    
+                    passed test <i>indivisible_8</i>
+                
+                    <li><span class="autotest_results_emphasis">67%</span>
+                    
+                    passed test <i>indivisible_9</i>
+                
+                </ul>
+                </div>
+            
+        
+    </div>
+
+
+<div class="answer">
+Obvious (readable) Perl solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+
+while ($line = &lt;STDIN&gt;) {
+	foreach $number (split /\s+/, $line) {
+		if ($number) {
+			push @numbers, $number;
+		}
+	}
+}
+
+foreach $number (@numbers) {
+	my $n_factors = 0;
+	for $possible_factors (@numbers) {
+		if ($number %  $possible_factors == 0) {
+			$n_factors++
+		}
+	}
+	if ($n_factors == 1) {
+		push @indivisible_numbers, $number;
+	}
+}
+@sorted_indivisible_numbers = sort {$a &lt;=&gt; $b} @indivisible_numbers;
+
+print &#34;@sorted_indivisible_numbers\n&#34;;
+
+</pre>
+
+
+
+More concise but less readable answer
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+
+@numbers = join(&#39;&#39;, &lt;STDIN&gt;) =~ /\d+/g;
+foreach $number (@numbers) {
+	my @factors = grep {$number % $_ == 0} @numbers;
+	push @indivisible_numbers, $number if @factors == 1;
+}
+@sorted_indivisible_numbers = sort {$a &lt;=&gt; $b} @indivisible_numbers;
+print &#34;@sorted_indivisible_numbers\n&#34;;
+
+</pre>
+
+
+
+</div>
+
+
+
+
+
+<h3>Submission</h3>
+
+
+When you are finished submit your work by running:
+
+<pre class="command_line">
+<kbd class="shell">give cs2041 test13 numbers.sh palindrome.py indivisible.pl</kbd>
+</pre>
+<p>
+Don't submit any exercises you haven't attempted.
+
+If you are working at home, you may find it more convenient
+to upload your work via
+ <a href="https://cgi.cse.unsw.edu.au/~give/code/login.php?app=/~give/Student/give.php&amp;debug=get_authuser">give's web interface</a>.
+<p>
+Remember you have until <b>Sunday 29 October 23:59</b> to submit your work.
+
+
+
+
+<h3>Assessment</h3>
+
+This test is worth 1 mark. It will be automarked.
+<p>
+After the automarking is complete you should be able to view it by running
+this command on a CSE machine:
+
+<pre class="command_line">
+<kbd class="shell">2041 classrun -collect test13
+</pre>
+
+You can inspect marks for this lab and other assessment components via <a href="https://cgi.cse.unsw.edu.au/~give/code/login.php?app=/~give/Student/give.php&amp;debug=get_authuser">give's web interface</a> or by running
+
+<pre class="command_line">
+<kbd class="shell">2041 classrun -sturec
+</pre>
+
+<p>
+Reminder: weekly tests contribute 6% to your final COMP[29]041 final mark.
+<p>
+Your mark for the test component will be the sum of your best 6 of 8 test marks.
+<p>
+Hence you can obtain full marks for the 6% weekly test component without obtaining full marks every week.
+<p>
+Reminder: any violation of the test conditions will results in a mark of zero for the entire programming test component.
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+<!--
+public_html_session_directory=/web/cs2041/17s2
+base_directory=/web/cs2041/17s2
+public_html_directory=/web/cs2041
+scripts_directory=/web/cs2041/17s2/scripts
+home_directory=/home/cs2041
+bin_directory=/home/cs2041/bin
+course_account=cs2041
+course_code=COMP2041
+course_number=2041
+postgraduate_course_code=COMP9041
+course_name=Software Construction
+unsw_session=17s2
+canonical_url=https://cgi.cse.unsw.edu.au/~cs2041/
+github_repo_url=https://github.com/COMP2041UNSW/course_materials
+course_forum_url=https://piazza.com/class/j5ji4vjjra62a3
+lecture_recordings_url=https://moodle.telt.unsw.edu.au/course/view.php?id=27708
+WORK=/web/cs2041/17s2/work
+OUT=/web/cs2041/17s2/work/.out
+MARKED=/web/cs2041/17s2/work/.out/.marked
+SMSDB=/web/cs2041/17s2/work/17s2db.sms
+tlb_directory=/web/cs2041/17s2/tlb
+lecture_directory=/web/cs2041/17s2/lec
+flask_cache_directory=/web/cs2041/17s2/flask_cache
+testing_results_file=/web/cs2041/17s2/work/testing_results.json
+enrollments_file=/web/cs2041/17s2/work/enrollments.json
+unsw_ldap_password_file=/web/cs2041/.unsw_ldap_password
+autotest_upload_url=https://cgi.cse.unsw.edu.au/~cs2041/cgi/autotest_upload.cgi
+PATH=/web/cs2041/17s2/scripts:/home/cs2041/bin:/bin/:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/home/class/bin:/home/give/stable/bin.:/bin:/usr/bin:/usr/local/bin
+directory_relative_pathname=tlb/13
+url=https://cgi.cse.unsw.edu.au/~cs2041/flask.cgi/test/13/answers
+directory_url=https://cgi.cse.unsw.edu.au/~cs2041/test/13/
+url_root=https://cgi.cse.unsw.edu.au/~cs2041/
+script_root=/~cs2041/flask.cgi
+current_lecture_topic=exam
+current_week=13
+week=13
+exercise_name=test13
+tut_or_lab_or_test=test
+questions_or_answers=answers
+programs=&lt;programs&gt;
+
+-->
+
+</body>
+</html>

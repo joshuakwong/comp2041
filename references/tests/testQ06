@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>
+
+COMP2041 Week 06 Weekly Test Questions
+
+</title>
+<link href="/~cs2041/flask.cgi/static/bootstrap.min.css?121200" rel="stylesheet"/>
+<link href="/~cs2041/flask.cgi/static/course.css?6554" rel="stylesheet"/>
+<script src="/~cs2041/flask.cgi/static/jquery.min.js?95992" type="text/javascript"></script>
+<script src="/~cs2041/flask.cgi/static/bootstrap.min.js?37045" type="text/javascript"></script>
+<script src="/~cs2041/flask.cgi/static/course.js?1631" type="text/javascript"></script>
+<link href="https://cgi.cse.unsw.edu.au/~cs2041/" rel="canonical"/>
+</head>
+<body>
+<div class="container">
+<div id="heading">
+<a class="heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/" id="left_heading_link" target="_blank">COMP[29]041 17s2</a>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Week 06
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/test/05/questions">Week 05</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/test/06/questions">Week 06</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/test/07/questions">Week 07</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/test/08/questions">Week 08</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/test/09/questions">Week 09</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/test/10/questions">Week 10</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/test/11/questions">Week 11</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/test/13/questions">Week 13</a></li>
+</ul>
+</span>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Weekly Test
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/06/questions">Tutorial
+                
+            </a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/06/questions">Laboratory
+                
+            </a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/test/06/questions">Weekly Test
+                
+            </a></li>
+</ul>
+</span>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Questions
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/test/06/questions">Questions
+            
+            </a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/test/06/answers">Sample Solutions
+            
+            </a></li>
+</ul>
+</span>
+<a class="heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/" id="right_heading_link" target="_blank">Software Construction</a>
+</div>
+</div>
+<div class="tutlab lab">
+<h3>Test Conditions</h3>
+
+These questions must be completed under self-administered exam-like conditions.
+
+<ul>
+<li> You may complete this test in CSE labs or elsewhere using your own machine
+</li><li> You may complete this test at any time before 
+</li><li> The maximum time allowed for this test is 1 hour
+</li><li> After starting this test you must complete the test within 1 hour and submit your
+answers with give.
+</li><li> you must complete the questions alone - you can not get help in any way from any person
+</li><li> you can not access web pages or use the internet in any way
+</li><li> you can not access books, notes or other written or online materials
+</li><li> you can not access your own files, programs, code ...
+</li><li> you can not access COMP[29]041 course materials except for language documentation linked above.
+</li></ul>
+<hr/>
+You may access this <b>language documentation</b> while attemting this test:
+<ul>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041//exam/shell_perl_cheatsheet.pdf">Shell/Regex/Perl quick reference</a>
+</li><li><a href="https://cgi.cse.unsw.edu.au/~cs2041//exam/python_cheatsheet.pdf">Python quick reference</a>
+</li><li><a href="https://cgi.cse.unsw.edu.au/~cs2041//exam/C_cheatsheet.pdf">C quick reference</a>
+</li><li><a href="https://cgi.cse.unsw.edu.au/~cs2041//exam/java_cheatsheet.pdf">Java quick reference</a>
+</li><li><a href="https://cgi.cse.unsw.edu.au/~cs2041//doc/perldoc-html-5.14.0/index.html">full Perl documentation</a>
+</li><li><a href="https://cgi.cse.unsw.edu.au/~cs2041//doc/python-3.5.2-docs-html/index.html">full Python 3.5 documentation</a>
+</li><li><a href="https://cgi.cse.unsw.edu.au/~cs2041//doc/python-2.7.2-docs-html/index.html">full Python 2.7 documentation</a>
+</li></ul>
+<hr/>
+
+You may also access manual entries (the man command)
+
+<p>
+Any violation of the test conditions will results in a mark of zero for the entire weekly test component.
+
+
+
+</p><h3>Exercise: Remove Digits</h3>
+
+Write a Perl program <code>filter_digits.pl</code> that reads from standard input and writes to standard output
+removing all digits.
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./filter_digits.pl</kbd>
+<kbd>I can think of 100's no 1000,000s
+of other things I'd rather
+be doing than these 3 questions
+</kbd><span class="eof"></span>
+I can think of 's no ,s
+of other things I'd rather
+be doing than these  questions
+</pre>
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+</p><pre class="command_line">
+<kbd class="shell">2041 autotest test06 filter_digits.pl</kbd>
+</pre>
+<div class="autotest_results">
+<h4>Automarking Results</h4>
+<span class="autotest_results_emphasis">99%</span>
+        
+        of <span class="autotest_results_emphasis">411</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">filter_digits.pl</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+<ul>
+<li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>filter_digits_1</i>
+</li><li><span class="autotest_results_emphasis">100%</span>
+                    
+                    passed test <i>filter_digits_2</i>
+</li><li><span class="autotest_results_emphasis">100%</span>
+                    
+                    passed test <i>filter_digits_3</i>
+</li><li><span class="autotest_results_emphasis">100%</span>
+                    
+                    passed test <i>filter_digits_4</i>
+</li><li><span class="autotest_results_emphasis">100%</span>
+                    
+                    passed test <i>filter_digits_5</i>
+</li></ul>
+</div>
+</div>
+<p></p>
+<h3>Exercise: n-th line</h3>
+
+Write a Perl program to print the <i>n</i>-th line of a file.
+<p>
+It will be given two arguments <i>n</i> and the file name.
+</p><p>
+Your program should print nothing if the file does not have an  <i>n</i>-th line
+</p><p>
+You can assume <i>n</i> is an integer.
+</p><p>
+No error checking is necessary.
+
+
+</p><pre class="command_line">
+<kbd class="shell">i=42;while [ $i -lt 100 ]; do echo $i; i=$(($i + 1)); done &gt;numbers.txt</kbd>
+<kbd class="shell">head numbers.txt</kbd>
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+<kbd class="shell">tail numbers.txt</kbd>
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+<kbd class="shell">./nth_line.pl 1 numbers.txt</kbd>
+42
+<kbd class="shell">./nth_line.pl 20 numbers.txt</kbd>
+61
+<kbd class="shell">./nth_line.pl 1000 numbers.txt</kbd>
+</pre>
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+</p><pre class="command_line">
+<kbd class="shell">2041 autotest test06 nth_line.pl</kbd>
+</pre>
+<div class="autotest_results">
+<h4>Automarking Results</h4>
+<span class="autotest_results_emphasis">97%</span>
+        
+        of <span class="autotest_results_emphasis">409</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">nth_line.pl</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+<ul>
+<li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>nth_line_1</i>
+</li><li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>nth_line_2</i>
+</li><li><span class="autotest_results_emphasis">100%</span>
+                    
+                    passed test <i>nth_line_3</i>
+</li><li><span class="autotest_results_emphasis">100%</span>
+                    
+                    passed test <i>nth_line_4</i>
+</li><li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>nth_line_5</i>
+</li><li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>nth_line_6</i>
+</li><li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>nth_line_7</i>
+</li></ul>
+</div>
+</div>
+<p></p>
+<h3>Exercise: Snap N</h3>
+
+Write a Perl program  which reads lines from its input until it
+reads an line that has been entered <i>n</i> times.
+<p>
+Your program should then print "Snap: " followed by the line.
+</p><p>
+Your program  will be given <i>n</i> as a command  line argument.
+Your program should print nothing if the end-of-input is reached
+before any line is repeated <i>n</i> times.
+</p><p>
+For example:
+
+
+    
+        
+    
+
+
+
+
+
+
+</p><pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./snap_n.pl 2</kbd>
+<kbd>hi
+how
+are
+you
+hi
+</kbd>Snap: hi
+</pre>
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./snap_n.pl 2</kbd>
+<kbd>hi
+hi hi
+hi hi hi
+hi hi hi hi
+hi hi
+</kbd>Snap: hi hi
+</pre>
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./snap_n.pl 4</kbd>
+<kbd>Hello World
+Line 2
+Hello World
+Line 3
+Hello World
+Line 4
+Hello World
+</kbd>Snap: Hello World
+</pre>
+
+No error checking is necessary.
+
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+</p><pre class="command_line">
+<kbd class="shell">2041 autotest test06 snap_n.pl</kbd>
+</pre>
+<div class="autotest_results">
+<h4>Automarking Results</h4>
+<span class="autotest_results_emphasis">94%</span>
+        
+        of <span class="autotest_results_emphasis">398</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">snap_n.pl</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+<ul>
+<li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>snap_n_1</i>
+</li><li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>snap_n_2</i>
+</li><li><span class="autotest_results_emphasis">96%</span>
+                    
+                    passed test <i>snap_n_3</i>
+</li><li><span class="autotest_results_emphasis">96%</span>
+                    
+                    passed test <i>snap_n_4</i>
+</li><li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>snap_n_5</i>
+</li><li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>snap_n_6</i>
+</li></ul>
+</div>
+</div>
+<p></p>
+<h3>Submission</h3>
+
+
+When you are finished submit your work by running:
+
+<pre class="command_line">
+<kbd class="shell">give cs2041 test06 filter_digits.pl nth_line.pl snap_n.pl</kbd>
+</pre>
+<p>
+Don't submit any exercises you haven't attempted.
+
+If you are working at home, you may find it more convenient
+to upload your work via
+ <a href="https://cgi.cse.unsw.edu.au/~give/code/login.php?app=/~give/Student/give.php&amp;debug=get_authuser">give's web interface</a>.
+</p><p>
+Remember you have until <b>Wednesday 6 September 23:59</b> to submit your work.
+
+
+
+
+</p><h3>Assessment</h3>
+
+This test is worth 1 mark. It will be automarked.
+<p>
+After the automarking is complete you should be able to view it by running
+this command on a CSE machine:
+
+</p><pre class="command_line">
+<kbd class="shell">2041 classrun -collect test06
+</kbd></pre>
+
+You can inspect marks for this lab and other assessment components via <a href="https://cgi.cse.unsw.edu.au/~give/code/login.php?app=/~give/Student/give.php&amp;debug=get_authuser">give's web interface</a> or by running
+
+<pre class="command_line">
+<kbd class="shell">2041 classrun -sturec
+</kbd></pre>
+<p>
+Reminder: weekly tests contribute 6% to your final COMP[29]041 final mark.
+</p><p>
+Your mark for the test component will be the sum of your best 6 of 8 test marks.
+</p><p>
+Hence you can obtain full marks for the 6% weekly test component without obtaining full marks every week.
+</p><p>
+Reminder: any violation of the test conditions will results in a mark of zero for the entire programming test component.
+
+
+</p></div>
+<!--
+public_html_session_directory=/web/cs2041/17s2
+base_directory=/web/cs2041/17s2
+public_html_directory=/web/cs2041
+scripts_directory=/web/cs2041/17s2/scripts
+home_directory=/home/cs2041
+bin_directory=/home/cs2041/bin
+course_account=cs2041
+course_code=COMP2041
+course_number=2041
+postgraduate_course_code=COMP9041
+course_name=Software Construction
+unsw_session=17s2
+canonical_url=https://cgi.cse.unsw.edu.au/~cs2041/
+github_repo_url=https://github.com/COMP2041UNSW/course_materials
+course_forum_url=https://piazza.com/class/j5ji4vjjra62a3
+lecture_recordings_url=https://moodle.telt.unsw.edu.au/course/view.php?id=27708
+WORK=/web/cs2041/17s2/work
+OUT=/web/cs2041/17s2/work/.out
+MARKED=/web/cs2041/17s2/work/.out/.marked
+SMSDB=/web/cs2041/17s2/work/17s2db.sms
+tlb_directory=/web/cs2041/17s2/tlb
+lecture_directory=/web/cs2041/17s2/lec
+flask_cache_directory=/web/cs2041/17s2/flask_cache
+testing_results_file=/web/cs2041/17s2/work/testing_results.json
+enrollments_file=/web/cs2041/17s2/work/enrollments.json
+unsw_ldap_password_file=/web/cs2041/.unsw_ldap_password
+autotest_upload_url=https://cgi.cse.unsw.edu.au/~cs2041/cgi/autotest_upload.cgi
+PATH=/web/cs2041/17s2/scripts:/home/cs2041/bin:/bin/:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/home/class/bin:/home/give/stable/bin.:/bin:/usr/bin:/usr/local/bin
+directory_relative_pathname=tlb/06
+url=https://cgi.cse.unsw.edu.au/~cs2041/flask.cgi/test/06/questions
+directory_url=https://cgi.cse.unsw.edu.au/~cs2041/test/06/
+url_root=https://cgi.cse.unsw.edu.au/~cs2041/
+script_root=/~cs2041/flask.cgi
+current_lecture_topic=exam
+current_week=13
+week=06
+exercise_name=test06
+tut_or_lab_or_test=test
+questions_or_answers=questions
+programs=&lt;programs&gt;
+
+-->
+</body>
+</html>

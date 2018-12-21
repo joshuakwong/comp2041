@@ -1,0 +1,1239 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>
+
+COMP2041 Week 03 Laboratory Sample Solutions
+
+</title>
+
+
+
+<link href="/~cs2041/flask.cgi/static/bootstrap.min.css?121200" rel="stylesheet">
+<link href="/~cs2041/flask.cgi/static/course.css?6554" rel="stylesheet">
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/jquery.min.js?95992"></script>
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/bootstrap.min.js?37045"></script>
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/course.js?1631"></script>
+<link rel="canonical" href="https://cgi.cse.unsw.edu.au/~cs2041/" />
+</head>
+<body>
+
+
+
+
+<div class="container">
+
+<div id="heading">
+
+
+<a class="heading_link" target="_blank" id="left_heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/">COMP[29]041 17s2</a>
+
+
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Week 03
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/02/answers">Week 02</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/03/answers">Week 03</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/04/answers">Week 04</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/05/answers">Week 05</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/06/answers">Week 06</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/07/answers">Week 07</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/08/answers">Week 08</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/09/answers">Week 09</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/10/answers">Week 10</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/11/answers">Week 11</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/13/answers">Week 13</a></li>
+        
+        
+    </ul>
+</span>
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Laboratory
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/03/answers">Tutorial
+                
+            </a></li>
+            
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/03/answers">Laboratory
+                
+            </a></li>
+            
+        
+            
+        
+    </ul>
+</span>
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Sample Solutions
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/03/questions">Exercises
+            
+            </a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/03/answers">Sample Solutions
+            
+            </a></li>
+        
+        
+    </ul>
+</span>
+
+
+
+
+<a class="heading_link" target="_blank" id="right_heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/">Software Construction</a>
+
+</div>
+
+</div>
+
+
+<div class="tutlab lab">
+
+
+
+<h3>Submission Summary</h3>
+Due
+
+Sunday midnight
+
+
+<pre class="command_line">
+<kbd class="shell">give cs2041 lab03 &lt;programs&gt;</kbd>
+</pre>
+
+
+
+
+<h3>Objectives</h3>
+
+
+Understanding how to program in Shell.
+
+
+
+
+
+<h3>Getting Started</h3>
+
+
+Create a new directory for this lab called <code>lab03</code> by typing:
+
+<pre class="command_line">
+<kbd class="shell">mkdir lab03</kbd>
+</pre>
+
+Change to this directory by typing:
+
+<pre class="command_line">
+<kbd class="shell">cd lab03</kbd>
+</pre>
+
+
+
+
+<h3>Exercise 0: Counting Classes</h3>
+
+The file <a href="counting_classes.txt">counting_classes.txt</a> contains a template which you must use
+to enter the answers for this exercise.  You can copy &amp; edit the file like this:
+<p>
+
+<pre class="command_line">
+<kbd class="shell">cp /web/cs2041/17s2/tlb/03/counting_classes.txt .</kbd>
+<kbd class="shell">gedit counting_classes.txt &</kbd>
+</pre>
+
+The autotest script depends on the format of this file so just add your answers
+and don't otherwise change the file.
+
+<h3>Counting Classes</h3>
+
+The file <a href="classes.txt">/web/cs2041/17s2/tlb/03/classes.txt</a> contains a
+list of  CSE classes downloaded from MyUNSW.
+
+<ol>
+
+<li>
+Write a shell pipeline to print how many classes there are.
+<p>
+<b>Hint:</b> the output of the pipeline should be:
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+381
+</pre>
+
+
+<div class="answer">
+Each line in the file represents a class. Therefore, the number
+of classes is equal to the number of lines in the file.
+<p>
+<pre>wc -l &lt;classes.txt</pre>
+</div>
+
+<li>
+Write a shell pipeline to print how many different courses have classes?
+<p>
+<b>Hint:</b> <code>cut</code> with the <code>-f</code> option will be useful here.
+<p>
+<b>Hint:</b> the output of the pipeline should be:
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+42
+</pre>
+
+<div class="answer">
+Approach: extract just the course codes, then sort them into groups
+of identical course codes, then compress each group to size one,
+giving one line for each group (i.e. each course). Then count the
+number of lines.
+
+<pre>cut -f1 classes.txt | sort | uniq | wc -l</pre>
+</div>
+
+<li>
+
+Write a shell pipeline which will print the course with the most classes (and no
+other courses) and how many classes are in this course? <p>
+<b>Hint:</b> the output of the pipeline should be:
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+     30 COMP1521
+</pre>
+
+
+<div class="answer">
+<pre>cut -f1 classes.txt | sort | uniq -c|sort -n|tail -1</pre>
+</div>
+
+<li>
+Write a shell pipeline that prints the room most frequently-used room by CSE classes how often it is used?
+<p>
+Don't include the CSE lab rooms.
+<p>
+<b>Hint:</b> the output of the pipeline should be:
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+     15 Quad G054
+</pre>
+
+
+<div class="answer">
+Approach: extract the non-lab classes, cut out the room names, then sort them into groups,
+then count the number of entries in each group, then sort numerically
+and grab the last line.
+<p>
+<pre>egrep -v 'LAB' classes.txt|cut -f5|sort|uniq -c|sort -n|tail -1</pre>
+<p>
+The last two steps in the above pipelines could be changed
+to <code>sort -nr | head -1</code>
+</div>
+
+<li>
+
+Write a shell pipeline  that prints the most popular time-of-day for classes to
+start and how many classes start at that time?
+<p>
+<b>Hint:</b> <code>cut</code> has a <code>-c</code> option.
+<p>
+<b>Hint:</b>  the output of the pipeline should be:
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+     19 Thu 16
+</pre>
+
+
+<div class="answer">
+<p>
+<pre>cut -f4 classes.txt|cut -d- -f1|sort|uniq -c|sort -n|tail -1</pre>
+<p>
+The last two steps in the above pipelines could be changed
+to <code>sort -nr | head -1</code>
+</div>
+
+<li>
+<b>Challenge:</b> write a shell pipeline that prints a list of the course codes (only) of COMP courses that
+run 2 or more  classes of the same type starting at the same time on the same day? (e.g. three tut-labs starting Monday at 10:00)
+<p>
+<b>Hint:</b> this should be the output of your pipeline:
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+COMP1511
+COMP1521
+COMP1531
+COMP2041
+COMP2521
+COMP3331
+COMP3421
+COMP9041
+COMP9323
+COMP9331
+COMP9415
+</pre>
+
+<div class="answer">
+This question needs a little thinking. The idea is that we're
+interested in any course where two classes are running on the same
+day at the same time. The info we want is contained in fields 1, 3
+and 4 of each line. If we cut these lines out, then sort the file,
+then count the size of each group, we could extract the final result
+by picking out groups whose size was different to '1'. The following
+pipeline uses this approach:
+
+<pre>grep '^COMP' classes.txt|cut -f1,3,4 |uniq -d|cut -f1|sort|uniq</pre>
+</div>
+</ol>
+
+
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+<pre class="command_line">
+<kbd class="shell">2041 autotest lab03 counting_classes.txt</kbd>
+</pre>
+
+
+    
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Automarking Results</h4>
+        <span class="autotest_results_emphasis">77%</span>
+        
+        of <span class="autotest_results_emphasis">464</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">counting_classes.txt</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+                <ul>
+                
+                    <li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>counting_classes_q1</i>
+                
+                    <li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>counting_classes_q2</i>
+                
+                    <li><span class="autotest_results_emphasis">96%</span>
+                    
+                    passed test <i>counting_classes_q3</i>
+                
+                    <li><span class="autotest_results_emphasis">95%</span>
+                    
+                    passed test <i>counting_classes_q4</i>
+                
+                    <li><span class="autotest_results_emphasis">94%</span>
+                    
+                    passed test <i>counting_classes_q5</i>
+                
+                    <li><span class="autotest_results_emphasis">79%</span>
+                    
+                    passed test <i>counting_classes_q6</i>
+                
+                </ul>
+                </div>
+            
+        
+    </div>
+
+
+<h3>Exercise 1: Mapping Digits</h3>
+
+Write a program <code>digits.sh</code> that reads from standard input and writes to standard output
+mapping all digit characters whose values are
+less than 5 into the character '<code>&lt;</code>' and all digit characters
+whose values are greater than 5 into the character '<code>&gt;</code>'.
+The digit character '5' should be left unchanged.
+<p>
+<table border=1 cellpadding=6>
+<tr><th>Sample Input Data</th><th>Corresponding Output</th></tr>
+<tr valign=top><td>
+<pre>
+1 234 5 678 9
+</pre>
+</td><td>
+<pre>
+&lt; &lt;&lt;&lt; 5 &gt;&gt;&gt; &gt;
+</pre>
+<tr valign=top><td>
+<pre>
+I can think of 100's
+of other things I'd rather
+be doing than these 3 questions
+</pre>
+</td><td>
+<pre>
+I can think of &lt;&lt;&lt;'s
+of other things I'd rather
+be doing than these &lt; questions
+</pre>
+</td></tr>
+<tr valign=top><td>
+<pre>
+A line with lots of numbers:
+123456789123456789123456789
+A line with all zeroes
+000000000000000000000000000
+A line with blanks at the end
+1 2 3
+</pre>
+</td><td>
+<pre>
+A line with lots of numbers:
+&lt;&lt;&lt;&lt;5&gt;&gt;&gt;&gt;&lt;&lt;&lt;&lt;5&gt;&gt;&gt;&gt;&lt;&lt;&lt;&lt;5&gt;&gt;&gt;&gt;
+A line with all zeroes
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+A line with blanks at the end
+&lt; &lt; &lt;
+</pre>
+</td></tr>
+<tr valign=top><td>
+<pre>
+Input with absolutely 0 digits in it
+Well ... apart from that one ...
+</pre>
+</td><td>
+<pre>
+Input with absolutely &lt; digits in it
+Well ... apart from that one ...
+</pre>
+</td></tr>
+<tr valign=top><td>
+<pre>
+1 2 4 8 16 32 64 128 256 512 1024
+2048 4096 8192 16384 32768 65536
+</pre>
+</td><td>
+<pre>
+&lt; &lt; &lt; &gt; &lt;&gt; &lt;&lt; &gt;&lt; &lt;&lt;&gt; &lt;5&gt; 5&lt;&lt; &lt;&lt;&lt;&lt;
+&lt;&lt;&lt;&gt; &lt;&lt;&gt;&gt; &gt;&lt;&gt;&lt; &lt;&gt;&lt;&gt;&lt; &lt;&lt;&gt;&gt;&gt; &gt;55&lt;&gt;
+</pre>
+</td></tr>
+</table>
+
+<b>Hint:</b> <code>tr</code> can be used.
+
+
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+<pre class="command_line">
+<kbd class="shell">2041 autotest lab03 digits.sh</kbd>
+</pre>
+
+
+    
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Automarking Results</h4>
+        <span class="autotest_results_emphasis">98%</span>
+        
+        of <span class="autotest_results_emphasis">458</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">digits.sh</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+                <ul>
+                
+                    <li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>digits_1</i>
+                
+                    <li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>digits_2</i>
+                
+                    <li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>digits_3</i>
+                
+                    <li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>digits_4</i>
+                
+                    <li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>digits_5</i>
+                
+                </ul>
+                </div>
+            
+        
+    </div>
+
+
+<div class="answer">
+Sample solution for digits.sh
+
+
+
+
+
+<pre class="program">
+
+#!/bin/sh
+tr &#39;0123456789&#39; &#39;&lt;&lt;&lt;&lt;&lt;5&gt;&gt;&gt;&gt;&#39;
+
+</pre>
+
+
+</div>
+
+<h3>Exercise 2: Repeated Echo</h3>
+
+Write a shell script  a program <code>echon.sh</code> which given exactly two arguments, an integer <i>n</i>
+and a string, prints the string <i>n</i> times. For example:
+<p>
+<pre class="command_line">
+<kbd class="shell">./echon.sh 5 hello</kbd>
+hello
+hello
+hello
+hello
+hello
+<kbd class="shell">./echon.sh 0 nothing</kbd>
+<kbd class="shell">./echon.sh 1 goodbye</kbd>
+goodbye
+</pre>
+<p>
+Your script should print exactly the error message below if it is not given
+exactly 2 arguments:
+<p>
+<pre class="command_line">
+<kbd class="shell">./echon.sh </kbd>
+Usage: ./echon.sh &lt;number of lines&gt; &lt;string&gt;
+<kbd class="shell">./echon.sh 1 2 3</kbd>
+Usage: ./echon.sh &lt;number of lines&gt; &lt;string&gt;
+</pre>
+<p>
+Also get your script to print this error message if
+its first argument isn't a non-negative integer:
+<p>
+<pre class="command_line">
+<kbd class="shell">./echon.sh hello world</kbd>
+./echon.sh: argument 1 must be a non-negative integer
+<kbd class="shell">./echon.sh -42 lines</kbd>
+./echon.sh: argument 1 must be a non-negative integer
+</pre>
+<p>
+Although its better practice to print your error messages to <code>stderr</code>
+its OK to print your error messages to stdout for this exercise.
+<p>
+<p>
+<b>Hint</b>: you'll need to use the shell <code>if</code>, <code>while</code> and <code>exit</code> statements,
+shell arithmetic and the <code>test</code> command.
+
+<div class="answer">
+<b>Discussion:</b>
+Straight-forward shell programming except for checking that
+the first argument is an integer
+<p>
+We could use the shell <code>case</code> to check the number of command-line args
+and also to check that the first argument is a non-negative integer.
+<p>
+Note the display of a usage message, which gives useful feedback
+to the user about they should have done.
+Note also the use of <code>exit</code> to terminate the script if
+an error is discovered in the command line arguments.
+</div>
+
+
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+<pre class="command_line">
+<kbd class="shell">2041 autotest lab03 echon.sh</kbd>
+</pre>
+
+
+    
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Automarking Results</h4>
+        <span class="autotest_results_emphasis">94%</span>
+        
+        of <span class="autotest_results_emphasis">456</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">echon.sh</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+                <ul>
+                
+                    <li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>echon_1</i>
+                
+                    <li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>echon_3</i>
+                
+                    <li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>echon_4</i>
+                
+                    <li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>echon_5</i>
+                
+                    <li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>echon_6</i>
+                
+                    <li><span class="autotest_results_emphasis">95%</span>
+                    
+                    passed test <i>echon_7</i>
+                
+                    <li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>echon_8</i>
+                
+                </ul>
+                </div>
+            
+        
+    </div>
+
+
+<div class="answer">
+Sample solution for echon.sh
+
+
+
+
+
+<pre class="program">
+
+#!/bin/sh
+
+# check command-line args
+if test $# != 2
+then
+    echo &#34;Usage: $0 &lt;number of lines&gt; &lt;string&gt;&#34;
+    exit 1
+fi
+
+# standard error redirected because test will print
+# a warning message if $1 is not an integer
+
+if test &#34;$1&#34; -ge 0 2&gt;/dev/null
+then
+    :
+else
+    echo &#34;$0: argument 1 must be a non-negative integer&#34;
+    exit 1
+fi
+
+number_of_lines=$1
+text=$2
+
+line_count=0
+while test $line_count -lt $number_of_lines
+do
+    echo $text
+    line_count=$(($line_count + 1))
+done
+
+exit 0
+
+</pre>
+
+
+</div>
+
+<h3>Exercise 3: Files Sizes</h3>
+
+Write a shell script <code>file_sizes.sh</code> which prints the names of the files
+in the current directory splitting them into three categories:  <i>small</i>, <i>medium-sized</i> and <i>large</i>.
+A file is considered <i>small</i> if it contains less than 10 lines, <i>medium-sized</i> if contains less than
+100 lines, otherwise it is considered  <i>large</i>.
+<p>
+Your script should always print exactly three lines of output.
+Files should be listed in alphabetic order on each line.
+Your shell-script should match character-for-character
+the output shown in the example below.
+Notice the creation of a separate direcory for testing and the use of
+the script from the last question to produce test files.
+You could also produce test files manually using an editor.
+<p>
+<pre class="command_line">
+<kbd class="shell">mkdir test</kbd>
+<kbd class="shell">cd test</kbd>
+<kbd class="shell">../echon.sh 5 text >a</kbd>
+<kbd class="shell">../echon.sh 505 text >bbb</kbd>
+<kbd class="shell">../echon.sh 17 text >cc</kbd>
+<kbd class="shell">../echon.sh 10 text >d</kbd>
+<kbd class="shell">../echon.sh 1000 text >e</kbd>
+<kbd class="shell">../echon.sh 0 text >empty</kbd>
+<kbd class="shell">ls -l</kbd>
+total 24
+-rw-r--r-- 1 andrewt andrewt   25 Mar 24 10:37 a
+-rw-r--r-- 1 andrewt andrewt 2525 Mar 24 10:37 bbb
+-rw-r--r-- 1 andrewt andrewt   85 Mar 24 10:37 cc
+-rw-r--r-- 1 andrewt andrewt   50 Mar 24 10:37 d
+-rw-r--r-- 1 andrewt andrewt 5000 Mar 24 10:37 e
+-rw-r--r-- 1 andrewt andrewt    0 Mar 24 10:37 empty
+<kbd class="shell">../file_sizes.sh </kbd>
+Small files: a empty
+Medium-sized files: cc d
+Large files: bbb e
+<kbd class="shell">rm cc d</kbd>
+<kbd class="shell">../echon.sh 10000 . >lots_of_dots</kbd>
+<kbd class="shell">ls -l</kbd>
+total 36
+-rw-r--r-- 1 andrewt andrewt    25 Mar 24 10:37 a
+-rw-r--r-- 1 andrewt andrewt  2525 Mar 24 10:37 bbb
+-rw-r--r-- 1 andrewt andrewt  5000 Mar 24 10:37 e
+-rw-r--r-- 1 andrewt andrewt     0 Mar 24 10:37 empty
+-rw-r--r-- 1 andrewt andrewt 20000 Mar 24 10:39 lots_of_dots
+<kbd class="shell">../file_sizes.sh </kbd>
+Small files: a empty
+Medium-sized files:
+Large files: bbb e lots_of_dots
+<kbd class="shell"></kbd>
+</pre>
+<p>
+<p>
+<p>
+<b>Hint</b>: you can use the command <code>wc</code> to discover how many lines are in a file.
+You probably want to use the shell's back quotes, its<code>if</code> statement, and
+the <code>test</code> command .
+
+
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+<pre class="command_line">
+<kbd class="shell">2041 autotest lab03 file_sizes.sh</kbd>
+</pre>
+
+
+    
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Automarking Results</h4>
+        <span class="autotest_results_emphasis">95%</span>
+        
+        of <span class="autotest_results_emphasis">431</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">file_sizes.sh</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+                <ul>
+                
+                    <li><span class="autotest_results_emphasis">95%</span>
+                    
+                    passed test <i>file_size_1</i>
+                
+                    <li><span class="autotest_results_emphasis">95%</span>
+                    
+                    passed test <i>file_size_2</i>
+                
+                </ul>
+                </div>
+            
+        
+    </div>
+
+
+<div class="answer">
+
+A nice example of accumulating a results in variables.
+<p>
+Sample solution for file_sizes.sh
+
+
+
+
+
+<pre class="program">
+
+#!/bin/sh
+
+for file in *
+do
+    lines=`wc -l &lt;$file`
+    if test $lines -lt 10
+    then
+        small_files=&#34;$small_files $file&#34;
+    elif test $lines -lt 100
+    then
+        medium_files=&#34;$medium_files $file&#34;
+    else
+        large_files=&#34;$large_files $file&#34;
+    fi
+done
+
+echo &#34;Small files:$small_files&#34;
+echo &#34;Medium-sized files:$medium_files&#34;
+echo &#34;Large files:$large_files&#34;
+
+exit 0
+
+</pre>
+
+
+</div>
+
+<h3>Challenge Exercise: Scraping Courses</h3>
+
+Write a shell script <code>courses.sh</code> which prints a list of UNSW courses with
+the given prefix by extracting them from the UNSW handbook webpages. For example:
+
+<pre class="command_line">
+<kbd class="shell">courses.sh OPTM</kbd>
+OPTM2111 Optometry 2A
+OPTM2133 The Clinical Environment
+OPTM2190 Introduction to Clinical Optometry
+OPTM2211 Optometry 2B
+OPTM2233 Optical Dispensing
+OPTM2291 Primary Care Optometry
+OPTM3105 Disease Processes of the Eye 1
+OPTM3111 Optometry 3A
+OPTM3131 Ocular Disease 3A
+OPTM3133 Vision Science in the Consulting Room
+OPTM3201 Ocular Imaging & Applied Vision Science
+OPTM3205 Disease Processes of the Eye 2
+OPTM3211 Optometry 3B
+OPTM3231 Ocular Disease 3B
+OPTM3233 Working in the clinical environment
+OPTM4110 Optometry 4A
+OPTM4131 Clinical Optometry 4A
+OPTM4151 Ocular Therapeutics 4A
+OPTM4211 Optometry 4B
+OPTM4231 Clinical Optometry 4B
+OPTM4251 Ocular Therapeutics 4B
+OPTM4271 Professional Optometry
+OPTM4291 Optometry, Medicine & Patient Management
+OPTM5111 Clinical Optometry 5A
+OPTM5131 Specialist Clinical Optometry 5A
+OPTM5151 Clinical Ocular Therapeutics 5A
+OPTM5171 Research Project 5A
+OPTM5211 Clinical Optometry 5B
+OPTM5231 Specialist Clinical Optometry 5B
+OPTM5251 Clinical Ocular Therapeutics 5B
+OPTM5271 Research Project 5B
+OPTM6400 Optometric Preclinical Practice
+OPTM6411 Contact Lenses
+OPTM6412 Clinical Optometry 4A
+OPTM6413 Anterior Eye Therapeutics
+OPTM6421 Binocular Vision, Paediatrics and Low Vision
+OPTM6422 Clinical Optometry 4B
+OPTM6423 Therapeutics and the Posterior Eye
+OPTM6424 Professional Optometry
+OPTM7001 Introduction to Community Eye Health
+OPTM7002 Epidemiology & Biostatistics for Needs Assessment
+OPTM7003 Epidemiology of Blinding Eye Diseases
+OPTM7004 Advocacy and Education in Community Eye Health
+OPTM7005 Eye Health Economics and Sustainability
+OPTM7006 Eye Care Program Management
+OPTM7007 Community Eye Health Project
+OPTM7103 Behavioural Optometry 1
+OPTM7104 Advanced Contact Lens Studies 1
+OPTM7108 Research Skills in Optometry
+OPTM7110 Public Health Optometry
+OPTM7115 Visual Neuroscience
+OPTM7117 Ocular Therapy 2
+OPTM7203 Behavioural Optometry 2
+OPTM7205 Specialty Contact Lens Studies
+OPTM7213 Ocular Therapy
+OPTM7301 Advanced Clinical Optometry
+OPTM7302 Evidence Based Optometry
+OPTM7308 Research Project
+OPTM7444 Business Skills in Optometry
+OPTM7511 Advanced Ocular Disease 1
+OPTM7521 Advanced Ocular Disease 2
+OPTM8511 Clinical paediatrics, low vision and colour vision
+OPTM8512 Clinical Optometry 5A
+OPTM8513 Clinical Ocular Therapy 5A
+OPTM8518 Optometry Research Project A
+OPTM8521 Clinical Contact Lenses
+OPTM8522 Clinical Optometry 5B
+OPTM8523 Clinical Ocular Therapy 5B
+OPTM8528 Optometry Research Project B
+<kbd class="shell">courses.sh MATH|wc</kbd>
+    126     585    4874
+<kbd class="shell">courses.sh COMP|grep Soft</kbd>
+COMP1531 Software Engineering Fundamentals
+COMP2041 Software Construction: Techniques and Tools
+COMP3141 Software System Design and Implementation
+COMP3431 Robotic Software Architecture
+COMP4001 Object-Oriented Software Development
+COMP4161 Advanced Topics in Software Verification
+COMP4181 Language-based Software Safety
+COMP6447 System and Software Security Assessment
+COMP9041 Software Construction: Techniques and Tools
+COMP9181 Language-based Software Safety
+COMP9431 Robotic Software Architecture
+<kbd class="shell">courses.sh MINE|grep Rock</kbd>
+MINE3630 Rock Breakage
+MINE8640 Geotechnical Hazards in Hard Rock Mines
+MINE8660 Geotechnical Engineering for Underground Hard Rock
+</pre>
+
+Your script must download the handbook web pages and extract the information from them when it is run.
+
+<h4>Hints</h4>
+
+This task can be done using the usual tools of grep, sed, sort & uniq but the regular expressions take some thought.
+<p>
+The UNSW handbook uses seperate web pages for  undergraduate and postgraduate courses.
+These two web pages would need to be downloaded for the above example (JAPN):
+<a href="http://www.handbook.unsw.edu.au/vbook2017/brCoursesByAtoZ.jsp?StudyLevel=Undergraduate&amp;descr=O"><code>http://www.handbook.unsw.edu.au/vbook2017/brCoursesByAtoZ.jsp?StudyLevel=Undergraduate&amp;descr=O</code></a>
+and
+<a href="http://www.handbook.unsw.edu.au/vbook2017/brCoursesByAtoZ.jsp?StudyLevel=Postgraduate&amp;descr=O"><code>http://www.handbook.unsw.edu.au/vbook2017/brCoursesByAtoZ.jsp?StudyLevel=Postgraduate&amp;descr=O</code></a>.
+<p>
+Make sure courses which occur in both postgraduate & undergraduate handbooks aren't repeated.
+<p>
+<code>cat -A</code> can be useful to check for non-printing characters.
+<p>
+The command <code>wget</code> can be used to download a web page and has option which
+allow it to be used in shell pipelines. For example:
+<pre class="command_line">
+<kbd class="shell">wget -q -O- "http://www.handbook.unsw.edu.au/vbook2017/brCoursesByAtoZ.jsp?StudyLevel=Undergraduate&amp;descr=O"|grep OPTM</kbd>
+                                &lt;TD class="" align="left">OPTM2111&lt;/TD>
+                                &lt;TD class="">&lt;A href="http://www.handbook.unsw.edu.au/undergraduate/courses/2017/OPTM2111.html">Optometry 2A&lt;/A>&lt;/TD>
+                                &lt;TD class="evenTableCell" align="left">OPTM2133&lt;/TD>
+                                &lt;TD class="evenTableCell">&lt;A href="http://www.handbook.unsw.edu.au/undergraduate/courses/2017/OPTM2133.html">The Clinical Environment &lt;/A>&lt;/TD>
+                                &lt;TD class="" align="left">OPTM2190&lt;/TD>
+                                &lt;TD class="">&lt;A href="http://www.handbook.unsw.edu.au/undergraduate/courses/2017/OPTM2190.html">Introduction to Clinical Optometry &lt;/A>&lt;/TD>
+                                &lt;TD class="evenTableCell" align="left">OPTM2211&lt;/TD>
+                                &lt;TD class="evenTableCell">&lt;A href="http://www.handbook.unsw.edu.au/undergraduate/courses/2017/OPTM2211.html">Optometry 2B&lt;/A>&lt;/TD>
+                                &lt;TD class="" align="left">OPTM2233&lt;/TD>
+                                &lt;TD class="">&lt;A href="http://www.handbook.unsw.edu.au/undergraduate/courses/2017/OPTM2233.html">Optical Dispensing &lt;/A>&lt;/TD>
+</pre>
+
+
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+<pre class="command_line">
+<kbd class="shell">2041 autotest lab03 courses.sh</kbd>
+</pre>
+
+
+    
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Automarking Results</h4>
+        <span class="autotest_results_emphasis">30%</span>
+        
+        of <span class="autotest_results_emphasis">291</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">courses.sh</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+                <ul>
+                
+                    <li><span class="autotest_results_emphasis">82%</span>
+                    
+                    passed test <i>challenge_courses_1</i>
+                
+                    <li><span class="autotest_results_emphasis">78%</span>
+                    
+                    passed test <i>challenge_courses_2</i>
+                
+                    <li><span class="autotest_results_emphasis">56%</span>
+                    
+                    passed test <i>challenge_courses_3</i>
+                
+                    <li><span class="autotest_results_emphasis">74%</span>
+                    
+                    passed test <i>challenge_courses_4</i>
+                
+                    <li><span class="autotest_results_emphasis">56%</span>
+                    
+                    passed test <i>challenge_courses_5</i>
+                
+                </ul>
+                </div>
+            
+        
+    </div>
+
+
+
+<div class="answer">
+<div class="program_description">
+Sample solution for courses.sh
+</div>
+
+
+
+
+
+<pre class="program">
+
+#!/bin/sh
+
+# written by andrewt@cse.unsw.edu.au
+# Aug 2017 as a COMP2041 programming example
+
+if test $# != 1
+then
+    echo &#34;Usage: $0 &lt;course-prefix&gt;&#34;
+    exit 1
+fi
+
+# get current year
+year=`date &#39;+%Y&#39;`
+course_prefix=$1
+first_letter=`echo $course_prefix|sed &#39;s/\(.\).*/\1/&#39;`
+base_url=&#34;http://www.handbook.unsw.edu.au/vbook$year/brCoursesByAtoZ.jsp&#34;
+ugrad_url=&#34;$base_url?StudyLevel=Undergraduate&amp;descr=$first_letter&#34;
+pgrad_url=&#34;$base_url?StudyLevel=Postgraduate&amp;descr=$first_letter&#34;
+
+wget -q -O- &#34;$ugrad_url&#34; &#34;$pgrad_url&#34;|
+egrep &#34;$course_prefix[0-9][0-9][0-9][0-9].html&#34;|
+sed &#34;s/.*\($course_prefix[0-9][0-9][0-9][0-9]\)\.html[^&gt;]*&gt; *\([^&lt;]*\).*/\1 \2/&#34;|
+sed &#39;s/ *$//&#39;|
+sort|
+uniq
+
+</pre>
+
+
+</div>
+
+
+
+
+
+<h3>Submission</h3>
+
+When you are finished submit your work by running:
+<pre class="command_line">
+<kbd class="shell">give cs2041 lab03 &lt;programs&gt;</kbd>
+</pre>
+<p>
+Don't submit any exercises you haven't attempted.
+
+If you are working at home, you may find it more convenient
+to upload your work via
+ <a href="https://cgi.cse.unsw.edu.au/~give/code/login.php?app=/~give/Student/give.php&amp;debug=get_authuser">give's web interface</a>.
+<p>
+Remember you have until
+
+Sunday midnight
+
+
+to submit your work.
+
+
+
+
+<h3>Assessment</h3>
+
+This lab exercises is worth 1 mark.
+<p>
+Labs exercise are either automarked or peer assessed.
+This is to allow tutors' time to be used to assist students.
+<p>
+After the automarking is complete you should be able to view it by running
+this command on a CSE machine:
+
+<pre class="command_line">
+<kbd class="shell">2041 classrun -collect lab03
+</pre>
+
+You can inspect marks for this lab and other assessment components via <a href="https://cgi.cse.unsw.edu.au/~give/code/login.php?app=/~give/Student/give.php&amp;debug=get_authuser">give's web interface</a> or by running
+
+<pre class="command_line">
+<kbd class="shell">2041 classrun -sturec
+</pre>
+
+<p>
+Reminder: lab marks contribute 9% to your final COMP[29]041 final mark.
+<p>
+The 11 lab marks will be summed at the end of session and the sum capped at 9 marks.
+<p>
+Hence you can obtain full marks for the 9% lab component without obtaining full marks every week.
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+<!--
+public_html_session_directory=/web/cs2041/17s2
+base_directory=/web/cs2041/17s2
+public_html_directory=/web/cs2041
+scripts_directory=/web/cs2041/17s2/scripts
+home_directory=/home/cs2041
+bin_directory=/home/cs2041/bin
+course_account=cs2041
+course_code=COMP2041
+course_number=2041
+postgraduate_course_code=COMP9041
+course_name=Software Construction
+unsw_session=17s2
+canonical_url=https://cgi.cse.unsw.edu.au/~cs2041/
+github_repo_url=https://github.com/COMP2041UNSW/course_materials
+course_forum_url=https://piazza.com/class/j5ji4vjjra62a3
+lecture_recordings_url=https://moodle.telt.unsw.edu.au/course/view.php?id=27708
+WORK=/web/cs2041/17s2/work
+OUT=/web/cs2041/17s2/work/.out
+MARKED=/web/cs2041/17s2/work/.out/.marked
+SMSDB=/web/cs2041/17s2/work/17s2db.sms
+tlb_directory=/web/cs2041/17s2/tlb
+lecture_directory=/web/cs2041/17s2/lec
+flask_cache_directory=/web/cs2041/17s2/flask_cache
+testing_results_file=/web/cs2041/17s2/work/testing_results.json
+enrollments_file=/web/cs2041/17s2/work/enrollments.json
+unsw_ldap_password_file=/web/cs2041/.unsw_ldap_password
+autotest_upload_url=https://cgi.cse.unsw.edu.au/~cs2041/cgi/autotest_upload.cgi
+PATH=/web/cs2041/17s2/scripts:/home/cs2041/bin:/bin/:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/home/class/bin:/home/give/stable/bin.:/bin:/usr/bin:/usr/local/bin
+directory_relative_pathname=tlb/03
+url=https://cgi.cse.unsw.edu.au/~cs2041/flask.cgi/lab/03/answers
+directory_url=https://cgi.cse.unsw.edu.au/~cs2041/lab/03/
+url_root=https://cgi.cse.unsw.edu.au/~cs2041/
+script_root=/~cs2041/flask.cgi
+current_lecture_topic=exam
+current_week=13
+week=03
+exercise_name=lab03
+tut_or_lab_or_test=lab
+questions_or_answers=answers
+programs=&lt;programs&gt;
+
+-->
+
+</body>
+</html>

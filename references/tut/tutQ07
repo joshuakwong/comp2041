@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>
+
+COMP2041 Week 07 Tutorial Questions
+
+</title>
+<link href="/~cs2041/flask.cgi/static/bootstrap.min.css?121200" rel="stylesheet"/>
+<link href="/~cs2041/flask.cgi/static/course.css?6554" rel="stylesheet"/>
+<script src="/~cs2041/flask.cgi/static/jquery.min.js?95992" type="text/javascript"></script>
+<script src="/~cs2041/flask.cgi/static/bootstrap.min.js?37045" type="text/javascript"></script>
+<script src="/~cs2041/flask.cgi/static/course.js?1631" type="text/javascript"></script>
+<link href="https://cgi.cse.unsw.edu.au/~cs2041/" rel="canonical"/>
+</head>
+<body>
+<div class="container">
+<div id="heading">
+<a class="heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/" id="left_heading_link" target="_blank">COMP[29]041 17s2</a>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Week 07
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/02/questions">Week 02</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/03/questions">Week 03</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/04/questions">Week 04</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/05/questions">Week 05</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/06/questions">Week 06</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/07/questions">Week 07</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/08/questions">Week 08</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/09/questions">Week 09</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/10/questions">Week 10</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/11/questions">Week 11</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/12/questions">Week 12</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/13/questions">Week 13</a></li>
+</ul>
+</span>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Tutorial
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/07/questions">Tutorial
+                
+            </a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/07/questions">Laboratory
+                
+            </a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/test/07/questions">Weekly Test
+                
+            </a></li>
+</ul>
+</span>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Questions
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/07/questions">Questions
+            
+            </a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/07/answers">Sample Answers
+            
+            </a></li>
+</ul>
+</span>
+<a class="heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/" id="right_heading_link" target="_blank">Software Construction</a>
+</div>
+</div>
+<div class="tutlab tut">
+<ol>
+<li>
+
+Write a Perl program <code>word_frequency.pl</code> which prints a count of all the words found in its
+input.  Your program should ignore case. It should treat any sequence of alphabetic characters ([a-z])
+as a word. It should treat any non-alphabetic character as a space. It should print words and their
+counts sorted in increasing order of frequency in the format shown in this example:
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./word_frequency.pl</kbd>
+<kbd>Peter Piper picked a peck of pickled peppers;
+A peck of pickled peppers Peter Piper picked;
+If Peter Piper picked a peck of pickled peppers,
+Where's the peck of pickled peppers Peter Piper picked?
+</kbd><span class="eof"></span>
+1 the
+1 s
+1 where
+1 if
+3 a
+4 pickled
+4 piper
+4 peppers
+4 of
+4 peter
+4 peck
+4 picked
+</pre>
+<p></p>
+</li><li>
+
+Write a Perl program <code>missing_words.pl</code> which given two files as arguments prints,
+in sorted order, all the words found in file1 but not file2.
+<p>
+You can assume words occur one per line in each file.
+
+</p><p></p>
+</li><li>
+Write a Perl program that given the road distances between
+a number of towns (on standard input) calculates the shortest journey
+between two towns specified as arguments.
+Here is an example of how your program should behave.
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./shortest_path.pl Parkes Gilgandra</kbd>
+<kbd>Bourke Broken-Hill   217
+Bourke Dubbo          23
+Bourke Gilgandra      62
+Bourke Parkes         71
+Canowindra Dubbo      35
+Canowindra Gilgandra  13
+Canowindra Parkes    112
+Dubbo Gilgandra       91
+Dubbo Parkes          57
+</kbd><span class="eof"></span>
+/bin/sh: ./shortest_path.pl: No such file or directory
+</pre>
+<p></p>
+</li><li>
+
+Write a Perl function <code>printHash()</code> that displays the contents
+of a Perl associative array (hash) in the format below (its the format  used by
+the PHP function <code>print_r</code>) e.g. the hash table ...
+
+<pre class="program">
+%colours = ("John" =&gt; "blue", "Anne" =&gt; "red", "Andrew" =&gt; "green");
+</pre>
+
+and the function call ...
+
+<pre class="program">
+printHash(%colours);
+</pre>
+
+should produce the output ...
+
+<pre class="program">
+[Andrew] =&gt; green
+[Anne] =&gt; red
+[John] =&gt; blue
+</pre>
+
+Since the function achieves its effect via <code>print</code>, it doesn't
+really need to return any value, but since Perl functions typically
+return <em>something</em>, <code>printHash</code> should return a count
+of the number of items displayed (i.e. the number of keys in the hash table).
+Note that the hash should be displayed in ascending alphabetical order
+on key values.
+
+<p></p>
+</li><li>
+
+A bigram is two words occuring consecutively in a piece of text.
+Some pairs of words tend to occur more commonly than others as bigrams,
+e.g <code>cold beer</code> or <code>programming language</code>.
+<p>
+Your task is to write a Perl program <code>bigrams.pl</code> which reads a piece of text,
+and prints the words which occur in the text
+in sorted order, one per line.  Each word should be accompanied
+by the word which most frequently follows it in the text - if several
+words occur equally often after the word, any of them can be printed.
+The number of times the word occurs in the text should be indicated
+as should the number of times the second word follows it.
+Case should be ignored. For example given this text:
+
+
+    
+        
+    
+
+
+
+
+
+
+</p><pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./bigrams.pl</kbd>
+<kbd>Peter Piper picked a peck of pickled peppers;
+A peck of pickled peppers Peter Piper picked;
+If Peter Piper picked a peck of pickled peppers,
+Where's the peck of pickled peppers Peter Piper picked?
+</kbd><span class="eof"></span>
+a(3) peck(3)
+if(1) peter(1)
+of(4) pickled(4)
+peck(4) of(4)
+peppers(4) peter(2)
+peter(4) piper(4)
+picked(3) a(2)
+pickled(4) peppers(4)
+piper(4) picked(4)
+s(1) the(1)
+the(1) peck(1)
+where(1) s(1)
+</pre>
+<p></p>
+<h3>Revision questions</h3>
+
+The remaining tutorial questions are primarily intended for revision - either this week
+or later in session.
+<p>
+Your tutor may still choose to cover some of the questions time permitting.
+</p><p>
+</p></li></ol>
+</div>
+<!--
+public_html_session_directory=/web/cs2041/17s2
+base_directory=/web/cs2041/17s2
+public_html_directory=/web/cs2041
+scripts_directory=/web/cs2041/17s2/scripts
+home_directory=/home/cs2041
+bin_directory=/home/cs2041/bin
+course_account=cs2041
+course_code=COMP2041
+course_number=2041
+postgraduate_course_code=COMP9041
+course_name=Software Construction
+unsw_session=17s2
+canonical_url=https://cgi.cse.unsw.edu.au/~cs2041/
+github_repo_url=https://github.com/COMP2041UNSW/course_materials
+course_forum_url=https://piazza.com/class/j5ji4vjjra62a3
+lecture_recordings_url=https://moodle.telt.unsw.edu.au/course/view.php?id=27708
+WORK=/web/cs2041/17s2/work
+OUT=/web/cs2041/17s2/work/.out
+MARKED=/web/cs2041/17s2/work/.out/.marked
+SMSDB=/web/cs2041/17s2/work/17s2db.sms
+tlb_directory=/web/cs2041/17s2/tlb
+lecture_directory=/web/cs2041/17s2/lec
+flask_cache_directory=/web/cs2041/17s2/flask_cache
+testing_results_file=/web/cs2041/17s2/work/testing_results.json
+enrollments_file=/web/cs2041/17s2/work/enrollments.json
+unsw_ldap_password_file=/web/cs2041/.unsw_ldap_password
+autotest_upload_url=https://cgi.cse.unsw.edu.au/~cs2041/cgi/autotest_upload.cgi
+PATH=/web/cs2041/17s2/scripts:/home/cs2041/bin:/bin/:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/home/class/bin:/home/give/stable/bin.:/bin:/usr/bin:/usr/local/bin
+directory_relative_pathname=tlb/07
+url=https://cgi.cse.unsw.edu.au/~cs2041/flask.cgi/tut/07/questions
+directory_url=https://cgi.cse.unsw.edu.au/~cs2041/tut/07/
+url_root=https://cgi.cse.unsw.edu.au/~cs2041/
+script_root=/~cs2041/flask.cgi
+current_lecture_topic=exam
+current_week=13
+week=07
+exercise_name=tut07
+tut_or_lab_or_test=tut
+questions_or_answers=questions
+programs=&lt;programs&gt;
+
+-->
+</body>
+</html>

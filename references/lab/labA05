@@ -1,0 +1,1207 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<title>
+
+COMP2041 Week 05 Laboratory Sample Solutions
+
+</title>
+
+
+
+<link href="/~cs2041/flask.cgi/static/bootstrap.min.css?121200" rel="stylesheet">
+<link href="/~cs2041/flask.cgi/static/course.css?6554" rel="stylesheet">
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/jquery.min.js?95992"></script>
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/bootstrap.min.js?37045"></script>
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/course.js?1631"></script>
+<link rel="canonical" href="https://cgi.cse.unsw.edu.au/~cs2041/" />
+</head>
+<body>
+
+
+
+
+<div class="container">
+
+<div id="heading">
+
+
+<a class="heading_link" target="_blank" id="left_heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/">COMP[29]041 17s2</a>
+
+
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Week 05
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/02/answers">Week 02</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/03/answers">Week 03</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/04/answers">Week 04</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/05/answers">Week 05</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/06/answers">Week 06</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/07/answers">Week 07</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/08/answers">Week 08</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/09/answers">Week 09</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/10/answers">Week 10</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/11/answers">Week 11</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/13/answers">Week 13</a></li>
+        
+        
+    </ul>
+</span>
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Laboratory
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/05/answers">Tutorial
+                
+            </a></li>
+            
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/05/answers">Laboratory
+                
+            </a></li>
+            
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/05/answers">Weekly Test
+                
+            </a></li>
+            
+        
+    </ul>
+</span>
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Sample Solutions
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/05/questions">Exercises
+            
+            </a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/05/answers">Sample Solutions
+            
+            </a></li>
+        
+        
+    </ul>
+</span>
+
+
+
+
+<a class="heading_link" target="_blank" id="right_heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/">Software Construction</a>
+
+</div>
+
+</div>
+
+
+<div class="tutlab lab">
+
+
+
+<h3>Submission Summary</h3>
+Due
+
+Sunday midnight
+
+
+<pre class="command_line">
+<kbd class="shell">give cs2041 lab05 digits.pl echon.pl tail.pl shuffle.pl shuffle_test.sh</kbd>
+</pre>
+
+
+
+
+<h3>Objectives</h3>
+
+
+Getting started with Perl programming.
+
+
+
+
+
+<h3>Getting Started</h3>
+
+
+Create a new directory for this lab called <code>lab05</code> by typing:
+
+<pre class="command_line">
+<kbd class="shell">mkdir lab05</kbd>
+</pre>
+
+Change to this directory by typing:
+
+<pre class="command_line">
+<kbd class="shell">cd lab05</kbd>
+</pre>
+
+
+
+
+<h3>Background</h3>
+<p>
+We have covered only a small amount of Perl in lectures. In fact, to
+cover the whole language in detail would take a whole semester, so
+we're going to rely on you finding out about the language yourself
+in tutes, labs and assignments. A good place to start is
+the Perl documentation & tutorial links on the class home page
+For example you might find these useful:
+</p>
+<ul>
+<li> <a target="doc" href="http://search.cpan.org/dist/perl/pod/perlsyn.pod">Perl language syntax</a>
+<li> <a target="doc" href="http://search.cpan.org/dist/perl/pod/perlsub.pod">Perl functions</a>
+<li> <a target="doc" href="http://search.cpan.org/dist/perl/pod/perlop.pod">Perl operators</a>
+</ul>
+
+<h3>Exercise: Mapping Digits</h3>
+
+Write a Perl script <code>digits.pl</code> that reads from standard input and writes to standard output
+mapping all digit characters whose values are
+less than 5 into the character '<code>&lt;</code>' and all digit characters
+whose values are greater than 5 into the character '<code>&gt;</code>'.
+The digit character '5' should be left unchanged.
+<p>
+
+<table border=1 cellpadding=6>
+<tr><th>Sample Input Data</th><th>Corresponding Output</th></tr>
+<tr valign=top><td>
+<pre>
+1 234 5 678 9
+</pre>
+</td><td>
+<pre>
+&lt; &lt;&lt;&lt; 5 &gt;&gt;&gt; &gt;
+</pre>
+<tr valign=top><td>
+<pre>
+I can think of 100's
+of other things I'd rather
+be doing than these 3 questions
+</pre>
+</td><td>
+<pre>
+I can think of &lt;&lt;&lt;'s
+of other things I'd rather
+be doing than these &lt; questions
+</pre>
+</td></tr>
+<tr valign=top><td>
+<pre>
+A line with lots of numbers:
+123456789123456789123456789
+A line with all zeroes
+000000000000000000000000000
+A line with blanks at the end
+1 2 3
+</pre>
+</td><td>
+<pre>
+A line with lots of numbers:
+&lt;&lt;&lt;&lt;5&gt;&gt;&gt;&gt;&lt;&lt;&lt;&lt;5&gt;&gt;&gt;&gt;&lt;&lt;&lt;&lt;5&gt;&gt;&gt;&gt;
+A line with all zeroes
+&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;
+A line with blanks at the end
+&lt; &lt; &lt;
+</pre>
+</td></tr>
+<tr valign=top><td>
+<pre>
+Input with absolutely 0 digits in it
+Well ... apart from that one ...
+</pre>
+</td><td>
+<pre>
+Input with absolutely &lt; digits in it
+Well ... apart from that one ...
+</pre>
+</td></tr>
+<tr valign=top><td>
+<pre>
+1 2 4 8 16 32 64 128 256 512 1024
+2048 4096 8192 16384 32768 65536
+</pre>
+</td><td>
+<pre>
+&lt; &lt; &lt; &gt; &lt;&gt; &lt;&lt; &gt;&lt; &lt;&lt;&gt; &lt;5&gt; 5&lt;&lt; &lt;&lt;&lt;&lt;
+&lt;&lt;&lt;&gt; &lt;&lt;&gt;&gt; &gt;&lt;&gt;&lt; &lt;&gt;&lt;&gt;&lt; &lt;&lt;&gt;&gt;&gt; &gt;55&lt;&gt;
+</pre>
+</td></tr>
+</table>
+
+
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+<pre class="command_line">
+<kbd class="shell">2041 autotest lab05 digits.pl</kbd>
+</pre>
+
+
+    
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Automarking Results</h4>
+        <span class="autotest_results_emphasis">99%</span>
+        
+        of <span class="autotest_results_emphasis">457</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">digits.pl</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+                <ul>
+                
+                    <li><span class="autotest_results_emphasis">100%</span>
+                    
+                    passed test <i>digits_1</i>
+                
+                    <li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>digits_2</i>
+                
+                    <li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>digits_3</i>
+                
+                    <li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>digits_4</i>
+                
+                    <li><span class="autotest_results_emphasis">100%</span>
+                    
+                    passed test <i>digits_5</i>
+                
+                </ul>
+                </div>
+            
+        
+    </div>
+
+
+<div class="answer">
+Sample solution #0 for digits.pl
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+while ($line = &lt;STDIN&gt;) {
+    $line =~ s/[0-4]/&lt;/g;
+    $line =~ s/[6-9]/&gt;/g;
+    print $line;
+}
+
+</pre>
+
+
+
+Sample solution #1 for digits.pl
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+# using the implicit variable $_
+while (&lt;STDIN&gt;) {
+    s/[0-4]/&lt;/g;
+    s/[6-9]/&gt;/g;
+    print;
+}
+
+</pre>
+
+
+
+Sample solution #2 for digits.pl
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+while (&lt;STDIN&gt;) {
+    tr/0-9/&lt;&lt;&lt;&lt;&lt;5&gt;&gt;&gt;&gt;/;
+    print;
+}
+
+</pre>
+
+
+
+</div>
+
+<h3>Exercise: Repeated Echo</h3>
+
+Write a Perl script <code>echon.pl</code> which given exactly two arguments, an integer <i>n</i>
+and a string, prints the string <i>n</i> times. For example:
+
+<p>
+<pre class="command_line">
+<kbd class="shell">./echon.pl 5 hello</kbd>
+hello
+hello
+hello
+hello
+hello
+<kbd class="shell">./echon.pl 0 nothing</kbd>
+<kbd class="shell">./echon.pl 1 goodbye</kbd>
+goodbye
+</pre>
+<p>
+Your script should print exactly the error message below
+if it is not given exactly 2 arguments:
+<p>
+<pre class="command_line">
+<kbd class="shell">./echon.pl </kbd>
+Usage: ./echon.pl &lt;number of lines&gt; &lt;string&gt;
+<kbd class="shell">./echon.pl 1 2 3</kbd>
+Usage: ./echon.pl &lt;number of lines&gt; &lt;string&gt;
+</pre>
+<p>
+Also get your script to print this error message if
+its first argument isn't a non-negative integer:
+<p>
+<pre class="command_line">
+<kbd class="shell">./echon.pl hello world</kbd>
+./echon.pl: argument 1 must be a non-negative integer
+<kbd class="shell">./echon.pl -42 lines</kbd>
+./echon.pl: argument 1 must be a non-negative integer
+</pre>
+<p>
+
+
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+<pre class="command_line">
+<kbd class="shell">2041 autotest lab05 echon.pl</kbd>
+</pre>
+
+
+    
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Automarking Results</h4>
+        <span class="autotest_results_emphasis">97%</span>
+        
+        of <span class="autotest_results_emphasis">457</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">echon.pl</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+                <ul>
+                
+                    <li><span class="autotest_results_emphasis">100%</span>
+                    
+                    passed test <i>echon_1</i>
+                
+                    <li><span class="autotest_results_emphasis">100%</span>
+                    
+                    passed test <i>echon_3</i>
+                
+                    <li><span class="autotest_results_emphasis">100%</span>
+                    
+                    passed test <i>echon_4</i>
+                
+                    <li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>echon_5</i>
+                
+                    <li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>echon_6</i>
+                
+                    <li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>echon_7</i>
+                
+                    <li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>echon_8</i>
+                
+                </ul>
+                </div>
+            
+        
+    </div>
+
+
+<div class="answer">
+Sample solution #0 for echon.pl
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+if (@ARGV != 2) {
+    die &#34;Usage: $0 &lt;number of lines&gt; &lt;string&gt;\n&#34;;
+}
+if ($ARGV[0] !~ /^\d+$/) {
+    die &#34;$0: argument 1 must be a non-negative integer\n&#34;;
+}
+foreach ($i=0; $i &lt; $ARGV[0]; $i++) {
+    print &#34;$ARGV[1]\n&#34;;
+}
+
+</pre>
+
+
+
+Sample solution #1 for echon.pl
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+die &#34;Usage: $0 &lt;number of lines&gt; &lt;string&gt;\n&#34; if @ARGV != 2;
+die &#34;$0: argument 1 must be a non-negative integer\n&#34; if $ARGV[0] !~ /^\d+$/;
+foreach (1..$ARGV[0]) {
+    print &#34;$ARGV[1]\n&#34;;
+}
+
+</pre>
+
+
+
+Sample solution #2 for echon.pl
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+die &#34;Usage: $0 &lt;number of lines&gt; &lt;string&gt;\n&#34; if @ARGV != 2;
+die &#34;$0: argument 1 must be a non-negative integer\n&#34; if $ARGV[0] !~ /^\d+$/;
+print &#34;$ARGV[1]\n&#34; foreach 1..$ARGV[0];
+
+</pre>
+
+
+
+Sample solution #3 for echon.pl
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+die &#34;Usage: $0 &lt;number of lines&gt; &lt;string&gt;\n&#34; if @ARGV != 2;
+die &#34;$0: argument 1 must be a non-negative integer\n&#34; if $ARGV[0] !~ /^\d+$/;
+print &#34;$ARGV[1]\n&#34; x $ARGV[0];
+
+</pre>
+
+
+</div>
+
+<h3>Exercise: Tail</h3>
+
+<h4>Perl file manipulation</h4>
+<p>
+The standard approach in Perl for dealing with a collection of files
+whose names are supplied as command line arguments, is something like:
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+foreach $arg (@ARGV) {
+    if ($arg eq &#34;--version&#34;) {
+        print &#34;$0: version 0.1\n&#34;;
+        exit 0;
+    }
+    # handle other options
+    # ...
+    else {
+        push @files, $arg;
+    }
+}
+foreach $f (@files) {
+    open F, &#39;&lt;&#39;, $f or die &#34;$0: Can&#39;t open $f: $!\n&#34;;
+    # process F
+    #...
+    close F;
+}
+
+</pre>
+
+
+
+Write a Perl script to implement the Unix <code>tail</code> command.
+It should support the following features of <code>tail</code>:
+</p>
+<ul>
+<li> read from files supplied as command line arguments
+<li> read from standard input if no file name arguments are supplied
+<li> display the error message <code>tail.pl: can't open <i>FileName</i></code> for any unreadable file
+<li> display the last <i>N</i> lines of each file (default <i>N</i> = 10)
+<li> can adjust the number of lines displayed via an optional first argument <code>-</code><i>N</i>
+<li> if there is more than one named file, separate each by
+    <code>==&gt; <i>FileName</i> &lt;==</code>
+</ul>
+<p>
+To assist with testing your solution, there are three small test
+files: <a href="t1.txt">t1.txt</a>, <a href="t2.txt">t2.txt</a>, and
+<a href="t3.txt">t3.txt</a>.  Copy these files to your current directory.
+
+<pre class="command_line">
+<kbd class="shell">cp /web/cs2041/17s2/tlb/05/t?.txt .</kbd>
+</pre>
+
+Using these data files, your program
+should behave as follows:
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./tail.pl &lt;t1.txt</kbd>
+Data 1 ... Line 2
+Data 1 ... Line 3
+Data 1 ... Line 4
+Data 1 ... Line 5
+Data 1 ... Line 6
+Data 1 ... Line 7
+Data 1 ... Line 8
+Data 1 ... Line 9
+Data 1 ... Line 10
+Data 1 ... Last line
+<kbd class="shell">./tail.pl t1.txt</kbd>
+Data 1 ... Line 2
+Data 1 ... Line 3
+Data 1 ... Line 4
+Data 1 ... Line 5
+Data 1 ... Line 6
+Data 1 ... Line 7
+Data 1 ... Line 8
+Data 1 ... Line 9
+Data 1 ... Line 10
+Data 1 ... Last line
+<kbd class="shell">./tail.pl -5 t1.txt</kbd>
+Data 1 ... Line 7
+Data 1 ... Line 8
+Data 1 ... Line 9
+Data 1 ... Line 10
+Data 1 ... Last line
+<kbd class="shell">./tail.pl -5 t2.txt</kbd>
+A one line file.
+<kbd class="shell">./tail.pl -5 t1.txt t2.txt t3.txt</kbd>
+==&gt; t1.txt &lt;==
+Data 1 ... Line 7
+Data 1 ... Line 8
+Data 1 ... Line 9
+Data 1 ... Line 10
+Data 1 ... Last line
+==&gt; t2.txt &lt;==
+A one line file.
+==&gt; t3.txt &lt;==
+one
+word
+on
+each
+line
+<kbd class="shell">./tail.pl -2 tX.txt</kbd>
+./tail.pl: can&#39;t open tX.txt
+</pre>
+
+
+
+<b>Hint:</b> use the above template for Perl file processing to get started
+with your script. You <em>must</em> use Perl's <code>-w</code> flag
+in your script, and you must write your code in such a way as
+to ensure that no warning messages are produced.
+
+
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+<pre class="command_line">
+<kbd class="shell">2041 autotest lab05 tail.pl</kbd>
+</pre>
+
+
+    
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Automarking Results</h4>
+        <span class="autotest_results_emphasis">82%</span>
+        
+        of <span class="autotest_results_emphasis">432</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">tail.pl</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+                <ul>
+                
+                    <li><span class="autotest_results_emphasis">96%</span>
+                    
+                    passed test <i>tail_1</i>
+                
+                    <li><span class="autotest_results_emphasis">95%</span>
+                    
+                    passed test <i>tail_10</i>
+                
+                    <li><span class="autotest_results_emphasis">95%</span>
+                    
+                    passed test <i>tail_11</i>
+                
+                    <li><span class="autotest_results_emphasis">92%</span>
+                    
+                    passed test <i>tail_12</i>
+                
+                    <li><span class="autotest_results_emphasis">86%</span>
+                    
+                    passed test <i>tail_13</i>
+                
+                    <li><span class="autotest_results_emphasis">96%</span>
+                    
+                    passed test <i>tail_2</i>
+                
+                    <li><span class="autotest_results_emphasis">96%</span>
+                    
+                    passed test <i>tail_3</i>
+                
+                    <li><span class="autotest_results_emphasis">96%</span>
+                    
+                    passed test <i>tail_4</i>
+                
+                    <li><span class="autotest_results_emphasis">96%</span>
+                    
+                    passed test <i>tail_5</i>
+                
+                    <li><span class="autotest_results_emphasis">96%</span>
+                    
+                    passed test <i>tail_6</i>
+                
+                    <li><span class="autotest_results_emphasis">96%</span>
+                    
+                    passed test <i>tail_7</i>
+                
+                    <li><span class="autotest_results_emphasis">93%</span>
+                    
+                    passed test <i>tail_8</i>
+                
+                    <li><span class="autotest_results_emphasis">95%</span>
+                    
+                    passed test <i>tail_9</i>
+                
+                </ul>
+                </div>
+            
+        
+    </div>
+
+
+<div class="answer">
+Sample solution for tail.pl
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+
+$max_lines = 10;
+
+if (@ARGV &gt; 0 &amp;&amp; $ARGV[0] =~ /-([0-9]+)/) {
+    $max_lines = $1;
+    shift @ARGV;
+}
+
+if (@ARGV == 0) {
+    @lines = &lt;&gt;;
+    $first = @lines - $max_lines;
+    $first = 0 if $first &lt; 0;
+    print @lines[$first..$#lines];
+} else {
+    $show_file_names = @ARGV &gt; 1;
+    foreach $file (@ARGV) {
+        open my $f, &#39;&lt;&#39;, $file or die &#34;$0: can&#39;t open $file\n&#34;;
+        print &#34;==&gt; $file &lt;==\n&#34; if $show_file_names;
+        @lines = &lt;$f&gt;;
+        $first = @lines - $max_lines;
+        $first = 0 if $first &lt; 0;
+        print @lines[$first..$#lines];
+        close $f;
+    }
+}
+
+</pre>
+
+
+</div>
+
+<h3>Challenge Exercise: Shuffling Lines</h3>
+
+Write a Perl script <code>shuffle.pl</code> which prints its input with the
+lines in random order.
+For example:
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">i=0;while [ $i -lt 5 ]; do echo $i; i=$(($i + 1)); done|./shuffle.pl</kbd>
+4
+3
+2
+1
+0
+</pre>
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">i=0;while [ $i -lt 5 ]; do echo $i; i=$(($i + 1)); done|./shuffle.pl</kbd>
+3
+0
+2
+1
+4
+</pre>
+
+You are not permitted to use <code>List::Util</code> (it contains a shuffle function).
+<p>
+Don't look for other people's solutions - see if you can come up with your own.
+
+<b>Hint:</b> the perl function <i>rand</i> returns a floating point number between 0 and its argument.
+For example:
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">perl -e &#39;print rand(42), &#34;\n&#34;&#39;</kbd>
+17.0891870943107
+</pre>
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">perl -e &#39;print rand(42), &#34;\n&#34;&#39;</kbd>
+39.2658069751434
+</pre>
+
+<b>Hint:</b> perl ignores the fractional part of a number if you use it to index an array
+
+<div class="answer">
+Sample solution for shuffle.pl
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+# simple implementation of http://en.wikipedia.org/wiki/Fisher-Yates_shuffle
+@lines = &lt;&gt;;
+print splice(@lines, rand(@lines), 1) while @lines;
+
+</pre>
+
+
+
+Sample solution using List::Util
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+use List::Util &#39;shuffle&#39;;
+print shuffle(&lt;&gt;);
+
+</pre>
+
+
+</div>
+<p>
+There is no autotest and no automarking of this question.
+<p>
+When you have completed demonstrate your work to another COMP[29]041 student in your lab
+and ask them to enter a
+<a href="https://cgi.cse.unsw.edu.au/~cs2041/cgi/peer/assess.py">peer assessment here</a>
+It is prefered you do this during your lab, but if this is not possible
+you may demonstrate your work to any COMP[29]041  student before Sunday midnight.
+<p>
+
+<h3>Challenge Question: Testing Shuffling Lines</h3>
+<p>
+There is no dryrun test for <code>shuffle.pl</code>.
+Testing (pseudo)random programs is more difficult
+because there are multiple correct outputs for a given input.
+<p>
+Write a shell script <code>shuffle_test.sh</code> which tests <code>shuffle.pl</code>.
+<p>
+Try to test that all outputs are correct and all correct outputs are being generated.
+<p>
+There is no autotest and no automarking of this question.
+<p>
+When you have completed demonstrate your work to another COMP[29]041 student in your lab
+and ask them to enter a
+<a href="https://cgi.cse.unsw.edu.au/~cs2041/cgi/peer/assess.py">peer assessment here</a>
+It is prefered you do this during your lab, but if this is not possible
+you may demonstrate your work to any COMP[29]041  student before Sunday midnight.
+<p>
+
+<div class="answer">
+Sample solution that just checks coverage
+
+
+
+
+
+<pre class="program">
+
+#!/bin/sh
+
+input=/tmp/shuffle_test0$$
+output=/tmp/shuffle_test1$$
+sorted_output=/tmp/shuffle_test2$$
+all_output=/tmp/shuffle_test3$$
+
+number_of_lines=4
+number_of_test_runs=256
+
+# create an input file with 1 integer per line in sorted order
+# and calculate how many permutations are possible
+i=1
+factorial=1
+while test $i -le $number_of_lines
+do
+    echo $i
+    factorial=$(($factorial * $i))
+    i=$(($i + 1))
+done &gt;$input
+
+run=1
+while test $run -le $number_of_test_runs
+do
+    ./shuffle.pl &lt;$input &gt;$output
+    sort -n $output &gt;$sorted_output
+
+    # after sorting output should be identical to input
+    if diff $sorted_output $input &gt;/dev/null
+    then
+        # append result of this execution to $all_output as a single line
+        echo `cat $output` &gt;&gt;$all_output
+    else
+        echo Testing failed, input was:
+        cat $input
+        echo Testing failed, output was:
+        cat $output
+        exit 1
+    fi
+    run=$(($run + 1))
+done
+
+n_different_outputs=`sort $all_output|uniq|wc -l`
+if test $n_different_outputs -eq $factorial
+then
+    echo All possible outputs produced
+    exit 0
+else
+    echo In $number_of_test_runs executions only $n_different_outputs of $factorial outputs produced
+    exit 1
+fi
+
+rm -f $input $output $sorted_output $all_output
+</pre>
+
+
+</div>
+
+<div class="answer">
+A more elaborate solution from Donny Yang which takes a more statistical approach
+
+
+
+
+
+<pre class="program">
+
+#!/bin/sh
+
+input=/tmp/shuffle_test0$$
+output=/tmp/shuffle_test1$$
+sorted_output=/tmp/shuffle_test2$$
+all_output=/tmp/shuffle_test3$$
+
+number_of_lines=4
+number_of_test_runs=256
+
+# create an input file with 1 integer per line in sorted order
+# and calculate how many permutations are possible
+i=1
+factorial=1
+while test $i -le $number_of_lines
+do
+    echo $i
+    factorial=$(($factorial * $i))
+    i=$(($i + 1))
+done &gt;$input
+
+run=1
+while test $run -le $number_of_test_runs
+do
+    ./shuffle.pl &lt;$input &gt;$output
+    sort -n $output &gt;$sorted_output
+
+    # after sorting output should be identical to input
+    if diff $sorted_output $input &gt;/dev/null
+    then
+        # append result of this execution to $all_output as a single line
+        echo `cat $output` &gt;&gt;$all_output
+    else
+        echo Testing failed, input was:
+        cat $input
+        echo Testing failed, output was:
+        cat $output
+        exit 1
+    fi
+    run=$(($run + 1))
+done
+
+n_different_outputs=`sort $all_output|uniq|wc -l`
+if test $n_different_outputs -eq $factorial
+then
+    echo All possible outputs produced
+    exit 0
+else
+    echo In $number_of_test_runs executions only $n_different_outputs of $factorial outputs produced
+    exit 1
+fi
+
+rm -f $input $output $sorted_output $all_output
+</pre>
+
+
+</div>
+
+
+
+
+
+<h3>Submission</h3>
+
+When you are finished submit your work by running:
+<pre class="command_line">
+<kbd class="shell">give cs2041 lab05 digits.pl echon.pl tail.pl shuffle.pl shuffle_test.sh</kbd>
+</pre>
+<p>
+Don't submit any exercises you haven't attempted.
+
+If you are working at home, you may find it more convenient
+to upload your work via
+ <a href="https://cgi.cse.unsw.edu.au/~give/code/login.php?app=/~give/Student/give.php&amp;debug=get_authuser">give's web interface</a>.
+<p>
+Remember you have until
+
+Sunday midnight
+
+
+to submit your work.
+
+
+
+
+<h3>Assessment</h3>
+
+This lab exercises is worth 1 mark.
+<p>
+Labs exercise are either automarked or peer assessed.
+This is to allow tutors' time to be used to assist students.
+<p>
+After the automarking is complete you should be able to view it by running
+this command on a CSE machine:
+
+<pre class="command_line">
+<kbd class="shell">2041 classrun -collect lab05
+</pre>
+
+You can inspect marks for this lab and other assessment components via <a href="https://cgi.cse.unsw.edu.au/~give/code/login.php?app=/~give/Student/give.php&amp;debug=get_authuser">give's web interface</a> or by running
+
+<pre class="command_line">
+<kbd class="shell">2041 classrun -sturec
+</pre>
+
+<p>
+Reminder: lab marks contribute 9% to your final COMP[29]041 final mark.
+<p>
+The 11 lab marks will be summed at the end of session and the sum capped at 9 marks.
+<p>
+Hence you can obtain full marks for the 9% lab component without obtaining full marks every week.
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+<!--
+public_html_session_directory=/web/cs2041/17s2
+base_directory=/web/cs2041/17s2
+public_html_directory=/web/cs2041
+scripts_directory=/web/cs2041/17s2/scripts
+home_directory=/home/cs2041
+bin_directory=/home/cs2041/bin
+course_account=cs2041
+course_code=COMP2041
+course_number=2041
+postgraduate_course_code=COMP9041
+course_name=Software Construction
+unsw_session=17s2
+canonical_url=https://cgi.cse.unsw.edu.au/~cs2041/
+github_repo_url=https://github.com/COMP2041UNSW/course_materials
+course_forum_url=https://piazza.com/class/j5ji4vjjra62a3
+lecture_recordings_url=https://moodle.telt.unsw.edu.au/course/view.php?id=27708
+WORK=/web/cs2041/17s2/work
+OUT=/web/cs2041/17s2/work/.out
+MARKED=/web/cs2041/17s2/work/.out/.marked
+SMSDB=/web/cs2041/17s2/work/17s2db.sms
+tlb_directory=/web/cs2041/17s2/tlb
+lecture_directory=/web/cs2041/17s2/lec
+flask_cache_directory=/web/cs2041/17s2/flask_cache
+testing_results_file=/web/cs2041/17s2/work/testing_results.json
+enrollments_file=/web/cs2041/17s2/work/enrollments.json
+unsw_ldap_password_file=/web/cs2041/.unsw_ldap_password
+autotest_upload_url=https://cgi.cse.unsw.edu.au/~cs2041/cgi/autotest_upload.cgi
+PATH=/web/cs2041/17s2/scripts:/home/cs2041/bin:/bin/:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/home/class/bin:/home/give/stable/bin.:/bin:/usr/bin:/usr/local/bin
+directory_relative_pathname=tlb/05
+url=https://cgi.cse.unsw.edu.au/~cs2041/flask.cgi/lab/05/answers
+directory_url=https://cgi.cse.unsw.edu.au/~cs2041/lab/05/
+url_root=https://cgi.cse.unsw.edu.au/~cs2041/
+script_root=/~cs2041/flask.cgi
+current_lecture_topic=exam
+current_week=13
+week=05
+exercise_name=lab05
+tut_or_lab_or_test=lab
+questions_or_answers=answers
+programs=&lt;programs&gt;
+
+-->
+
+</body>
+</html>

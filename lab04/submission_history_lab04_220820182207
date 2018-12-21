@@ -1,0 +1,4 @@
+give cs2041 lab04_jpg2png jpg2png.sh
+give cs2041 lab04_email_image email_image.sh
+give cs2041 lab04_date_image date_image.sh
+give cs2041 lab04_tag_music tag_music.sh

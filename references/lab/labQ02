@@ -1,0 +1,1822 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>
+
+COMP2041 Week 02 Laboratory Exercises
+
+</title>
+<link href="/~cs2041/flask.cgi/static/bootstrap.min.css?121200" rel="stylesheet"/>
+<link href="/~cs2041/flask.cgi/static/course.css?6554" rel="stylesheet"/>
+<script src="/~cs2041/flask.cgi/static/jquery.min.js?95992" type="text/javascript"></script>
+<script src="/~cs2041/flask.cgi/static/bootstrap.min.js?37045" type="text/javascript"></script>
+<script src="/~cs2041/flask.cgi/static/course.js?1631" type="text/javascript"></script>
+<link href="https://cgi.cse.unsw.edu.au/~cs2041/" rel="canonical"/>
+</head>
+<body>
+<div class="container">
+<div id="heading">
+<a class="heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/" id="left_heading_link" target="_blank">COMP[29]041 17s2</a>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Week 02
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/02/questions">Week 02</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/03/questions">Week 03</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/04/questions">Week 04</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/05/questions">Week 05</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/06/questions">Week 06</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/07/questions">Week 07</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/08/questions">Week 08</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/09/questions">Week 09</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/10/questions">Week 10</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/11/questions">Week 11</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/12/questions">Week 12</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/13/questions">Week 13</a></li>
+</ul>
+</span>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Laboratory
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/02/questions">Tutorial
+                
+            </a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/02/questions">Laboratory
+                
+            </a></li>
+</ul>
+</span>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Exercises
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/02/questions">Exercises
+            
+            </a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/02/answers">Sample Solutions
+            
+            </a></li>
+</ul>
+</span>
+<a class="heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/" id="right_heading_link" target="_blank">Software Construction</a>
+</div>
+</div>
+<div class="tutlab lab">
+<h3>Submission Summary</h3>
+Due
+
+Sunday midnight
+
+
+<pre class="command_line">
+<kbd class="shell">give cs2041 lab02 &lt;programs&gt;</kbd>
+</pre>
+<h3>Objectives</h3>
+
+
+Understanding regular expressions and their use with Unix filters.
+
+
+
+
+
+<h3>Getting Started</h3>
+
+
+Create a new directory for this lab called <code>lab02</code> by typing:
+
+<pre class="command_line">
+<kbd class="shell">mkdir lab02</kbd>
+</pre>
+
+Change to this directory by typing:
+
+<pre class="command_line">
+<kbd class="shell">cd lab02</kbd>
+</pre>
+<h3>Preparation</h3>
+
+
+
+The file <a href="lab02.txt">lab02.txt</a> contains a template which you must use
+to enter the answers for this weeks lab.  You can copy &amp; edit the file like this:
+<p>
+</p><pre class="command_line">
+<kbd class="shell">cp /web/cs2041/17s2/tlb/02/lab02.txt .</kbd>
+<kbd class="shell">gedit lab02.txt &amp;</kbd>
+</pre>
+
+The autotest scripts depend on the format of this file so just add your answers
+don't otherwise change the file.
+
+<h3>Analyzing a Dictionary with egrep &amp; Regular Expressions</h3>
+
+On most Unix systems you will find one or more dictionaries containing many thousands of
+words usually in the directories.<code>/usr/share/dict/</code> or <code>/usr/dict/</code>.
+<p>
+We copied one such dictionary named <a href="words.txt">words.txt</a> for this lab exercise.
+To save repeatedly typing its full pathname for these exercises,
+make a symbolic link to the file with this command:
+
+</p><pre class="command_line">
+<kbd class="shell">ln -s /web/cs2041/17s2/tlb/02/words.txt</kbd>
+</pre>
+
+This creates a link to the file in the current directory pointing to
+the original file, without taking up the space of a complete copy.
+<p>
+</p><ol>
+<li>
+
+Write an egrep command  that prints  the words in <a href="words.txt">words.txt</a>
+which contain in characters "lmn" consecutively.
+<p>
+<b>Hint</b>:  it should print:
+
+
+    
+        
+    
+
+
+
+
+
+
+</p><pre class="command_line" style="max-height: 32em;overflow:  auto;">
+Selmner
+Selmner's
+almner
+almners
+calmness
+calmness's
+calmnesses
+</pre>
+<p>
+</p><p></p>
+
+The COMP2041 class account contains a script named <b>autotest</b>
+that automatically runs 1 or more tests on your lab exercises.
+<p>
+If you have entered you answer for q1 you can check it like this:
+
+</p><pre class="command_line">
+<kbd class="shell">~cs2041/bin/autotest lab02 q1</kbd>
+Test q1 (grep '^Q1 answer' lab02.txt|tail -1|sed 's/.*answer[: ]*//'|sh) - passed
+1 tests passed 0 tests failed
+</pre>
+
+Passing the autotest doesn't guarantee your answer is correct, of course, but
+it may find a mistake you've missed so run autotest for each of the following questions
+when you've enetered the answer in <code>lab02.txt</code>.
+
+</li><li>
+
+Write a shell pipeline  that prints the words that contain "zz", but do not end in apostrophe-s ('s)?
+<p>
+<b>Hint</b>:  it should print:
+
+
+    
+        
+    
+
+
+
+
+
+
+</p><pre class="command_line" style="max-height: 12em;overflow:  auto;">
+Abruzzi
+Arezzini
+Arezzo
+Barozzi
+Belshazzar
+Brazzaville
+Buzz
+Buzzell
+Cazzie
+Chuzzlewit
+Cozza
+Cuzzart
+Durazzo
+Ezzo
+Fabozzi
+Fezzan
+Fuzzbuster
+Fuzzbusters
+Gazza
+Gazzo
+Hizzoner
+Hizzoners
+Izzy
+Jacuzzi
+Jacuzzis
+Kizzee
+Kizzie
+Lipizzan
+Lipizzaner
+Lipizzaners
+Lipizzans
+Lippizzaner
+Lippizzaners
+Lizzie
+Lizzy
+Matazzoni
+Mazzini
+Mezzogiorno
+Mozza
+Nebuchadnezzar
+Nebuchadnezzars
+Nebuchadrezzar
+Nuzzi
+Ozzie
+Ozzies
+Ozzy
+Paolozzi
+Peruzzi
+Pestalozzi
+Pestalozzian
+Pirozzo
+Pozzuoli
+Pozzy
+Prezzes
+Regazzi
+Rezzani
+Rizzi
+Rizzio
+Rizzo
+Suzzy
+Tetrazzini
+Uzzi
+Uzzia
+Uzzial
+Uzziel
+Verrazzano
+Vezza
+Vizza
+Vizzone
+Wozzeck
+Zzz
+abuzz
+albizzia
+albizzias
+altezza
+bazazz
+bedazzle
+bedazzled
+bedazzlement
+bedazzlements
+bedazzles
+bedazzling
+belshazzar
+belshazzars
+bemuzzle
+bemuzzled
+bemuzzles
+bemuzzling
+bezazz
+bezazzes
+bezzant
+bezzants
+bezzazz
+bezzle
+bezzled
+bezzles
+bezzling
+bizazz
+bizzazz
+bizzes
+blizzard
+blizzardly
+blizzardous
+blizzards
+blizzardy
+bozzetti
+bozzetto
+bumfuzzle
+bumfuzzled
+bumfuzzles
+bumfuzzling
+buzz
+buzzard
+buzzards
+buzzbomb
+buzzcut
+buzzcuts
+buzzed
+buzzer
+buzzers
+buzzes
+buzzing
+buzzingly
+buzzings
+buzzsaw
+buzzwig
+buzzwigs
+buzzword
+buzzwords
+buzzy
+chazzan
+chazzanim
+chazzans
+chazzen
+chazzenim
+chazzens
+chiarezza
+chizz
+chizzed
+chizzes
+chizzing
+cozzes
+d'Arezzo
+dazzle
+dazzled
+dazzlement
+dazzler
+dazzlers
+dazzles
+dazzling
+dazzlingly
+dazzlings
+dizzard
+dizzards
+dizzied
+dizzier
+dizzies
+dizziest
+dizzily
+dizziness
+dizzinesses
+dizzy
+dizzying
+dizzyingly
+drizzle
+drizzled
+drizzles
+drizzlier
+drizzliest
+drizzling
+drizzlingly
+drizzly
+embezzle
+embezzled
+embezzlement
+embezzlements
+embezzler
+embezzlers
+embezzles
+embezzling
+fezzed
+fezzes
+fezzy
+fizz
+fizzed
+fizzer
+fizzers
+fizzes
+fizzgig
+fizzgigs
+fizzier
+fizziest
+fizzily
+fizziness
+fizzing
+fizzings
+fizzle
+fizzled
+fizzler
+fizzlers
+fizzles
+fizzling
+fizzy
+frazzle
+frazzled
+frazzles
+frazzling
+frizz
+frizzante
+frizzed
+frizzer
+frizzers
+frizzes
+frizzier
+frizziest
+frizzily
+frizziness
+frizzinesses
+frizzing
+frizzle
+frizzled
+frizzler
+frizzlers
+frizzles
+frizzlier
+frizzliest
+frizzling
+frizzly
+frizzy
+fuzz
+fuzzball
+fuzzbox
+fuzzboxes
+fuzzed
+fuzzes
+fuzzier
+fuzziest
+fuzzily
+fuzziness
+fuzzinesses
+fuzzing
+fuzztone
+fuzztones
+fuzzy
+fuzzyheaded
+fuzzyheadedness
+fuzzyheadednesses
+gizz
+gizzard
+gizzards
+gozzan
+gozzans
+grizzle
+grizzled
+grizzler
+grizzlers
+grizzles
+grizzlier
+grizzlies
+grizzliest
+grizzling
+grizzly
+guzzle
+guzzled
+guzzler
+guzzlers
+guzzles
+guzzling
+hazzan
+hazzanim
+hazzans
+hizz
+hizzoner
+hizzoners
+humbuzz
+humbuzzes
+huzza
+huzzaed
+huzzah
+huzzahed
+huzzahing
+huzzahs
+huzzaing
+huzzaings
+huzzas
+intermezzi
+intermezzo
+intermezzos
+izzard
+izzards
+izzat
+jacuzzi
+jacuzzis
+jazz
+jazzbo
+jazzbos
+jazzed
+jazzer
+jazzers
+jazzes
+jazzfest
+jazzfests
+jazzier
+jazziest
+jazzily
+jazziness
+jazzinesses
+jazzing
+jazzish
+jazzlike
+jazzman
+jazzmen
+jazzy
+jizz
+jizzes
+lazzarone
+lazzaroni
+lazzi
+lazzo
+lezzes
+lezzie
+lezzies
+lezzy
+luzzes
+mazzard
+mazzards
+mezzanine
+mezzanines
+mezzavoce
+mezze
+mezzes
+mezzo
+mezzos
+mezzotint
+mezzotinted
+mezzotinter
+mezzotinting
+mezzotinto
+mezzotintos
+mezzotints
+mizz
+mizzen
+mizzenmast
+mizzenmasts
+mizzens
+mizzensail
+mizzle
+mizzled
+mizzles
+mizzling
+mizzlings
+mizzly
+mizzonite
+moorbuzzard
+moorbuzzards
+morbidezza
+mozz
+mozzarella
+mozzarellas
+mozzes
+mozzetta
+mozzettas
+mozzette
+mozzie
+mozzies
+mozzle
+muezzin
+muezzins
+muzz
+muzzier
+muzziest
+muzzily
+muzziness
+muzzinesses
+muzzle
+muzzled
+muzzleloader
+muzzleloaders
+muzzleloading
+muzzler
+muzzlers
+muzzles
+muzzling
+muzzy
+nebuchadnezzar
+nebuchadnezzars
+nozzer
+nozzers
+nozzle
+nozzles
+nuzzer
+nuzzers
+nuzzle
+nuzzled
+nuzzler
+nuzzlers
+nuzzles
+nuzzling
+outdazzle
+outdazzled
+outdazzles
+outdazzling
+palazzi
+palazzo
+palazzos
+paparazzi
+paparazzo
+passamezzo
+passamezzos
+pavonazzo
+pazazz
+pazazzes
+pazzazz
+phizzes
+piazza
+piazzas
+piazze
+piazzian
+pizazz
+pizazzes
+pizazzy
+pizza
+pizzaiola
+pizzalike
+pizzas
+pizzaz
+pizzazes
+pizzazz
+pizzazzes
+pizzazzy
+pizzelle
+pizzelles
+pizzeria
+pizzerias
+pizzicati
+pizzicato
+pizzicatos
+pizzle
+pizzles
+pozz
+pozzies
+pozzolan
+pozzolana
+pozzolanas
+pozzolanic
+pozzolans
+pozzuolana
+pozzuolanas
+pozzuolanic
+pozzy
+prezzes
+prezzie
+prezzies
+puzzle
+puzzled
+puzzledom
+puzzlehead
+puzzleheaded
+puzzleheadedness
+puzzleheadednesses
+puzzlement
+puzzlements
+puzzler
+puzzlers
+puzzles
+puzzling
+puzzlingly
+puzzlings
+puzzolana
+pzazz
+quizzed
+quizzer
+quizzers
+quizzery
+quizzes
+quizzical
+quizzicalities
+quizzicality
+quizzically
+quizzicalness
+quizzification
+quizzifications
+quizzified
+quizzifies
+quizzify
+quizzifying
+quizziness
+quizzing
+quizzings
+razz
+razzamatazz
+razzamatazzes
+razzed
+razzes
+razzia
+razzias
+razzing
+razzle
+razzles
+razzmatazz
+razzmatazzes
+rozzer
+rozzers
+schemozzle
+schemozzled
+schemozzles
+schemozzling
+schizzier
+schizziest
+schizzy
+schnozz
+schnozzle
+schnozzles
+scuzz
+scuzzbag
+scuzzbags
+scuzzball
+scuzzballs
+scuzzbucket
+scuzzbuckets
+scuzzes
+scuzzier
+scuzziest
+scuzzily
+scuzzy
+shemozzle
+shemozzles
+shimozzle
+shimozzles
+shlemozzle
+shlemozzled
+shlemozzles
+shlemozzling
+showbizzes
+showbizzy
+sizzle
+sizzled
+sizzler
+sizzlers
+sizzles
+sizzling
+sizzlingly
+sizzlings
+snazzier
+snazziest
+snazzily
+snazziness
+snazzinesses
+snazzy
+snuzzle
+snuzzled
+snuzzles
+snuzzling
+sozzle
+sozzled
+sozzles
+sozzling
+sozzly
+spazz
+spazzed
+spazzes
+spazzing
+squizzes
+swazzle
+swazzles
+swizz
+swizzes
+swizzle
+swizzled
+swizzler
+swizzlers
+swizzles
+swizzling
+swozzle
+swozzles
+tazza
+tazzas
+tazze
+terrazzo
+terrazzos
+tetrazzini
+tizz
+tizzes
+tizzies
+tizzy
+trezzes
+twizzle
+twizzled
+twizzles
+twizzling
+undazzle
+undazzled
+undazzles
+undazzling
+unmuzzle
+unmuzzled
+unmuzzles
+unmuzzling
+unpuzzle
+unpuzzled
+unpuzzles
+unpuzzling
+whizz
+whizzbang
+whizzbangs
+whizzed
+whizzer
+whizzers
+whizzes
+whizzing
+whizzingly
+whizzings
+wizzen
+wizzens
+wizzes
+wuzzle
+zizz
+zizzed
+zizzes
+zizzing
+zizzle
+zizzled
+zizzles
+zizzling
+zuzzes
+zyzzyva
+zyzzyvas
+zzz
+</pre>
+<p></p>
+</li><li>
+
+Write an egrep command that prints the words that contain four consecutive vowels?
+<p>
+<b>Hint</b>:  it should print these words:
+
+
+    
+        
+    
+
+
+
+
+
+
+</p><pre class="command_line" style="max-height: 12em;overflow:  auto;">
+Aiea
+Aiea's
+Araguaia
+Araguaia's
+Douai
+Douai's
+Graeae
+Graiae
+Hawaiian
+Hawaiians
+Homoiousian
+Homoiousian's
+Homoiousianism
+Homoiousianism's
+Homoiousianisms
+Homoiousians
+Iroquoian
+Iroquoian's
+Iroquoians
+Kauai
+Kauai's
+Keaau
+Keaau's
+Kilauea
+Kilauea's
+Longueuil
+Longueuil's
+Louie
+Louie's
+Montesquieu
+Montesquieu's
+Niuean
+Niueans
+Paauilo
+Paauilo's
+Palaeoanthropus
+Palaeoanthropus's
+Pareoean
+Pareoean's
+Pauiie
+Pauiie's
+Pollaiuolo
+Pollaiuolo's
+Pompeiian
+Pompeiians
+Puiia
+Puiia's
+Rouault
+Rouault's
+Rousseauesque
+Rousseauian
+Rousseauism
+Rousseauism's
+Rousseauisms
+Rousseauist
+Rousseauist's
+Rousseauistic
+Rousseauists
+Siouan
+Siouan's
+Siouans
+aqueous
+archaeoastronomer
+archaeoastronomers
+archaeoastronomical
+archaeoastronomies
+archaeoastronomy
+banlieue
+banlieue's
+beauish
+blooie
+cooee
+cooeed
+cooeeing
+cooees
+enqueue
+epigaeous
+epopoeia
+epopoeias
+euoi
+euois
+euouae
+euouaes
+flooie
+giaour
+giaour's
+giaours
+gooier
+gooiest
+guaiac
+guaiacol
+guaiacol's
+guaiacols
+guaiacs
+guaiacum
+guaiacum's
+guaiacums
+guaiocum
+guaiocums
+hawaiians
+homoiousian
+homoiousians
+hypoaeolian
+hypogaeous
+loaiasis
+loaiasis's
+looie
+looie's
+looies
+louie
+louie's
+louies
+maieutic
+maieutical
+maieutics
+meoued
+meouing
+metasequoia
+metasequoias
+miaou
+miaoued
+miaouing
+miaous
+mythopoeia
+mythopoeia's
+mythopoeias
+nonaqueous
+obloquious
+obsequious
+obsequiously
+obsequiousness
+obsequiousnesses
+onomatopoeia
+onomatopoeia's
+onomatopoeias
+palaeoanthropic
+palaeoanthropological
+palaeoanthropologies
+palaeoanthropologist
+palaeoanthropologists
+palaeoanthropology
+palaeoanthropology's
+palaeoecologic
+palaeoecological
+palaeoecologies
+palaeoecologist
+palaeoecologist's
+palaeoecologists
+palaeoecology
+palaeoecology's
+palaeoethnologic
+palaeoethnological
+palaeoethnologist
+palaeoethnologists
+palaeoethnology
+pharmacopoeia
+pharmacopoeia's
+pharmacopoeial
+pharmacopoeian
+pharmacopoeias
+plateaued
+plateauing
+prosopopoeia
+prosopopoeia's
+prosopopoeial
+prosopopoeias
+queue
+queue's
+queued
+queueing
+queueings
+queuer
+queuer's
+queuers
+queues
+queuings
+radioautograph
+radioautograph's
+radioautographic
+radioautographies
+radioautographs
+radioautography
+radioautography's
+radioiodine
+radioiodines
+reliquiae
+rhythmopoeia
+saouari
+saouaris
+scarabaeoid
+scarabaeoids
+sequoia
+sequoia's
+sequoias
+subaqueous
+tenuious
+terraqueous
+zoaea
+zoaea's
+zooea
+zooeae
+zooeal
+zooeas
+zoogloeae
+zoogloeoid
+zooier
+zooiest
+</pre>
+<p></p>
+</li><li>
+Write an egrep command that prints words which contain all 5 vowels "aeiou" in that order?
+<p>
+The words may contain more than 5 vowels but they must contain "aeiou" in that order.
+</p><p>
+<b>Hint</b>:  it should print these words:
+
+
+    
+        
+    
+
+
+
+
+
+
+</p><pre class="command_line" style="max-height: 12em;overflow:  auto;">
+abstemious
+abstemiously
+abstemiousness
+abstemiousness's
+abstemiousnesses
+abstentious
+adenocarcinomatous
+adventitious
+adventitiously
+adventitiousness
+adventitiousness's
+adventitiousnesses
+aeruginous
+amentiferous
+androdioecious
+andromonoecious
+anemophilous
+antenniferous
+antireligious
+arenicolous
+argentiferous
+arsenious
+arteriovenous
+asclepiadaceous
+autoecious
+autoeciously
+bacteriophagous
+caesalpiniaceous
+caesious
+cavernicolous
+chaetiferous
+facetious
+facetiously
+facetiousness
+facetiousness's
+facetiousnesses
+flagelliferous
+garnetiferous
+haemoglobinous
+hamamelidaceous
+lateritious
+paroecious
+quadrigeminous
+sacrilegious
+sacrilegiously
+sacrilegiousness
+sacrilegiousness's
+sacrilegiousnesses
+sarraceniaceous
+supercalifragilisticexpialidocious
+ultrareligious
+ultraserious
+valerianaceous
+</pre>
+<p></p>
+</li><li> <b>Challenge</b>
+
+Write an egrep command that prints which contain the vowels "aeiou" in that order
+and no other vowels.
+<p>
+<b>Hint</b>:  it should print these words:
+
+
+    
+        
+    
+
+
+
+
+
+
+</p><pre class="command_line" style="max-height: 32em;overflow:  auto;">
+abstemious
+abstemiously
+abstentious
+arsenious
+caesious
+facetious
+facetiously
+</pre>
+<p></p>
+<h3>Analyzing Parliament with egrep &amp; Regular Expressions</h3>
+
+The file <a href="parliament.txt">parliament.txt</a>
+contains a list of the members of the Australian House of Representatives (MPs).
+For example:
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 24em;overflow:  auto;">
+<kbd class="shell">cat parliament.txt</kbd>
+Hon Tony Abbott: Member for Warringah, New South Wales
+Hon Anthony Albanese: Member for Grayndler, New South Wales
+Mr John Alexander OAM: Member for Bennelong, New South Wales
+Hon Karen Andrews: Member for McPherson, Queensland
+Hon Kevin Andrews: Member for Menzies, Victoria
+Mr Adam Bandt: Member for Melbourne, Victoria
+Ms Julia Banks: Member for Chisholm, Victoria
+Hon Sharon Bird: Member for Cunningham, New South Wales
+Hon Julie Bishop: Member for Curtin, Western Australia
+Hon Chris Bowen: Member for McMahon, New South Wales
+Mr Andrew Broad: Member for Mallee, Victoria
+Mr Russell Broadbent: Member for McMillan, Victoria
+Ms Gai Brodtmann: Member for Canberra, Australian Capital Territory
+Mr Scott Buchholz: Member for Wright, Queensland
+Hon Tony Burke: Member for Watson, New South Wales
+Hon Linda Burney: Member for Barton, New South Wales
+Hon Mark Butler: Member for Port Adelaide, South Australia
+Ms Terri Butler: Member for Griffith, Queensland
+Hon Anthony Byrne: Member for Holt, Victoria
+Dr Jim Chalmers: Member for Rankin, Queensland
+Mr Nick Champion: Member for Wakefield, South Australia
+Hon Darren Chester: Member for Gippsland, Victoria
+Ms Lisa Chesters: Member for Bendigo, Victoria
+Mr George Christensen: Member for Dawson, Queensland
+Hon Steven Ciobo: Member for Moncrieff, Queensland
+Hon Jason Clare: Member for Blaxland, New South Wales
+Ms Sharon Claydon: Member for Newcastle, New South Wales
+Mr David Coleman: Member for Banks, New South Wales
+Hon Julie Collins: Member for Franklin, Tasmania
+Mr Pat Conroy: Member for Charlton, New South Wales
+Mr Mark Coulton: Member for Parkes, New South Wales
+Mr Chris Crewther: Member for Dunkley, Victoria
+Hon Michael Danby: Member for Melbourne Ports, Victoria
+Mr Milton Dick: Member for Oxley, Queensland
+Hon Mark Dreyfus QC: Member for Isaacs, Victoria
+Hon Peter Dutton: Member for Dickson, Queensland
+Hon Justine Elliot: Member for Richmond, New South Wales
+Hon Kate Ellis: Member for Adelaide, South Australia
+Hon Warren Entsch: Member for Leichhardt, Queensland
+Mr Trevor Evans: Member for Brisbane, Queensland
+Mr Jason Falinski: Member for Mackellar, New South Wales
+Hon David Feeney: Member for Batman, Victoria
+Hon Joel Fitzgibbon: Member for Hunter, New South Wales
+Hon Paul Fletcher: Member for Bradfield, New South Wales
+Mr Mike Freelander: Member for Macarthur, New South Wales
+Hon Josh Frydenberg: Member for Kooyong, Victoria
+Mr Andrew Gee: Member for Calare, New South Wales
+Mr Steve Georganas: Member for Hindmarsh, South Australia
+Mr Andrew Giles: Member for Scullin, Victoria
+The Hon Dr David Gillespie: Member for Lyne, New South Wales
+Mr Ian Goodenough: Member for Moore, Western Australia
+Mr Luke Gosling: Member for Solomon, Northern Territory
+Mr Tim Hammond: Member for Perth, Western Australia
+Mr Ross Hart: Member for Bass, Tasmania
+Hon Luke Hartsuyker: Member for Cowper, New South Wales
+Mr Andrew Hastie: Member for Canning, Western Australia
+Hon Alex Hawke: Member for Mitchell, New South Wales
+Mr Chris Hayes: Member for Fowler, New South Wales
+Ms Sarah Henderson: Member for Corangamite, Victoria
+Mr Julian Hill: Member for Bruce, Victoria
+Mr Kevin Hogan: Member for Page, New South Wales
+Mr Luke Howarth: Member for Petrie, Queensland
+Hon Greg Hunt: Member for Flinders, Victoria
+Hon Ed Husic: Member for Chifley, New South Wales
+Mr Steve Irons: Member for Swan, Western Australia
+Mr Ewen Jones: Member for Herbert, Queensland
+Mr Stephen Jones: Member for Throsby, New South Wales
+Hon Barnaby Joyce: Member for New England, New South Wales
+Hon Bob Katter: Member for Kennedy, Queensland
+Ms Justine Keay: Member for Braddon, Tasmania
+Hon Michael Keenan: Member for Stirling, Western Australia
+Mr Craig Kelly: Member for Hughes, New South Wales
+The Hon Dr Mike Kelly AM: Member for Eden-Monaro, New South Wales
+Mr Matt Keogh: Member for Burt, Western Australia
+Mr Peter Khalil: Member for Wills, Victoria
+Hon Catherine King: Member for Ballarat, Victoria
+Ms Madeleine King: Member for Brand, Western Australia
+Ms Susan Lamb: Member for Longman, Queensland
+Mr Andrew Laming: Member for Bowman, Queensland
+Ms Michelle Landry: Member for Capricornia, Queensland
+Hon Craig Laundy: Member for Reid, New South Wales
+Mr Julian Leeser: Member for Berowra, New South Wales
+Hon Dr Andrew Leigh: Member for Fenner, Australian Capital Territory
+Hon Sussan Ley: Member for Farrer, New South Wales
+Hon Jenny Macklin: Member for Jagajaga, Victoria
+Ms Nola Marino: Member for Forrest, Western Australia
+Hon Richard Marles: Member for Corio, Victoria
+Ms Emma McBride: Member for Dobell, New South Wales
+Hon Michael McCormack: Member for Riverina, New South Wales
+Ms Cathy McGowan AO: Member for Indi, Victoria
+Dr John McVeigh: Member for Groom, Queensland
+Mr Brian Mitchell: Member for Lyons, Tasmania
+Mr Rob Mitchell: Member for McEwen, Victoria
+Hon Scott Morrison: Member for Cook, New South Wales
+Mr Ben Morton: Member for Tangney, Western Australia
+Hon Shayne Neumann: Member for Blair, Queensland
+Mr Ted O'Brien: Member for Fairfax, Queensland
+Mr Llew O'Brien: Member for Wide Bay, Queensland
+Hon Brendan O'Connor: Member for Gorton, Victoria
+Mr Ken O'Dowd: Member for Flynn, Queensland
+Hon Kelly O'Dwyer: Member for Higgins, Victoria
+Ms Clare O'Neil: Member for Hotham, Victoria
+Ms Julie Owens: Member for Parramatta, New South Wales
+Mr Tony Pasin: Member for Barker, South Australia
+Mr Graham Perrett: Member for Moreton, Queensland
+Hon Keith Pitt: Member for Hinkler, Queensland
+Hon Tanya Plibersek: Member for Sydney, New South Wales
+Hon Christian Porter: Member for Pearce, Western Australia
+Hon Jane Prentice: Member for Ryan, Queensland
+Ms Melissa Price: Member for Durack, Western Australia
+Hon Christopher Pyne: Member for Sturt, South Australia
+Mr Rowan Ramsey: Member for Grey, South Australia
+Hon Amanda Rishworth: Member for Kingston, South Australia
+Hon Stuart Robert: Member for Fadden, Queensland
+Ms Michelle Rowland: Member for Greenway, New South Wales
+Ms Joanne Ryan: Member for Lalor, Victoria
+Ms Rebekha Sharkie: Member for Mayo, South Australia
+Hon Bill Shorten: Member for Maribyrnong, Victoria
+The Hon Tony Smith: Member for Casey, Victoria
+Hon Warren Snowdon: Member for Lingiari, Northern Territory
+Ms Anne Stanley: Member for Werriwa, New South Wales
+Mrs Ann Sudmalis: Member for Gilmore, New South Wales
+Mr Michael Sukkar: Member for Deakin, Victoria
+Hon Wayne Swan: Member for Lilley, Queensland
+Ms Meryl Swanson: Member for Paterson, New South Wales
+Hon Angus Taylor: Member for Hume, New South Wales
+Hon Dan Tehan: Member for Wannon, Victoria
+Ms Susan Templeman: Member for Macquarie, New South Wales
+Hon Matt Thistlethwaite: Member for Kingsford Smith, New South Wales
+Hon Alan Tudge: Member for Aston, Victoria
+Hon Malcolm Turnbull: Member for Wentworth, New South Wales
+Ms Maria Vamvakinou: Member for Calwell, Victoria
+Mr Bert van Manen: Member for Forde, Queensland
+Mr Ross Vasta: Member for Bonner, Queensland
+Mr Andrew Wallace: Member for Fisher, Queensland
+Mr Tim Watts: Member for Gellibrand, Victoria
+Mrs Lucy Wicks: Member for Robertson, New South Wales
+Mr Andrew Wilkie: Member for Denison, Tasmania
+Mr Josh Wilson: Member for Fremantle, Western Australia
+Mr Rick Wilson: Member for O'Connor, Western Australia
+Mr Tim Wilson: Member for Goldstein, Victoria
+Mr Jason Wood: Member for La Trobe, Victoria
+Hon Ken Wyatt AM: Member for Hasluck, Western Australia
+Mr Tony Zappia: Member for Makin, South Australia
+Mr Trent Zimmerman: Member for North Sydney, New South Wales
+</pre>
+
+Each line contains the name of the MP followed by the electorate they represent.
+<p>
+Create a link to file in your current directory:
+
+</p><pre class="command_line">
+<kbd class="shell">ln -s /web/cs2041/17s2/tlb/02/parliament.txt</kbd>
+</pre>
+</li><li>
+Write an egrep command that will print all the lines in the file where the electorate begins with W.
+<p>
+<b>Hint</b>:  it should print these lines:
+
+
+    
+        
+    
+
+
+
+
+
+
+</p><pre class="command_line" style="max-height: 32em;overflow:  auto;">
+Hon Tony Abbott: Member for Warringah, New South Wales
+Mr Scott Buchholz: Member for Wright, Queensland
+Hon Tony Burke: Member for Watson, New South Wales
+Mr Nick Champion: Member for Wakefield, South Australia
+Mr Peter Khalil: Member for Wills, Victoria
+Mr Llew O'Brien: Member for Wide Bay, Queensland
+Ms Anne Stanley: Member for Werriwa, New South Wales
+Hon Dan Tehan: Member for Wannon, Victoria
+Hon Malcolm Turnbull: Member for Wentworth, New South Wales
+</pre>
+<p></p>
+</li><li>
+Write an egrep command that will list all the lines in the file where the MP's
+first name is Andrew.
+<p>
+<b>Hint</b>:  it should print these words:
+
+
+    
+        
+    
+
+
+
+
+
+
+</p><pre class="command_line" style="max-height: 32em;overflow:  auto;">
+Mr Andrew Broad: Member for Mallee, Victoria
+Mr Andrew Gee: Member for Calare, New South Wales
+Mr Andrew Giles: Member for Scullin, Victoria
+Mr Andrew Hastie: Member for Canning, Western Australia
+Mr Andrew Laming: Member for Bowman, Queensland
+Hon Dr Andrew Leigh: Member for Fenner, Australian Capital Territory
+Mr Andrew Wallace: Member for Fisher, Queensland
+Mr Andrew Wilkie: Member for Denison, Tasmania
+</pre>
+<p></p>
+</li><li>
+Write an egrep command that will print all the lines in the file where the MP's
+surname (last name) ends in the letter 'y'.
+<p>
+<b>Hint</b>:  it should print these words:
+
+
+    
+        
+    
+
+
+
+
+
+
+</p><pre class="command_line" style="max-height: 32em;overflow:  auto;">
+Hon Linda Burney: Member for Barton, New South Wales
+Mr Pat Conroy: Member for Charlton, New South Wales
+Hon Michael Danby: Member for Melbourne Ports, Victoria
+Hon David Feeney: Member for Batman, Victoria
+Ms Justine Keay: Member for Braddon, Tasmania
+Mr Craig Kelly: Member for Hughes, New South Wales
+The Hon Dr Mike Kelly AM: Member for Eden-Monaro, New South Wales
+Ms Michelle Landry: Member for Capricornia, Queensland
+Hon Craig Laundy: Member for Reid, New South Wales
+Hon Sussan Ley: Member for Farrer, New South Wales
+Mr Rowan Ramsey: Member for Grey, South Australia
+Ms Anne Stanley: Member for Werriwa, New South Wales
+</pre>
+<p></p>
+</li><li>
+Write an egrep command that will print all the lines in the file where the MP's name <b>and</b> the electorate
+ends in the letter 'y'.
+<p>
+<b>Hint</b>:  it should print these lines:
+
+
+    
+        
+    
+
+
+
+
+
+
+</p><pre class="command_line" style="max-height: 32em;overflow:  auto;">
+Mr Rowan Ramsey: Member for Grey, South Australia
+</pre>
+<p></p>
+</li><li>
+Write an egrep command that will print all the lines in the file where the MP's name <b>or</b> the electorate
+ends in the letter 'y'.
+<p>
+<b>Hint</b>:  it should print these lines:
+
+
+    
+        
+    
+
+
+
+
+
+
+</p><pre class="command_line" style="max-height: 32em;overflow:  auto;">
+Hon Linda Burney: Member for Barton, New South Wales
+Mr Pat Conroy: Member for Charlton, New South Wales
+Mr Chris Crewther: Member for Dunkley, Victoria
+Hon Michael Danby: Member for Melbourne Ports, Victoria
+Mr Milton Dick: Member for Oxley, Queensland
+Hon David Feeney: Member for Batman, Victoria
+Hon Ed Husic: Member for Chifley, New South Wales
+Mr Stephen Jones: Member for Throsby, New South Wales
+Hon Bob Katter: Member for Kennedy, Queensland
+Ms Justine Keay: Member for Braddon, Tasmania
+Mr Craig Kelly: Member for Hughes, New South Wales
+The Hon Dr Mike Kelly AM: Member for Eden-Monaro, New South Wales
+Ms Michelle Landry: Member for Capricornia, Queensland
+Hon Craig Laundy: Member for Reid, New South Wales
+Hon Sussan Ley: Member for Farrer, New South Wales
+Mr Ben Morton: Member for Tangney, Western Australia
+Mr Llew O'Brien: Member for Wide Bay, Queensland
+Hon Tanya Plibersek: Member for Sydney, New South Wales
+Mr Rowan Ramsey: Member for Grey, South Australia
+Ms Michelle Rowland: Member for Greenway, New South Wales
+The Hon Tony Smith: Member for Casey, Victoria
+Ms Anne Stanley: Member for Werriwa, New South Wales
+Hon Wayne Swan: Member for Lilley, Queensland
+Mr Trent Zimmerman: Member for North Sydney, New South Wales
+</pre>
+<p></p>
+</li><li>
+Write an egrep command to print all the lines in the file where there is any part of the
+MP's name or the electorate name that ends in ng.
+<p>
+<b>Hint</b>:  it should print these lines:
+
+
+    
+        
+    
+
+
+
+
+
+
+</p><pre class="command_line" style="max-height: 32em;overflow:  auto;">
+Mr John Alexander OAM: Member for Bennelong, New South Wales
+Hon Josh Frydenberg: Member for Kooyong, Victoria
+Mr Luke Gosling: Member for Solomon, Northern Territory
+Mr Andrew Hastie: Member for Canning, Western Australia
+Hon Michael Keenan: Member for Stirling, Western Australia
+Hon Catherine King: Member for Ballarat, Victoria
+Ms Madeleine King: Member for Brand, Western Australia
+Mr Andrew Laming: Member for Bowman, Queensland
+Hon Bill Shorten: Member for Maribyrnong, Victoria
+</pre>
+<p></p>
+</li><li>
+Write an egrep command that will print all the lines in the file where the MP's
+surname (last name) both begins and ends with a vowel.
+<p>
+<b>Hint</b>:  it should print these lines:
+
+
+    
+        
+    
+
+
+
+
+
+
+</p><pre class="command_line" style="max-height: 32em;overflow:  auto;">
+Hon Anthony Albanese: Member for Grayndler, New South Wales
+</pre>
+<p></p>
+</li><li>
+Most electorate have names that are a single word, e.g. Warringah, Lyons &amp; Grayndler.
+A few electorates have multiple word names, for example, Kingsford Smith.
+Write an egrep command that will print all the lines in the file where the electorate name contains
+multiple words (separated by spaces or hyphens).
+<p>
+<b>Hint</b>:  it should print these lines:
+
+
+    
+        
+    
+
+
+
+
+
+
+</p><pre class="command_line" style="max-height: 32em;overflow:  auto;">
+Hon Mark Butler: Member for Port Adelaide, South Australia
+Hon Michael Danby: Member for Melbourne Ports, Victoria
+Hon Barnaby Joyce: Member for New England, New South Wales
+The Hon Dr Mike Kelly AM: Member for Eden-Monaro, New South Wales
+Mr Llew O'Brien: Member for Wide Bay, Queensland
+Hon Matt Thistlethwaite: Member for Kingsford Smith, New South Wales
+Mr Jason Wood: Member for La Trobe, Victoria
+Mr Trent Zimmerman: Member for North Sydney, New South Wales
+</pre>
+<p></p>
+</li><li>
+
+Write a shell pipeline which prints the 8 Australians states &amp; territory in order of the number of MPs they have.
+It should print only the names of the states/territories.
+It should print them one per line
+<p>
+Hint: check out the Unix filters cut, sort, uniq in the lecture notes.
+</p><p>
+<b>Hint</b>:  it should print these lines:
+
+
+    
+        
+    
+
+
+
+
+
+
+</p><pre class="command_line" style="max-height: 32em;overflow:  auto;">
+Australian Capital Territory
+Northern Territory
+Tasmania
+South Australia
+Western Australia
+Queensland
+Victoria
+New South Wales
+</pre>
+<p></p>
+</li><li>
+Challenge: The most common first name for an MP is Andrew.
+Write a shell pipeline which prints the 2nd most common MP first name.
+It should print this first name and only this first name.
+<p>
+Hint: check out the Unix filters cut, sort, sed, head, tail &amp; uniq in the lecture notes.
+</p><p>
+<b>Hint</b>:  it should print these lines:
+
+
+    
+        
+    
+
+
+
+
+
+
+</p><pre class="command_line" style="max-height: 32em;overflow:  auto;">
+/bin/sh: -c: line 0: unexpected EOF while looking for matching `''
+/bin/sh: -c: line 1: syntax error: unexpected end of file
+/bin/sh: -c: line 0: unexpected EOF while looking for matching `''
+/bin/sh: -c: line 1: syntax error: unexpected end of file
+</pre>
+<p></p>
+<h3>Challenge: Interesting Regexps</h3>
+Use <code>egrep</code> to test your answers to these questions.
+<p>
+Try to solve these questions using the standard regular expression language described
+in lectures.
+</p><p>
+</p></li><li>
+Write a egrep command  that prints the lines in a file named <code>input.txt</code> containing
+containing at least one <code>A</code> and at least one <code>B</code>.
+For example:
+<p>
+</p><table border="1">
+<tr><th width="50%">Matching</th><th width="50%">Not Matching
+</th></tr><tr><td>Andrew's favourite Band is not</td><td>George is Brillant
+</td></tr><tr><td>ABBA</td><td>Andrew
+</td></tr><tr><td>BA</td><td>B
+</td></tr><tr><td>AB</td><td>A
+</td></tr></table>
+<p>
+So to test with egrep you might do this:
+
+</p><pre class="command_line">
+<kbd class="shell">cat &gt;input.txt &lt;&lt;eof</kbd>
+Andrew's favourite Band is not
+George is Brillant
+ABBA
+Andrew
+AB
+BA
+A
+B
+eof
+<kbd class="shell">egrep 'REGEXP' input.txt</kbd>
+Andrew's favourite Band is not
+ABBA
+AB
+BA
+</pre>
+<p></p>
+</li><li>
+Write a egrep command  that prints the lines in a file named <code>input.txt</code> containing
+only the characters <code>A</code> and  <code>B</code> such that
+all pairs of adjacent A's occur before any pairs of adjacent B's.
+In other words if there is pair of B's on the line , there can not be
+a pair of A's afterwards.
+<p>
+</p><table border="1">
+<tr><th width="50%">Matching</th><th width="50%">Not Matching
+</th></tr><tr><td>ABAABAABAABBBBABB</td><td>BBAA
+</td></tr><tr><td>ABBA</td><td>ABBAA
+</td></tr><tr><td>ABAAAAAAAAAABBA</td><td>ABBABABABABAA
+</td></tr><tr><td>ABABABABA</td><td>ABBBAAA
+</td></tr><tr><td>A</td><td>BBABABABABABABAA
+</td></tr></table>
+<p>
+</p><p></p>
+</li><li>
+Write a egrep command  that prints the lines in a file named <code>input.txt</code> containing
+only the characters <code>A</code> and  <code>B</code> such that
+the number of A's is divisible by 4.
+<p>
+</p><table border="1">
+<tr><th width="50%">Matching</th><th width="50%">Not Matching
+</th></tr><tr><td>AAAA</td><td>AAAAA
+</td></tr><tr><td>BABABABAB</td><td>ABABBBBBBBBBBBBBBBAAA
+</td></tr><tr><td>AAAABBBBAAAA</td><td>AAAABBABBAAAA
+</td></tr><tr><td>BBBAABBBBBAABBBAAAA</td><td>BBBAABBABBBAABBBAAAA
+</td></tr></table>
+<p>
+</p><p></p>
+</li><li>
+Write a egrep command  that prints the lines in a file named <code>input.txt</code> containing
+only the characters <code>A</code> and  <code>B</code> such that
+there are exactly <i>n</i> A's followed by
+exactly <i>n</i> B's and no other characters.
+<p>
+</p><table border="1">
+<tr><th width="50%">Matching</th><th width="50%">Not Matching
+</th></tr><tr><td>AAABBB</td><td>AAABB
+</td></tr><tr><td>AB</td><td>BA
+</td></tr><tr><td>AABB</td><td>AABBB
+</td></tr><tr><td>AAAABBBB</td><td>AAAABBBBA
+</td></tr></table>
+<p></p>
+</li></ol>
+<h3>Autotest All Questions</h3>
+
+When you have all the answers entered you might like to run the autotest for all questions:
+
+<pre class="command_line">
+<kbd class="shell">~cs2041/bin/autotest lab02</kbd>
+Test q1 (grep '^Q1 answer' lab02.txt|tail -1|sed 's/.*answer[: ]*//'|sh) - passed
+Test q2 (grep '^Q2 answer' lab02.txt|tail -1|sed 's/.*answer[: ]*//'|sh) - passed
+Test q3 (grep '^Q3 answer' lab02.txt|tail -1|sed 's/.*answer[: ]*//'|sh) - passed
+Test q4 (grep '^Q4 answer' lab02.txt|tail -1|sed 's/.*answer[: ]*//'|sh) - passed
+Test q5 (grep '^Q5 answer' lab02.txt|tail -1|sed 's/.*answer[: ]*//'|sh) - passed
+Test q6 (grep '^Q6 answer' lab02.txt|tail -1|sed 's/.*answer[: ]*//'|sh) - passed
+Test q7 (grep '^Q7 answer' lab02.txt|tail -1|sed 's/.*answer[: ]*//'|sh) - passed
+Test q8 (grep '^Q8 answer' lab02.txt|tail -1|sed 's/.*answer[: ]*//'|sh) - passed
+Test q9 (grep '^Q9 answer' lab02.txt|tail -1|sed 's/.*answer[: ]*//'|sh) - passed
+Test q10 (grep '^Q10 answer' lab02.txt|tail -1|sed 's/.*answer[: ]*//'|sh) - passed
+Test q11 (grep '^Q11 answer' lab02.txt|tail -1|sed 's/.*answer[: ]*//'|sh) - passed
+Test q12 (grep '^Q12 answer' lab02.txt|tail -1|sed 's/.*answer[: ]*//'|sh) - passed
+Test q13 (grep '^Q13 answer' lab02.txt|tail -1|sed 's/.*answer[: ]*//'|sh) - passed
+Test q14 (grep '^Q14 answer' lab02.txt|tail -1|sed 's/.*answer[: ]*//'|sh) - passed
+Test q15 (grep '^Q15 answer' lab02.txt|tail -1|sed 's/.*answer[: ]*//'|sh) - passed
+Test q16 (grep '^Q16 answer' lab02.txt|tail -1|sed 's/.*answer[: ]*//'|sh) - passed
+Test q17 (grep '^Q17 answer' lab02.txt|tail -1|sed 's/.*answer[: ]*//'|sh) - passed
+Test q18 (grep '^Q18 answer' lab02.txt|tail -1|sed 's/.*answer[: ]*//'|sh) - passed
+Test q19 (grep '^Q19 answer' lab02.txt|tail -1|sed 's/.*answer[: ]*//'|sh) - passed
+19 tests passed 0 tests failed
+</pre>
+
+The autotests for this week are very simple but they will pick up silly mistakes.
+
+
+
+
+
+<h3>Submission</h3>
+
+When you are finished submit your work by running:
+<pre class="command_line">
+<kbd class="shell">give cs2041 lab02 &lt;programs&gt;</kbd>
+</pre>
+<p>
+Don't submit any exercises you haven't attempted.
+
+If you are working at home, you may find it more convenient
+to upload your work via
+ <a href="https://cgi.cse.unsw.edu.au/~give/code/login.php?app=/~give/Student/give.php&amp;debug=get_authuser">give's web interface</a>.
+</p><p>
+Remember you have until
+
+Sunday midnight
+
+
+to submit your work.
+
+
+
+
+</p><h3>Assessment</h3>
+
+This lab exercises is worth 1 mark.
+<p>
+Labs exercise are either automarked or peer assessed.
+This is to allow tutors' time to be used to assist students.
+</p><p>
+After the automarking is complete you should be able to view it by running
+this command on a CSE machine:
+
+</p><pre class="command_line">
+<kbd class="shell">2041 classrun -collect lab02
+</kbd></pre>
+
+You can inspect marks for this lab and other assessment components via <a href="https://cgi.cse.unsw.edu.au/~give/code/login.php?app=/~give/Student/give.php&amp;debug=get_authuser">give's web interface</a> or by running
+
+<pre class="command_line">
+<kbd class="shell">2041 classrun -sturec
+</kbd></pre>
+<p>
+Reminder: lab marks contribute 9% to your final COMP[29]041 final mark.
+</p><p>
+The 11 lab marks will be summed at the end of session and the sum capped at 9 marks.
+</p><p>
+Hence you can obtain full marks for the 9% lab component without obtaining full marks every week.
+
+
+
+</p></div>
+<!--
+public_html_session_directory=/web/cs2041/17s2
+base_directory=/web/cs2041/17s2
+public_html_directory=/web/cs2041
+scripts_directory=/web/cs2041/17s2/scripts
+home_directory=/home/cs2041
+bin_directory=/home/cs2041/bin
+course_account=cs2041
+course_code=COMP2041
+course_number=2041
+postgraduate_course_code=COMP9041
+course_name=Software Construction
+unsw_session=17s2
+canonical_url=https://cgi.cse.unsw.edu.au/~cs2041/
+github_repo_url=https://github.com/COMP2041UNSW/course_materials
+course_forum_url=https://piazza.com/class/j5ji4vjjra62a3
+lecture_recordings_url=https://moodle.telt.unsw.edu.au/course/view.php?id=27708
+WORK=/web/cs2041/17s2/work
+OUT=/web/cs2041/17s2/work/.out
+MARKED=/web/cs2041/17s2/work/.out/.marked
+SMSDB=/web/cs2041/17s2/work/17s2db.sms
+tlb_directory=/web/cs2041/17s2/tlb
+lecture_directory=/web/cs2041/17s2/lec
+flask_cache_directory=/web/cs2041/17s2/flask_cache
+testing_results_file=/web/cs2041/17s2/work/testing_results.json
+enrollments_file=/web/cs2041/17s2/work/enrollments.json
+unsw_ldap_password_file=/web/cs2041/.unsw_ldap_password
+autotest_upload_url=https://cgi.cse.unsw.edu.au/~cs2041/cgi/autotest_upload.cgi
+PATH=/web/cs2041/17s2/scripts:/home/cs2041/bin:/bin/:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/home/class/bin:/home/give/stable/bin.:/bin:/usr/bin:/usr/local/bin
+directory_relative_pathname=tlb/02
+url=https://cgi.cse.unsw.edu.au/~cs2041/flask.cgi/lab/02/questions
+directory_url=https://cgi.cse.unsw.edu.au/~cs2041/lab/02/
+url_root=https://cgi.cse.unsw.edu.au/~cs2041/
+script_root=/~cs2041/flask.cgi
+current_lecture_topic=exam
+current_week=13
+week=02
+exercise_name=lab02
+tut_or_lab_or_test=lab
+questions_or_answers=questions
+programs=&lt;programs&gt;
+
+-->
+</body>
+</html>

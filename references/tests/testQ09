@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>
+
+COMP2041 Week 09 Weekly Test Questions
+
+</title>
+<link href="/~cs2041/flask.cgi/static/bootstrap.min.css?121200" rel="stylesheet"/>
+<link href="/~cs2041/flask.cgi/static/course.css?6554" rel="stylesheet"/>
+<script src="/~cs2041/flask.cgi/static/jquery.min.js?95992" type="text/javascript"></script>
+<script src="/~cs2041/flask.cgi/static/bootstrap.min.js?37045" type="text/javascript"></script>
+<script src="/~cs2041/flask.cgi/static/course.js?1631" type="text/javascript"></script>
+<link href="https://cgi.cse.unsw.edu.au/~cs2041/" rel="canonical"/>
+</head>
+<body>
+<div class="container">
+<div id="heading">
+<a class="heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/" id="left_heading_link" target="_blank">COMP[29]041 17s2</a>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Week 09
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/test/05/questions">Week 05</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/test/06/questions">Week 06</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/test/07/questions">Week 07</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/test/08/questions">Week 08</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/test/09/questions">Week 09</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/test/10/questions">Week 10</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/test/11/questions">Week 11</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/test/13/questions">Week 13</a></li>
+</ul>
+</span>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Weekly Test
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/09/questions">Tutorial
+                
+            </a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/09/questions">Laboratory
+                
+            </a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/test/09/questions">Weekly Test
+                
+            </a></li>
+</ul>
+</span>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Questions
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/test/09/questions">Questions
+            
+            </a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/test/09/answers">Sample Solutions
+            
+            </a></li>
+</ul>
+</span>
+<a class="heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/" id="right_heading_link" target="_blank">Software Construction</a>
+</div>
+</div>
+<div class="tutlab lab">
+<h3>Test Conditions</h3>
+
+These questions must be completed under self-administered exam-like conditions.
+
+<ul>
+<li> You may complete this test in CSE labs or elsewhere using your own machine
+</li><li> You may complete this test at any time before 
+</li><li> The maximum time allowed for this test is 1 hour
+</li><li> After starting this test you must complete the test within 1 hour and submit your
+answers with give.
+</li><li> you must complete the questions alone - you can not get help in any way from any person
+</li><li> you can not access web pages or use the internet in any way
+</li><li> you can not access books, notes or other written or online materials
+</li><li> you can not access your own files, programs, code ...
+</li><li> you can not access COMP[29]041 course materials except for language documentation linked above.
+</li></ul>
+<hr/>
+You may access this <b>language documentation</b> while attemting this test:
+<ul>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041//exam/shell_perl_cheatsheet.pdf">Shell/Regex/Perl quick reference</a>
+</li><li><a href="https://cgi.cse.unsw.edu.au/~cs2041//exam/python_cheatsheet.pdf">Python quick reference</a>
+</li><li><a href="https://cgi.cse.unsw.edu.au/~cs2041//exam/C_cheatsheet.pdf">C quick reference</a>
+</li><li><a href="https://cgi.cse.unsw.edu.au/~cs2041//exam/java_cheatsheet.pdf">Java quick reference</a>
+</li><li><a href="https://cgi.cse.unsw.edu.au/~cs2041//doc/perldoc-html-5.14.0/index.html">full Perl documentation</a>
+</li><li><a href="https://cgi.cse.unsw.edu.au/~cs2041//doc/python-3.5.2-docs-html/index.html">full Python 3.5 documentation</a>
+</li><li><a href="https://cgi.cse.unsw.edu.au/~cs2041//doc/python-2.7.2-docs-html/index.html">full Python 2.7 documentation</a>
+</li></ul>
+<hr/>
+
+You may also access manual entries (the man command)
+
+<p>
+Any violation of the test conditions will results in a mark of zero for the entire weekly test component.
+
+
+
+</p><h3>Exercise: Unique Echo</h3>
+
+Write a Python program <b>uniq_echo.py</b> that prints each different command-line argument to
+standard output exactly once, similar to <b>echo</b> command in shell but with duplicates removed.
+
+Print out the unique arguments in order of their first appearance.
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./uniq_echo.py echo echo echo</kbd>
+echo 
+<kbd class="shell">./uniq_echo.py bird cow bird cow fish bird cow fish bird</kbd>
+bird cow fish 
+<kbd class="shell">./uniq_echo.py how much wood would a woodchuck chuck</kbd>
+how much wood would a woodchuck chuck 
+<kbd class="shell">./uniq_echo.py d c b d c a a d</kbd>
+d c b a 
+<kbd class="shell">./uniq_echo.py</kbd>
+
+</pre>
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+</p><pre class="command_line">
+<kbd class="shell">2041 autotest test09 uniq_echo.py</kbd>
+</pre>
+<div class="autotest_results">
+<h4>Automarking Results</h4>
+<span class="autotest_results_emphasis">97%</span>
+        
+        of <span class="autotest_results_emphasis">308</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">uniq_echo.py</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+<ul>
+<li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>uniq_echo_1</i>
+</li><li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>uniq_echo_2</i>
+</li><li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>uniq_echo_3</i>
+</li><li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>uniq_echo_4</i>
+</li><li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>uniq_echo_5</i>
+</li><li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>uniq_echo_6</i>
+</li><li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>uniq_echo_7</i>
+</li><li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>uniq_echo_8</i>
+</li><li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>uniq_echo_9</i>
+</li></ul>
+</div>
+</div>
+<p></p>
+<h3>Exercise: Sort Words</h3>
+
+Write a Python program <b>sort_words.py</b> that reads lines of text from its standard input
+and prints them to its standard output with the words on each line rearranged to be in sorted (alphabetic) order.
+<p>
+You can assume that a word is any sequence of non-whitespace characters.
+</p><p>
+You should print the words separated by a single space character.
+</p><p>
+For example:
+
+
+    
+        
+    
+
+
+
+
+
+
+</p><pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./sort_words.py</kbd>
+<kbd>I shall be telling this with a sigh
+Somewhere     ages and ages hence
+Two roads diverged in a   wood and I
+I took   the one   less traveled by
+And that has made all the difference
+</kbd><span class="eof"></span>
+I a be shall sigh telling this with
+Somewhere ages ages and hence
+I Two a and diverged in roads wood
+I by less one the took traveled
+And all difference has made that the
+</pre>
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+</p><pre class="command_line">
+<kbd class="shell">2041 autotest test09 sort_words.py</kbd>
+</pre>
+<div class="autotest_results">
+<h4>Automarking Results</h4>
+<span class="autotest_results_emphasis">93%</span>
+        
+        of <span class="autotest_results_emphasis">296</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">sort_words.py</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+<ul>
+<li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>sort_words_1</i>
+</li><li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>sort_words_10</i>
+</li><li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>sort_words_11</i>
+</li><li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>sort_words_12</i>
+</li><li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>sort_words_13</i>
+</li><li><span class="autotest_results_emphasis">96%</span>
+                    
+                    passed test <i>sort_words_14</i>
+</li><li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>sort_words_15</i>
+</li><li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>sort_words_3</i>
+</li><li><span class="autotest_results_emphasis">95%</span>
+                    
+                    passed test <i>sort_words_4</i>
+</li><li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>sort_words_5</i>
+</li><li><span class="autotest_results_emphasis">95%</span>
+                    
+                    passed test <i>sort_words_6</i>
+</li><li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>sort_words_7</i>
+</li><li><span class="autotest_results_emphasis">95%</span>
+                    
+                    passed test <i>sort_words_8</i>
+</li><li><span class="autotest_results_emphasis">95%</span>
+                    
+                    passed test <i>sort_words_9</i>
+</li></ul>
+</div>
+</div>
+<p></p>
+<h3>Exercise: Distinct Lines</h3>
+
+Write a Python program <b>distinct_lines.py</b> which given a single argument <b>n</b>
+reads lines from standard input until  <b>n</b>
+different lines have been read.
+<p>
+It should then print a message (exactly as below) indicating  how many lines were read.
+It should then stop. It should not read futher input
+</p><p>
+If end-of-input is reached before <b>n</b> different lines
+it should print a message  indicating  how many lines were read.
+</p><p>
+Your program should ignore case and white-space when comapring lines.
+</p><p>
+You can assume your program is given a single positive integer as argument.
+
+
+    
+        
+    
+
+
+
+
+
+
+</p><pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./distinct_lines.py 3</kbd>
+<kbd>hi
+hello world
+hi
+hello world
+hello world
+bye
+</kbd>3 distinct lines seen after 6 lines read.
+</pre>
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./distinct_lines.py 3</kbd>
+<kbd>hi
+hello world
+   hi
+hello        world
+   HELLO  world
+bye
+</kbd>3 distinct lines seen after 6 lines read.
+</pre>
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./distinct_lines.py 4</kbd>
+<kbd>how
+are
+you
+are
+how
+are
+well
+</kbd>4 distinct lines seen after 7 lines read.
+</pre>
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./distinct_lines.py 3</kbd>
+<kbd>how
+are
+you
+</kbd>3 distinct lines seen after 3 lines read.
+</pre>
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./distinct_lines.py 7</kbd>
+<kbd>hello
+how
+are
+you
+</kbd><span class="eof"></span>
+End of input reached after 4 lines read -  7 different lines not seen.
+</pre>
+
+No error checking is necessary.
+
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+</p><pre class="command_line">
+<kbd class="shell">2041 autotest test09 distinct_lines.py</kbd>
+</pre>
+<div class="autotest_results">
+<h4>Automarking Results</h4>
+<span class="autotest_results_emphasis">88%</span>
+        
+        of <span class="autotest_results_emphasis">288</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">distinct_lines.py</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+<ul>
+<li><span class="autotest_results_emphasis">94%</span>
+                    
+                    passed test <i>distinct_lines_0</i>
+</li><li><span class="autotest_results_emphasis">91%</span>
+                    
+                    passed test <i>distinct_lines_1</i>
+</li><li><span class="autotest_results_emphasis">91%</span>
+                    
+                    passed test <i>distinct_lines_10</i>
+</li><li><span class="autotest_results_emphasis">94%</span>
+                    
+                    passed test <i>distinct_lines_11</i>
+</li><li><span class="autotest_results_emphasis">94%</span>
+                    
+                    passed test <i>distinct_lines_12</i>
+</li><li><span class="autotest_results_emphasis">91%</span>
+                    
+                    passed test <i>distinct_lines_13</i>
+</li><li><span class="autotest_results_emphasis">94%</span>
+                    
+                    passed test <i>distinct_lines_2</i>
+</li><li><span class="autotest_results_emphasis">94%</span>
+                    
+                    passed test <i>distinct_lines_3</i>
+</li><li><span class="autotest_results_emphasis">92%</span>
+                    
+                    passed test <i>distinct_lines_4</i>
+</li><li><span class="autotest_results_emphasis">94%</span>
+                    
+                    passed test <i>distinct_lines_5</i>
+</li><li><span class="autotest_results_emphasis">94%</span>
+                    
+                    passed test <i>distinct_lines_6</i>
+</li><li><span class="autotest_results_emphasis">94%</span>
+                    
+                    passed test <i>distinct_lines_7</i>
+</li><li><span class="autotest_results_emphasis">94%</span>
+                    
+                    passed test <i>distinct_lines_8</i>
+</li><li><span class="autotest_results_emphasis">94%</span>
+                    
+                    passed test <i>distinct_lines_9</i>
+</li></ul>
+</div>
+</div>
+<p></p>
+<h3>Submission</h3>
+
+
+When you are finished submit your work by running:
+
+<pre class="command_line">
+<kbd class="shell">give cs2041 test09 uniq_echo.py sort_words.py distinct_lines.py</kbd>
+</pre>
+<p>
+Don't submit any exercises you haven't attempted.
+
+If you are working at home, you may find it more convenient
+to upload your work via
+ <a href="https://cgi.cse.unsw.edu.au/~give/code/login.php?app=/~give/Student/give.php&amp;debug=get_authuser">give's web interface</a>.
+</p><p>
+Remember you have until <b>Tuesday 3 October 23:59</b> to submit your work.
+
+
+
+
+</p><h3>Assessment</h3>
+
+This test is worth 1 mark. It will be automarked.
+<p>
+After the automarking is complete you should be able to view it by running
+this command on a CSE machine:
+
+</p><pre class="command_line">
+<kbd class="shell">2041 classrun -collect test09
+</kbd></pre>
+
+You can inspect marks for this lab and other assessment components via <a href="https://cgi.cse.unsw.edu.au/~give/code/login.php?app=/~give/Student/give.php&amp;debug=get_authuser">give's web interface</a> or by running
+
+<pre class="command_line">
+<kbd class="shell">2041 classrun -sturec
+</kbd></pre>
+<p>
+Reminder: weekly tests contribute 6% to your final COMP[29]041 final mark.
+</p><p>
+Your mark for the test component will be the sum of your best 6 of 8 test marks.
+</p><p>
+Hence you can obtain full marks for the 6% weekly test component without obtaining full marks every week.
+</p><p>
+Reminder: any violation of the test conditions will results in a mark of zero for the entire programming test component.
+
+
+</p></div>
+<!--
+public_html_session_directory=/web/cs2041/17s2
+base_directory=/web/cs2041/17s2
+public_html_directory=/web/cs2041
+scripts_directory=/web/cs2041/17s2/scripts
+home_directory=/home/cs2041
+bin_directory=/home/cs2041/bin
+course_account=cs2041
+course_code=COMP2041
+course_number=2041
+postgraduate_course_code=COMP9041
+course_name=Software Construction
+unsw_session=17s2
+canonical_url=https://cgi.cse.unsw.edu.au/~cs2041/
+github_repo_url=https://github.com/COMP2041UNSW/course_materials
+course_forum_url=https://piazza.com/class/j5ji4vjjra62a3
+lecture_recordings_url=https://moodle.telt.unsw.edu.au/course/view.php?id=27708
+WORK=/web/cs2041/17s2/work
+OUT=/web/cs2041/17s2/work/.out
+MARKED=/web/cs2041/17s2/work/.out/.marked
+SMSDB=/web/cs2041/17s2/work/17s2db.sms
+tlb_directory=/web/cs2041/17s2/tlb
+lecture_directory=/web/cs2041/17s2/lec
+flask_cache_directory=/web/cs2041/17s2/flask_cache
+testing_results_file=/web/cs2041/17s2/work/testing_results.json
+enrollments_file=/web/cs2041/17s2/work/enrollments.json
+unsw_ldap_password_file=/web/cs2041/.unsw_ldap_password
+autotest_upload_url=https://cgi.cse.unsw.edu.au/~cs2041/cgi/autotest_upload.cgi
+PATH=/web/cs2041/17s2/scripts:/home/cs2041/bin:/bin/:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/home/class/bin:/home/give/stable/bin.:/bin:/usr/bin:/usr/local/bin
+directory_relative_pathname=tlb/09
+url=https://cgi.cse.unsw.edu.au/~cs2041/flask.cgi/test/09/questions
+directory_url=https://cgi.cse.unsw.edu.au/~cs2041/test/09/
+url_root=https://cgi.cse.unsw.edu.au/~cs2041/
+script_root=/~cs2041/flask.cgi
+current_lecture_topic=exam
+current_week=13
+week=09
+exercise_name=test09
+tut_or_lab_or_test=test
+questions_or_answers=questions
+programs=&lt;programs&gt;
+
+-->
+</body>
+</html>

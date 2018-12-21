@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>
+
+COMP2041 Week 09 Tutorial Questions
+
+</title>
+<link href="/~cs2041/flask.cgi/static/bootstrap.min.css?121200" rel="stylesheet"/>
+<link href="/~cs2041/flask.cgi/static/course.css?6554" rel="stylesheet"/>
+<script src="/~cs2041/flask.cgi/static/jquery.min.js?95992" type="text/javascript"></script>
+<script src="/~cs2041/flask.cgi/static/bootstrap.min.js?37045" type="text/javascript"></script>
+<script src="/~cs2041/flask.cgi/static/course.js?1631" type="text/javascript"></script>
+<link href="https://cgi.cse.unsw.edu.au/~cs2041/" rel="canonical"/>
+</head>
+<body>
+<div class="container">
+<div id="heading">
+<a class="heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/" id="left_heading_link" target="_blank">COMP[29]041 17s2</a>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Week 09
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/02/questions">Week 02</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/03/questions">Week 03</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/04/questions">Week 04</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/05/questions">Week 05</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/06/questions">Week 06</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/07/questions">Week 07</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/08/questions">Week 08</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/09/questions">Week 09</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/10/questions">Week 10</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/11/questions">Week 11</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/12/questions">Week 12</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/13/questions">Week 13</a></li>
+</ul>
+</span>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Tutorial
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/09/questions">Tutorial
+                
+            </a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/09/questions">Laboratory
+                
+            </a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/test/09/questions">Weekly Test
+                
+            </a></li>
+</ul>
+</span>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Questions
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/09/questions">Questions
+            
+            </a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/09/answers">Sample Answers
+            
+            </a></li>
+</ul>
+</span>
+<a class="heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/" id="right_heading_link" target="_blank">Software Construction</a>
+</div>
+</div>
+<div class="tutlab tut">
+<ol>
+<li>
+What is <code>gitlab.cse.unsw.edu.au</code> and why do I want use it?
+<p>
+</p><p></p>
+</li><li>
+What (basically)  does <code> git add <i>file</i></code> do?
+
+<p></p>
+</li><li>
+What (basically)  does <code> git commit -a</code> do?
+
+<p></p>
+</li><li>
+What (basically)  does <code> git push</code> do?
+
+<p></p>
+</li><li>
+What is bash arithmetic?  What are its advantages and disadvantages.
+
+<p></p>
+</li><li>
+
+Discuss what has to be done to transform
+this Python to equivalent Perl.
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python3
+number = 0
+while number &gt;= 0:
+    number = int(input("Enter number: "))
+    if number &gt;= 0:
+        if number % 2 == 0:
+            print(number, "is even")
+        else:
+            print(number, "odd")
+print("Bye")
+
+</pre>
+<p></p>
+</li><li>
+
+Discuss what has to be done to transform
+the  Python in the previous question to equivalent Shell using test/expr
+for the arithmetic statements.
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python3
+number = 0
+while number &gt;= 0:
+    number = int(input("Enter number: "))
+    if number &gt;= 0:
+        if number % 2 == 0:
+            print(number, "is even")
+        else:
+            print(number, "odd")
+print("Bye")
+
+</pre>
+<p></p>
+</li><li>
+
+Discuss what has to be done to transform
+the above  Shell using test/expr
+to bash arithmetic
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python3
+number = 0
+while number &gt;= 0:
+    number = int(input("Enter number: "))
+    if number &gt;= 0:
+        if number % 2 == 0:
+            print(number, "is even")
+        else:
+            print(number, "odd")
+print("Bye")
+
+</pre>
+<p></p>
+</li><li>
+
+We are translating a Python program to Perl
+and we reach this line.
+
+<pre class="program">
+a[x] = y;
+</pre>
+
+what is difficult about translating this line?
+<p>
+What can we do about this?
+
+</p><p></p>
+</li><li>
+
+Discuss what  this  Shell script does then translate it directly to Perl
+using Perl's <b>system</b> fucntion.
+<p>
+Then translate it to  Perl than doesn't use <b>system</b>.
+
+
+
+
+
+</p><pre class="program">
+
+#!/bin/sh
+
+important_file=/home/cs2041/public_html/index.html
+
+while ls $important_file &gt;/dev/null 2&gt;&amp;1
+do
+        echo "all OK"
+        sleep 1
+done
+
+echo "Panic $important_file gone"
+
+</pre>
+<p></p>
+<h3>Revision questions</h3>
+
+The remaining tutorial questions are primarily intended for revision - either this week
+or later in session.
+<p>
+Your tutor may still choose to cover some of the questions time permitting.
+</p><p>
+</p></li></ol>
+</div>
+<!--
+public_html_session_directory=/web/cs2041/17s2
+base_directory=/web/cs2041/17s2
+public_html_directory=/web/cs2041
+scripts_directory=/web/cs2041/17s2/scripts
+home_directory=/home/cs2041
+bin_directory=/home/cs2041/bin
+course_account=cs2041
+course_code=COMP2041
+course_number=2041
+postgraduate_course_code=COMP9041
+course_name=Software Construction
+unsw_session=17s2
+canonical_url=https://cgi.cse.unsw.edu.au/~cs2041/
+github_repo_url=https://github.com/COMP2041UNSW/course_materials
+course_forum_url=https://piazza.com/class/j5ji4vjjra62a3
+lecture_recordings_url=https://moodle.telt.unsw.edu.au/course/view.php?id=27708
+WORK=/web/cs2041/17s2/work
+OUT=/web/cs2041/17s2/work/.out
+MARKED=/web/cs2041/17s2/work/.out/.marked
+SMSDB=/web/cs2041/17s2/work/17s2db.sms
+tlb_directory=/web/cs2041/17s2/tlb
+lecture_directory=/web/cs2041/17s2/lec
+flask_cache_directory=/web/cs2041/17s2/flask_cache
+testing_results_file=/web/cs2041/17s2/work/testing_results.json
+enrollments_file=/web/cs2041/17s2/work/enrollments.json
+unsw_ldap_password_file=/web/cs2041/.unsw_ldap_password
+autotest_upload_url=https://cgi.cse.unsw.edu.au/~cs2041/cgi/autotest_upload.cgi
+PATH=/web/cs2041/17s2/scripts:/home/cs2041/bin:/bin/:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/home/class/bin:/home/give/stable/bin.:/bin:/usr/bin:/usr/local/bin
+directory_relative_pathname=tlb/09
+url=https://cgi.cse.unsw.edu.au/~cs2041/flask.cgi/tut/09/questions
+directory_url=https://cgi.cse.unsw.edu.au/~cs2041/tut/09/
+url_root=https://cgi.cse.unsw.edu.au/~cs2041/
+script_root=/~cs2041/flask.cgi
+current_lecture_topic=exam
+current_week=13
+week=09
+exercise_name=tut09
+tut_or_lab_or_test=tut
+questions_or_answers=questions
+programs=&lt;programs&gt;
+
+-->
+</body>
+</html>

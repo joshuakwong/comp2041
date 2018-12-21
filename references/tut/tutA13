@@ -1,0 +1,1461 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>
+
+COMP2041 Week 13 Tutorial Sample Answers
+
+</title>
+
+
+
+<link href="/~cs2041/flask.cgi/static/bootstrap.min.css?121200" rel="stylesheet">
+<link href="/~cs2041/flask.cgi/static/course.css?6554" rel="stylesheet">
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/jquery.min.js?95992"></script>
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/bootstrap.min.js?37045"></script>
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/course.js?1631"></script>
+<link rel="canonical" href="https://cgi.cse.unsw.edu.au/~cs2041/" />
+</head>
+<body>
+
+
+
+
+<div class="container">
+
+<div id="heading">
+
+
+<a class="heading_link" target="_blank" id="left_heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/">COMP[29]041 17s2</a>
+
+
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Week 13
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/02/answers">Week 02</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/03/answers">Week 03</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/04/answers">Week 04</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/05/answers">Week 05</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/06/answers">Week 06</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/07/answers">Week 07</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/08/answers">Week 08</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/09/answers">Week 09</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/10/answers">Week 10</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/11/answers">Week 11</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/12/answers">Week 12</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/13/answers">Week 13</a></li>
+        
+        
+    </ul>
+</span>
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Tutorial
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/13/answers">Tutorial
+                
+            </a></li>
+            
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/13/answers">Laboratory
+                
+            </a></li>
+            
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/13/answers">Weekly Test
+                
+            </a></li>
+            
+        
+    </ul>
+</span>
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Sample Answers
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/13/questions">Questions
+            
+            </a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/13/answers">Sample Answers
+            
+            </a></li>
+        
+        
+    </ul>
+</span>
+
+
+
+
+<a class="heading_link" target="_blank" id="right_heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/">Software Construction</a>
+
+</div>
+
+</div>
+
+
+<div class="tutlab tut">
+<ol>
+
+<ol>
+<li>
+
+How is assignment 2 going?
+<p>
+Do students who've made progress with the assignment have advice for students not so far along?
+<p>
+Do students have questions that other may be able to answer?
+
+<li>
+
+In the context of computing, a <i>shell</i> is
+<ol type="a">
+<li> <p> part of the Unix operating system </p>
+<li> <p> a program that arranges the execution of other programs </p>
+<li> <p> a component of a window manager such as <code>fvwm</code> </p>
+<li> <p> an object-oriented wrapper for a procedural program </p>
+</ol>
+
+<div class="answer">
+<ol type="a">
+<li><p>
+Incorrect ... the shell runs as a normal process under Unix; it is not part of the O/S
+</p>
+<li><p>
+Correct.
+</p>
+</div>
+
+<li>
+Which one of the following regular expressions would match a
+non-empty string consisting only of the letters <code>x</code>,
+<code>y</code> and <code>z</code>, in any order?
+<ol type="a">
+<li> <p> <code>[xyz]+</code> </p>
+<li> <p> <code>x+y+z+</code> </p>
+<li> <p> <code>(xyz)*</code> </p>
+<li> <p> <code>x*y*z*</code> </p>
+</ol>
+<div class="answer">
+<ol type="a">
+<li> <p>
+Correct
+</p>
+<li> <p>
+Incorrect ... this matches strings like <code>xxx...yyy...zzz...</code>
+</p>
+<li> <p>
+Incorrect ... this matches strings like <code>xyzxyzxyz...</code>
+</p>
+<li> <p>
+Incorrect ... this matches strings like <code>xxx...yyy...zzz...</code>
+</p>
+</ol>
+<p>
+The difference between (b) and (d) is that (b) requires there to be
+at least one of each <code>x</code>, <code>y</code> and <code>z</code>.
+</p>
+</div>
+<li><p>
+Which one of the following commands would extract the student id
+field from a file in the following format:
+<pre class="command_line">
+COMP3311;2122987;David Smith;95
+COMP3231;2233445;John Smith;51
+COMP3311;2233445;John Smith;76
+</pre>
+<ol type="a">
+<li> <p> <code>cut -f 2</code> </p>
+<li> <p> <code>cut -d; -f 2</code> </p>
+<li> <p> <code>sed -e 's/.*;//'</code> </p>
+<li> <p> None of the above. </p>
+</ol>
+<div class="answer">
+<ol type="a">
+<li> <p>
+Incorrect ... this gives the entire data file; the default field-separator
+is tab, and since the lines contain no tabs, they are treated as a single
+large field; if an invalid field number is specified, <code>cut</code> simply
+prints the first
+</p>
+<li> <p>
+Incorrect ... this runs two separate commands <code>cut -d</code> followed
+by <code>-f 2</code>, and neither of them makes sense on its own
+</p>
+<li> <p>
+Incorrect ... this removes all chars up to and including the final
+semicolon in the line, and this gives the 4th field on each line
+</p>
+<li> <p>
+Correct
+</p>
+</ol>
+</div>
+<li><p>
+Which one of the following Perl commands would acheive the same
+effect as in the previous question (i.e. extract the student id
+field)?
+<ol type="a">
+<li> <p> <code>perl -e '{while (<>) { split /;/; print;}}'</code> </p>
+<li> <p> <code>perl -e '{while (<>) { split /;/; print $2;}}'</code> </p>
+<li> <p> <code>perl -e '{while (<>) { @x = split /;/; print "$x[1]\n";}}'</code> </p>
+<li> <p> <code>perl -e '{while (<>) { @x = split /;/; print "$x[2]\n";}}'</code> </p>
+</ol>
+<div class="answer">
+<ol type="a">
+<li> <p>
+Incorrect ... this splits the line, but doesn't save the result of the
+splitting, and then prints the default value, which is the whole line
+read
+</p>
+<li> <p>
+Incorrect ... <code>$2</code> does not refer to the second field in Perl
+</p>
+<li> <p>
+Correct ... the <code>split</code> saves the result in the <code>@x</code> list,
+and the index <code>[1]</code> selects the second value from the list
+</p>
+<li> <p>
+Incorrect ... the <code>split</code> saves the result in the <code>@x</code> list,
+but the index <code>[2]</code> selects the third value from the list
+</p>
+</ol>
+</div>
+
+<li>
+Consider the following Perl program that processes its standard input:
+</p>
+<pre class="command_line">
+#!/usr/bin/perl -w
+while (&lt;STDIN&gt;) {
+    @marks = split;
+    $studentID = $marks[0];
+    for (i = 0; i &lt; $#marks; i++) {
+        $totalMark += $marks[$i];
+    }
+    printf "%s %d\n", $studentID, $totalMark;
+}
+</pre>
+<p>
+This program has several common mistakes in it. Indicate and describe
+the nature of each of these mistakes, and say what the program is
+attempting to do.
+</p>
+<div class="answer">
+<ul>
+<li>
+The <code>for</code> loop uses the "variable" <code>i</code> but forgets to
+prefix it with the <code>$</code> symbol, so it will be treated as a
+constant and an error message generated
+<li>
+The iteration over the marks is incorrect; the value <code>$#marks</code>
+gives the index of the last array element; since the loop runs to less
+than <code>$#marks</code> it will miss the last element
+<li>
+A related point: since the first element in the array is the student
+ID and not a mark, it should not be included in the <code>$totalMark</code>;
+the loop iteration should start from <code>$i = 1</code>.
+<li>
+The value of <code>$totalMark</code> is not reset for each student, so
+the total simply increases continually and does not reflect the sum
+of marks for any individual except the first student
+</ul>
+</div>
+
+<li>
+
+Write a <i>shell script</i> called <code>rmall.sh</code> that removes all of the
+files and directories below the directory supplied as its single
+command-line argument.
+The script should prompt the user with <code>Delete</code> <i>X</i><code>?</code>
+before it starts deleting the contents of any directory <i>X</i>.
+If the user responds <code>yes</code> to the prompt, <code>rmall</code>
+should remove all of the plain files in the directory, and then
+check whether the contents of the subdirectories should be removed.
+The script should also check the validity of its command-line arguments.
+
+<div class="answer">
+Sample solution
+
+
+
+
+
+<pre class="program">
+
+#!/bin/sh
+
+# check whether there is a cmd line arg
+case $# in
+1) # ok ... requires exactly one arg
+    ;;
+*)
+    echo &#34;Usage: $0 dir&#34;
+    exit 1
+esac
+
+# then make sure that it is a directory
+if test ! -d $1
+then
+    echo &#34;$1 is not a directory&#34;
+    echo &#34;Usage: $0 dir&#34;
+    exit 1
+fi
+
+# change into the specified directory
+cd $1
+
+# for each plain file in the directory
+for f in .* *
+do
+    case $f in
+    .|..) # ignore . and ..
+        ;;
+    *)
+        if test -f $f
+        then
+            rm $f
+        fi
+        ;;
+    esac
+done
+
+# for each subdirectory
+for d in .* *
+do
+    case $d in
+    .|..) # ignore . and ..
+        ;;
+    *)
+        if test -d $d
+        then
+            echo -n &#34;Delete $d? &#34;
+            read answer
+            if test &#34;$answer&#34; = &#34;yes&#34;
+            then
+                rmall $d
+            fi
+        fi
+        ;;
+    esac
+done
+
+</pre>
+
+
+
+</div>
+
+<li>
+
+Write a <i>shell script</i> called <code>check</code> that looks for duplicated
+student ids in a file of marks for a particular subject.
+The file consists of lines in the following format:
+
+<pre class="command_line">
+2233445 David Smith 80
+2155443 Peter Smith 73
+2244668 Anne Smith 98
+2198765 Linda Smith 65
+</pre>
+
+The output should be a list of student ids that occur 2+ times, separated by newlines.
+(i.e. any student id that occurs more than once should be displayed on a line by itself on the standard output).
+
+<div class="answer">
+
+Sample solution
+
+
+
+
+
+<pre class="program">
+
+#!/bin/sh
+
+cut -d&#39; &#39; -f1 &lt; Marks | sort | uniq -c | egrep -v &#39;^ *1 &#39; | sed -e &#39;s/^.* //&#39;
+
+</pre>
+
+
+
+<b>Explanation:</b>
+
+<ol>
+<li> <p>
+<code>cut -d' ' -f1 &lt; Marks</code> ... extracts the student ID from each line
+</p>
+<li> <p>
+<code>sort | uniq -c</code> ... sorts and counts the occurrences of each ID
+</p>
+<li> <p>
+IDs that occur once will be on a line that begins with spaces followed
+by <code>1</code> followed by a TAB
+</p>
+<li> <p>
+<code>grep -v '^  *1  '</code> removes such lines, leaving only IDs that occur multiple times
+</p>
+<li> <p>
+<code>sed -e 's/^.* //'</code> gets rid of the counts that <code>uniq -c</code> placed
+at the start of each line
+</p>
+</ol>
+</div>
+
+<li>
+
+Write a <i>Perl script</i> <b>revline.pl</b> that reverses the fields on each line
+of its standard input.
+<p>
+Assume that the fields are separated by spaces, and that only one space
+is required between fields in the output.
+<p>
+For example
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./revline.pl</kbd>
+<kbd>hi how are you
+i&#39;m great thank you
+</kbd><span class="eof"></span>
+you are how hi
+you thank great i&#39;m
+</pre>
+
+<div class="answer">
+
+Obvious readable solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+
+while ($line = &lt;STDIN&gt;) {
+    chomp $line;
+    my @fields = split /\s+/, $line;
+    @fields = reverse @fields;
+    $line_out = join &#39; &#39;, @fields;
+    print &#34;$line_out\n&#34;;
+}
+
+</pre>
+
+
+
+Or using Perls $_ variable.
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+
+while (&lt;STDIN&gt;) {
+    chomp;
+    my @fields = split;
+    @fields = reverse @fields;
+    $line_out = join &#39; &#39;, @fields;
+    print &#34;$line_out\n&#34;;
+}
+
+</pre>
+
+
+
+or exploiting perl's -p command flags:
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -pw
+
+chomp;
+$_ = join &#39; &#39;, reverse split;
+
+</pre>
+
+
+
+
+</div>
+
+<li>
+
+Write a <i>Python script</i> <b>revline.py</b> that reverses the fields on each line
+of its standard input.  See the previous question for details.
+
+<li>
+
+Consider the following table of student enrolment data:
+
+<center>
+<table>
+<tr><th>StudentID</th><th>Course</th><th>Year</th><th>Session</th><th>Mark</th><th>Grade</th></tr>
+<tr><td>2201440</td><td>COMP1011</td><td>1999</td><td>S1</td><td>57</td><td>PS</td></tr>
+<tr><td>2201440</td><td>MATH1141</td><td>1999</td><td>S1</td><td>51</td><td>PS</td></tr>
+<tr><td>2201440</td><td>MATH1081</td><td>1999</td><td>S1</td><td>60</td><td>PS</td></tr>
+<tr><td>2201440</td><td>PHYS1131</td><td>1999</td><td>S1</td><td>52</td><td>PS</td></tr>
+<tr><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td></tr>
+</table>
+</center>
+
+A file containing a large data set in this format for the years 1999
+to 2001 and ordered by student ID is available in the file <i>data</i>.
+</p>
+<p>
+Write a program that computes the average mark for a specified course
+for each of the sessions that it has run.
+The course code is specified as a command-line argument, and the
+data is read from standard input.
+All output from the program should be written to the standard output.
+</p>
+<p>
+If no command-line argument is given, the program should write the
+following message and quit:
+</p>
+<pre class="command_line">
+    Usage: ex3 Course
+</pre>
+<p>
+The program does <em>not</em> have to check whether the argument is
+valid (i.e. whether it looks like a real course code). However,
+if the specified course code (<i>CCODE</i>) does not appear anywhere
+in the data file, the program should write the following message:
+</p>
+<pre class="command_line">
+    No marks for course CCODE
+</pre>
+<p>
+Otherwise, it should write one line for each session that the
+course was offered. The line should contain the course code, the
+year, the session and the average mark for the course
+(with one digit after the decimal point).
+You can assume that a course will not be offered more than 100 times.
+The entries should be written in chronological order.
+</p>
+<p>
+The following shows an example input/output pair for this program:
+</p>
+<center>
+<table border=1 cellpadding=5>
+<tr><td><b>Sample Input Data</b></td><td><b>Corresponding Output</b></td></tr>
+<tr valign=top>
+<td>
+<pre class="command_line">
+COMP1011
+</pre>
+</td><td>
+<pre class="command_line">
+COMP1011 1999 S1 62.5
+COMP1011 2000 S1 69.1
+COMP1011 2001 S1 66.8
+</pre>
+</td>
+</tr>
+</table>
+</center>
+
+<div class="answer">
+
+Sample Perl solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl
+
+if (@ARGV &lt; 1) {
+    print &#34;Usage: ex3 Course\n&#34;; exit 0
+}
+else {
+    $c = $ARGV[0];
+}
+
+while (&lt;STDIN&gt;) {
+    chomp;
+    my ($sid,$course,$year,$sess,$mark,$grade) = split;
+
+    if ($course eq $c) {
+        $sum{&#34;$year $sess&#34;} += $mark;
+        $count{&#34;$year $sess&#34;}++;
+        $nofferings++;
+    }
+}
+
+if ($nofferings == 0) {
+    print &#34;No marks for course $c\n&#34;;
+}
+else {
+    foreach $s (sort keys %sum) {
+        printf &#34;$c $s %0.1f\n&#34;, $sum{&#34;$s&#34;}/$count{&#34;$s&#34;};
+    }
+}
+
+</pre>
+
+
+
+
+</div>
+
+<li>
+Write a Perl program <b>frequencies.pl</b> that prints a count of how often each letter ('a'..'z'
+and 'A'..'Z') and digit ('0'..'9') occurs in its input.  Your program
+should follow the output format indicated in the examples below exactly.
+<p>
+No count
+should be printed for letters or digits which do not occur in the input.
+<p>
+The counts should be printed in dictionary order ('0'..'9','A'..'Z','a'..'z').
+<p>
+Characters other than
+letters and digits should be ignored.
+<p>
+The following shows an example input/output pair for this program:
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./frequencies.pl</kbd>
+<kbd>The  Mississippi is
+1800 miles long!
+</kbd><span class="eof"></span>
+&#39;0&#39; occurred 2 times
+&#39;1&#39; occurred 1 times
+&#39;8&#39; occurred 1 times
+&#39;M&#39; occurred 1 times
+&#39;T&#39; occurred 1 times
+&#39;e&#39; occurred 2 times
+&#39;g&#39; occurred 1 times
+&#39;h&#39; occurred 1 times
+&#39;i&#39; occurred 6 times
+&#39;l&#39; occurred 2 times
+&#39;m&#39; occurred 1 times
+&#39;n&#39; occurred 1 times
+&#39;o&#39; occurred 1 times
+&#39;p&#39; occurred 2 times
+&#39;s&#39; occurred 6 times
+</pre>
+
+<div class="answer">
+
+Clear readable Perl solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+# courtesy aek@cse.unsw.EDU.AU
+# letter count- count number of occurrences of each letter
+
+# map letters to counts
+my %lettercount = ();
+while (&lt;&gt;) {
+        chomp;
+
+        # remove anything but letters and numbers
+        s/[^A-Za-z0-9]//g;
+
+        # split the line into an array of characters
+        @chars = split //;
+        foreach $letter (@chars) {
+                # record count in hash table
+                $lettercount{$letter}++;
+        }
+}
+
+# output count of each letter, sorted on the keys (letters)
+foreach $letter (sort keys %lettercount) {
+        print &#34;&#39;$letter&#39; occurred $lettercount{$letter} times\n&#34;;
+        # (look up count for each letter from table)
+}
+
+</pre>
+
+
+
+Terse less-reable Perl soluton:
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+while (&lt;&gt;) {
+    for (split //) {
+        $count{$_}++ if /[a-zA-Z0-9]/;
+    }
+}
+print &#34;&#39;$_&#39; occurred $count{$_} times\n&#34; for sort keys %count;
+
+</pre>
+
+
+
+</div>
+
+<li>
+Write a  program <b>frequencies.py</b> - see previous question for details.
+
+<li>
+
+Write a Perl program that maps all lower-case vowels (a,e,i,o,u) in
+its standard input into their upper-case equivalents and, at the
+same time, maps all upper-case vowels (A, E, I, O, U) into their
+lower-case equivalents.
+<p>
+The following shows an example input/output pair for this program:
+</p>
+<center>
+<table border=1 cellpadding=5>
+<tr><td><b>Sample Input Data</b></td><td><b>Corresponding Output</b></td></tr>
+<tr valign=top>
+<td>
+<pre class="command_line">
+This is some boring text.
+A little foolish perhaps?
+</pre>
+</td><td>
+<pre class="command_line">
+ThIs Is sOmE bOrIng tExt.
+a lIttlE fOOlIsh pErhAps?
+</pre>
+</td>
+</tr>
+</table>
+</center>
+
+<div class="answer">
+
+Sample Perl solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+
+@lines = &lt;STDIN&gt;;
+map {tr /aeiouAEIOU/AEIOUaeiou/} @lines;
+print @lines;
+
+
+</pre>
+
+
+
+Another Sample Shell solution
+
+
+
+
+
+<pre class="program">
+
+#!/bin/sh
+
+tr aeiouAEIOU AEIOUaeiou
+
+</pre>
+
+
+</div>
+
+<li>
+
+A "hill vector" is structured as an <em>ascent</em>,
+followed by an <em>apex</em>, followed by a <em>descent</em>, where
+<p>
+<ul>
+<li> the <em>ascent</em> is a non-empty strictly ascending sequence that ends with the apex
+<li> the <em>apex</em> is the maximum value, and must occur only once
+<li> the <em>descent</em> is a non-empty strictly descending sequence that starts with the apex
+</ul>
+<p>
+For example, [1,2,3,4,3,2,1] is a hill vector (with apex=4) and
+[2,4,6,8,5] is a hill vector (with apex=8).
+The following vectors are not hill vectors:
+[1,1,2,3,3,2,1] (not strictly ascending and multiple apexes),
+[1,2,3,4] (no descent), and
+[2,6,3,7,8,4] (not ascent then descent).
+No vector with less than three elements is considered to be a hill.
+
+<P>
+Write a Perl program <b>hill_vector.pl</b> that determines whether a sequence of numbers (integers)
+read from standard input forms a "hill vector".
+The program should write "hill" if the input <I>does</I>  form a hill
+vector and write "not hill" otherwise.
+<P>
+Your program's input will only contain digits and white space.
+Any amount of whitespace may precede or follow integers.
+<P>
+Multiple integers may occur on the same line.
+<P>
+A line may contain no integers.
+<P>
+You can assume all the integers are positive.
+The following shows example input/output pairs for this program:
+<p><center>
+<table border=1 cellpadding=5>
+<tr><td><b>Sample Input Data</b></td><td><b>Corresponding Output</b></td></tr>
+<tr valign=top>
+<td>
+<pre class="command_line">
+1 2 4 8 5 3 2
+</pre>
+</td><td>
+<pre class="command_line">
+hill
+</pre>
+</td>
+</tr>
+<tr valign=top>
+<td>
+<pre class="command_line">
+1 2
+</pre>
+</td><td>
+<pre class="command_line">
+not hill
+</pre>
+</td>
+</tr>
+<tr valign=top>
+<td>
+<pre class="command_line">
+1 3 1
+</pre>
+</td><td>
+<pre class="command_line">
+hill
+</pre>
+</td>
+</tr>
+<tr valign=top>
+<td>
+<pre class="command_line">
+  3
+1   1
+</pre>
+</td><td>
+<pre class="command_line">
+not hill
+</pre>
+</td>
+</tr>
+<tr valign=top>
+<td>
+<pre class="command_line">
+2 4 6 8 10 10 9 7 5 3 1
+</pre>
+</td><td>
+<pre class="command_line">
+not hill
+</pre>
+</td>
+</tr>
+</table>
+</center>
+<div class="answer">
+
+Sample Perl solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+@n = split /\D+/, join(&#39; &#39;, &lt;&gt;);
+$i= 0;
+$i++ while $i &lt; $#n &amp;&amp; $n[$i] &lt; $n[$i+1];
+$j = $#n;
+$j-- while $j &gt; 0 &amp;&amp; $n[$j] &lt; $n[$j-1];
+print &#34;not &#34; if $i != $j || $i == 0 || $j == $#n;
+print &#34;hill\n&#34;;
+
+</pre>
+
+
+
+</div>
+
+<li>
+Write a Python program <b>hill_vector.py</b> see the previous question for details.
+
+<li>
+
+A list  <b>a<sub>1</sub></b>, <b>a<sub>2</sub></b>, ... <b>a<sub>n</sub></b> is said to be <b>converging</b> if
+<p>
+<pre>
+<b>a<sub>1</sub></b> > <b>a<sub>2</sub></b> > ... > <b>a<sub>n</sub></b>
+</pre>
+<p>
+and
+<p>
+<pre>
+<p>
+for all i <b>a<sub>i - 1</sub></b> - <b>a<sub>i</sub></b> &gt; <b>a<sub>i</sub></b> - <b>a<sub>i + 1</sub></b>
+</pre>
+<P>
+In other words, the list is strictly decreasing and the difference between consecuctive list elements
+always decreases as you go down the list.
+<P>
+Write a Perl program <b>converging.pl</b> that determines whether a sequence of positive integers
+read from standard input is converging.
+The program should write "converging" if the input is converging
+and write "not converging" otherwise.
+It should produce no other output.
+<P>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="LEFT"><SPAN  CLASS="textbf">Sample Input Data</SPAN></TH>
+<TH ALIGN="LEFT"><SPAN  CLASS="textbf">Corresponding Output</SPAN></TH>
+</TR>
+<TR><TD ALIGN="LEFT"><TABLE  WIDTH="227">
+<TR><TD>
+<pre class="command_line">
+2010 6 4 3
+</PRE></TD></TR>
+</TABLE></TD>
+<TD ALIGN="LEFT"><TABLE  WIDTH="227">
+<TR><TD>
+<pre class="command_line">
+converging
+</PRE></TD></TR>
+</TABLE></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TABLE  WIDTH="227">
+<TR><TD>
+<pre class="command_line">
+20
+15
+9
+</PRE></TD></TR>
+</TABLE></TD>
+<TD ALIGN="LEFT"><TABLE  WIDTH="227">
+<TR><TD>
+<pre class="command_line">
+not converging
+</PRE></TD></TR>
+</TABLE></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TABLE  WIDTH="227">
+<TR><TD>
+<pre class="command_line">
+1000
+     100   10
+     1
+</PRE></TD></TR>
+</TABLE></TD>
+<TD ALIGN="LEFT"><TABLE  WIDTH="227">
+<TR><TD>
+<pre class="command_line">
+converging
+</PRE></TD></TR>
+</TABLE></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TABLE  WIDTH="227">
+<TR><TD>
+<pre class="command_line">
+  6
+  5
+2 2
+</PRE></TD></TR>
+</TABLE></TD>
+<TD ALIGN="LEFT"><TABLE  WIDTH="227">
+<TR><TD>
+<pre class="command_line">
+not converging
+</PRE></TD></TR>
+</TABLE></TD>
+</TR>
+<TR><TD ALIGN="LEFT"><TABLE  WIDTH="227">
+<TR><TD>
+<pre class="command_line">
+  1 2 4 8
+</PRE></TD></TR>
+</TABLE></TD>
+<TD ALIGN="LEFT"><TABLE  WIDTH="227">
+<TR><TD>
+<pre class="command_line">
+not converging
+</PRE></TD></TR>
+</TABLE></TD>
+</TR>
+</TABLE>
+</DIV>
+<P>
+
+Your program's input will only contain digits and white space.
+Any amount of whitespace may precede or follow integers.
+<P>
+Multiple integers may occur on the same line.
+<P>
+A line may contain no integers.
+<P>
+You can assume your input contains at least 2 integers.
+<P>
+You can assume all the integers are positive.
+
+<div class="answer">
+
+Sample Perl solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+@n = split /\D+/, join(&#39; &#39;, &lt;&gt;);
+foreach $i (1..$#n) {
+    if ($n[$i] &gt;= $n[$i+1]) {
+        print &#34;not converging\n&#34;;
+        exit;
+    }
+}
+foreach $i (2..$#n) {
+    if ($n[$i-2] - $n[$i-1] &lt;= $n[$i-1] - $n[$i]) {
+        print &#34;not converging\n&#34;;
+        exit;
+    }
+}
+print &#34;converging\n&#34;;
+
+</pre>
+
+
+
+</div>
+
+<li>
+Write a Python program <b>converging.py</b> - see the previous question for details.
+
+<li>
+
+The <I>weight</I> of a number in a list is its value multiplied by
+how many times it occurs in the list.
+Consider the list <code> 1 6 4 7 3 4 6 3 3]</code>.
+The number 7 occurs once so it has weight 7. The number 3 occurs 3 times so it has weight 9.
+The number 4 occurs twice so it has weight 8.
+<P>
+Write a Perl program <b>heaviest.pl</b> which takes 1 or more positive integers as arguments and prints the heaviest.
+<P>
+Your Perl program should print one integer and no other output.
+<P>
+Your Perl program can assume it it is given only positive integers as arguments
+<P>
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./heaviest.pl 1 6 4 7 3 4 6 3 3</kbd>
+6
+<kbd class="shell">./heaviest.pl 1 6 4 7 3 4 3 3</kbd>
+3
+<kbd class="shell">./heaviest.pl 1 6 4 7 3 4 3</kbd>
+4
+<kbd class="shell">./heaviest.pl 1 6 4 7 3 3</kbd>
+7
+</pre>
+
+<div class="answer">
+
+Sample Perl solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+foreach $n (@ARGV) {
+    $w{$n * grep {$_ == $n} @ARGV} = $n;
+}
+print $w{(sort {$b &lt;=&gt; $a} keys %w)[0]}, &#34;\n&#34;;
+</pre>
+
+
+
+</div>
+
+<li>
+Write a Python program <b>heaviest.py</b> - see the previous question for details.
+
+
+
+
+<h3>Revision questions</h3>
+
+The remaining tutorial questions are primarily intended for revision - either this week
+or later in session.
+<p>
+Your tutor may still choose to cover some of the questions time permitting.
+<p>
+
+
+
+<LI>
+
+We wish to create a web site named myAddressBook where users can stores their address book.
+<p>
+After users login to the web site it should show them their current addressbook.
+<p>
+Then should be able to add and delete name/address pairs from their addressbook.
+<p>
+Write a CGI script <code>myAddressBook.cgi</code> to perform this task.
+<p>
+Here is an  <a href="http://cgi.cse.unsw.edu.au/~cs2041cgi/tlb/13/address-reference.cgi">example implementation</a>.
+
+<div class="answer">
+Sample solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl
+# Simple CGI script written by andrewt@cse.unsw.edu.au
+
+use CGI qw/:all/;
+use CGI::Carp qw(fatalsToBrowser warningsToBrowser);
+
+print header, start_html(&#39;My addressbook&#39;);
+warningsToBrowser(1);
+
+$data_directory = &#34;./addresses/&#34;;
+mkdir $data_directory or die &#34;Cannot create $data_directory: $!\n&#34; if !-d $data_directory;
+
+$login = param(&#39;login&#39;);
+
+if (!$login) {
+    print    start_form,
+            &#39;Enter your login: &#39;, textfield(&#39;login&#39;),
+            end_form,
+            end_html;
+    exit 0;
+}
+
+$login =~ s/[^\w\s]//g;          # remove all but expected characters
+$login = substr $login, 0, 64;   # limit login to 64 characters
+print h2(&#34;My Addressbook for $login&#34;);
+
+$user_directory = &#34;$data_directory/$login/&#34;;
+mkdir $user_directory or die &#34;Cannot create $user_directory: $!\n&#34; if !-d $user_directory;
+
+if (param(&#39;add_name&#39;) &amp;&amp; param(&#39;add_address&#39;)) {
+    my $name = param(&#39;add_name&#39;);
+    $name =~ s/[^\w\s-_]//g;        # remove all but expected characters
+    $name = substr $name, 0, 256;   # limit name to 256 characters
+    $address = param(&#39;add_address&#39;);
+    $address =~ s/[^\w\s-_\/]//g;          # remove all but expected characters
+    $address = substr $address, 0, 1024;   # limit address to 1024 characters
+    open F, &#34;&gt;$user_directory/$name&#34; or die &#34;Cannot create $user_directory/$name: $!\n&#34;;
+    print F $address;
+    close F;
+}
+
+if (param(&#39;Delete&#39;)) {
+    my $name = param(&#39;delete_name&#39;);
+    $name =~ s/[^\w\s-_]//g;        # remove all but expected characters
+    $name = substr $name, 0, 256;   # limit name to 256 characters
+    unlink &#34;$user_directory/$name&#34; or die &#34;Cannot unlink $user_directory/$name: $!\n&#34;;
+}
+
+@address_files = glob &#34;$user_directory/*&#34;;
+
+if (!@address_files) {
+    print &#34;Your addressbook is empty, $login.&#34;;
+} else {
+    print &#34;&lt;table border=1&gt;&#34;;
+    foreach $address_file (@address_files) {
+        open F, $address_file or die &#34;Cannot access $address_file: $!\n&#34;;
+        my @address = &lt;F&gt;;
+        close F;
+        my $name = $address_file;
+        $name =~ s/.*\///;
+        print &#34;&lt;tr&gt;&lt;td&gt;$name&lt;td&gt;@address\n&#34;;
+    }
+    print &#34;&lt;/table&gt;&#34;;
+}
+
+print start_form,
+    hr,
+    h4(&#39;Add a new address&#39;),
+    &#39;Name: &#39;, textfield(&#39;add_name&#39;),
+    &#39; Address: &#39;, textfield(&#39;add_address&#39;), &#39; &#39;,
+    hidden(login),
+    submit(&#39;Add&#39;),
+    end_form;
+
+if (@address_files) {
+    my @names = @address_files;
+    s/.*\/// foreach @names;
+    print start_form,
+        hr,
+        h4(&#39;Delete the address for:&#39;),
+        &#39;Name: &#39;,   popup_menu(&#39;delete_name&#39;, \@names),
+        hidden(login),
+        submit(&#39;Delete&#39;),
+        hr,
+        end_form;
+}
+print end_html;
+
+</pre>
+
+
+</div>
+
+<LI>
+
+Modify the CGI script to store the user's login in a cookie and log them in automatically on future visits.
+
+<div class="answer">
+Sample solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl
+# Simple CGI script written by andrewt@cse.unsw.edu.au
+
+use CGI qw/:all/;
+use CGI::Carp qw(fatalsToBrowser warningsToBrowser);
+use CGI::Cookie;
+
+%cookies = CGI::Cookie-&gt;fetch;
+$login = &#39;&#39;;
+if (defined param(&#39;login&#39;)) {
+    $login =  param(&#39;login&#39;);
+} elsif ($cookies{&#39;myAddressBookLogin&#39;}) {
+    $login = $cookies{&#39;myAddressBookLogin&#39;}-&gt;value
+}
+
+$login =~ s/[^\w\s]//g;          # remove all but expected characters
+$login = substr $login, 0, 64;   # limit login to 64 characters
+
+if (!$login) {
+    print   header,
+            start_html(&#39;My addressbook&#39;),
+            start_form,
+            &#39;Enter your login: &#39;, textfield(&#39;login&#39;),
+            end_form,
+            end_html;
+    exit 0;
+}
+
+my $cookie = CGI::Cookie-&gt;new(-name =&gt; &#39;myAddressBookLogin&#39;, -value =&gt; $login, -expires =&gt; &#39;+3M&#39;);
+print   header(-cookie=&gt;$cookie),
+        start_html(&#39;My addressbook&#39;),
+        h2(&#34;My Addressbook for $login&#34;);
+warningsToBrowser(1);
+
+$data_directory = &#34;./addresses/&#34;;
+mkdir $data_directory or die &#34;Cannot create $data_directory: $!\n&#34; if !-d $data_directory;
+$user_directory = &#34;$data_directory/$login/&#34;;
+mkdir $user_directory or die &#34;Cannot create $user_directory: $!\n&#34; if !-d $user_directory;
+
+if (param(&#39;add_name&#39;) &amp;&amp; param(&#39;add_address&#39;)) {
+    my $name = param(&#39;add_name&#39;);
+    $name =~ s/[^\w\s-_]//g;        # remove all but expected characters
+    $name = substr $name, 0, 256;   # limit name to 256 characters
+    $address = param(&#39;add_address&#39;);
+    $address =~ s/[^\w\s-_\/]//g;          # remove all but expected characters
+    $address = substr $address, 0, 1024;   # limit address to 1024 characters
+    open F, &#34;&gt;$user_directory/$name&#34; or die &#34;Cannot create $user_directory/$name: $!\n&#34;;
+    print F $address;
+    close F;
+}
+
+if (param(&#39;Delete&#39;)) {
+    my $name = param(&#39;delete_name&#39;);
+    $name =~ s/[^\w\s-_]//g;        # remove all but expected characters
+    $name = substr $name, 0, 256;   # limit name to 256 characters
+    unlink &#34;$user_directory/$name&#34; or die &#34;Cannot unlink $user_directory/$name: $!\n&#34;;
+}
+
+@address_files = glob &#34;$user_directory/*&#34;;
+
+if (!@address_files) {
+    print &#34;Your addressbook is empty, $login.&#34;;
+} else {
+    print &#34;&lt;table border=1&gt;&#34;;
+    foreach $address_file (@address_files) {
+        open F, $address_file or die &#34;Cannot access $address_file: $!\n&#34;;
+        my @address = &lt;F&gt;;
+        close F;
+        my $name = $address_file;
+        $name =~ s/.*\///;
+        print &#34;&lt;tr&gt;&lt;td&gt;$name&lt;td&gt;@address\n&#34;;
+    }
+    print &#34;&lt;/table&gt;&#34;;
+}
+
+print start_form,
+    hr,
+    h4(&#39;Add a new address&#39;),
+    &#39;Name: &#39;, textfield(&#39;add_name&#39;),
+    &#39; Address: &#39;, textfield(&#39;add_address&#39;), &#39; &#39;,
+    hidden(login), # in case cookies are disbaled
+    submit(&#39;Add&#39;),
+    end_form;
+
+if (@address_files) {
+    my @names = @address_files;
+    s/.*\/// foreach @address_files;
+    print start_form,
+        hr,
+        h4(&#39;Delete the address for:&#39;),
+        &#39;Name: &#39;,   popup_menu(&#39;delete_name&#39;, \@names),
+        hidden(login), # in case cookies are disbaled
+        submit(&#39;Delete&#39;),
+        hr,
+        end_form;
+}
+print end_html;
+
+</pre>
+
+
+</div>
+
+
+</ol>
+</div>
+
+
+
+
+
+</div>
+
+
+<!--
+public_html_session_directory=/web/cs2041/17s2
+base_directory=/web/cs2041/17s2
+public_html_directory=/web/cs2041
+scripts_directory=/web/cs2041/17s2/scripts
+home_directory=/home/cs2041
+bin_directory=/home/cs2041/bin
+course_account=cs2041
+course_code=COMP2041
+course_number=2041
+postgraduate_course_code=COMP9041
+course_name=Software Construction
+unsw_session=17s2
+canonical_url=https://cgi.cse.unsw.edu.au/~cs2041/
+github_repo_url=https://github.com/COMP2041UNSW/course_materials
+course_forum_url=https://piazza.com/class/j5ji4vjjra62a3
+lecture_recordings_url=https://moodle.telt.unsw.edu.au/course/view.php?id=27708
+WORK=/web/cs2041/17s2/work
+OUT=/web/cs2041/17s2/work/.out
+MARKED=/web/cs2041/17s2/work/.out/.marked
+SMSDB=/web/cs2041/17s2/work/17s2db.sms
+tlb_directory=/web/cs2041/17s2/tlb
+lecture_directory=/web/cs2041/17s2/lec
+flask_cache_directory=/web/cs2041/17s2/flask_cache
+testing_results_file=/web/cs2041/17s2/work/testing_results.json
+enrollments_file=/web/cs2041/17s2/work/enrollments.json
+unsw_ldap_password_file=/web/cs2041/.unsw_ldap_password
+autotest_upload_url=https://cgi.cse.unsw.edu.au/~cs2041/cgi/autotest_upload.cgi
+PATH=/web/cs2041/17s2/scripts:/home/cs2041/bin:/bin/:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/home/class/bin:/home/give/stable/bin.:/bin:/usr/bin:/usr/local/bin
+directory_relative_pathname=tlb/13
+url=https://cgi.cse.unsw.edu.au/~cs2041/flask.cgi/tut/13/answers
+directory_url=https://cgi.cse.unsw.edu.au/~cs2041/tut/13/
+url_root=https://cgi.cse.unsw.edu.au/~cs2041/
+script_root=/~cs2041/flask.cgi
+current_lecture_topic=exam
+current_week=13
+week=13
+exercise_name=tut13
+tut_or_lab_or_test=tut
+questions_or_answers=answers
+programs=&lt;programs&gt;
+
+-->
+
+</body>
+</html>

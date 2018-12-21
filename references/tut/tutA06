@@ -1,0 +1,882 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>
+
+COMP2041 Week 06 Tutorial Sample Answers
+
+</title>
+
+
+
+<link href="/~cs2041/flask.cgi/static/bootstrap.min.css?121200" rel="stylesheet">
+<link href="/~cs2041/flask.cgi/static/course.css?6554" rel="stylesheet">
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/jquery.min.js?95992"></script>
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/bootstrap.min.js?37045"></script>
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/course.js?1631"></script>
+<link rel="canonical" href="https://cgi.cse.unsw.edu.au/~cs2041/" />
+</head>
+<body>
+
+
+
+
+<div class="container">
+
+<div id="heading">
+
+
+<a class="heading_link" target="_blank" id="left_heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/">COMP[29]041 17s2</a>
+
+
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Week 06
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/02/answers">Week 02</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/03/answers">Week 03</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/04/answers">Week 04</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/05/answers">Week 05</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/06/answers">Week 06</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/07/answers">Week 07</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/08/answers">Week 08</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/09/answers">Week 09</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/10/answers">Week 10</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/11/answers">Week 11</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/12/answers">Week 12</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/13/answers">Week 13</a></li>
+        
+        
+    </ul>
+</span>
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Tutorial
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/06/answers">Tutorial
+                
+            </a></li>
+            
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/06/answers">Laboratory
+                
+            </a></li>
+            
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/06/answers">Weekly Test
+                
+            </a></li>
+            
+        
+    </ul>
+</span>
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Sample Answers
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/06/questions">Questions
+            
+            </a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/06/answers">Sample Answers
+            
+            </a></li>
+        
+        
+    </ul>
+</span>
+
+
+
+
+<a class="heading_link" target="_blank" id="right_heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/">Software Construction</a>
+
+</div>
+
+</div>
+
+
+<div class="tutlab tut">
+<ol>
+
+<ol>
+<li>
+
+Write a Perl program <code>./merge_whales.pl</code> which reads a list of whales observations
+from its standard input and prints them to its standard output, merging adjacent counts
+of the same species. For example, given this input:
+<pre class="command_line">
+3 beluga
+10 humpback
+15 humpback
+2 sperm whale
+3 humpback
+5 humpback
+8 humpback
+1 beluga
+3 beluga
+</pre>
+
+Your program should produce this output:
+
+<pre class="command_line">
+3 beluga
+25 humpback
+2 sperm whale
+16 humpback
+4 beluga
+</pre>
+
+<div class="answer">
+Sample Perl solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+
+$current_count = 0;
+$current_species = &#34;&#34;;
+
+while ($line = &lt;STDIN&gt;) {
+	if ($line =~ /(\d+)\s*(.+)\s*$/) {
+		$count = $1;
+		$species = $2;
+		if ($species eq $current_species) {
+			$current_count += $count;
+		} else {
+			print &#34;$current_count $current_species\n&#34; if $current_count;
+			$current_count = $count;
+			$current_species = $species;
+		}
+	} else {
+		print &#34;Sorry couldn&#39;t parse: $line\n&#34;;
+	}
+}
+
+print &#34;$current_count $current_species\n&#34; if $current_count;
+
+</pre>
+
+
+
+Sample Python solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python
+
+import re, sys
+
+current_count = 0
+current_species = &#34;&#34;
+for line in sys.stdin:
+    m = re.search(r&#39;(\d+)\s*(.+)$&#39;, line)
+    if m:
+        count = int(m.group(1))
+        species = m.group(2)
+        if species  == current_species:
+            current_count += count
+        else:
+            if current_count:
+                print(current_count + &#34; &#34; +current_species)
+            current_count = count
+            current_species = species
+    else:
+        print(&#34;Sorry couldn&#39;t parse: %s&#34; % line)
+
+if current_count:
+    print(current_count + &#34; &#34; +current_species)
+
+</pre>
+
+
+
+</div>
+<li>
+
+Write a Perl program, <code>phone_numbers.pl</code> which given the URL of a web
+page fetches it by running <i>wget</i> and prints any strings that might be
+phone numbers in the web page.
+<p>
+Assume the digits of phone numbers may be separated  by zero or more spaces or hyphens('-')
+and can contain between 8 and 15 digits inclusive.
+<p>
+You should print the phone numbers one per line with spaces & hyphens removed.
+<p>
+For example
+<pre class="command_line">
+<kbd class="shell">./phone_numbers.pl http://www.unsw.edu.au</kbd>
+20151028
+11187777
+841430912571345
+413200225
+61293851000
+57195873179
+</pre>
+
+<div class="answer">
+Sample Perl solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+# there are perl libraries which provide a  better way to fetch web pages
+foreach $url (@ARGV) {
+    open my $f, &#39;-|&#39;, &#34;wget -q -O- $url&#34; or die;
+    while ($line = &lt;$f&gt;) {
+        @numbers = split /[^\d\- ]/, $line;
+        foreach $number (@numbers) {
+            $number =~ s/\D//g;
+            print &#34;$number\n&#34; if length $number &gt;= 8 &amp;&amp; length $number &lt;= 15;
+        }
+    }
+    close $f;
+}
+</pre>
+
+
+
+Another sample Perl solution for phone_numbers.1.pl
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+# there are perl libraries which provide a  better way to fetch web pages
+foreach $url (@ARGV) {
+    open my $f, &#39;-|&#39;, &#34;wget -q -O- $url&#34; or die;
+    while ($line = &lt;$f&gt;) {
+        @numbers = $line =~ /[\d\- ]+/g;
+        foreach $number (@numbers) {
+            $number =~ s/\D//g;
+            print &#34;$number\n&#34; if length $number &gt;= 8 &amp;&amp; length $number &lt;= 15;
+        }
+    }
+    close $f;
+}
+</pre>
+
+
+
+Python solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python
+import sys, re, subprocess
+# there are python libraries which provide a  better way to fetch web pages
+for url in sys.argv[1:]:
+    webpage = subprocess.Popen([&#34;wget&#34;,&#34;-q&#34;,&#34;-O-&#34;,url], stdout=subprocess.PIPE).communicate()[0]
+    for number in re.findall(r&#39;[\d \-]+&#39;, webpage):
+        number = re.sub(r&#39;\D&#39;, &#39;&#39;, number)
+        if len(number) &gt;= 8 and len(number) &lt;= 15:
+            print(number)
+
+</pre>
+
+
+</div>
+<li>
+
+What does each of the following Perl code fragments print
+(no, don't just clip the lines and pass them to Perl,
+think about what they're doing):
+
+<ol type="a">
+<li>
+
+<pre class="program">
+$x = 'x';
+for ($i = 1; $i &lt;= 3; $i++) {
+    $x = "($x)";
+}
+print "$x\n";
+</pre>
+
+<div class="answer">
+
+It iterates three times through the loop, and each iteration wraps
+a pair of parentheses around what was there on the last iteration so
+it prints:
+
+<pre class="program">
+(((x)))
+</pre>
+
+</div>
+
+
+<li>
+<pre class="program">
+@hi = split //,"hello";
+for ($i = 0; $i &lt; 4; $i++) {
+    print $hi[$i];
+}
+print "\n";
+</pre>
+<div class="answer">
+<p>
+The idiom <code>split //</code> splits a string into an array of
+individual characters (in this case <code>("h","e","l","l","o")</code>.
+The loop iterates over the first four of these characters.
+So it prints:
+<p>
+<pre class="code">
+hell
+</pre>
+</div>
+
+<li>
+
+<pre class="program">
+@vec = (10 .. 20);
+print "@vec[1..3]\n";
+</pre>
+
+<div class="answer">
+The first statement produces an array containing the integers between
+10 and 20 inclusive; the expression in the <code>print</code> statement
+takes a slice of this array from the 2nd to the 4th elements (remember
+that index values start at zero) so i prints:
+<p>
+<pre class="program">
+11 12 13
+</pre>
+</div>
+
+<li>
+
+<pre class="program">
+foreach $n (1..10) {
+    last if ($n > 5);
+    print "$n ";
+    next if ($n % 2 == 0);
+    print "$n ";
+}
+print "\n";
+</pre>
+
+<div class="answer">
+The loop iterates with <code>$n</code> set to the values from
+1 to 10 inclusive. The <code>last</code> terminates the loop
+as soon as the value of <code>$n</code> exceeds five (cf.
+<code>break</code> in C or Java). The <code>next</code> starts
+the next iteration straight away whenever the test succeeds;
+which occurs for each even number, so that the evens only
+get printed once so it prints:
+<p>
+<pre class="program">
+1 1 2 3 3 4 5 5
+</pre>
+</div>
+</ol>
+
+
+<h3>Revision questions</h3>
+
+The remaining tutorial questions are primarily intended for revision - either this week
+or later in session.
+<p>
+Your tutor may still choose to cover some of the questions time permitting.
+<p>
+
+
+<li>
+
+Write a Perl program <code>source_count.pl</code> which prints the number of line of C source code
+in the current directory.  In other words, this Perl program should
+behave similarly to <code>wc -l *.[ch]</code>.  (Note: you are not
+allowed to use <code>wc</code> or other Unix programs from within the
+Perl script). For example:
+<p>
+<pre class="command_line">
+<kbd class="shell">./source_count.pl</kbd>
+    383 cyclorana.c
+    280 cyclorana.h
+     15 enum.c
+    194 frequency.c
+    624 model.c
+    293 parse.c
+    115 random.c
+     51 smooth.c
+    132 util.c
+     16 util.h
+    410 waveform.c
+   2513 total
+</pre>
+
+<div class="answer">
+Sample Perl solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+# written by andrewt@cse.unsw.edu.au for COMP2041
+# count lines of C source code
+$total = 0;
+foreach $file (glob(&#34;*.[ch]&#34;)) {
+    open my $f, &#39;&lt;&#39;, $file or die &#34;Can not open $file: $!&#34;;
+    @lines = &lt;$f&gt;;
+    $n_lines = @lines;
+    # Why wouldn&#39;t   $n_lines = &lt;FILE&gt;;   work?
+
+    printf &#34;%7d %s\n&#34;, $n_lines, $file;
+    $total += $n_lines;
+    close $f;
+}
+printf &#34;%7d total\n&#34;, $total;
+
+</pre>
+
+
+
+Sample Python solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python
+# written by andrewt@cse.unsw.edu.au for COMP2041
+# count lines of C source code
+import glob
+total = 0
+for filename in glob.glob(&#34;*.[ch]&#34;):
+    with open(filename) as f:
+        lines = f.readlines()
+        n_lines = len(lines)
+        print(&#34;%7d %s&#34; % (n_lines, filename))
+        total += n_lines
+print(&#34;%7d total&#34;%total)
+
+</pre>
+
+
+
+</div>
+<li>
+
+Write a Perl program, <code>cut.pl</code> which takes three arguments, <i>n</i>, <i>m</i> and a file name.
+It should print characters <i>n</i>-<i>m</i> of each line of the file.
+For example:
+
+<pre class="command_line">
+<kbd class="shell">./cut.pl 1 8 file</kbd>
+</pre>
+
+should print the 8 characters of every line in <code>file</code>.
+<p>
+Implement a version of the program which invokes <code>/usr/bin/cut</code>
+and a version which performs the operations directly in Perl.
+
+<div class="answer">
+Sample Perl solution calling /usr/bin/cut
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+system &#34;cut -c$ARGV[0]-$ARGV[1] $ARGV[2]&#34;;
+
+</pre>
+
+
+
+Sample solution in Perl itself
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+die &#34;Usage: $0 &lt;n&gt; &lt;m&gt; &lt;file&#34; if @ARGV != 3;
+open my $f, &#39;&lt;&#39;, $ARGV[2] or die &#34;$0: can not open $ARGV[2]: $!&#34;;
+while ($line = &lt;$f&gt;) {
+    chomp $line;
+    @chars = split //, $line;
+    print @chars[$ARGV[0]-1..$ARGV[1]-1], &#34;\n&#34;;
+}
+
+</pre>
+
+
+
+Sample solution implementing more of cut in Perl
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+
+$delim = &#34;\t&#34;;
+if ($ARGV[0] =~ /-d./) {
+    ($delim = $ARGV[0]) =~ s/-d//;
+    shift;
+}
+if ($ARGV[0] =~ /-f*/) {
+    ($flist = $ARGV[0]) =~ s/-f//;
+    if ($flist eq &#34;&#34;)
+        { shift; $flist = $ARGV[0]; }
+    @fields = split(/,/,$flist);
+    shift;
+}
+while (&lt;&gt;) {
+    chomp;
+    @words = split /$delim/;
+    @outs = ();
+    $nf = $#words;
+    foreach $f (@fields) {
+        push @outs, $words[$f-1] if ($f &lt;= $nf+1);
+    }
+    print join($delim,@outs).&#34;\n&#34;;
+}
+
+</pre>
+
+
+
+Python solution calling /usr/bin/cut
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python
+import subprocess, sys
+print()
+subprocess.call([&#34;cut&#34;,&#34;-c%s-%s&#34;%(sys.argv[1:3]), sys.argv[3]])
+
+</pre>
+
+
+
+Sample solution in Python
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python
+
+import sys
+
+if len(sys.argv) != 4:
+    sys.stderr.write(&#34;Usage: %s &lt;n&gt; &lt;m&gt; &lt;file&gt;\n&#34; % sys.argv[0])
+    sys.exit(1)
+
+for line in open(sys.argv[3]):
+    line = line.rstrip(&#39;\n&#39;)
+    print(line[int(sys.argv[1])-1:int(sys.argv[2])])
+
+</pre>
+
+
+
+</div>
+<li>
+
+Implement a Perl script to solve the marks-to-grades problem that
+was solved as a shell script in a previous tutorial.
+Reminder: the script reads a sequence
+of (studentID,mark) pairs from its standard input and writes
+(studentID,grade) pairs to its standard output.
+The input pairs are written on a single line, separated by spaces,
+and the output should use a similar format.
+The script should also check whether the second value on each line
+looks like a valid grade, and output an appropriate message if it
+doesn't.
+The script can ignore any extra data occuring after the mark on each line.
+<p>
+Consider the following input and corresponding output to the
+program:
+
+
+<table cellpadding=10>
+<tr> <th>Input <th>Output
+<tr>
+<td>
+<pre class="command_line">
+2212345 65
+2198765 74
+2199999 48
+2234567 50 ok
+2265432 99
+2121212 hello
+2222111 120
+2524232 -1
+</pre>
+
+<td>
+<pre class="command_line">
+2212345 CR
+2198765 CR
+2199999 FL
+2234567 PS
+2265432 HD
+2121212 ?? (hello)
+2222111 ?? (120)
+2524232 ?? (-1)
+</pre>
+
+</table>
+
+<div class="answer">
+
+Sample Perl solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+while (&lt;&gt;) {
+    chomp;
+    ($sid,$mark) = split;
+    if ($mark !~ /^\d+$/) {
+        $grade = &#34;??&#34;;
+    }
+    else {
+        $grade = &#34;FL&#34; if $mark &gt;= 0 &amp;&amp; $mark &lt; 50;
+        $grade = &#34;PS&#34; if $mark &gt;= 50 &amp;&amp; $mark &lt; 65;
+        $grade = &#34;CR&#34; if $mark &gt;= 65 &amp;&amp; $mark &lt; 75;
+        $grade = &#34;DN&#34; if $mark &gt;= 75 &amp;&amp; $mark &lt; 85;
+        $grade = &#34;HD&#34; if $mark &gt;= 85 &amp;&amp; $mark &lt;= 100;
+        $grade = &#34;??&#34; if $mark &lt; 0 || $mark &gt; 100;
+    }
+    $err = ($grade ne &#34;??&#34;) ? &#34;&#34; : &#34; ($mark)&#34;;
+    print &#34;$sid $grade$err\n&#34;;
+}
+</pre>
+
+
+</div>
+<li>
+
+Write a program <code>addressbook.pl</code> that reads two files <code>people.txt</code> and <code>phones.txt</code> containing data in CSV
+(comma-separated values) format and uses this data to print
+an address book in the format below:
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">cat people.txt</kbd>
+andrew,Andrew Taylor,42 Railway St,Petersham
+arun,Arun Sharma,94 Leafy Close,Brisbane
+gernot,Gernot Heiser,64 Trendy Tce,Newtown
+jas,John Shepherd,16/256 Busy Rd,Alexandria
+<kbd class="shell">cat phones.txt</kbd>
+jas,home,9665 6432
+arun,work,9385 5518
+jas,work,9385 6494
+arun,home,(07) 9314 6543
+andrew,work,9385 4321
+arun,mobile,0803 123 432
+<kbd class="shell">./addressbook.pl</kbd>
+Andrew Taylor
+42 Railway St, Petersham
+Phones: 9385 4321 (work)
+
+Arun Sharma
+94 Leafy Close, Brisbane
+Phones: 0803 123 432 (mobile), (07) 9314 6543 (home), 9385 5518 (work)
+
+Gernot Heiser
+64 Trendy Tce, Newtown
+Phones: ?
+
+John Shepherd
+16/256 Busy Rd, Alexandria
+Phones: 9665 6432 (home), 9385 6494 (work)
+
+</pre>
+
+<p>
+Assume that there are only three types of phone (mobile, home and work)
+and we always display them in that order.
+</p>
+<p>
+<I>Hint:</I> because the phone types are fixed, login name and phone type
+together can be the key used to look up a number.
+In this situation some suitable separator is used to create
+a composite, unambiguous key for the hash.
+
+<div class="answer">
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+
+# Build hash table of phone numbers, where keys
+# are &#34;person:phone-type&#34; strings
+
+open my $phones, &#39;&lt;&#39;, &#34;phones.txt&#34; or die &#34;Can not open phones.txt:$!\n&#34;;
+
+while ($line = &lt;$phones&gt;) {
+    chomp $line;
+    my ($id,$type,$number) = split /,/, $line;
+    $phones{&#34;$id:$type&#34;} = $number;
+}
+
+close $phones;
+
+# Iterate through People, displaying values
+open my $people, &#39;&lt;&#39;, &#34;people.txt&#34; or die &#34;Can not open people.txt:$!\n&#34;;
+
+while ($line = &lt;$people&gt;) {
+    chomp $line;
+    my ($id,$name,$street,$suburb) = split /,/, $line;
+    print &#34;$name\n$street, $suburb\nPhones: &#34;;
+    my $nphones = 0;
+    foreach $type (&#39;mobile&#39;, &#39;home&#39;, &#39;work&#39;) {
+        my $key = &#34;$id:$type&#34;;
+        if (defined($phones{$key})) {
+            $num = $phones{$key};
+            print &#34;, &#34; if ($nphones++ &gt; 0);
+            print &#34;$num ($type)&#34;;
+        }
+    }
+    print &#34;?&#34; if ($nphones == 0);
+    print &#34;\n\n&#34;;
+}
+
+close $people;
+</pre>
+
+
+
+</div>
+</ol>
+
+</ol>
+</div>
+
+
+
+
+
+</div>
+
+
+<!--
+public_html_session_directory=/web/cs2041/17s2
+base_directory=/web/cs2041/17s2
+public_html_directory=/web/cs2041
+scripts_directory=/web/cs2041/17s2/scripts
+home_directory=/home/cs2041
+bin_directory=/home/cs2041/bin
+course_account=cs2041
+course_code=COMP2041
+course_number=2041
+postgraduate_course_code=COMP9041
+course_name=Software Construction
+unsw_session=17s2
+canonical_url=https://cgi.cse.unsw.edu.au/~cs2041/
+github_repo_url=https://github.com/COMP2041UNSW/course_materials
+course_forum_url=https://piazza.com/class/j5ji4vjjra62a3
+lecture_recordings_url=https://moodle.telt.unsw.edu.au/course/view.php?id=27708
+WORK=/web/cs2041/17s2/work
+OUT=/web/cs2041/17s2/work/.out
+MARKED=/web/cs2041/17s2/work/.out/.marked
+SMSDB=/web/cs2041/17s2/work/17s2db.sms
+tlb_directory=/web/cs2041/17s2/tlb
+lecture_directory=/web/cs2041/17s2/lec
+flask_cache_directory=/web/cs2041/17s2/flask_cache
+testing_results_file=/web/cs2041/17s2/work/testing_results.json
+enrollments_file=/web/cs2041/17s2/work/enrollments.json
+unsw_ldap_password_file=/web/cs2041/.unsw_ldap_password
+autotest_upload_url=https://cgi.cse.unsw.edu.au/~cs2041/cgi/autotest_upload.cgi
+PATH=/web/cs2041/17s2/scripts:/home/cs2041/bin:/bin/:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/home/class/bin:/home/give/stable/bin.:/bin:/usr/bin:/usr/local/bin
+directory_relative_pathname=tlb/06
+url=https://cgi.cse.unsw.edu.au/~cs2041/flask.cgi/tut/06/answers
+directory_url=https://cgi.cse.unsw.edu.au/~cs2041/tut/06/
+url_root=https://cgi.cse.unsw.edu.au/~cs2041/
+script_root=/~cs2041/flask.cgi
+current_lecture_topic=exam
+current_week=13
+week=06
+exercise_name=tut06
+tut_or_lab_or_test=tut
+questions_or_answers=answers
+programs=&lt;programs&gt;
+
+-->
+
+</body>
+</html>

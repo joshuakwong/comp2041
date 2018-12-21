@@ -1,0 +1,955 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>
+
+COMP2041 Week 12 Tutorial Sample Answers
+
+</title>
+
+
+
+<link href="/~cs2041/flask.cgi/static/bootstrap.min.css?121200" rel="stylesheet">
+<link href="/~cs2041/flask.cgi/static/course.css?6554" rel="stylesheet">
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/jquery.min.js?95992"></script>
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/bootstrap.min.js?37045"></script>
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/course.js?1631"></script>
+<link rel="canonical" href="https://cgi.cse.unsw.edu.au/~cs2041/" />
+</head>
+<body>
+
+
+
+
+<div class="container">
+
+<div id="heading">
+
+
+<a class="heading_link" target="_blank" id="left_heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/">COMP[29]041 17s2</a>
+
+
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Week 12
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/02/answers">Week 02</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/03/answers">Week 03</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/04/answers">Week 04</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/05/answers">Week 05</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/06/answers">Week 06</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/07/answers">Week 07</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/08/answers">Week 08</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/09/answers">Week 09</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/10/answers">Week 10</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/11/answers">Week 11</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/12/answers">Week 12</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/13/answers">Week 13</a></li>
+        
+        
+    </ul>
+</span>
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Tutorial
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/12/answers">Tutorial
+                
+            </a></li>
+            
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/12/answers">Laboratory
+                
+                    (tutors only)
+                
+            </a></li>
+            
+        
+            
+        
+    </ul>
+</span>
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Sample Answers
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/12/questions">Questions
+            
+            </a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/12/answers">Sample Answers
+            
+            </a></li>
+        
+        
+    </ul>
+</span>
+
+
+
+
+<a class="heading_link" target="_blank" id="right_heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/">Software Construction</a>
+
+</div>
+
+</div>
+
+
+<div class="tutlab tut">
+<ol>
+
+<ol>
+
+<li>
+What is  Unicode
+<div class="written answer">
+A standard for representing all the world's written languages and other symbols - it has 100,000+ characters,
+<p>
+ASCII represents 128 characters including the English alphabet.
+</div>
+
+
+<li>
+What is UTF-8
+<div class="written answer">
+An encoding for Unicode which uses 1-4 bytes to represent characters.
+<p>
+It is backward compatible with ASCII - the 128 ASCII characters have the same value in UTF-8
+</div>
+
+
+
+<li>
+Do I need to I know about UTF-8 for the assignment.
+
+<div class="written answer">
+Yes and no.
+<p>
+The test data set are encoded in UTF-8 but only a small fraction
+of the posts/replies/comments contain non-ASCII so you can do a lot of the assignment
+Assuming the data is ASCII.
+<p>
+Most the world's web pages use UTF-8 and for example
+users of a social media website with non-ASCII names would be (rghtly) upset if their name are shown correctly!
+<p>
+So if you get past the first couple of subsets you may have to do a little research on handling unicode.
+</div>
+
+
+<li>
+The  UNSWtalk Perl starting-point code contains this function. Discuss how it works.
+<pre class="program">
+sub student_page {
+    my $n = param('n') || 0;
+    my @students = sort(glob("$students_dir/*"));
+    my $student_to_show  = $students[$n % @students];
+    my $details_filename = "$student_to_show/student.txt";
+    open my $p, "$details_filename" or die "can not open $details_filename: $!";
+    $details = join '', &lt;$p>;
+    close $p;
+    my $next_student = $n + 1;
+    return &lt;&lt;eof
+&lt;div class="unswtalk_user_details">
+$details
+&lt;/div>
+&lt;p>
+&lt;form method="POST" action="">
+    &lt;input type="hidden" name="n" value="$next_student">
+    &lt;input type="submit" value="Next student" class="unswtalk_button">
+&lt;/form>
+eof
+}
+</pre>
+
+
+
+<li>
+The UNSWtalk Python starting point code contains this function. Discuss how it works.
+<pre class="program">
+@app.route('/', methods=['GET','POST'])
+@app.route('/start', methods=['GET','POST'])
+def start():
+    n = session.get('n', 0)
+    students = sorted(os.listdir(students_dir))
+    student_to_show = students[n % len(students)]
+    details_filename = os.path.join(students_dir, student_to_show, "student.txt")
+    with open(details_filename) as f:
+        details = f.read()
+    session['n'] = n + 1
+    return render_template('start.html', student_details=details)
+</pre>
+
+
+
+<li>
+Both Perl starting point code for assignment 2 and the Python starting point code will
+prints out approximately these lines (followed by more output) when run.
+
+<pre class="program">
+Content-Type: text/html
+
+&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+&lt;title>UNSWtalk&lt;/title>
+&lt;link href="unswtalk.css" rel="stylesheet">
+&lt;/head>
+&lt;body>
+&lt;div class="unswtalk_heading">
+UNSWtalk
+&lt;/div>
+</pre>
+
+Quickly discuss why these lines are being printed, in particular
+
+<ol>
+<li> Why is line 2 blank?
+<li> What else might appear in the first 2 lines?
+<li> What does <code>class="unswtalk_heading"</code> mean?
+</ol>
+
+<div class="answer">
+<ol>
+<li> The blank line marks the finish of the header.
+<li> Cookies!
+<li> The attribute <code>class="unswtalk_heading"</code> results in the style <code>.unswtalk_heading</code> from <code>UNSWtalk.css</code> being applied to the div (see next question) .
+</ol>
+</div>
+
+<li>
+
+The file <code>UNSWtalk.css</code> supplied for the assignment contains this:
+
+<pre class="program">
+.unswtalk_heading {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.unswtalk_user_details {
+    background-color: #ABCDEF;
+    color: #204142;
+    white-space: pre;
+    border:thin solid #204142;
+    border-radius: 1em;
+    padding-left: 0.42em;
+}
+
+.unswtalk_button {
+    background-color: #FEDBCA;
+    border:thin solid #904142;
+    border-radius: 0.42em;
+    color: #904142;
+}
+</pre>
+
+CSS isn't really covered in COMP[29]041 - but can you quickly guess what the CSS does?
+
+
+<li>
+
+A good way to test out code for assignment 2 is to write
+small programs which can be run from the command line.
+<p>
+A COMP[29]041 student wrote this small  program
+to test  Perl that wanted to use in UNSWtalk.
+<p>
+It takes a zid as a command-line argument and is meant
+to print the filenames of the student's posts in reverse chronological order (most recent first).
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+
+$dataset = &#34;dataset-medium&#34;;
+
+sub student_post_filenames {
+	my ($student) = @_;
+	
+	my @post_filenames = glob &#34;$dataset/$student/*.txt&#34;;
+	return reverse sort @post_filenames;
+}
+
+foreach $student (@ARGV) {
+	print join(&#34; &#34;, student_post_filenames($student)), &#34;\n&#34;;
+}
+
+</pre>
+
+
+
+They also wrote this equivalent program in Python
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python3
+
+import glob, os, sys
+
+dataset = &#34;dataset-medium&#34;
+
+def student_post_filenames(student):
+	post_filenames = glob.glob(os.path.join(dataset, student, &#39;*.txt&#39;))
+	return sorted(post_filenames, reverse=True) 
+
+for user in sys.argv[1:]:
+	print(&#34; &#34;.join(student_post_filenames(user)))
+
+</pre>
+
+
+
+Unfortunately both when run print the wrong files, and posts aren't in reverse chronological order - <code>10.txt</code> is the user's most recent post not <code>9.txt</code>
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./print_posts.pl z5194548</kbd>
+
+</pre>
+
+<p>
+What is wrong with the programs.
+<p>
+How would you fix it?
+
+<div class="answer">
+
+The code include will .txt files in the student's UNSwtalk directory.
+<p>
+This includes their <code>stduent.txt</code> file containing their details and all the comments
+to their posts and replies to comments to their posts.
+<p>
+It does an alphabetic sort instead of a numeric sort.
+This breaks if there are more then 10 posts.
+<p>
+Here is which includes only posts and places them in the correct order:
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+
+$dataset = &#34;dataset-medium&#34;;
+
+sub student_post_filenames {
+	my ($student) = @_;
+	
+	my @all_filenames = glob &#34;$dataset/$student/*.txt&#34;;
+	my @post_numbers = ();
+	foreach my $filename (@all_filenames) {
+		if ($filename =~ /\/([0-9]+)\.txt$/) {
+			push @post_numbers, $1;
+		}
+	}
+	my @sorted_post_numbers = sort {$b &lt;=&gt; $a} @post_numbers;
+	my @post_filenames = ();
+	foreach my $post_number (@sorted_post_numbers){
+		push @post_filenames, &#34;$dataset/$student/$post_number.txt&#34;;
+	}
+	return  @post_filenames;
+}
+
+foreach $student (@ARGV) {
+	print join(&#34; &#34;, student_post_filenames($student)), &#34;\n&#34;;
+}
+
+</pre>
+
+
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python3
+
+import glob, os, re, sys
+
+dataset = &#34;dataset-medium&#34;
+
+def student_post_filenames(student):
+	all_filenames = glob.glob(os.path.join(dataset, student, &#39;*.txt&#39;))
+	post_numbers = []
+	for filename in all_filenames:
+		m = re.search(r&#39;\/([0-9]+)\.txt$&#39;, filename)
+		if m:
+			post_numbers.append(int(m.group(1)))
+	sorted_post_numbers = sorted(post_numbers, reverse=True) 
+	post_filenames = []
+	for post_number in sorted_post_numbers:
+		post_filename = str(post_number) + &#39;.txt&#39;
+		full_post_filename= os.path.join(dataset, student, post_filename)
+		post_filenames.append(full_post_filename)
+	return post_filenames
+
+for user in sys.argv[1:]:
+	print(&#34; &#34;.join(student_post_filenames(user)))
+
+</pre>
+
+
+</div>
+
+<li>
+Write a shell pipeline that reports any e-mail address which is being used
+by more than 1 UNSWtalk users in the large dataset.
+
+<div class="answer">
+
+<pre class="command_line">
+<kbd class="shell">egrep '^email' dataset-large/*/profile.txt|sed 's/.*email=//'|sort|uniq -d</kbd>
+</pre>
+
+The above pipeline break if the string 'email=' appears in an email address.
+One way to avoid it is this:
+
+<pre class="command_line">
+<kbd class="shell">egrep '^email' dataset-large/*/student.txt|cut -d: -f2- |sort|uniq -d</kbd>
+</pre>
+
+egrep also as a -h flag which supresses printing of the filename:
+
+<pre class="command_line">
+<kbd class="shell">egrep -h '^email' dataset-large/*/student.txt|sort|uniq -d</kbd>
+</pre>
+
+</div>
+
+<li>
+
+Write a Perl program script <code>distance_from_unsw.pl</code> which lists the latitude, longitude and
+suburb (if provided) of all UNSWtalk users in a dataset it is given as argument.
+<p>
+The users must be listed in increasing order of distance from UNSW.
+<p>
+For example:
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./distance_from_unsw.pl dataset-small</kbd>
+</pre>
+
+Assume UNSW's (latitiude, longitude) is (-33.9172238,151.2302268).
+<p>
+Don't print  users who don't provide their latitude/longitude.
+<p>
+You can assume if a user provides either latitude or longitude they provide both.
+
+<div class="answer">
+Sample solution for distance_from_unsw.pl
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+
+$dataset_dir = $ARGV[0] or die;
+
+$unsw_latitude = -33.9172238;
+$unsw_longitude = 151.2302268;
+
+foreach $user_directory (glob &#34;$dataset_dir/*&#34;) {
+	open F, &#39;&lt;&#39;, &#34;$user_directory/student.txt&#34; or next;
+	my $username = $user_directory;
+	$username =~ s/.*\///;
+	my ($line, $latitude, $longitude);
+	while ($line = &lt;F&gt;) {
+		if ($line =~ /^home_latitude: (\S+)/) {
+			$latitude{$username} = $1;
+		} elsif ($line =~ /^home_longitude: (\S+)/) {
+			$longitude{$username} = $1;
+		} elsif ($line =~ /^home_suburb: (.*)/) {
+			$suburb{$username} = $1;
+		}
+	}
+	close F;
+}
+
+sub distance_from_unsw {
+	my ($username) = @_;
+	my ($latitude, $longitude) = ($latitude{$username}, $longitude{$username});
+	return sqrt(($latitude - $unsw_latitude) ** 2 + ($longitude - $unsw_longitude) ** 2)
+}
+
+@usernames = keys %latitude;
+@sorted_usernames = sort {distance_from_unsw($a) &lt;=&gt; distance_from_unsw($b)} @usernames;
+
+foreach $username (@sorted_usernames) {
+	printf &#34;$username lives at $latitude{$username} $longitude{$username}&#34;;
+	print &#34; in $suburb{$username}&#34; if $suburb{$username};
+	print &#34;\n&#34;;
+}
+
+</pre>
+
+
+</div>
+
+<li>
+
+Translate  distance_from_unsw.pl to Python.
+
+
+<div class="answer">
+Sample solution for distance_from_unsw.py
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python
+
+import glob, math, os, re, sys
+dataset_dir = sys.argv[1]
+
+unsw_latitude = -33.9172238
+unsw_longitude = 151.2302268
+
+latitude = {}
+longitude = {}
+suburb = {}
+for user_directory in glob.glob(os.path.join(dataset_dir, &#34;*&#34;)):
+    username = os.path.basename(user_directory)
+    with open(os.path.join(user_directory, &#34;student.txt&#34;)) as f:
+        for line in f:
+            m = re.match(r&#39;(.*?): (.*)&#39;, line)
+            if not m:
+                continue
+            if m.group(1) == &#39;home_latitude&#39;:
+                latitude[username] = float(m.group(2))
+            elif m.group(1) == &#39;home_longitude&#39;:
+                longitude[username] = float(m.group(2))
+            elif m.group(1) == &#39;home_suburb&#39;:
+                suburb[username] = m.group(2)
+
+def distance_from_unsw(username):
+    (lat, int) = (latitude[username], longitude[username])
+    return math.sqrt((lat - unsw_latitude) ** 2 + (int - unsw_longitude) ** 2)
+
+usernames = list(latitude.keys())
+sorted_usernames = sorted(usernames, key=distance_from_unsw)
+
+for username in sorted_usernames:
+    sys.stdout.write(&#34;%s lives at %s, %s&#34; % (username, latitude[username], longitude[username]))
+    if username in suburb:
+        sys.stdout.write(&#34; in %s&#34; % suburb[username])
+    sys.stdout.write(&#39;\n&#39;)
+
+</pre>
+
+
+</div>
+
+
+
+<h3>Revision questions</h3>
+
+The remaining tutorial questions are primarily intended for revision - either this week
+or later in session.
+<p>
+Your tutor may still choose to cover some of the questions time permitting.
+<p>
+
+
+<li>
+
+Write a CGI script to play the <a href="http://en.wikipedia.org/wiki/Bulls_and_cows">Bulls and Cows</a> guessing game.
+<p>
+Here is an example implementation: <a href="https://cgi.cse.unsw.edu.au/~cs2041cgi/tlb/12/bullscows.cgi">reference implementation</a>
+
+<div class="answer">
+Sample solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr//bin/perl
+#
+# Play the Bulls and Cows game
+#
+# This script has three states:
+# - &#34;&#34; (initial state before we start playing the game)
+# - Guessing (state for making guess/processing previous guess)
+# - Won (state when the player guesses correctly)
+#
+# States are implemented via the State data item
+#
+# Other data items that are carried from state to state:
+# - Answer (what we&#39;re trying to guess)
+# - Guesses (comma-separated list of guesses made so far)
+# - Box1,Box2,Box3,Box4 (most recent colours guessed for boxes)
+#
+# All data items are initially null (&#34;&#34;)
+#
+
+use CGI qw/:all/;
+
+# Information for the current state
+
+$state   = param(&#39;State&#39;);
+$guesses = param(&#39;Guesses&#39;);
+$answer  = param(&#39;Answer&#39;);
+
+# Constants (colour list and welcome message)
+
+%colours = (&#34;r&#34;=&gt;&#34;Red&#34;,&#34;y&#34;=&gt;&#34;Yellow&#34;,&#34;g&#34;=&gt;&#34;Green&#34;,&#34;b&#34;=&gt;&#34;Blue&#34;);
+
+$welcome = &lt;&lt;WELCOME
+Welcome to the Bulls and Cows guessing game. &lt;p&gt;
+There are four colours &#34;hidden&#34; under the squares. &lt;p&gt;
+&lt;table border=1 cellpadding=10&gt;
+&lt;tr&gt;
+  &lt;td&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; ? &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;/td&gt;
+  &lt;td&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; ? &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;/td&gt;
+  &lt;td&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; ? &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;/td&gt;
+  &lt;td&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; ? &amp;nbsp; &amp;nbsp; &amp;nbsp;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt; &lt;p&gt;
+In each turn you can guess colours for as many squares as you like. &lt;br&gt;
+I will then tell you how many &#34;bulls&#34; and &#34;cows&#34; you scored. &lt;br&gt;
+A &#34;bull&#34; means that you guessed the correct colour in the correct square. &lt;br&gt;
+A &#34;cow&#34; means that you guessed the correct colour but in the wrong square. &lt;br&gt;
+Each guess will be counted only once, and bulls are counted before cows. &lt;p&gt;
+The aim of the game is for you to work out the colours &lt;br&gt;
+in the least number of guesses.
+WELCOME
+;
+
+# Start off each page with a standard header
+
+print(
+    header,
+    start_html(-title=&gt;&#39;Bulls\&#39;n\&#39;Cows Game&#39;),
+    &#34;&lt;center&gt;\n&#34;,
+    h1(&#34;Bulls\&#39;n\&#39;Cows Guessing Game&#34;)
+);
+
+if ($state eq &#34;&#34;)
+# Initial state: print welcome/instruction message
+{
+    # Generate a random sequence of four colours
+    @cols = keys %colours;
+    foreach $i (1..4) {
+        $c = $cols[int(rand($#cols+1))];
+        $answer .= $c;
+    }
+
+    # Print message, set initial state and display button to start game
+    print(
+        $welcome,
+        start_form,
+        &#34;&lt;input type=hidden name=&#39;State&#39; value=&#39;Guessing&#39;&gt;&#34;,
+        &#34;&lt;input type=hidden name=&#39;Guesses&#39; value=&#39;&#39;&gt;&#34;,
+        &#34;&lt;input type=hidden name=&#39;Answer&#39; value=&#39;$answer&#39;&gt;&#34;,
+        submit(&#34;Start the game&#34;),
+        end_form
+    );
+}
+elsif ($state eq &#34;Guessing&#34;)
+# Check previous guess (if any)
+# If won, then print a message and click to scoreboard page
+# If not won, print the guessing table, plus previous guesses
+{
+    # Process previous guess
+
+    $guess = param(&#39;Box1&#39;).param(&#39;Box2&#39;).param(&#39;Box3&#39;).param(&#39;Box4&#39;);
+    ($bulls, $cows) = &amp;bullcow($guess, $answer);
+    $guesses = &#34;$guess,$guesses&#34;;
+    $guesses =~ s/,$//;
+
+    # We won! So set up for winning state
+
+    if ($bulls == 4)
+    {
+        @g = split(/,/,$guesses);
+        $ng = $#g+1;
+        print(
+            &#34;Congratulations! You guessed it.&#34;,
+            p,
+            &#34;It took you $ng guesses.&#34;,
+            p,
+            start_form,
+            &#34;&lt;input type=hidden name=&#39;State&#39; value=&#39;Won&#39;&gt;&#34;,
+            &#34;&lt;input type=hidden name=&#39;Score&#39; value=&#39;$ng&#39;&gt;&#34;,
+            &#34;Enter your name:&#34;,
+            &#34;&lt;input type=text name=&#39;Player&#39;&gt;&#34;,
+            p,
+            submit(&#34;Click for ScoreBoard&#34;),
+            end_form,
+            end_html
+        );
+        exit 0;
+    }
+
+    # Set up table containing pull-down colour menus
+    #  for collecting the next guess
+
+    print(
+        start_form,
+        &#34;&lt;input type=hidden name=&#39;State&#39; value=&#39;Guessing&#39;&gt;&#34;,
+        &#34;&lt;input type=hidden name=&#39;Guesses&#39; value=&#39;$guesses&#39;&gt;&#34;,
+        &#34;&lt;input type=hidden name=&#39;Answer&#39; value=&#39;$answer&#39;&gt;&#34;,
+        &#34;&lt;table border=1 cellpadding=5&gt;&lt;tr&gt;&#34;
+    );
+    foreach $i (1..4) {
+        print &#34;&lt;td&gt;&lt;select name=&#39;Box$i&#39; default=&#39;?&#39;&gt;\n&#34;;
+        print &#34;&lt;option value=&#39;?&#39;&gt;?\n&#34;;
+        foreach $c (keys %colours) {
+            print &#34;&lt;option value=&#39;$c&#39;&gt;$colours{$c}\n&#34;;
+        }
+        print &#34;&lt;/select&gt;&lt;/td&gt;\n&#34;;
+    }
+    print(
+        &#34;&lt;/tr&gt;&lt;/table&gt;\n&#34;,
+        p,
+        submit(&#34;Submit guess&#34;),
+        end_form,
+        p
+    );
+
+    # Iterate over previous guesses, displaying
+    #  each guess along with the score it obtained
+
+    print h3(&#34;Previous Guesses&#34;);
+    foreach $guess (split(/,/,$guesses)) {
+        print &#34;&lt;p&gt;&lt;table border=1 cellpadding=5&gt;&lt;tr&gt;&#34;;
+        foreach $c (split(//, $guess)) {
+            if ($c eq &#34;?&#34;) {
+                print &#34;&lt;td&gt; &amp;nbsp; ? &amp;nbsp; &amp;nbsp; &lt;/td&gt;&#34;;
+            }
+            else {
+                print(
+                    &#34;&lt;td bgcolor=&#39;$colours{$c}&#39;&gt;&#34;,
+                    &#34;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;&#34;,
+                    &#34;&lt;/td&gt;&#34;
+                );
+            }
+        }
+        ($bulls, $cows) = &amp;bullcow($guess, $answer);
+        print &#34;&lt;td&gt;$bulls Bulls, $cows Cows&lt;/td&gt;&#34;;
+        print &#34;&lt;/tr&gt;&lt;/table&gt;\n&#34;;
+    }
+}
+elsif ($state eq &#34;Won&#34;)
+{
+    # Update the scoreboard
+
+    $score = param(&#39;Score&#39;);
+    $score =~ s/[^\d]//g;             # remove all but expected characters
+    $score = substr $score, 0, 4;    # limit score to 4 characters
+    $player = param(&#39;Player&#39;);
+    $player =~ s/[^\w\s-_]//g;        # remove all but expected characters
+    $player = substr $player, 0, 256; # limit player to 256 characters
+    if (!open(SCORES, &#34;&gt;&gt;ScoreBoard&#34;)) {
+        print h3(font({-color=&gt;&#39;red&#39;},&#34;Can&#39;t write Scoreboard&#34;));
+    }
+    else {
+        print SCORES &#34;$score;$player;&#34;.localtime().&#34;\n&#34;;
+        close(SCORES);
+    }
+
+    # Fetch the scoreboard information
+
+    if (!open(SCORES, &#34;&lt;ScoreBoard&#34;)) {
+        print(
+            h3(font({-color=&gt;&#39;red&#39;},&#34;Can&#39;t read Scoreboard&#34;)),
+            end_html
+        );
+        exit 0;
+    }
+    $i = 0;
+    while ($line = &lt;SCORES&gt;) {
+        $lines[$i++] = $line;
+    }
+    close(SCORES);
+
+    # Display the scoreboard
+
+    print h3(&#34;Best Scores&#34;);
+    print(
+        &#34;&lt;table border=1&gt;\n&#34;,
+        &#34;&lt;tr&gt;&lt;th&gt;Score&lt;/th&gt;&lt;th&gt;Player&lt;/th&gt;&lt;th&gt;Date&lt;/th&gt;&lt;/tr&gt;\n&#34;
+    );
+    foreach $line (sort @lines) {
+        @bits = split(/;/,$line);
+        print &#34;&lt;tr&gt;&lt;td&gt;$bits[0]&lt;/td&gt;&lt;td&gt;$bits[1]&lt;/td&gt;&lt;td&gt;$bits[2]&lt;/td&gt;&lt;/tr&gt;\n&#34;;
+    }
+    print &#34;&lt;/table&gt;\n&#34;;
+
+    # Print button for starting a new game
+
+    print(
+        start_form,
+        &#34;&lt;input type=hidden name=&#39;State&#39; value=&#39;&#39;&gt;&#34;,
+        submit(&#34;Play another game?&#34;),
+        end_form,
+    );
+}
+
+print &#34;&lt;/center&gt;&#34;,end_html;
+
+# BullCow subroutine:
+#   Takes two strings (each of four chars) and computes the
+#   number of direct (Bull) matches and indirect (Cow) matches
+
+sub bullcow()
+{
+    my @guess  = split(//,$_[0]);
+    my @answer = split(//,$_[1]);
+    my $bulls = 0;
+    my $cows  = 0;
+
+    # Count bulls
+
+    for $i (0..3) {
+        if ($guess[$i] eq $answer[$i]) {
+            $bulls++;
+            $guess[$i] = &#34;?&#34;;
+            $answer[$i] = &#34;#&#34;;
+        }
+    }
+
+    # Count cows
+
+    foreach $i (0..3) {
+        foreach $j (0..3) {
+            if ($guess[$i] eq $answer[$j]) {
+                $cows++;
+                $guess[$i] = &#34;?&#34;;
+                $answer[$j] = &#34;#&#34;;
+            }
+        }
+    }
+
+    return ($bulls,$cows);
+}
+
+</pre>
+
+
+
+</div>
+
+</ol>
+</div>
+
+
+
+
+
+</div>
+
+
+<!--
+public_html_session_directory=/web/cs2041/17s2
+base_directory=/web/cs2041/17s2
+public_html_directory=/web/cs2041
+scripts_directory=/web/cs2041/17s2/scripts
+home_directory=/home/cs2041
+bin_directory=/home/cs2041/bin
+course_account=cs2041
+course_code=COMP2041
+course_number=2041
+postgraduate_course_code=COMP9041
+course_name=Software Construction
+unsw_session=17s2
+canonical_url=https://cgi.cse.unsw.edu.au/~cs2041/
+github_repo_url=https://github.com/COMP2041UNSW/course_materials
+course_forum_url=https://piazza.com/class/j5ji4vjjra62a3
+lecture_recordings_url=https://moodle.telt.unsw.edu.au/course/view.php?id=27708
+WORK=/web/cs2041/17s2/work
+OUT=/web/cs2041/17s2/work/.out
+MARKED=/web/cs2041/17s2/work/.out/.marked
+SMSDB=/web/cs2041/17s2/work/17s2db.sms
+tlb_directory=/web/cs2041/17s2/tlb
+lecture_directory=/web/cs2041/17s2/lec
+flask_cache_directory=/web/cs2041/17s2/flask_cache
+testing_results_file=/web/cs2041/17s2/work/testing_results.json
+enrollments_file=/web/cs2041/17s2/work/enrollments.json
+unsw_ldap_password_file=/web/cs2041/.unsw_ldap_password
+autotest_upload_url=https://cgi.cse.unsw.edu.au/~cs2041/cgi/autotest_upload.cgi
+PATH=/web/cs2041/17s2/scripts:/home/cs2041/bin:/bin/:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/home/class/bin:/home/give/stable/bin.:/bin:/usr/bin:/usr/local/bin
+directory_relative_pathname=tlb/12
+url=https://cgi.cse.unsw.edu.au/~cs2041/flask.cgi/tut/12/answers
+directory_url=https://cgi.cse.unsw.edu.au/~cs2041/tut/12/
+url_root=https://cgi.cse.unsw.edu.au/~cs2041/
+script_root=/~cs2041/flask.cgi
+current_lecture_topic=exam
+current_week=13
+week=12
+exercise_name=tut12
+tut_or_lab_or_test=tut
+questions_or_answers=answers
+programs=&lt;programs&gt;
+
+-->
+
+</body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>
+
+COMP2041 Week 12 Tutorial Questions
+
+</title>
+<link href="/~cs2041/flask.cgi/static/bootstrap.min.css?121200" rel="stylesheet"/>
+<link href="/~cs2041/flask.cgi/static/course.css?6554" rel="stylesheet"/>
+<script src="/~cs2041/flask.cgi/static/jquery.min.js?95992" type="text/javascript"></script>
+<script src="/~cs2041/flask.cgi/static/bootstrap.min.js?37045" type="text/javascript"></script>
+<script src="/~cs2041/flask.cgi/static/course.js?1631" type="text/javascript"></script>
+<link href="https://cgi.cse.unsw.edu.au/~cs2041/" rel="canonical"/>
+</head>
+<body>
+<div class="container">
+<div id="heading">
+<a class="heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/" id="left_heading_link" target="_blank">COMP[29]041 17s2</a>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Week 12
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/02/questions">Week 02</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/03/questions">Week 03</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/04/questions">Week 04</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/05/questions">Week 05</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/06/questions">Week 06</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/07/questions">Week 07</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/08/questions">Week 08</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/09/questions">Week 09</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/10/questions">Week 10</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/11/questions">Week 11</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/12/questions">Week 12</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/13/questions">Week 13</a></li>
+</ul>
+</span>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Tutorial
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/12/questions">Tutorial
+                
+            </a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/12/questions">Laboratory
+                
+            </a></li>
+</ul>
+</span>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Questions
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/12/questions">Questions
+            
+            </a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/12/answers">Sample Answers
+            
+            </a></li>
+</ul>
+</span>
+<a class="heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/" id="right_heading_link" target="_blank">Software Construction</a>
+</div>
+</div>
+<div class="tutlab tut">
+<ol>
+<ol>
+<li>
+What is  Unicode
+<p></p>
+</li><li>
+What is UTF-8
+<p></p>
+</li><li>
+Do I need to I know about UTF-8 for the assignment.
+
+<p></p>
+</li><li>
+The  UNSWtalk Perl starting-point code contains this function. Discuss how it works.
+<pre class="program">
+sub student_page {
+    my $n = param('n') || 0;
+    my @students = sort(glob("$students_dir/*"));
+    my $student_to_show  = $students[$n % @students];
+    my $details_filename = "$student_to_show/student.txt";
+    open my $p, "$details_filename" or die "can not open $details_filename: $!";
+    $details = join '', &lt;$p&gt;;
+    close $p;
+    my $next_student = $n + 1;
+    return &lt;&lt;eof
+&lt;div class="unswtalk_user_details"&gt;
+$details
+&lt;/div&gt;
+&lt;p&gt;
+&lt;form method="POST" action=""&gt;
+    &lt;input type="hidden" name="n" value="$next_student"&gt;
+    &lt;input type="submit" value="Next student" class="unswtalk_button"&gt;
+&lt;/form&gt;
+eof
+}
+</pre>
+</li><li>
+The UNSWtalk Python starting point code contains this function. Discuss how it works.
+<pre class="program">
+@app.route('/', methods=['GET','POST'])
+@app.route('/start', methods=['GET','POST'])
+def start():
+    n = session.get('n', 0)
+    students = sorted(os.listdir(students_dir))
+    student_to_show = students[n % len(students)]
+    details_filename = os.path.join(students_dir, student_to_show, "student.txt")
+    with open(details_filename) as f:
+        details = f.read()
+    session['n'] = n + 1
+    return render_template('start.html', student_details=details)
+</pre>
+</li><li>
+Both Perl starting point code for assignment 2 and the Python starting point code will
+prints out approximately these lines (followed by more output) when run.
+
+<pre class="program">
+Content-Type: text/html
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+&lt;title&gt;UNSWtalk&lt;/title&gt;
+&lt;link href="unswtalk.css" rel="stylesheet"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div class="unswtalk_heading"&gt;
+UNSWtalk
+&lt;/div&gt;
+</pre>
+
+Quickly discuss why these lines are being printed, in particular
+
+<ol>
+<li> Why is line 2 blank?
+</li><li> What else might appear in the first 2 lines?
+</li><li> What does <code>class="unswtalk_heading"</code> mean?
+</li></ol>
+<p></p>
+</li><li>
+
+The file <code>UNSWtalk.css</code> supplied for the assignment contains this:
+
+<pre class="program">
+.unswtalk_heading {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.unswtalk_user_details {
+    background-color: #ABCDEF;
+    color: #204142;
+    white-space: pre;
+    border:thin solid #204142;
+    border-radius: 1em;
+    padding-left: 0.42em;
+}
+
+.unswtalk_button {
+    background-color: #FEDBCA;
+    border:thin solid #904142;
+    border-radius: 0.42em;
+    color: #904142;
+}
+</pre>
+
+CSS isn't really covered in COMP[29]041 - but can you quickly guess what the CSS does?
+
+
+</li><li>
+
+A good way to test out code for assignment 2 is to write
+small programs which can be run from the command line.
+<p>
+A COMP[29]041 student wrote this small  program
+to test  Perl that wanted to use in UNSWtalk.
+</p><p>
+It takes a zid as a command-line argument and is meant
+to print the filenames of the student's posts in reverse chronological order (most recent first).
+
+
+
+
+
+</p><pre class="program">
+
+#!/usr/bin/perl -w
+
+$dataset = "dataset-medium";
+
+sub student_post_filenames {
+	my ($student) = @_;
+	
+	my @post_filenames = glob "$dataset/$student/*.txt";
+	return reverse sort @post_filenames;
+}
+
+foreach $student (@ARGV) {
+	print join(" ", student_post_filenames($student)), "\n";
+}
+
+</pre>
+
+
+
+They also wrote this equivalent program in Python
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python3
+
+import glob, os, sys
+
+dataset = "dataset-medium"
+
+def student_post_filenames(student):
+	post_filenames = glob.glob(os.path.join(dataset, student, '*.txt'))
+	return sorted(post_filenames, reverse=True) 
+
+for user in sys.argv[1:]:
+	print(" ".join(student_post_filenames(user)))
+
+</pre>
+
+
+
+Unfortunately both when run print the wrong files, and posts aren't in reverse chronological order - <code>10.txt</code> is the user's most recent post not <code>9.txt</code>
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./print_posts.pl z5194548</kbd>
+
+</pre>
+<p>
+What is wrong with the programs.
+</p><p>
+How would you fix it?
+
+</p><p></p>
+</li><li>
+Write a shell pipeline that reports any e-mail address which is being used
+by more than 1 UNSWtalk users in the large dataset.
+
+<p></p>
+</li><li>
+
+Write a Perl program script <code>distance_from_unsw.pl</code> which lists the latitude, longitude and
+suburb (if provided) of all UNSWtalk users in a dataset it is given as argument.
+<p>
+The users must be listed in increasing order of distance from UNSW.
+</p><p>
+For example:
+
+
+    
+        
+    
+
+
+
+
+
+
+</p><pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./distance_from_unsw.pl dataset-small</kbd>
+</pre>
+
+Assume UNSW's (latitiude, longitude) is (-33.9172238,151.2302268).
+<p>
+Don't print  users who don't provide their latitude/longitude.
+</p><p>
+You can assume if a user provides either latitude or longitude they provide both.
+
+</p><p></p>
+</li><li>
+
+Translate  distance_from_unsw.pl to Python.
+
+
+<p></p>
+<h3>Revision questions</h3>
+
+The remaining tutorial questions are primarily intended for revision - either this week
+or later in session.
+<p>
+Your tutor may still choose to cover some of the questions time permitting.
+</p><p>
+</p></li><li>
+
+Write a CGI script to play the <a href="http://en.wikipedia.org/wiki/Bulls_and_cows">Bulls and Cows</a> guessing game.
+<p>
+Here is an example implementation: <a href="https://cgi.cse.unsw.edu.au/~cs2041cgi/tlb/12/bullscows.cgi">reference implementation</a>
+</p><p></p>
+</li></ol>
+</ol></div>
+<!--
+public_html_session_directory=/web/cs2041/17s2
+base_directory=/web/cs2041/17s2
+public_html_directory=/web/cs2041
+scripts_directory=/web/cs2041/17s2/scripts
+home_directory=/home/cs2041
+bin_directory=/home/cs2041/bin
+course_account=cs2041
+course_code=COMP2041
+course_number=2041
+postgraduate_course_code=COMP9041
+course_name=Software Construction
+unsw_session=17s2
+canonical_url=https://cgi.cse.unsw.edu.au/~cs2041/
+github_repo_url=https://github.com/COMP2041UNSW/course_materials
+course_forum_url=https://piazza.com/class/j5ji4vjjra62a3
+lecture_recordings_url=https://moodle.telt.unsw.edu.au/course/view.php?id=27708
+WORK=/web/cs2041/17s2/work
+OUT=/web/cs2041/17s2/work/.out
+MARKED=/web/cs2041/17s2/work/.out/.marked
+SMSDB=/web/cs2041/17s2/work/17s2db.sms
+tlb_directory=/web/cs2041/17s2/tlb
+lecture_directory=/web/cs2041/17s2/lec
+flask_cache_directory=/web/cs2041/17s2/flask_cache
+testing_results_file=/web/cs2041/17s2/work/testing_results.json
+enrollments_file=/web/cs2041/17s2/work/enrollments.json
+unsw_ldap_password_file=/web/cs2041/.unsw_ldap_password
+autotest_upload_url=https://cgi.cse.unsw.edu.au/~cs2041/cgi/autotest_upload.cgi
+PATH=/web/cs2041/17s2/scripts:/home/cs2041/bin:/bin/:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/home/class/bin:/home/give/stable/bin.:/bin:/usr/bin:/usr/local/bin
+directory_relative_pathname=tlb/12
+url=https://cgi.cse.unsw.edu.au/~cs2041/flask.cgi/tut/12/questions
+directory_url=https://cgi.cse.unsw.edu.au/~cs2041/tut/12/
+url_root=https://cgi.cse.unsw.edu.au/~cs2041/
+script_root=/~cs2041/flask.cgi
+current_lecture_topic=exam
+current_week=13
+week=12
+exercise_name=tut12
+tut_or_lab_or_test=tut
+questions_or_answers=questions
+programs=&lt;programs&gt;
+
+-->
+</body>
+</html>

@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>
+
+COMP2041 Week 04 Laboratory Exercises
+
+</title>
+<link href="/~cs2041/flask.cgi/static/bootstrap.min.css?121200" rel="stylesheet"/>
+<link href="/~cs2041/flask.cgi/static/course.css?6554" rel="stylesheet"/>
+<script src="/~cs2041/flask.cgi/static/jquery.min.js?95992" type="text/javascript"></script>
+<script src="/~cs2041/flask.cgi/static/bootstrap.min.js?37045" type="text/javascript"></script>
+<script src="/~cs2041/flask.cgi/static/course.js?1631" type="text/javascript"></script>
+<link href="https://cgi.cse.unsw.edu.au/~cs2041/" rel="canonical"/>
+</head>
+<body>
+<div class="container">
+<div id="heading">
+<a class="heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/" id="left_heading_link" target="_blank">COMP[29]041 17s2</a>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Week 04
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/02/questions">Week 02</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/03/questions">Week 03</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/04/questions">Week 04</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/05/questions">Week 05</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/06/questions">Week 06</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/07/questions">Week 07</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/08/questions">Week 08</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/09/questions">Week 09</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/10/questions">Week 10</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/11/questions">Week 11</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/12/questions">Week 12</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/13/questions">Week 13</a></li>
+</ul>
+</span>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Laboratory
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/04/questions">Tutorial
+                
+            </a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/04/questions">Laboratory
+                
+            </a></li>
+</ul>
+</span>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Exercises
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/04/questions">Exercises
+            
+            </a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/04/answers">Sample Solutions
+            
+            </a></li>
+</ul>
+</span>
+<a class="heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/" id="right_heading_link" target="_blank">Software Construction</a>
+</div>
+</div>
+<div class="tutlab lab">
+<h3>Submission Summary</h3>
+Due
+
+Sunday midnight
+
+
+<pre class="command_line">
+<kbd class="shell">give cs2041 lab04 &lt;programs&gt;</kbd>
+</pre>
+<h3>Objectives</h3>
+<ul>
+<li> Practice writing shell scripts for real tasks
+</li><li> Practice processing collections of files with shell scripts.
+</li></ul>
+<h3>Getting Started</h3>
+
+
+Create a new directory for this lab called <code>lab04</code> by typing:
+
+<pre class="command_line">
+<kbd class="shell">mkdir lab04</kbd>
+</pre>
+
+Change to this directory by typing:
+
+<pre class="command_line">
+<kbd class="shell">cd lab04</kbd>
+</pre>
+<h3>Exercise: Converting Images</h3>
+Write a shell script <code>jpg2png.sh</code> which converts all images in <a href="http://en.wikipedia.org/wiki/JPEG">JPEG</a> format
+in the current directory to <a href="http://en.wikipedia.org/wiki/Portable_Network_Graphics">PNG</a> format.
+<p>
+You can assume that JPEG files and only JPEG files have the suffix <code>jpg</code>.
+</p><p>
+If the conversion is succesful the JPEG file should be removed.
+</p><p>
+Your script should stop with the error message shown below and exit status 1 if the PNG file already exists.
+
+</p><pre class="command_line">
+<kbd class="shell">wget https://cgi.cse.unsw.edu.au/~cs2041/lab/04/images.zip</kbd>
+<kbd class="shell">unzip images.zip</kbd>
+Archive:  images.zip
+  inflating: Johannes Vermeer - The Girl With The Pearl Earring.jpg
+  inflating: nautilus.jpg
+  inflating: panic.jpg
+  inflating: penguins.jpg
+  inflating: shell.jpg
+  inflating: stingray.jpg
+  inflating: treefrog.jpg
+<kbd class="shell">./jpg2png.sh</kbd>
+<kbd class="shell">ls</kbd>
+Johannes Vermeer - The Girl With The Pearl Earring.png  panic.png
+email_image.sh                                          penguins.png
+images.zip                                              shell.png
+index.php                                               stingray.png
+jpg2png.sh                                              treefrog.png
+nautilus.png
+<kbd class="shell">cp -p /web/cs2041/17s2/tlb/04/penguins.jpg .</kbd>
+<kbd class="shell">./jpg2png.sh</kbd>
+penguins.png already exists
+</pre>
+<h4>Hints</h4>
+<p>
+You may find sed and back quotes useful.
+</p><p>
+The tool <code>convert</code> will convert between many image formats, for example:
+</p><p>
+</p><pre class="command_line">
+<kbd class="shell">convert penguins.jpg penguins.png</kbd>
+</pre>
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+</p><pre class="command_line">
+<kbd class="shell">2041 autotest lab04 jpg2png.sh</kbd>
+</pre>
+<div class="autotest_results">
+<h4>Automarking Results</h4>
+<span class="autotest_results_emphasis">92%</span>
+        
+        of <span class="autotest_results_emphasis">451</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">jpg2png.sh</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+<ul>
+<li><span class="autotest_results_emphasis">96%</span>
+                    
+                    passed test <i>jpg2png_0</i>
+</li><li><span class="autotest_results_emphasis">93%</span>
+                    
+                    passed test <i>jpg2png_1</i>
+</li><li><span class="autotest_results_emphasis">96%</span>
+                    
+                    passed test <i>jpg2png_2</i>
+</li><li><span class="autotest_results_emphasis">94%</span>
+                    
+                    passed test <i>jpg2png_3</i>
+</li></ul>
+</div>
+</div>
+<p></p>
+<h3>Exercise: Emailing Images</h3>
+Write a shell script <code>email_image.sh</code> which given a list of image
+files as arguments  displays them one-by-one.  After the user has viewed each image
+the script should prompt the user for an e-mail address.
+If the user does enter an email address, the script should prompt the user for a message to
+accompany the image and then send the image to
+the specified e-mail address.
+<pre class="command_line">
+<kbd class="shell">./email_image.sh penguins.png treefrog.png </kbd>
+Address to e-mail this image to? <kbd>andrewt@cse.unsw.edu.au</kbd>
+Message to accompany image? <kbd>Penguins are cool.</kbd>
+penguins.png sent to andrewt@cse.unsw.edu.au
+Address to e-mail this image to? <kbd>andrewt@cse.unsw.edu.au</kbd>
+Message to accompany image? <kbd>This is a White-lipped Tree Frog</kbd>
+treefrog.png sent to andrewt@cse.unsw.edu.au
+</pre>
+<p>
+</p><h4>Hints</h4>
+<p>
+The program <code>display</code> can be used to view image files
+</p><p>
+The program  <code>mutt</code> can be used to send mail from the command line including attachments, for example:
+</p><p>
+</p><pre class="command_line">
+<kbd class="shell">echo 'Penguins are cool.'|mutt -s 'penguins!' -e 'set copy=no' -a penguins.png -- nobody@nowhere.com</kbd>
+</pre>
+<p>
+There is no autotest and no automarking of this question.
+</p><p>
+When you have completed demonstrate your work to another COMP[29]041 student in your lab
+and ask them to enter a
+<a href="https://cgi.cse.unsw.edu.au/~cs2041/cgi/peer/assess.py">peer assessment here</a>
+It is prefered you do this during your lab, but if this is not possible
+you may demonstrate your work to any COMP[29]041  student before Sunday midnight.
+</p><p>
+</p><p></p>
+<h3>Exercise: Annotating Images</h3>
+Write a shell script <code>date_image.sh</code> which, given a list of image
+files as arguments, changes each file so it has a label added to the image
+indicating the time it was taken.
+You can assume the last-modification time of the image file
+is the time it was taken.
+<p>
+So for example if we run these commands:
+</p><p>
+</p><pre class="command_line">
+<kbd class="shell">cp -p /web/cs2041/17s2/tlb/04/penguins.jpg  .</kbd>
+<kbd class="shell">ls -l penguins.jpg </kbd>
+-rw-r--r-- 1 andrewt andrewt 58092 Mar 16 16:08 penguins.jpg
+<kbd class="shell">./date_image.sh penguins.jpg</kbd>
+<kbd class="shell">display  penguins.jpg </kbd>
+</pre>
+<p>
+Then <code>penguins.jpg</code> should have been be modified to look like this:
+</p><p>
+<img alt="http://en.wikipedia.org/wiki/File:Emperor_penguins.jpg" src="labelled_penguins.jpg"/>
+</p><h4>Hints</h4>
+<p>
+The program <code>convert</code> can be used to label an image like this:
+</p><p>
+</p><pre class="command_line">
+<kbd class="shell"> convert -gravity south -pointsize 36 -draw "text 0,10 'Andrew rocks'" penguins.jpg temporary_file.jpg</kbd>
+</pre>
+<p>
+<b>Hint:</b><code>sed</code> and/or <code>cut</code> may be useful to extract the date &amp; time from ls's output.
+</p><p>
+<b>Hint:</b><code>convert</code> produce confusing messages if you don't get its option syntax exactly right
+</p><p>
+There is no autotest and no automarking of this question.
+</p><p>
+When you have completed demonstrate your work to another COMP[29]041 student in your lab
+and ask them to enter a
+<a href="https://cgi.cse.unsw.edu.au/~cs2041/cgi/peer/assess.py">peer assessment here</a>
+</p><p>
+It is prefered you do this during your lab, but if this is not possible
+you may demonstrate your work to any COMP[29]041  student before Sunday midnight.
+
+</p><p></p>
+<h3>Challenge Question: preserving file modification times</h3>
+
+Modify <code>date_image.sh</code> so it doesn't affect the
+image file's last-modification time. For example:
+<p>
+</p><pre class="command_line">
+<kbd class="shell">cp -p /web/cs2041/17s2/tlb/04/penguins.jpg  .</kbd>
+<kbd class="shell">ls -l penguins.jpg </kbd>
+-rw-r--r-- 1 andrewt andrewt 58092 Mar 16 16:08 penguins.jpg
+<kbd class="shell">./date_image.sh penguins.jpg</kbd>
+<kbd class="shell">ls -l penguins.jpg </kbd>
+-rw-r--r-- 1 andrewt andrewt 58092 Mar 16 16:08 penguins.jpg
+</pre>
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+</p><pre class="command_line">
+<kbd class="shell">2041 autotest lab04 date_image.sh</kbd>
+</pre>
+<div class="autotest_results">
+<h4>Automarking Results</h4>
+<span class="autotest_results_emphasis">59%</span>
+        
+        of <span class="autotest_results_emphasis">428</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">date_image.sh</span>
+            (that could be marked)
+        
+        
+            passed the automarking test.
+        
+    </div>
+<h3>Exercise: Organizing Music</h3>
+
+Andrew needs help fixing the <a href="https://en.wikipedia.org/wiki/ID3">ID3</a> tags in the <a href="https://en.wikipedia.org/wiki/MP3">MP3</a> files in his music collection.
+<p>
+You will write a shell script <code>fix_id3_tags.sh</code> which sets appropriate ID3 tags for Andrew's music collection.
+</p><p>
+Your script will determine the appropriate ID3 tags from the directory names and file names of the music collection.
+</p><p>
+You assume the names follow a standard format.  You can determine this
+format by <a href="music.zip">downloading</a> Andrew's music collection.
+</p><p>
+</p><pre class="command_line">
+<kbd class="shell">wget https://cgi.cse.unsw.edu.au/~cs2041/lab/04/music.zip</kbd>
+<i>...</i>
+<kbd class="shell">unzip music.zip</kbd>
+Archive:  music.zip
+   creating: music/
+   creating: music/Triple J Hottest 100, 2006/
+  inflating: music/Triple J Hottest 100, 2006/2 - Black Fingernails, Red Wine - Eskimo Joe.mp3
+  inflating: music/Triple J Hottest 100, 2006/6 - Crazy - Gnarls Barkley.mp3
+  inflating: music/Triple J Hottest 100, 2006/5 - I Don't Feel Like Dancin' - Scissor Sisters.mp3
+<i>...</i>
+</pre>
+<p>
+The command <code>id3</code> can be used to list the value of ID3 tags in an MP3 file, for example:
+
+</p><pre class="command_line">
+<kbd class="shell">id3 -l 'music/Triple J Hottest 100, 2013/1 - Riptide - Vance Joy.mp3'</kbd>
+music/Triple J Hottest 100, 2013/1 - Riptide - Vance Joy.mp3:
+Title  : Andrew Rocks                    Artist: Andrew
+Album  : Best of Andrew                  Year: 2038, Genre: Unknown (255)
+Comment:                                 Track: 42
+</pre>
+
+As you can see the ID3 tags of this music file have been accidentally over-written. The ID3 tags  should be:
+
+<pre class="command_line">
+<kbd class="shell">id3 -l 'music/Triple J Hottest 100, 2013/1 - Riptide - Vance Joy.mp3'</kbd>
+music/Triple J Hottest 100, 2013/1 - Riptide - Vance Joy.mp3:
+Title  : Riptide                         Artist: Vance Joy
+Album  : Triple J Hottest 100, 2013      Year: 2013, Genre: Unknown (255)
+Comment:                                 Track: 1
+</pre>
+
+Fortunately all the information needed to fix the ID3 tags is available in
+the name of the file and the name of the directory it is in.
+<p>
+You will write a shell script <code>fix_id3_tags.sh</code> which takes the name of 1 or more directories
+in Andrew's music collection as arguments and fixes the ID3 tags of the all MP3 files in that directory.
+For example:
+
+</p><pre class="command_line">
+<kbd class="shell">./fix_id3_tags.sh 'music/Triple J Hottest 100, 2015'</kbd>
+<kbd class="shell">id3 -l 'music/Triple J Hottest 100, 2015/4 - The Less I Know the Better - Tame Impala.mp3'</kbd>
+music/Triple J Hottest 100, 2015/4 - The Less I Know the Better - Tame Impala.mp3:
+Title  : The Less I Know the Better      Artist: Tame Impala
+Album  : Triple J Hottest 100, 2015      Year: 2015, Genre: Unknown (255)
+Comment:                                 Track: 4
+<kbd class="shell">./fix_id3_tags.sh music/*</kbd>
+<kbd class="shell">id3 -l 'music/Triple J Hottest 100, 1995/10 - Greg! The Stop Sign!! - TISM.mp3'</kbd>
+music/Triple J Hottest 100, 1995/10 - Greg! The Stop Sign!! - TISM.mp3:
+Title  : Greg! The Stop Sign!!           Artist: TISM
+Album  : Triple J Hottest 100, 1995      Year: 1995, Genre: Unknown (255)
+Comment:                                 Track: 10
+<kbd class="shell">id3 -l 'music/Triple J Hottest 100, 1999/1 - These Days - Powderfinger.mp3'</kbd>
+music/Triple J Hottest 100, 1999/1 - These Days - Powderfinger.mp3:
+Title  : These Days                      Artist: Powderfinger
+Album  : Triple J Hottest 100, 1999      Year: 1999, Genre: Unknown (255)
+Comment:                                 Track: 1
+<kbd class="shell">id3 -l 'music/Triple J Hottest 100, 2012/2 - Little Talks - Of Monsters and Men.mp3'</kbd>
+music/Triple J Hottest 100, 2012/2 - Little Talks - Of Monsters and Men.mp3:
+Title  : Little Talks                    Artist: Of Monsters and Men
+Album  : Triple J Hottest 100, 2012      Year: 2012, Genre: Unknown (255)
+Comment:                                 Track: 2
+</pre>
+
+Your script should not change the <i>Genre</i> or <i>Comment</i> fields.
+<p>
+Your script should determine <i>Title</i>, <i>Artist</i>, <i>Track</i>, <i>Album</i> &amp; <i>Year</i> from the directory &amp; filename.
+
+</p><h4>Hints</h4>
+<pre class="command_line">
+<kbd class="shell">man id3</kbd>
+<i>...</i>
+</pre>
+<code>cut</code> almost works for extracting  <i>Title</i> and <i>Album</i>  from the filename.
+<p>
+Handling the few MP3 files correctly where using <code>cut</code> doesn't work will be considered a <b>challenge exercise</b>.
+</p><p>
+It can be difficult debugging your script on Andrew's music collection.
+In cases like these it usually worth creating a smaller data set
+for initial debugging.
+Such a tiny data set is available in  <a href="tiny_music.zip">tiny_music.zip</a> if you want to use it
+for debugging.  This dataset is used in the first autotests.
+
+</p><pre class="command_line">
+<kbd class="shell">wget https://cgi.cse.unsw.edu.au/~cs2041/lab/04/tiny_music.zip</kbd>
+<kbd class="shell">unzip tiny_music.zip</kbd>
+Archive:  tiny_music.zip
+   creating: tiny_music/
+   creating: tiny_music/Album1, 2015/
+  inflating: tiny_music/Album1, 2015/2 - Little Talks - Of Monsters and Men.mp3
+  inflating: tiny_music/Album1, 2015/1 - Riptide - Vance Joy.mp3
+   creating: tiny_music/Album2, 2016/
+  inflating: tiny_music/Album2, 2016/2 - Royals - Lorde.mp3
+  inflating: tiny_music/Album2, 2016/1 - Hoops - The Rubens.mp3
+<kbd class="shell">id3 -l tiny_music/*/*.mp3</kbd>
+tiny_music/Album1, 2015/1 - Riptide - Vance Joy.mp3:
+Title  : Andrew Rocks                    Artist: Andrew
+Album  : Best of Andrew                  Year: 2038, Genre: Unknown (255)
+Comment:                                 Track: 42
+tiny_music/Album1, 2015/2 - Little Talks - Of Monsters and Men.mp3:
+Title  : Andrew Rocks                    Artist: Andrew
+Album  : Best of Andrew                  Year: 2038, Genre: Unknown (255)
+Comment:                                 Track: 42
+tiny_music/Album2, 2016/1 - Hoops - The Rubens.mp3:
+Title  : Andrew Rocks                    Artist: Andrew
+Album  : Best of Andrew                  Year: 2038, Genre: Unknown (255)
+Comment:                                 Track: 42
+tiny_music/Album2, 2016/2 - Royals - Lorde.mp3:
+Title  : Andrew Rocks                    Artist: Andrew
+Album  : Best of Andrew                  Year: 2038, Genre: Unknown (255)
+Comment:                                 Track: 42
+<kbd class="shell">./fix_id3_tags.sh tiny_music/*</kbd>
+<kbd class="shell">id3 -l tiny_music/*/*.mp3</kbd>
+tiny_music/Album1, 2015/1 - Riptide - Vance Joy.mp3:
+Title  : Riptide                         Artist: Vance Joy
+Album  : Album1, 2015                    Year: 2015, Genre: Unknown (255)
+Comment:                                 Track: 1
+tiny_music/Album1, 2015/2 - Little Talks - Of Monsters and Men.mp3:
+Title  : Little Talks                    Artist: Of Monsters and Men
+Album  : Album1, 2015                    Year: 2015, Genre: Unknown (255)
+Comment:                                 Track: 2
+tiny_music/Album2, 2016/1 - Hoops - The Rubens.mp3:
+Title  : Hoops                           Artist: The Rubens
+Album  : Album2, 2016                    Year: 2016, Genre: Unknown (255)
+Comment:                                 Track: 1
+tiny_music/Album2, 2016/2 - Royals - Lorde.mp3:
+Title  : Royals                          Artist: Lorde
+Album  : Album2, 2016                    Year: 2016, Genre: Unknown (255)
+Comment:                                 Track: 2
+</pre>
+<p></p>
+
+You can run some tests on your script like this:
+
+<pre class="command_line">
+<kbd class="shell">2041 autotest lab04 fix_id3_tags.sh</kbd>
+</pre>
+
+
+You can also specify that only a single test be run:
+
+<pre class="command_line">
+<kbd class="shell">2041 autotest lab04 tiny_album1</kbd>
+</pre>
+
+Also do your own testing!
+
+
+<h3>Challenge Exercise: Creating Music</h3>
+
+The test data for the previous question is not really Andrew's music collection.
+All the mp3 files contain identical contents.
+The directories and filenames  were created from the source of this  <a href="https://en.wikipedia.org/wiki/Triple_J_Hottest_100">web page</a>.
+
+Write a shell script <code>create_music.sh</code> which uses the above webpage to create exactly the same directories and files as
+in the test data set supplied above.
+
+Your script should take 2 arguments: the name of an MP3 file to use as the contents of the MP3 files you create and
+the directory in which to create the test data.
+For example:
+
+<pre class="command_line">
+<kbd class="shell">wget https://cgi.cse.unsw.edu.au/~cs2041/lab/04/music.zip</kbd>
+<i>...</i>
+<kbd class="shell">unzip music.zip</kbd>
+<kbd class="shell">wget https://cgi.cse.unsw.edu.au/~cs2041/lab/04/sample.mp3</kbd>
+<kbd class="shell">./create_music.sh sample.mp3 created_music</kbd>
+<kbd class="shell">ls created_music</kbd>
+Triple J Hottest 100, 1993  Triple J Hottest 100, 1998  Triple J Hottest 100, 2003  Triple J Hottest 100, 2008  Triple J Hottest 100, 2013
+Triple J Hottest 100, 1994  Triple J Hottest 100, 1999  Triple J Hottest 100, 2004  Triple J Hottest 100, 2009  Triple J Hottest 100, 2014
+Triple J Hottest 100, 1995  Triple J Hottest 100, 2000  Triple J Hottest 100, 2005  Triple J Hottest 100, 2010  Triple J Hottest 100, 2015
+Triple J Hottest 100, 1996  Triple J Hottest 100, 2001  Triple J Hottest 100, 2006  Triple J Hottest 100, 2011
+Triple J Hottest 100, 1997  Triple J Hottest 100, 2002  Triple J Hottest 100, 2007  Triple J Hottest 100, 2012
+<kbd class="shell">ls 'created_music/Triple J Hottest 100, 2012'</kbd>
+1 - Thrift Shop - Macklemore and Ryan Lewis featuring Wanz.mp3  5 - I Will Wait - Mumford &amp; Sons.mp3
+10 - My Gun - The Rubens.mp3                                    6 - Get Free - Major Lazer featuring Amber Coffman.mp3
+2 - Little Talks - Of Monsters and Men.mp3                      7 - Elephant - Tame Impala.mp3
+3 - Breezeblocks - Alt-J.mp3                                    8 - Lost - Frank Ocean.mp3
+4 - Holdin' On - Flume.mp3                                      9 - Feels Like We Only Go Backwards - Tame Impala.mp3
+<kbd class="shell">diff -r music created_music/</kbd>
+<kbd class="shell"></kbd>
+</pre>
+<h4>Hints</h4>
+<pre class="command_line">
+<kbd class="shell">wget -q -O- 'https://en.wikipedia.org/wiki/Triple_J_Hottest_100?action=raw'</kbd>
+<i>...</i>
+</pre>
+<p>
+You may find <a href="https://r12a.github.io/apps/conversion/">this</a>
+useful for dealing with unicode characters such as "en dash".
+</p>
+<p></p>
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+</p><pre class="command_line">
+<kbd class="shell">2041 autotest lab04 create_music.sh</kbd>
+</pre>
+<div class="autotest_results">
+<h4>Automarking Results</h4>
+<span class="autotest_results_emphasis">66%</span>
+        
+        of <span class="autotest_results_emphasis">134</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">create_music.sh</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+<ul>
+<li><span class="autotest_results_emphasis">75%</span>
+                    
+                    passed test <i>challenge_create_music_1993_7</i>
+</li><li><span class="autotest_results_emphasis">73%</span>
+                    
+                    passed test <i>challenge_create_music_1994</i>
+</li><li><span class="autotest_results_emphasis">73%</span>
+                    
+                    passed test <i>challenge_create_music_1999</i>
+</li><li><span class="autotest_results_emphasis">74%</span>
+                    
+                    passed test <i>challenge_create_music_2000_2</i>
+</li><li><span class="autotest_results_emphasis">66%</span>
+                    
+                    passed test <i>challenge_create_music_all</i>
+</li></ul>
+</div>
+</div>
+<h3>Submission</h3>
+
+When you are finished submit your work by running:
+<pre class="command_line">
+<kbd class="shell">give cs2041 lab04 &lt;programs&gt;</kbd>
+</pre>
+<p>
+Don't submit any exercises you haven't attempted.
+
+If you are working at home, you may find it more convenient
+to upload your work via
+ <a href="https://cgi.cse.unsw.edu.au/~give/code/login.php?app=/~give/Student/give.php&amp;debug=get_authuser">give's web interface</a>.
+</p><p>
+Remember you have until
+
+Sunday midnight
+
+
+to submit your work.
+
+
+
+
+</p><h3>Assessment</h3>
+
+This lab exercises is worth 1 mark.
+<p>
+Labs exercise are either automarked or peer assessed.
+This is to allow tutors' time to be used to assist students.
+</p><p>
+After the automarking is complete you should be able to view it by running
+this command on a CSE machine:
+
+</p><pre class="command_line">
+<kbd class="shell">2041 classrun -collect lab04
+</kbd></pre>
+
+You can inspect marks for this lab and other assessment components via <a href="https://cgi.cse.unsw.edu.au/~give/code/login.php?app=/~give/Student/give.php&amp;debug=get_authuser">give's web interface</a> or by running
+
+<pre class="command_line">
+<kbd class="shell">2041 classrun -sturec
+</kbd></pre>
+<p>
+Reminder: lab marks contribute 9% to your final COMP[29]041 final mark.
+</p><p>
+The 11 lab marks will be summed at the end of session and the sum capped at 9 marks.
+</p><p>
+Hence you can obtain full marks for the 9% lab component without obtaining full marks every week.
+
+
+
+</p></div>
+<!--
+public_html_session_directory=/web/cs2041/17s2
+base_directory=/web/cs2041/17s2
+public_html_directory=/web/cs2041
+scripts_directory=/web/cs2041/17s2/scripts
+home_directory=/home/cs2041
+bin_directory=/home/cs2041/bin
+course_account=cs2041
+course_code=COMP2041
+course_number=2041
+postgraduate_course_code=COMP9041
+course_name=Software Construction
+unsw_session=17s2
+canonical_url=https://cgi.cse.unsw.edu.au/~cs2041/
+github_repo_url=https://github.com/COMP2041UNSW/course_materials
+course_forum_url=https://piazza.com/class/j5ji4vjjra62a3
+lecture_recordings_url=https://moodle.telt.unsw.edu.au/course/view.php?id=27708
+WORK=/web/cs2041/17s2/work
+OUT=/web/cs2041/17s2/work/.out
+MARKED=/web/cs2041/17s2/work/.out/.marked
+SMSDB=/web/cs2041/17s2/work/17s2db.sms
+tlb_directory=/web/cs2041/17s2/tlb
+lecture_directory=/web/cs2041/17s2/lec
+flask_cache_directory=/web/cs2041/17s2/flask_cache
+testing_results_file=/web/cs2041/17s2/work/testing_results.json
+enrollments_file=/web/cs2041/17s2/work/enrollments.json
+unsw_ldap_password_file=/web/cs2041/.unsw_ldap_password
+autotest_upload_url=https://cgi.cse.unsw.edu.au/~cs2041/cgi/autotest_upload.cgi
+PATH=/web/cs2041/17s2/scripts:/home/cs2041/bin:/bin/:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/home/class/bin:/home/give/stable/bin.:/bin:/usr/bin:/usr/local/bin
+directory_relative_pathname=tlb/04
+url=https://cgi.cse.unsw.edu.au/~cs2041/flask.cgi/lab/04/questions
+directory_url=https://cgi.cse.unsw.edu.au/~cs2041/lab/04/
+url_root=https://cgi.cse.unsw.edu.au/~cs2041/
+script_root=/~cs2041/flask.cgi
+current_lecture_topic=exam
+current_week=13
+week=04
+exercise_name=lab04
+tut_or_lab_or_test=lab
+questions_or_answers=questions
+programs=&lt;programs&gt;
+
+-->
+</body>
+</html>

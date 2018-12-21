@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>
+
+COMP2041 Week 10 Laboratory Exercises
+
+</title>
+<link href="/~cs2041/flask.cgi/static/bootstrap.min.css?121200" rel="stylesheet"/>
+<link href="/~cs2041/flask.cgi/static/course.css?6554" rel="stylesheet"/>
+<script src="/~cs2041/flask.cgi/static/jquery.min.js?95992" type="text/javascript"></script>
+<script src="/~cs2041/flask.cgi/static/bootstrap.min.js?37045" type="text/javascript"></script>
+<script src="/~cs2041/flask.cgi/static/course.js?1631" type="text/javascript"></script>
+<link href="https://cgi.cse.unsw.edu.au/~cs2041/" rel="canonical"/>
+</head>
+<body>
+<div class="container">
+<div id="heading">
+<a class="heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/" id="left_heading_link" target="_blank">COMP[29]041 17s2</a>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Week 10
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/02/questions">Week 02</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/03/questions">Week 03</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/04/questions">Week 04</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/05/questions">Week 05</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/06/questions">Week 06</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/07/questions">Week 07</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/08/questions">Week 08</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/09/questions">Week 09</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/10/questions">Week 10</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/11/questions">Week 11</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/12/questions">Week 12</a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/13/questions">Week 13</a></li>
+</ul>
+</span>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Laboratory
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/tut/10/questions">Tutorial
+                
+            </a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/10/questions">Laboratory
+                
+            </a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/test/10/questions">Weekly Test
+                
+            </a></li>
+</ul>
+</span>
+<span class="dropdown">
+<button class="btn dropdown-toggle heading_button" data-toggle="dropdown" type="button">
+        Exercises
+        <span class="caret"></span>
+</button>
+<ul class="dropdown-menu">
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/10/questions">Exercises
+            
+            </a></li>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/10/answers">Sample Solutions
+            
+            </a></li>
+</ul>
+</span>
+<a class="heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/" id="right_heading_link" target="_blank">Software Construction</a>
+</div>
+</div>
+<div class="tutlab lab">
+<h3>Submission Summary</h3>
+Due
+
+<b>Wednedsay 11 October 23:59</b>
+<pre class="command_line">
+<kbd class="shell">give cs2041 lab10 browser.cgi game.cgi</kbd>
+</pre>
+<h3>Objectives</h3>
+<ul>
+<li> Understanding CGI scripts
+</li></ul>
+<h3>Getting Started</h3>
+
+
+Create a new directory for this lab inside your public_html directory
+called <code>lab10</code> by typing:
+
+<pre class="command_line">
+<kbd class="shell">mkdir ~/public-html/lab10</kbd>
+<kbd class="shell">chmod 755 ~/public-html/lab10</kbd>
+</pre>
+
+Change to this directory by typing:
+
+<pre class="command_line">
+<kbd class="shell">cd ~/public-html/lab10</kbd>
+</pre>
+<h3>Exercise: A CGI script in Shell</h3>
+
+Write a shell CGI script <b>browser.cgi</b>  which prints the details of the
+web client  accessing the CGI script. It should print:
+
+<ul>
+<li> the IP address of the web client (browser)
+</li><li> the  hostname of the machine the browser is running on
+</li><li> the <i>user agent</i> string supplied by the browser.
+</li></ul>
+<h4>Reference Implementation</h4>
+
+
+Match the behaviour of this <a href="browser-reference-implementation.cgi">reference implementation</a> of <b>browser.cgi</b> <b>EXACTLY</b>.
+<p>
+To help you understand what you need to do
+
+</p><ul>
+<li> the left window below shows the rendered output from <code>browser-reference-implementation.cgi</code>
+</li><li> and the right window shows the raw HTML
+</li></ul>
+<p>
+</p><hr/>
+<div class="cgi_display">
+<div class="cgi_display_title">
+<a href="browser-reference-implementation.cgi" target="_blank">browser-reference-implementation.cgi</a>
+</div>
+<div class="cgi_output_panel">
+<iframe class="cgi_output_display" onload="show_html_source(this)" src="browser-reference-implementation.cgi">
+</iframe>
+</div>
+<div class="html_source_panel">
+<div class="html_source_display">
+</div>
+</div>
+</div>
+<hr/>
+<p>
+</p><h4>Starting Code</h4>
+
+To help you get started here is <a href="browser-starting-code.cgi">browser-starting-code.cgi</a>, a CGI script that
+prints the environment variables it is given by the web server.
+
+
+
+
+
+<pre class="program" style="max-height: 16em;overflow:  auto;">
+
+#!/bin/sh
+
+
+# print HTTP header
+# its best to print the header ASAP because 
+# debugging is hard if an error stops a valid header being printed
+
+echo Content-type: text/html
+echo
+
+# print page content
+
+cat &lt;&lt;eof
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+&lt;title&gt;Environment Variables&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+Here are the environment variables the web server has passed to this CGI script:
+&lt;pre&gt;
+eof
+
+# print all environment variables
+# This is interpreted as HTML so we replace some chars by the equivalent HTML entity.
+# Note this will not guarantee security in all contexts.
+
+env|
+sed 's/&amp;/\&amp;amp;/;s/&lt;/\&amp;lt;/g;s/&gt;/\&amp;gt;/g'
+
+cat &lt;&lt;eof
+&lt;/pre&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+eof
+
+</pre>
+
+
+
+And here is what it looks like. Again the left window shows the rendered output and the right window
+shows the raw HTML.
+
+<p>
+</p><hr/>
+<div class="cgi_display">
+<div class="cgi_display_title">
+<a href="browser-starting-code.cgi" target="_blank">browser-starting-code.cgi</a>
+</div>
+<div class="cgi_output_panel">
+<iframe class="cgi_output_display" onload="show_html_source(this)" src="browser-starting-code.cgi">
+</iframe>
+</div>
+<div class="html_source_panel">
+<div class="html_source_display">
+</div>
+</div>
+</div>
+<hr/>
+<p>
+
+These commands will copy the starting code into an appropriate
+place in your CSE account.
+
+
+</p><pre class="command_line">
+<kbd class="shell">cd</kbd>
+<kbd class="shell">chmod 751 .</kbd>
+<kbd class="shell">mkdir -p public_html/lab10</kbd>
+<kbd class="shell">cd public_html/lab10</kbd>
+<kbd class="shell">cp /web/cs2041/17s2/tlb/10/browser-starting-code.cgi browser.cgi</kbd>
+<kbd class="shell">chmod 755 . ..</kbd>
+<kbd class="shell">chmod 700 browser.cgi</kbd>
+</pre>
+
+You should be able to run your CGI script by entering this URL in a browser <code>http://cgi.cse.unsw.edu.au/~<i>z5555555</i>/lab10/browser.cgi</code>.
+
+
+
+<b>Hint</b>: you need to produce identical HTML to pass the autotest for this exercise.
+<p>
+<b>Hint</b>: web browsers let you view the HTML of a web page (CTRL+U is the shortcut for firefox &amp; chrome).
+</p><p>
+<b>Hint</b>: the command "host" will given an IP address print the corresponding hostname
+(if there is one). For example:
+
+
+    
+        
+    
+
+
+
+
+
+
+</p><pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">host 129.94.242.20</kbd>
+20.242.94.129.in-addr.arpa domain name pointer williams.orchestra.cse.unsw.EDU.AU.
+</pre>
+<b>Hint</b>: if your script is producing a 500 error from the webserver you can obtain
+some debugging info by creating a <code>.htaccess</code> file with these contents:
+<p>
+</p><pre class="command_line">
+&lt;Files "browser.cgi"&gt;
+SetHandler application/x-setuid-cgid
+&lt;/Files&gt;
+</pre>
+<p>
+See <a href="http://taggi.cse.unsw.edu.au/FAQ/CGI_scripts/">here</a> for more info.
+
+
+</p><p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+</p><pre class="command_line">
+<kbd class="shell">2041 autotest lab10 browser.cgi</kbd>
+</pre>
+<div class="autotest_results">
+<h4>Automarking Results</h4>
+<span class="autotest_results_emphasis">90%</span>
+        
+        of <span class="autotest_results_emphasis">404</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">browser.cgi</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+<ul>
+<li><span class="autotest_results_emphasis">96%</span>
+                    
+                    passed test <i>browser_0</i>
+</li><li><span class="autotest_results_emphasis">90%</span>
+                    
+                    passed test <i>browser_1</i>
+</li></ul>
+</div>
+</div>
+<p></p>
+<h3>Exercise: Adding Authentication to A CGI Script</h3>
+
+In this exercise and the next exercise you modify a Perl CGI script which allows
+the user to play a simple game.
+<p>
+Here is the CGI script:
+
+
+
+
+
+</p><pre class="program" style="max-height: 16em;overflow:  auto;">
+
+#!/usr/bin/perl -w
+
+use CGI qw/:all/;
+use CGI::Carp qw/fatalsToBrowser warningsToBrowser/;
+
+$max_number_to_guess = 99;
+
+sub main() {
+    # print start of HTML ASAP to assist debugging if there is an error in the script
+    print page_header();
+    
+    # Now tell CGI::Carp to embed any warning in HTML
+    warningsToBrowser(1);
+    
+	$username = param('username') || '';
+	$password = param('password') || '';
+
+	# remove any non-word characters from username 
+	# another malicious user could include ../ in username
+	$username =~ s/\W//g;
+	# limit username to 32 word characters
+	$username = substr $username, 0, 32;
+	
+
+	if (!$username || !$password) {
+		print login_form();
+	} else {
+		$guess = param('guess') || '';
+		# remove any non-digit characters from guess
+		$guess =~ s/\D//g;
+	
+		$number_to_guess = param('number_to_guess') || '';
+		$number_to_guess =~ s/\D//g;
+		
+		if ($number_to_guess eq '') {
+			$number_to_guess = 1 + int(rand $max_number_to_guess);
+ 			print "I've thought of a number\n";
+			print guess_number_form($username, $password, $number_to_guess);
+		} elsif ($guess eq '') {
+			print guess_number_form($username, $password, $number_to_guess);
+		} elsif ($guess == $number_to_guess) {
+    		print "You guessed right, it was $number_to_guess.\n";
+    		print new_game_form($username, $password);
+		} elsif ($guess &lt; $number_to_guess) {
+    		print "Its higher than $guess.\n";
+			print guess_number_form($username, $password, $number_to_guess);
+		} else {
+    		print "Its lower than $guess.\n";
+			print guess_number_form($username, $password, $number_to_guess);
+		} 
+	}
+	
+    print page_trailer();
+}
+
+# form to allow user to supply username/password 
+
+sub login_form {
+	return &lt;&lt;eof;
+    &lt;form method="POST" action=""&gt;
+        Username: &lt;input type="textfield" name="username"&gt;
+        &lt;p&gt;
+        Password: &lt;input type="password" name="password"&gt;
+         &lt;p&gt;
+        &lt;input type="submit" value="Login"&gt;
+    &lt;/form&gt;
+eof
+}
+
+#
+# form to allow user to guess a number
+#
+# Pass username &amp; password to next invocation as hidden
+# field so user doesn't have to login again
+#
+
+sub guess_number_form {
+	my ($username, $password, $number_to_guess) = @_;
+	return &lt;&lt;eof;
+    &lt;form method="POST" action=""&gt;
+    	Enter a guess between 1 and $max_number_to_guess (inclusive):
+     	&lt;input type="textfield" name="guess"&gt;
+     	&lt;input type="hidden" name="username" value="$username"&gt;
+     	&lt;input type="hidden" name="password" value="$password"&gt;
+     	&lt;input type="hidden" name="number_to_guess" value="$number_to_guess"&gt;
+     &lt;/form&gt;
+eof
+}
+
+#
+# form to allow user to go to a new game
+#
+sub new_game_form {
+	my ($username, $password) = @_;
+	return &lt;&lt;eof;
+    &lt;form method="POST" action=""&gt;
+        &lt;input type="submit" value="Play Again"&gt;
+     	&lt;input type="hidden" name="username" value="$username"&gt;
+     	&lt;input type="hidden" name="password" value="$password"&gt;
+    &lt;/form&gt;
+eof
+}
+
+
+
+#
+# HTML placed at the top of every page
+#
+sub page_header {
+    return &lt;&lt;eof
+Content-Type: text/html;charset=utf-8
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+&lt;title&gt;Guess A Number&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+eof
+}
+
+
+#
+# HTML placed at the bottom of every page
+#
+sub page_trailer {
+    return "&lt;/body&gt;\n&lt;/html&gt;\n";
+}
+
+main();
+exit(0);
+
+
+</pre>
+
+
+
+And here is what it looks like. Again the left window shows the rendered output and the right window
+shows the raw HTML.
+
+<p>
+</p><hr/>
+<div class="cgi_display">
+<div class="cgi_display_title">
+<a href="game-starting-code.cgi" target="_blank">game-starting-code.cgi</a>
+</div>
+<div class="cgi_output_panel">
+<iframe class="cgi_output_display" onload="show_html_source(this)" src="game-starting-code.cgi">
+</iframe>
+</div>
+<div class="html_source_panel">
+<div class="html_source_display">
+</div>
+</div>
+</div>
+<hr/>
+<p>
+
+These commands will copy the starting code into an appropriate
+place in your CSE account.
+
+
+</p><pre class="command_line">
+<kbd class="shell">cd</kbd>
+<kbd class="shell">cd ~/public_html/lab10</kbd>
+<kbd class="shell">cp /web/cs2041/17s2/tlb/10/game-starting-code.cgi game.cgi</kbd>
+<kbd class="shell">chmod 700 game.cgi</kbd>
+</pre>
+
+You should be able to run your CGI scipt by entering this URL in a web browser <code>http://cgi.cse.unsw.edu.au/~<i>z5555555</i>/lab10/game.cgi</code>.
+<p>
+
+You will note the CGI script accepts any username and any password.
+</p><p>
+In the tute you saw a Perl program which read a username and password
+and then checked that the password matches against one stored for the user in the
+file <code>accounts</code>/<i>username</i>/<code>password</code>
+</p><p>
+
+This <a href="accounts.zip">zip file</a> contains a dataset of
+sample users and passwords stored in this format.
+</p><p>
+Add this to the same directory as <code>game.cgi</code>:
+
+</p><pre class="command_line">
+<kbd class="shell">cd ~/public_html/lab10</kbd>
+<kbd class="shell">wget -q https://cgi.cse.unsw.edu.au/~cs2041/lab/10/accounts.zip</kbd>
+<kbd class="shell">unzip accounts.zip</kbd>
+   creating: accounts/
+....
+<kbd class="shell">cat accounts/andrewt/password</kbd>
+correct horse battery staple
+</pre>
+
+Add code to <code>game.cgi</code> to check username and password
+against these files.
+<p>
+You should produce suitable message if a username does not exist
+and a different suitable message if the password is incorrect.
+
+</p><h4>Reference Implementation</h4>
+
+
+Match the behaviour of this <a href="game-reference-implementation.cgi">reference implementation</a> of <b>game.cgi</b>.
+<p>
+</p><p>
+</p><hr/>
+<div class="cgi_display">
+<div class="cgi_display_title">
+<a href="game-reference-implementation.cgi" target="_blank">game-reference-implementation.cgi</a>
+</div>
+<div class="cgi_output_panel">
+<iframe class="cgi_output_display" onload="show_html_source(this)" src="game-reference-implementation.cgi">
+</iframe>
+</div>
+<div class="html_source_panel">
+<div class="html_source_display">
+</div>
+</div>
+</div>
+<hr/>
+<p>
+</p><h4>Hints</h4>
+
+Get a Perl program like the one in your tute working first then cut-and-paste
+the relevant parts of the debugged code into your CGI script.
+
+<h4>Peer Assessment</h4>
+
+There is no autotest and no automarking of this question.
+<p>
+When you have completed demonstrate your work to another COMP[29]041 student in your lab
+and ask them to enter a
+<a href="https://cgi.cse.unsw.edu.au/~cs2041//peer_assess/lab10">peer assessment here</a>
+It is prefered you do this during your lab, but if this is not possible
+you may demonstrate your work to any COMP[29]041  student before the due date.
+
+</p><p></p>
+<h3>Exercise: Preventing Cheating</h3>
+
+You will notice its easy for users to cheat with <code>game.cgi</code>
+because the number they have to guess is hidden in the HTML of the web page.
+<p>
+Modify <code>game.cgi</code> so users can not cheat.
+</p><p>
+You may take any approach.
+</p><p>
+You must assume the user can see the source of your CGI script and will know
+how you are hiding or storing the number.
+</p><p>
+You may assume a user does not play simultaneous games and store the number
+in their accounts directory.
+
+</p><h4>Peer Assessment</h4>
+
+There is no autotest and no automarking of this question.
+<p>
+When you have completed demonstrate your work to another COMP[29]041 student in your lab
+and ask them to enter a
+<a href="https://cgi.cse.unsw.edu.au/~cs2041//peer_assess/lab10">peer assessment here</a>
+</p><p>
+It is prefered you do this during your lab, but if this is not possible
+you may demonstrate your work to any COMP[29]041  student before the due date.
+
+</p><p></p>
+<h3>Submission</h3>
+
+When you are finished submit your work by running:
+<pre class="command_line">
+<kbd class="shell">give cs2041 lab10 browser.cgi game.cgi</kbd>
+</pre>
+<p>
+Don't submit any exercises you haven't attempted.
+
+If you are working at home, you may find it more convenient
+to upload your work via
+ <a href="https://cgi.cse.unsw.edu.au/~give/code/login.php?app=/~give/Student/give.php&amp;debug=get_authuser">give's web interface</a>.
+</p><p>
+Remember you have until
+
+<b>Wednedsay 11 October 23:59</b>
+
+
+to submit your work.
+
+
+
+
+</p><h3>Assessment</h3>
+
+This lab exercises is worth 1 mark.
+<p>
+Labs exercise are either automarked or peer assessed.
+This is to allow tutors' time to be used to assist students.
+</p><p>
+After the automarking is complete you should be able to view it by running
+this command on a CSE machine:
+
+</p><pre class="command_line">
+<kbd class="shell">2041 classrun -collect lab10
+</kbd></pre>
+
+You can inspect marks for this lab and other assessment components via <a href="https://cgi.cse.unsw.edu.au/~give/code/login.php?app=/~give/Student/give.php&amp;debug=get_authuser">give's web interface</a> or by running
+
+<pre class="command_line">
+<kbd class="shell">2041 classrun -sturec
+</kbd></pre>
+<p>
+Reminder: lab marks contribute 9% to your final COMP[29]041 final mark.
+</p><p>
+The 11 lab marks will be summed at the end of session and the sum capped at 9 marks.
+</p><p>
+Hence you can obtain full marks for the 9% lab component without obtaining full marks every week.
+
+
+
+</p></div>
+<!--
+public_html_session_directory=/web/cs2041/17s2
+base_directory=/web/cs2041/17s2
+public_html_directory=/web/cs2041
+scripts_directory=/web/cs2041/17s2/scripts
+home_directory=/home/cs2041
+bin_directory=/home/cs2041/bin
+course_account=cs2041
+course_code=COMP2041
+course_number=2041
+postgraduate_course_code=COMP9041
+course_name=Software Construction
+unsw_session=17s2
+canonical_url=https://cgi.cse.unsw.edu.au/~cs2041/
+github_repo_url=https://github.com/COMP2041UNSW/course_materials
+course_forum_url=https://piazza.com/class/j5ji4vjjra62a3
+lecture_recordings_url=https://moodle.telt.unsw.edu.au/course/view.php?id=27708
+WORK=/web/cs2041/17s2/work
+OUT=/web/cs2041/17s2/work/.out
+MARKED=/web/cs2041/17s2/work/.out/.marked
+SMSDB=/web/cs2041/17s2/work/17s2db.sms
+tlb_directory=/web/cs2041/17s2/tlb
+lecture_directory=/web/cs2041/17s2/lec
+flask_cache_directory=/web/cs2041/17s2/flask_cache
+testing_results_file=/web/cs2041/17s2/work/testing_results.json
+enrollments_file=/web/cs2041/17s2/work/enrollments.json
+unsw_ldap_password_file=/web/cs2041/.unsw_ldap_password
+autotest_upload_url=https://cgi.cse.unsw.edu.au/~cs2041/cgi/autotest_upload.cgi
+PATH=/web/cs2041/17s2/scripts:/home/cs2041/bin:/bin/:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/home/class/bin:/home/give/stable/bin.:/bin:/usr/bin:/usr/local/bin
+directory_relative_pathname=tlb/10
+url=https://cgi.cse.unsw.edu.au/~cs2041/flask.cgi/lab/10/questions
+directory_url=https://cgi.cse.unsw.edu.au/~cs2041/lab/10/
+url_root=https://cgi.cse.unsw.edu.au/~cs2041/
+script_root=/~cs2041/flask.cgi
+current_lecture_topic=exam
+current_week=13
+week=10
+exercise_name=lab10
+tut_or_lab_or_test=lab
+questions_or_answers=questions
+programs=&lt;programs&gt;
+
+-->
+</body>
+</html>

@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Week 11 Tutorial</title>
+<link href="2041.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+<div id="heading">
+Introduction to Flask
+</div>
+<!doctype html>
+<html lang="en">
+<head>
+<title>
+
+COMP2041 Week 11 Tutorial Sample Answers
+
+</title>
+
+
+
+<link href="/~cs2041/flask.cgi/static/bootstrap.min.css?121200" rel="stylesheet">
+<link href="/~cs2041/flask.cgi/static/course.css?6554" rel="stylesheet">
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/jquery.min.js?95992"></script>
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/bootstrap.min.js?37045"></script>
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/course.js?1631"></script>
+<link rel="canonical" href="https://cgi.cse.unsw.edu.au/~cs2041/" />
+</head>
+<body>
+
+
+
+
+<div class="container">
+
+<div id="heading">
+
+
+<a class="heading_link" target="_blank" id="left_heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/">COMP[29]041 17s2</a>
+
+
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Week 11
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/02/answers">Week 02</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/03/answers">Week 03</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/04/answers">Week 04</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/05/answers">Week 05</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/06/answers">Week 06</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/07/answers">Week 07</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/08/answers">Week 08</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/09/answers">Week 09</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/10/answers">Week 10</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/11/answers">Week 11</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/12/answers">Week 12</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/13/answers">Week 13</a></li>
+        
+        
+    </ul>
+</span>
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Tutorial
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/11/answers">Tutorial
+                
+            </a></li>
+            
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/11/answers">Laboratory
+                
+            </a></li>
+            
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/11/answers">Weekly Test
+                
+            </a></li>
+            
+        
+    </ul>
+</span>
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Sample Answers
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/11/questions">Questions
+            
+            </a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/11/answers">Sample Answers
+            
+            </a></li>
+        
+        
+    </ul>
+</span>
+
+
+
+
+<a class="heading_link" target="_blank" id="right_heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/">Software Construction</a>
+
+</div>
+
+</div>
+
+
+<div class="tutlab tut">
+<ol>
+
+<ol>
+<li>
+What is Flask?
+<p>
+Why is Flask good for COMP[29]041?
+<p>
+Can it also be used for large real applications?
+
+<div class="answer">
+Flask is a a very popular web framework based on Python.
+<p>
+It is good for COMP[29]041 because it is possible to write very
+simple Flask application.
+<p>
+It has powerful features available and is  used in large high traffic applications at companies such
+as pinterest, linkedin, twilio and lyft.
+</div>
+<li>
+Discuss the lines in this "hello world" Flask app:
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python3
+
+from flask import Flask
+app = Flask(__name__)
+
+@app.route(&#39;/&#39;)
+def hello_world():
+    return &#39;Hello, World!&#39;
+
+if __name__ == &#39;__main__&#39;:
+	app.run(debug=True)
+
+</pre>
+
+
+
+<div class="answer">
+
+<pre class="program">
+from flask import Flask
+</pre>
+imports the main <code>Flask</code> into the program's webspace.
+<p>
+Apps usually need to import other names as well, as you can
+see in the code you have been given for the lab.
+
+<pre class="program">
+app = Flask(__name__)
+</pre>
+
+creates the a Flask object.
+<p>
+Its argument (<code>__name__</code>) is not important for our the little apps your
+work on in the lab.
+<p>
+<code>__name__</code> is a special Python name which evaluates to the name
+of the current package, or <code> '__main__'</code> when the code is run directly.
+
+<pre class="program">
+@app.route('/')
+</pre>
+
+This line associates a URL pattern with the following function (<code>hello_world</code>).
+<p>
+This means if Flask receives a request for a URL fitting this pattern it will
+call the function.
+<p>
+Its argument (<code>__name__</code>) is not important for our the little apps your
+work on in the lab.
+<p>
+The <b>@</b> character is Python syntax for a <b>decorator</b>.  Decorators provide a
+readable way of altering the behaviour of Python function using other functions.
+<p>
+In this case the <b>route</b> decorator just causes the Flask app to record that
+URL of this pattern should be "routed" to this function.
+<p>
+You don't need to understand decorators to use Flask or do the lab,
+but its highly recommended (at some stage)
+you try to write your  decorators to understand properly how they work.
+
+<pre class="program">
+def hello_world():
+    return 'Hello, World!'
+</pre>
+
+This function returns the content for the URL that has been "routed" to it.
+<p>
+Note the function name doesn't matter.
+
+<pre class="program">
+if __name__ == '__main__':
+    app.run(debug=True)
+</pre>
+
+If the script is run directly (rather than imported).  This will run Flask as a webserver.
+</div>
+
+<li>
+
+How do you the run the Flask  "hello world" Flask app
+
+<div class="answer">
+
+Like this
+<pre class="command_line">
+<kbd class="shell">./hello_world_flask.py</kbd>
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 204-542-564
+</pre>
+
+Then access <a href= "http://127.0.0.1:5000/">http://127.0.0.1:5000/</a> from a web browser
+running on the same machine.  Note you can't do this on CSE's login servers or vlab.
+</div>
+
+
+<li>
+
+Discuss this code from game.py which you are given for the lab.
+
+<pre class="program">
+@app.route('/', methods=['GET','POST'])
+@app.route('/start', methods=['GET','POST'])
+def start():
+    session['number_to_guess'] = random.randint(1, MAX_NUMBER_TO_GUESS)
+    return render_template('game_start.html', max_number_to_guess=MAX_NUMBER_TO_GUESS)
+</pre>
+
+<div class="answer">
+
+<pre class="program">
+@app.route('/', methods=['GET','POST'])
+@app.route('/start', methods=['GET','POST'])
+</pre>
+
+These 2  lines (decorators) cause Flask to route requests matching eietehr of
+those patterns to the following function.
+
+<pre class="program">
+    session['number_to_guess'] = random.randint(1, MAX_NUMBER_TO_GUESS)
+</pre>
+
+creates a random number and stores in a session cookie so it will be available
+in subsquent requests to Flask from the same client.
+
+<pre class="program">
+    return render_template('game_start.html', max_number_to_guess=MAX_NUMBER_TO_GUESS)
+</pre>
+
+This returns the contents of <code>game_start.html</code> after applying Jinja
+templating to it.  The variable <code>max_number_to_guess</code> can be used in the template
+and will have the value <code>MAX_NUMBER_TO_GUESS</code>
+</div>
+
+<li>
+
+What is Jinja?
+
+<div class="answer">
+Jinja is popular templating engine provided with Flask.
+<p>
+It is useful when you want to embed dynamic-generated values in HTML content.
+<p>
+It allows you to embed Python within HTML.
+</div>
+<li>
+
+Discuss the contents of <code>game_start.html</code>:
+
+
+
+
+
+<pre class="program">
+
+{% extends &#34;game_base.html&#34; %}
+{% block body %}
+&lt;form method=&#34;POST&#34; action=&#34;guess&#34;&gt;
+    Enter a guess between 1 and {{max_number_to_guess}} (inclusive):
+    &lt;input type=&#34;textfield&#34; name=&#34;guess&#34;&gt;
+&lt;/form&gt;
+{% endblock %}
+
+</pre>
+
+
+
+<div class="answer">
+<pre class="program">
+
+{% extends "game_base.html" %}
+
+</pre>
+
+This says this page will inherit the contents <code>game_start.html</code>
+<p>
+This is useful because often many pages have common content.
+<p>
+This simple inheritence allows the content to be placed in a single file.
+
+<pre class="program">
+
+{% block body %}
+{% endblock %}
+
+</pre>
+
+This says replace the <code>body</code> block of the inherited page
+with what is between the Jinja <code>block</code> and <code>endblock</code> statements.
+
+<pre class="program">
+
+    Enter a guess between 1 and {{max_number_to_guess}} (inclusive):
+{% endblock %}
+
+</pre>
+
+The {{ }} allows us to include a Python expression in a Jina template
+<p>
+In this case its just a variable,  <code>max_number_to_guess</code>, whose value we passed
+in via <code>render_template</code>.
+
+<pre class="program">
+
+{% block body %}
+&lt;form method="POST" action="guess">
+    &lt;input type="textfield" name="guess">
+&lt;/form>
+{% endblock %}
+
+</pre>
+
+This is the  HTML for a form.
+</div>
+
+<li>
+
+Discuss what you need to do for the first lab exercise including which files you change or create.
+<li>
+
+Discuss the contents of <code>students.txt</code>.
+<li>
+
+Discuss what you need to do for the second lab exercise including which files you change or create.
+
+<li>
+
+Discuss the contents of the <code>assessments</code> directory for the peer assessment exercise.
+
+
+
+<h3>Revision questions</h3>
+
+The remaining tutorial questions are primarily intended for revision - either this week
+or later in session.
+<p>
+Your tutor may still choose to cover some of the questions time permitting.
+<p>
+
+
+<li>
+A CGI script contains the following Perl:
+<p>
+<pre>
+print "&lt;!-- ".join(",", map({"$_='".param($_)."'"} param()))."-->\n";
+</pre>
+<p>
+What does it do?
+<p>
+Why is this useful?
+<p>
+Indicate a bug and why it creates a security hole.
+<p>
+Rewrite the code, fixing the bug.
+
+<div class="answer">
+It outputs an HTML comment containing the value of all parameters.
+<p>
+This is useful for debugging because these parameters are
+usually the key input to your CGI script.
+<p>
+It doesn't check if  the value of a parameter contains HTML code.
+<p>
+Displaying HTML code from a malicious user is an <a href="http://en.wikipedia.org/wiki/Cross-site_scripting">easily exploited security hole</a>.
+<p>
+This code is simpler and avoids some possible problems:
+
+<pre>
+print "&lt;!-- ";
+foreach $param (param()) {
+    my $value = param($param);
+    $value =~ s/\&gt;/&amp;gt;/g;
+    print "$param='$value' "
+}
+print "-->\n";
+</pre>
+
+</div>
+
+<li>
+
+The following CGI script sends a message to the script author,
+whose login name is <code>you</code>.
+The message subject and the message body are available via the
+script parameters <code>MailSubject</code> and <code>MailBody</code>
+provided by filling in a form.
+<P>
+Consider for a moment that you are a hacker
+(yes, I know it's difficult but just pretend :-).
+What are the potential security problems with such a script
+that you could exploit?
+Can you think of different ways they could be exploited
+(be creative, hackers certainly are)?
+How can they be overcome?
+
+<pre class="program">
+#!/usr/bin/perl
+use CGI ':all';
+print header, start_html;
+$subject = param('MailSubject');
+$message = param('MailBody');
+if (!open(MAIL, "|mail -s \"$subject\" you")) {
+    print h1("Sorry, can't send mail.");
+} else {
+    print MAIL $message;
+    close(MAIL);
+}
+print end_html;
+</pre>
+
+<div class="written_answer">
+Some of the potential security problems that I know about (there may be others):
+
+<ul>
+<li>
+People could use backquotes in the <code>$subject</code> variable.
+Since the <code>open</code> is done by passing the <code>mail</code>
+command line to a shell, the backquotes can be used to execute any
+arbitrary command <em>before</em> attempting to run <code>mail</code>.
+<p>
+Example: <code>$subject == "`/bin/rm -fr .`"</code> executes the command
+
+<pre class="program">
+mail -s "`/bin/rm -fr *`" you
+</pre>
+
+which removes a whole bunch of files, and uses the output of the
+<code>rm</code> command (which ought to be the empty string)
+as the subject of the mail.
+<P>
+<I>Note:</I> using single quotes in the mail command
+would protect against back ticks, but not the next exploit.
+<li>
+People could supply a <code>$subject</code> that terminated the
+subject command line argument, sent the mail to some other address,
+and then appended some arbitrary Unix commands after a semicolon.
+Once again, they can execute an arbitrary command as you.
+<p>
+Example: <code>$subject == "done\" evil@naughty.com; rm -fr *; echo \"haha tricked"</code> executes
+the command
+
+<pre class="program">
+mail -s "done" evil@naughty.com; rm -fr *; echo "haha tricked" you
+</pre>
+
+which sends mail to <code>evil@naughty.com</code> and then removes a
+whole bunch of files.
+
+<li>
+Some versions of <code>mail</code> allow you to put a line like
+<code>.!<i>command</i></code> to execute commands while you're
+typing in a message (this is typically called a "shell escape").
+People could use the <code>mail</code> command's shell escape
+mechanisms to embed arbitrary commands in the body of the message.
+<p>
+Example: <code>$message == "Hello\n.!rm -fr *\nHope you liked the surprise!"</code>
+sends the message "Hello\nHope you liked the surprise!", but as a side-effect also
+executes the <code>rm</code> command to remove a whole bunch of files.
+</ul>
+<p>
+To avoid such problems, you would need to make both the
+<code>$subject</code> and <code>$message</code> variables
+"safe" before using them.
+This could be achieved simply by removing any problematic
+characters (like backquotes, tildes, exclamation marks, dots).
+You should also run the script using Perl's <code>-T</code> flag
+(check for "tainted" code),
+which causes Perl to not even execute your
+script if you haven't taken enough precautions to avoid
+(many) potential problems.
+</div>
+<li>
+The validation algorithm
+ used for credit cards is an old one devised by
+<a href="http://en.wikipedia.org/wiki/Hans_Peter_Luhn">Hans-Peter Luhn</a>
+(1896-1964), a mathematician at IBM.
+<P>
+The <a href="https://en.wikipedia.org/wiki/Luhn_algorithm">Luhn formula</a> sums all the digits,
+with weights of 1 for odd positions and 2 for even positions (so every even digit is
+doubled before adding it to the sum). Odd and even is worked out by counting from the right, as usual.
+However, if any doubled digit exceeds 9, the two digits of the result are added together,
+creating a "reduced sum". This reduced sum is added to the total (not the double digit number).
+For example, a digit 7 in an even position is doubled to make 14,
+so its contribution to the total is
+1+4=5.
+The credit card number is valid if the total is a multiple of 10.
+<P>
+Here is a (fictitious) VISA card number,
+entered the way web forms should allow if their developers
+weren't so lazy:
+<b>4564-7953-6021-9047</b>.
+Remembering that odd and even positions are counted from the right,
+<pre>
+Code:    4 5 6 4 7 9 5 3 6 0 2 1 9 0 4 7
+Weights: 2 1 2 1 2 1 2 1 2 1 2 1 2 1 2 1
+Sum:     8 5 3 4 5 9 1 3 3 0 4 1 9 0 8 7
+(reduced):   *   *   *   *       *
+</pre>
+and the sum is 70, and 70 mod 10 = 0 as required.
+<p>
+Here is a Python program which takes credit-card numbers
+as arguments and indicates whether they are not valid or not.
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python
+# written by andrewt@cse.unsw.edu.au as a COMP2041 programming example
+# validate a credit card number by calculating its
+# checksum using Luhn&#39;s formula (https://en.wikipedia.org/wiki/Luhn_algorithm)
+
+import re, sys
+
+def luhn_checksum(number):
+    checksum = 0
+    digits = reversed(number)
+    for (index, digit) in enumerate(digits):
+        multiplier = 1 + index % 2
+        d = int(digit) * multiplier
+        if d &gt; 9:
+            d -= 9
+        checksum += d
+    return checksum
+
+def validate(credit_card):
+    number = re.sub(r&#39;\D&#39;, &#39;&#39;, credit_card)
+    if len(number) != 16:
+        return credit_card + &#34; is invalid - does not contain exactly 16 digits&#34;
+    elif luhn_checksum(number) % 10 == 0:
+        return credit_card + &#34; is valid&#34;
+    else:
+        return credit_card + &#34; is invalid&#34;
+
+if __name__ == &#34;__main__&#34;:
+    for arg in sys.argv[1:]:
+        print(validate(arg))
+
+</pre>
+
+
+
+And here is it in action:
+
+<pre>
+$ ./creditcard.py 2389423423423467 9182387723427777 9182380923427773 4564456445644564
+2389423423423467 is valid
+9182387723427777 is invalid
+9182380923427773 is invalid
+4564456445644564 is valid
+</pre>
+
+<ol>
+<li>
+Discuss how the Luhn Formula is calculated.
+<li>
+Why is useful that credit card numbers satisfy this forumla.
+<li>
+Discuss how the Python works including why the functions <i>reversed</i>, <i>enumerate</i> and <i>int</i> are used.
+Also discuss the use of <code>sys.argv</code> and  <code>__name__</code>
+<li>
+Discuss how the features of this program can be translated to Perl.
+</ol>
+<div class="answer">
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+# written by andrewt@cse.unsw.edu.au as a COMP2041 programming example
+# validate a credit card number by calculating its
+# checksum using Luhn&#39;s formula (https://en.wikipedia.org/wiki/Luhn_algorithm)
+
+sub luhn_checksum {
+    my ($number) = @_;
+    my $checksum = 0;
+    my @digits = reverse(split //, $number);
+    foreach $index (0..$#digits) {
+        my $digit = $digits[$index];
+        my $multiplier = 1 + $index % 2;
+        my $check_digit = int($digit) * $multiplier;
+        if ($check_digit &gt; 9) {
+            $check_digit -= 9;
+        }
+        $checksum += $check_digit;
+    }
+    return $checksum;
+}
+
+sub validate {
+    my ($credit_card) = @_;
+    my $number = $credit_card;
+    $number =~ s/\D//g;
+    if (length $number != 16) {
+        return  &#34;invalid - does not contain exactly 16 digits&#34;;
+    } elsif (luhn_checksum($number) % 10 == 0) {
+        return &#34;valid&#34;;
+    } else {
+        return &#34;invalid&#34;;
+    }
+}
+
+foreach $credit_card (@ARGV) {
+    print &#34;$credit_card is &#34;, validate($credit_card), &#34;\n&#34;;
+}
+
+</pre>
+
+
+</div>
+
+</ol>
+</div>
+
+
+
+
+
+</div>
+
+
+<!--
+public_html_session_directory=/web/cs2041/17s2
+base_directory=/web/cs2041/17s2
+public_html_directory=/web/cs2041
+scripts_directory=/web/cs2041/17s2/scripts
+home_directory=/home/cs2041
+bin_directory=/home/cs2041/bin
+course_account=cs2041
+course_code=COMP2041
+course_number=2041
+postgraduate_course_code=COMP9041
+course_name=Software Construction
+unsw_session=17s2
+canonical_url=https://cgi.cse.unsw.edu.au/~cs2041/
+github_repo_url=https://github.com/COMP2041UNSW/course_materials
+course_forum_url=https://piazza.com/class/j5ji4vjjra62a3
+lecture_recordings_url=https://moodle.telt.unsw.edu.au/course/view.php?id=27708
+WORK=/web/cs2041/17s2/work
+OUT=/web/cs2041/17s2/work/.out
+MARKED=/web/cs2041/17s2/work/.out/.marked
+SMSDB=/web/cs2041/17s2/work/17s2db.sms
+tlb_directory=/web/cs2041/17s2/tlb
+lecture_directory=/web/cs2041/17s2/lec
+flask_cache_directory=/web/cs2041/17s2/flask_cache
+testing_results_file=/web/cs2041/17s2/work/testing_results.json
+enrollments_file=/web/cs2041/17s2/work/enrollments.json
+unsw_ldap_password_file=/web/cs2041/.unsw_ldap_password
+autotest_upload_url=https://cgi.cse.unsw.edu.au/~cs2041/cgi/autotest_upload.cgi
+PATH=/web/cs2041/17s2/scripts:/home/cs2041/bin:/bin/:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/home/class/bin:/home/give/stable/bin.:/bin:/usr/bin:/usr/local/bin
+directory_relative_pathname=tlb/11
+url=https://cgi.cse.unsw.edu.au/~cs2041/flask.cgi/tut/11/answers
+directory_url=https://cgi.cse.unsw.edu.au/~cs2041/tut/11/
+url_root=https://cgi.cse.unsw.edu.au/~cs2041/
+script_root=/~cs2041/flask.cgi
+current_lecture_topic=exam
+current_week=13
+week=11
+exercise_name=tut11
+tut_or_lab_or_test=tut
+questions_or_answers=answers
+programs=&lt;programs&gt;
+
+-->
+
+</body>
+</html>

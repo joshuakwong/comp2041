@@ -1,0 +1,29 @@
+#!/bin/sh
+
+declare -a arr=("02" "03" "04" "05" "06" "07" "08" "09" "10" "11" "12" "13")
+
+for i in "${arr[@]}"
+do
+    wget "https://cgi.cse.unsw.edu.au/~cs2041/tut/$i/questions" -O tutQ$i
+    wget "https://cgi.cse.unsw.edu.au/~cs2041/tut/$i/answers" -O tutA$i  
+    wget "https://cgi.cse.unsw.edu.au/~cs2041/lab/$i/questions" -O labQ$i
+    wget "https://cgi.cse.unsw.edu.au/~cs2041/lab/$i/answers" -O labA$i
+done
+
+mkdir tut
+mkdir lab
+mv tutQ* tutA* tut/
+mv labQ* labA* lab/
+
+
+
+declare -a test=("05" "06" "07" "08" "09" "10" "11" "12" "13")
+
+for j in "${test[@]}"
+do 
+    wget "https://cgi.cse.unsw.edu.au/~cs2041/test/$j/questions" -O testQ$j
+    wget "https://cgi.cse.unsw.edu.au/~cs2041/test/$j/answers" -O testA$j
+done
+
+mkdir tests
+mv testQ* testA* tests/

@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>
+
+COMP2041 Week 09 Tutorial Sample Answers
+
+</title>
+
+
+
+<link href="/~cs2041/flask.cgi/static/bootstrap.min.css?121200" rel="stylesheet">
+<link href="/~cs2041/flask.cgi/static/course.css?6554" rel="stylesheet">
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/jquery.min.js?95992"></script>
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/bootstrap.min.js?37045"></script>
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/course.js?1631"></script>
+<link rel="canonical" href="https://cgi.cse.unsw.edu.au/~cs2041/" />
+</head>
+<body>
+
+
+
+
+<div class="container">
+
+<div id="heading">
+
+
+<a class="heading_link" target="_blank" id="left_heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/">COMP[29]041 17s2</a>
+
+
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Week 09
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/02/answers">Week 02</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/03/answers">Week 03</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/04/answers">Week 04</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/05/answers">Week 05</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/06/answers">Week 06</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/07/answers">Week 07</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/08/answers">Week 08</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/09/answers">Week 09</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/10/answers">Week 10</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/11/answers">Week 11</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/12/answers">Week 12</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/13/answers">Week 13</a></li>
+        
+        
+    </ul>
+</span>
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Tutorial
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/09/answers">Tutorial
+                
+            </a></li>
+            
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/09/answers">Laboratory
+                
+            </a></li>
+            
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/09/answers">Weekly Test
+                
+            </a></li>
+            
+        
+    </ul>
+</span>
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Sample Answers
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/09/questions">Questions
+            
+            </a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/09/answers">Sample Answers
+            
+            </a></li>
+        
+        
+    </ul>
+</span>
+
+
+
+
+<a class="heading_link" target="_blank" id="right_heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/">Software Construction</a>
+
+</div>
+
+</div>
+
+
+<div class="tutlab tut">
+<ol>
+
+<li>
+What is <code>gitlab.cse.unsw.edu.au</code> and why do I want use it?
+<p>
+<div class="answer">
+Its a server   run by CSE to host git repositories of student programs for some CSE courses.
+<p>
+It is required for COMP[29]041 assignment 1!
+<p>
+Its  easy to use.
+<p>
+
+Using it ensures you have a complete backup of all work on your program
+and can return to its state at any stage.
+
+<p>
+It will also allow your tutor to check you are progressing on the lab as they can access your gitlab repository
+
+<p>
+Similar servers such <i>github</i> as <i>bitbucket</i>) are heavily used in software development so you want the learn how to use them.
+</div>
+
+<li>
+What (basically)  does <code> git add <i>file</i></code> do?
+
+<div class="answer">
+Tells git you want to keep track of versions of <i>file</i>
+</div>
+
+<li>
+What (basically)  does <code> git commit -a</code> do?
+
+<div class="answer">
+Tells git to save the current version of all the files it is tracking.
+<p>
+You do this when development your program is at a  stage you might want to return to, perhaps when you add a feature.
+</div>
+
+<li>
+What (basically)  does <code> git push</code> do?
+
+<div class="answer">
+It tells git to update another repository with all the commits in this repository.
+</div>
+<li>
+What is bash arithmetic?  What are its advantages and disadvantages.
+
+<div class="answer">
+Arithmetic was originally provide in shell scripts by external programs <b>test</b> and <b>expr</b>.
+<p>
+For example:
+
+<pre class="program">
+number=1
+while test $number -le 42
+do
+    echo $number
+    number=`expr $number + 1`
+done
+</pre>
+
+Bash added an arithmetic syntax and most other  commonly-used eventually added the same syntax.
+
+
+<pre class="program">
+number=1
+while ((number &lt;= 42))
+do
+    echo $number
+    number=$((number + 1))
+done
+</pre>
+
+Bash arithmetic is more readable and faster but you may encountered Shell, e.g. one embedded devices
+which don't support bash arithmetic.
+</div>
+
+<li>
+
+Discuss what has to be done to transform
+this Python to equivalent Perl.
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python3
+number = 0
+while number &gt;= 0:
+    number = int(input(&#34;Enter number: &#34;))
+    if number &gt;= 0:
+        if number % 2 == 0:
+            print(number, &#34;is even&#34;)
+        else:
+            print(number, &#34;odd&#34;)
+print(&#34;Bye&#34;)
+
+</pre>
+
+
+
+<div class="answer">
+
+<ul> change #! line
+<li> remove import
+<li> add semi-colons
+<li> put $ in front of variables
+<li> add braces ({}) where indenting indicates
+<li> add brackets to if & while statments
+<li> add chomp
+<li> add &#92;n to print statements
+</ul>
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+$number = 0;
+while ($number &gt;= 0) {
+	print &#34;Enter number: &#34;;
+    $number = &lt;STDIN&gt;;
+    chomp $number;
+    if ($number &gt;= 0) {
+        if ($number % 2 == 0) {
+            print &#34;$number is even\n&#34;;
+        } else {
+            print &#34;$number is odd\n&#34;;
+        }
+    }
+}
+print &#34;Bye\n&#34;;
+
+</pre>
+
+
+</div>
+
+<li>
+
+Discuss what has to be done to transform
+the  Python in the previous question to equivalent Shell using test/expr
+for the arithmetic statements.
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python3
+number = 0
+while number &gt;= 0:
+    number = int(input(&#34;Enter number: &#34;))
+    if number &gt;= 0:
+        if number % 2 == 0:
+            print(number, &#34;is even&#34;)
+        else:
+            print(number, &#34;odd&#34;)
+print(&#34;Bye&#34;)
+
+</pre>
+
+
+
+<div class="answer">
+
+<ul> change #! line
+<li> remove import
+<li> put $ in front of variables on right hand of
+<li> add do/done keywords to while loop where indenting indicates body
+<li> add then/fi keywords to if statements loop  where indenting indicates body
+<li> change print statements to echo
+<li> change arithmetic to expr and test
+</ul>
+
+
+
+
+
+<pre class="program">
+
+#!/bin/bash
+number=0
+while test $number -ge 0
+do
+	echo -n &#34;Enter number: &#34;
+    read number
+    if  test $number -ge 0
+    then
+        if  test `expr $number % 2` -eq 0
+        then
+            echo &#34;$number is even&#34;
+        else
+            echo &#34;$number is odd&#34;
+        fi
+    fi
+done
+echo &#34;Bye&#34;
+
+</pre>
+
+
+</div>
+
+<li>
+
+Discuss what has to be done to transform
+the above  Shell using test/expr
+to bash arithmetic
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python3
+number = 0
+while number &gt;= 0:
+    number = int(input(&#34;Enter number: &#34;))
+    if number &gt;= 0:
+        if number % 2 == 0:
+            print(number, &#34;is even&#34;)
+        else:
+            print(number, &#34;odd&#34;)
+print(&#34;Bye&#34;)
+
+</pre>
+
+
+
+<div class="answer">
+
+<ul> change test to (( ))
+<li> change expr to $(( ))
+<li> remove $ from variables in both
+</ul>
+
+
+
+
+
+<pre class="program">
+
+#!/bin/bash
+number=0
+while ((number &gt;= 0))
+do
+    echo -n &#34;Enter number: &#34;
+    read number
+    if ((number &gt;= 0))
+    then
+        if ((number % 2 == 0))
+        then
+            echo &#34;$number is even&#34;
+        else
+            echo &#34;$number is odd&#34;
+        fi
+    fi
+done
+echo &#34;Bye&#34;
+
+</pre>
+
+
+
+</div>
+
+<li>
+
+We are translating a Python program to Perl
+and we reach this line.
+
+<pre class="program">
+a[x] = y;
+</pre>
+
+what is difficult about translating this line?
+<p>
+What can we do about this?
+
+<div class="answer">
+
+<b>a</b> might contain a list in which case the equivalent Python is:
+
+<pre class="program">
+$a[$x] = $y;
+</pre>
+
+<b>a</b> might contain a dict in which case the equivalent Python is:
+
+<pre class="program">
+$a{$x} = $y;
+</pre>
+
+<b>a</b> might even be another  type of Python object which support indexing []
+via the __setitem__ magic method.
+<p>
+There is now way to completelysolve this problem but in real programs the
+preceding lines will often indicate how the code should be translated.
+
+<pre class="program">
+a = {}
+...
+a[x] = y;
+</pre>
+
+
+
+
+</div>
+
+<li>
+
+Discuss what  this  Shell script does then translate it directly to Perl
+using Perl's <b>system</b> fucntion.
+<p>
+Then translate it to  Perl than doesn't use <b>system</b>.
+
+
+
+
+
+<pre class="program">
+
+#!/bin/sh
+
+important_file=/home/cs2041/public_html/index.html
+
+while ls $important_file &gt;/dev/null 2&gt;&amp;1
+do
+        echo &#34;all OK&#34;
+        sleep 1
+done
+
+echo &#34;Panic $important_file gone&#34;
+
+</pre>
+
+
+
+<div class="answer">
+
+The shell script every second checks to see if a particular file exists.
+<p>
+If it doesn't the script exists prints a message and exits.
+<p>
+Here is a translation using <b>system</b>.
+<p>
+Note an exit code of 0 from ls indicates success.
+But 0 is false in Perl (and C and Python and ...)
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+
+$important_file = &#34;/home/cs2041/public_html/index.html&#34;;
+
+while (!system &#34;ls $important_file &gt;/dev/null 2&gt;&amp;1&#34;) {
+        system &#34;echo \&#34;all OK\&#34;&#34;;
+        system &#34;sleep 1&#34;;
+}
+system &#34;echo \&#34;Panic $important_file gone\&#34;&#34;;
+
+
+</pre>
+
+
+
+Here is more natural Perl code using the equivalent Perl buitlin functions.questions
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+
+$important_file = &#34;/home/cs2041/public_html/index.html&#34;;
+
+while (-e $important_file) {
+        print &#34;all OK\n&#34;;
+        sleep 1;
+}
+print &#34;Panic $important_file gone\n&#34;;
+
+
+</pre>
+
+
+</div>
+
+
+
+<h3>Revision questions</h3>
+
+The remaining tutorial questions are primarily intended for revision - either this week
+or later in session.
+<p>
+Your tutor may still choose to cover some of the questions time permitting.
+<p>
+
+
+
+</ol>
+</div>
+
+
+
+
+
+</div>
+
+
+<!--
+public_html_session_directory=/web/cs2041/17s2
+base_directory=/web/cs2041/17s2
+public_html_directory=/web/cs2041
+scripts_directory=/web/cs2041/17s2/scripts
+home_directory=/home/cs2041
+bin_directory=/home/cs2041/bin
+course_account=cs2041
+course_code=COMP2041
+course_number=2041
+postgraduate_course_code=COMP9041
+course_name=Software Construction
+unsw_session=17s2
+canonical_url=https://cgi.cse.unsw.edu.au/~cs2041/
+github_repo_url=https://github.com/COMP2041UNSW/course_materials
+course_forum_url=https://piazza.com/class/j5ji4vjjra62a3
+lecture_recordings_url=https://moodle.telt.unsw.edu.au/course/view.php?id=27708
+WORK=/web/cs2041/17s2/work
+OUT=/web/cs2041/17s2/work/.out
+MARKED=/web/cs2041/17s2/work/.out/.marked
+SMSDB=/web/cs2041/17s2/work/17s2db.sms
+tlb_directory=/web/cs2041/17s2/tlb
+lecture_directory=/web/cs2041/17s2/lec
+flask_cache_directory=/web/cs2041/17s2/flask_cache
+testing_results_file=/web/cs2041/17s2/work/testing_results.json
+enrollments_file=/web/cs2041/17s2/work/enrollments.json
+unsw_ldap_password_file=/web/cs2041/.unsw_ldap_password
+autotest_upload_url=https://cgi.cse.unsw.edu.au/~cs2041/cgi/autotest_upload.cgi
+PATH=/web/cs2041/17s2/scripts:/home/cs2041/bin:/bin/:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/home/class/bin:/home/give/stable/bin.:/bin:/usr/bin:/usr/local/bin
+directory_relative_pathname=tlb/09
+url=https://cgi.cse.unsw.edu.au/~cs2041/flask.cgi/tut/09/answers
+directory_url=https://cgi.cse.unsw.edu.au/~cs2041/tut/09/
+url_root=https://cgi.cse.unsw.edu.au/~cs2041/
+script_root=/~cs2041/flask.cgi
+current_lecture_topic=exam
+current_week=13
+week=09
+exercise_name=tut09
+tut_or_lab_or_test=tut
+questions_or_answers=answers
+programs=&lt;programs&gt;
+
+-->
+
+</body>
+</html>

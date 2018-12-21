@@ -1,0 +1,627 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>
+
+COMP2041 Week 02 Tutorial Sample Answers
+
+</title>
+
+
+
+<link href="/~cs2041/flask.cgi/static/bootstrap.min.css?121200" rel="stylesheet">
+<link href="/~cs2041/flask.cgi/static/course.css?6554" rel="stylesheet">
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/jquery.min.js?95992"></script>
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/bootstrap.min.js?37045"></script>
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/course.js?1631"></script>
+<link rel="canonical" href="https://cgi.cse.unsw.edu.au/~cs2041/" />
+</head>
+<body>
+
+
+
+
+<div class="container">
+
+<div id="heading">
+
+
+<a class="heading_link" target="_blank" id="left_heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/">COMP[29]041 17s2</a>
+
+
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Week 02
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/02/answers">Week 02</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/03/answers">Week 03</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/04/answers">Week 04</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/05/answers">Week 05</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/06/answers">Week 06</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/07/answers">Week 07</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/08/answers">Week 08</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/09/answers">Week 09</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/10/answers">Week 10</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/11/answers">Week 11</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/12/answers">Week 12</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/13/answers">Week 13</a></li>
+        
+        
+    </ul>
+</span>
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Tutorial
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/02/answers">Tutorial
+                
+            </a></li>
+            
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/02/answers">Laboratory
+                
+            </a></li>
+            
+        
+            
+        
+    </ul>
+</span>
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Sample Answers
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/02/questions">Questions
+            
+            </a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/02/answers">Sample Answers
+            
+            </a></li>
+        
+        
+    </ul>
+</span>
+
+
+
+
+<a class="heading_link" target="_blank" id="right_heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/">Software Construction</a>
+
+</div>
+
+</div>
+
+
+<div class="tutlab tut">
+<ol>
+
+<li>
+What is your tutor's name, e-mail, how long have they been at UNSW, what are they studying, what is 1 interesting thing about them?
+
+<div class="answer">
+Answered in tute.
+</div>
+
+<li>
+What are your class mates's names, what are they each studying, what is 1 interesting thing about each of them?
+
+<div class="answer">
+Answered in tute.
+</div>
+
+<li>
+Are there marks for attending lectures, tutorials or labs?
+
+<div class="answer">
+No attendence marks for lectures, tutorials or labs.
+</div>
+
+<li>
+
+What is an operating system? What operating systems are running in your tute room? What operating system do CSE lab computers run?
+
+<div class="answer">
+An operating system is a piece of software that manages the hardware of a computer and provides an interface to the programs that run on the computer.
+
+Operating systems on phones in your tut room might include Linux (Android), IOS (iPhone), Windows.
+
+CSE's lab computers and servers run Linux.
+</div>
+<li>
+<ol type="a">
+<li> Write a regexp to match C preprocessor commands in a C program.
+<li> Write a regexp to match all the lines in a C program except preprocessor commands
+<li> Write a regexp to find line in a C program with trailing white space - one or white space at the end of line
+<li> Write a regexp to match the names Barry, Harry, Larry and Parry
+<li> Write a regexp to match a string containing the word <code>hello</code> followed later by the word <code>world</code>
+<li> Write regexp to match the word <code>calendar</code> and all mis-spellings with 'a' replaced 'e' or vice-versa
+<li> Write regexp to match a list of positive integers separated by commas, e.g.  <code>2,4,8,16,32</code>
+<li> Write regexp to match a C string whose last character is newline
+</ol>
+<div class="answer">
+<ol type="a">
+<li> <code>^#</code>
+<li> <code>^[^#]</code>
+<li> <code>\s$</code>
+<li> <code>[BHLP]arry</code> or <code>Barry|Harry|Larry|Parry</code>
+<li> <code>hello.*world</code>
+<li> <code>c[ae]l[ae]nd[ae]r</code>
+<li> <code>[0-9][0-9]*(,[0-9][0-9]*)</code> or <code>[0-9]+(,[0-9]+)*</code>
+<li> <code>"[^"]*\\n"</code>
+</ol>
+</div>
+<li>
+Give five reasons why this attempt to search a  file for
+HTML paragraph and break tags may fail.
+<pre class="command_line">
+<kbd class="shell">grep &lt;p>|&lt;br> /tmp/index.html</kbd>
+</pre>
+<p>
+Give egrep commands that will work.
+<div class="answer">
+The characters '<', '>' and '|' are part of the shell's syntax (meta characters) and the shell
+will interpret them rather than passing them to grep. This can be avoided with singleor double-quotes or backslash, e.g:
+<p>
+<pre class="command_line">
+<kbd class="shell">egrep '&lt;p>|&lt;br>' /tmp/index.html</kbd>
+<kbd class="shell">egrep "&lt;p>|&lt;br>" /tmp/index.html</kbd>
+<kbd class="shell">egrep \&lt;p>\|&lt;br\> /tmp/index.html</kbd>
+</pre>
+<p>
+<p>
+For historical reasons 'grep' doesn't implement alternation ('|').
+You need to use 'egrep' or ('grep -E')
+instead to get the full power of regular expressions.
+<p>
+The supplied regular expression won't match the HTML tags if they are in upper case (A-Z), e.g: &lt;P&gt;.
+The match can be case insensitive by changing the regular expression or using grep's -i flag<p>
+<pre class="command_line">
+<kbd class="shell">egrep  '&lt;[pP]>|&lt;[bB][rR]>' /tmp/index.html</kbd>
+<kbd class="shell">egrep -i '&lt;p>|&lt;br>' /tmp/index.html</kbd>
+</pre>
+<p>
+The supplied regular expression also won't match  HTML tags containing spaces, e.g: &lt;p &gt;.
+This can be remedied by changing the regular expression or
+using wgrep's -w flag.
+<p>
+<pre class="command_line">
+<kbd class="shell">egrep -i '&lt; *(p|br) *>' /tmp/index.html</kbd>
+<kbd class="shell">egrep -iw '&lt;p>|&lt;br>' /tmp/index.html</kbd>
+</pre>
+<p>
+The HTML tag may contain attributes, e.g: &lt;p class="lead_para"&gt;.
+Again can be remedied by changing the regular expression or
+using grep's -w flag.
+<p>
+<pre class="command_line">
+<kbd class="shell">egrep -i '&lt;(p|br)[^>]*>' /tmp/index.html</kbd>
+</pre>
+<p>
+This will still match &lt;pre>. This can be avoided using a more complex regex:
+<p>
+<pre class="command_line">
+<kbd class="shell">egrep -i '&lt;(p|br)( [^>]*)*>' /tmp/index.html</kbd>
+</pre>
+<p>
+The HTML tag might contain a newline.  This is more difficult to handle with an essentially line-based
+tool like grep.
+<p>
+</div>
+
+<li>
+For each of the regular expression below indicate how many different
+strings the pattern matches and give some example of the strings it matches.
+If possible these example should include the shortest string and the longest string.
+<ol type="a">
+<li> <pre class="command_line">Perl</pre>
+<li> <pre class="command_line">Pe*r*l</pre>
+<li> <pre class="command_line">Full-stop.</pre>
+<li> <pre class="command_line">[1-9][0-9][0-9][0-9]</pre>
+<li> <pre class="command_line">I (love|hate) programming in (Perl|Python) and (Java|C)</pre>
+</ol>
+<div class="answer">
+<table border=1>
+<tr><th>Regexp<th>N Matches<th>Shortest Match<th>Longest Match<th>Other Examples
+<tr><td>Perl<td>1<td>Perl<td>Perl<td>Perl
+<tr><td>Pe*r*l<td>Arbitrary<td>Pl<td><td>Pel Prl Perl
+<tr><td>Full-stop.<td>same as number of characters in character set<td>constant length<td>constant length<td>Full-stopa Full-stopb Full-stopc
+<tr><td>[1-9][0-9][0-9][0-9]<td>9000<td>constant length<td>constant length<td>1000 1001 1002
+<tr><td>I (love|hate) programming in (Perl|Python) and (Java|C)<td>8<td>I love programming in Perl and C<td>I love programming in Python and Java<td>
+</table>
+</div>
+
+<li>
+This regular expression [0-9]*.[0-9]* is intended to match floating point
+numbers such as '42.5'. Is it appropriate?
+<div class="answer">
+No.  The regular expression [0-9]*.[0-9]* matches strings which are not floating point numbers.
+It will match zero or more digits, any character, followed by  zero or more digits.
+It also will match numbers such as 01.12
+<p>
+Better would be [1-9][0-9]*\.[0-9]+
+<p>
+</div>
+<li>
+What does the command <code>egrep -v .</code> print and why?
+<p>
+Give an equivalent egrep command with no options, in other words without the -v and with a different pattern.
+<div class="answer">
+The pattern '.' matches any character.
+<p>
+The option -v causes egrep to print lines which don't match the pattern
+<p>
+So the command <code>egrep -v .</code> prints all the empty lines in its input.
+<p>
+The command <code>egrep '^$'</code> would also do this.
+</div>
+<li>
+Write an egrep command which will print any lines in a file <code>ips.txt</code> containing
+an IP addresses in the
+range 129.94.172.1 to 129.94.172.25
+
+<div class="answer">
+<pre class="answer command_line">
+<kbd class="shell">egrep '129\.94\.172\.([1-9]|1[0-9]|2[0-5])$' ips.txt</kbd>
+</pre>
+Or, more generally
+<pre class="answer command_line">
+<kbd class="shell">egrep '\b129\.94\.172\.([1-9]|1[0-9]|2[0-5])\b' ips.txt</kbd>
+</pre>
+</div>
+
+<li>
+For each of the scenarios below
+<ul>
+<li> describe the strings being matched using an English sentence
+<li> give a POSIX regular expression to match this class of strings
+</ul>
+In the examples, the expected matches are highlighted in bold.
+<ol type=a>
+
+<li>
+encrypted password fields (including the surrounding colons)
+in a Unix password file entry, e.g.
+<pre>
+root<b>:ZHolHAHZw8As2:</b>0:0:root:/root:/bin/bash
+jas<b>:nJz3ru5a/44Ko:</b>100:100:John Shepherd:/home/jas:/bin/bash
+</pre>
+<div class="answer">
+<code>:[^:]+:</code>
+<p>
+Since encrypted passwords can contain just about any character (except colon)
+you could structure the pattern as "find a colon, followed by a sequence of
+non-colons, terminated by a colon". Note that this pattern actually matches
+all of the fields in the line except the first and last, but if we assume
+that we only look for the first match on each line, it will do.
+</div>
+<li>
+positive real numbers at the start of a line
+(using normal fixed-point notation for reals,
+<em>not</em> the kind of scientific notation you find in
+programming languages), e.g.
+<pre>
+<b>3.141</b> value of Pi
+<b>90.57</b> maximum hits/sec
+half of the time, life is silly
+<b>0.05</b>% is the legal limit
+<b>42</b> - the meaning of life
+this 1.333 is not at the start
+</pre>
+<div class="answer">
+<code>^[0-9]+(\.[0-9]*)?</code>
+<p>
+This pattern assumes that real numbers will consist of a sequence of
+digits (the integer part) optionally followed by a decimal point
+with the fraction digits after the decimal point.
+Note the use of the <code>^</code> symbol to anchor the pattern to
+the start of the line, the <code>+</code> to ensure that there is
+at least one digit in the integer part, the <code>\</code> to escape
+the special meaning of <code>.</code>, and the <code>?</code> to make the
+fractional part optional.
+</div>
+
+<li>
+Names as represented in this file containing details of tute/lab
+enrolments:
+
+<pre>
+    2134389|Wang, Duved Seo Ken         |fri15-spoons|
+    2139656|Undirwaad, Giaffriy Jumis   |tue13-kazoo|
+    2154877|Ng, Hinry                   |tue17-kazoo|
+    2174328|Zhung, Yung                 |thu17-spoons|
+    2234136|Hso, Men-Tsun               |tue09-harp|
+    2254148|Khorme, Saneu               |tue09-harp|
+    2329667|Mahsin, Zumel               |tue17-kazoo|
+    2334348|Trun, Toyin Hong Recky      |mon11-leaf|
+    2336212|Sopuvunechyunant, Sopuchue  |mon11-leaf|
+    2344749|Chung, Wue Sun              |fri09-harp|
+    ...
+</pre>
+<p>
+
+<div class="answer">
+ <code>[^|,]+, [^|]+</code>
+<p>
+To pick out the content without the delimiters, the first part of the name
+is any string without a comma or bar, then the comma and space,
+and then everything up to the next delimiter. Both parts of the name
+are non-empty, hence <code>+</code> is used rather than <code>*</code>.
+</div>
+
+<li>
+Names as above, but without the trailing spaces (difficult).
+<i>Hint:</i> what are given names composed of, and how many of these
+things can there be?
+<div class="answer">
+<code>[^|,]+,( [^| ]+)+</code>
+<p>
+We couldn't just say <code>[^| ]+</code>, because that would disallow
+spaces inside the given names. For a space to be accepted, it
+has to be followed by a non-space (usually a letter).
+Hence the given name portion is one or more sequences of W, where W
+is a space followed by non-spaces and non-bars.
+<p>
+<small>When a regular expression starts to look like stupid smiley icons,
+you know it's complex.
+</small>
+</div>
+</ol>
+<li>
+Consider the following columnated (space-delimited) data file
+containing marks information for a single subject:
+<p>
+<pre>
+2111321 37 FL
+2166258 67 CR
+2168678 84 DN
+2186565 77 DN
+2190546 78 DN
+2210109 50 PS
+2223455 95 HD
+2266365 55 PS
+...
+</pre>
+<p>
+Assume that the student number occurs at the beginning of the
+line, that the file is sorted on student number, and that nobody
+scores 100.
+
+<ol type=a>
+<li>
+Give calls to the <code>sort</code> filter to display the data:
+<ol type=i>
+
+<li> in order on student number
+
+<pre class="answer command_line">
+<kbd class="shell">sort &lt; dataFile</kbd>
+</pre>
+
+<li> in ascending order on mark
+
+<pre class="answer command_line">
+<kbd class="shell">sort -k2n &lt; dataFile</kbd>
+</pre>
+
+<li> in descending order on mark
+
+<pre class="answer command_line">
+<kbd class="shell">sort -k2nr &lt; dataFile</kbd>
+</pre>
+</ol>
+
+
+<li>
+Write calls to the <code>grep</code> filter to select details of:
+<ol type=i>
+
+<li> students who failed
+
+<pre class="answer command_line">
+<kbd class="shell">grep 'FL' &lt; dataFile</kbd>
+</pre>
+
+<li> students who scored above 90
+
+<div class="answer">
+<pre class="answer command_line">
+<kbd class="shell">grep ' 9[0-9] ' &lt; dataFile</kbd>
+</pre>
+(although the <code>'[0-9] '</code> isn't strictly necessary)
+</div>
+
+<li> students with even student numbers
+
+<div class="answer">
+<pre class="answer command_line">
+<kbd class="shell">grep '^[0-9]*[02468] ' &lt; dataFile</kbd>
+</pre>
+ (even numbers end in an even digit)
+</div>
+
+</ol>
+
+<li>
+Write a pipeline to print:
+<ol type=i>
+<li> the details for the top 10 students (ordered by mark)
+
+<pre class="answer command_line">
+<kbd class="shell">sort -k2n &lt; dataFile | head</kbd>
+</pre>
+
+<li> the details for the bottom 5 students (ordered by mark)
+
+<div class="answer">
+<pre class="answer command_line">
+<kbd class="shell">sort -k2nr &lt; dataFile | head -5</kbd>
+</pre>
+
+or
+<pre class="answer command_line">
+<kbd class="shell">sort -k2n &lt; dataFile | tail -5</kbd>
+</pre>
+</div>
+
+</ol>
+
+<li>
+Assuming that the command <code>cut -d' ' -f 3</code> can extract
+just the grades (<code>PS</code>, etc.), write a pipeline to show
+how many people achieved each grade (i.e. the grade distribution).
+E.g. for the above data:
+<pre>
+    1 CR
+    3 DN
+    1 FL
+    1 HD
+    2 PS
+</pre>
+
+<pre class="answer command_line">
+<kbd class="shell">cut -d' ' -f 3 &lt; dataFile | sort | uniq -c</kbd>
+</pre>
+</ol>
+
+<li>
+Consider the following text file containing details of tute/lab
+enrolments:
+
+<pre>
+    2134389|Wang, Duved Seo Ken         |fri15-spoons|
+    2139656|Undirwaad, Giaffriy Jumis   |tue13-kazoo|
+    2154877|Ng, Hinry                   |tue17-kazoo|
+    2174328|Zhung, Yung                 |thu17-spoons|
+    2234136|Hso, Men-Tsun               |tue09-harp|
+    2254148|Khorme, Saneu               |tue09-harp|
+    2329667|Mahsin, Zumel               |tue17-kazoo|
+    2334348|Trun, Toyin Hong Recky      |mon11-leaf|
+    2336212|Sopuvunechyunant, Sopuchue  |mon11-leaf|
+    2344749|Chung, Wue Sun              |fri09-harp|
+    ...
+</pre>
+<p>
+Assuming that the file is called <code>enrolments</code>,
+write pipelines to answer each of the following queries:
+
+<ol type=a>
+
+<li> Which tute is Hinry Ng enrolled in?
+
+<pre class="answer command_line">
+<kbd class="shell">grep 'Ng, Hinry' enrolments | cut -d'|' -f3</kbd>
+</pre>
+
+<li> How many different tutorials are there?
+
+<pre class="answer command_line">
+<kbd class="shell">cut -d'|' -f3 enrolments | sort | uniq | wc -l</kbd>
+</pre>
+
+<li> What is the number of students in each tute?
+
+<pre class="answer command_line">
+<kbd class="shell">cut -d'|' -f3 enrolments | sort | uniq -c</kbd>
+</pre>
+
+<li> Are any students enrolled in multiple tutes?
+
+<pre class="answer command_line">
+<kbd class="shell">sort enrolments | uniq | cut -d'|' -f1,2 | uniq -c | egrep -v '^ *1     '</kbd>
+</pre>
+
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+</ol>
+</div>
+
+
+
+
+
+</div>
+
+
+<!--
+public_html_session_directory=/web/cs2041/17s2
+base_directory=/web/cs2041/17s2
+public_html_directory=/web/cs2041
+scripts_directory=/web/cs2041/17s2/scripts
+home_directory=/home/cs2041
+bin_directory=/home/cs2041/bin
+course_account=cs2041
+course_code=COMP2041
+course_number=2041
+postgraduate_course_code=COMP9041
+course_name=Software Construction
+unsw_session=17s2
+canonical_url=https://cgi.cse.unsw.edu.au/~cs2041/
+github_repo_url=https://github.com/COMP2041UNSW/course_materials
+course_forum_url=https://piazza.com/class/j5ji4vjjra62a3
+lecture_recordings_url=https://moodle.telt.unsw.edu.au/course/view.php?id=27708
+WORK=/web/cs2041/17s2/work
+OUT=/web/cs2041/17s2/work/.out
+MARKED=/web/cs2041/17s2/work/.out/.marked
+SMSDB=/web/cs2041/17s2/work/17s2db.sms
+tlb_directory=/web/cs2041/17s2/tlb
+lecture_directory=/web/cs2041/17s2/lec
+flask_cache_directory=/web/cs2041/17s2/flask_cache
+testing_results_file=/web/cs2041/17s2/work/testing_results.json
+enrollments_file=/web/cs2041/17s2/work/enrollments.json
+unsw_ldap_password_file=/web/cs2041/.unsw_ldap_password
+autotest_upload_url=https://cgi.cse.unsw.edu.au/~cs2041/cgi/autotest_upload.cgi
+PATH=/web/cs2041/17s2/scripts:/home/cs2041/bin:/bin/:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/home/class/bin:/home/give/stable/bin.:/bin:/usr/bin:/usr/local/bin
+directory_relative_pathname=tlb/02
+url=https://cgi.cse.unsw.edu.au/~cs2041/flask.cgi/tut/02/answers
+directory_url=https://cgi.cse.unsw.edu.au/~cs2041/tut/02/
+url_root=https://cgi.cse.unsw.edu.au/~cs2041/
+script_root=/~cs2041/flask.cgi
+current_lecture_topic=exam
+current_week=13
+week=02
+exercise_name=tut02
+tut_or_lab_or_test=tut
+questions_or_answers=answers
+programs=&lt;programs&gt;
+
+-->
+
+</body>
+</html>

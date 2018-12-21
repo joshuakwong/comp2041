@@ -1,0 +1,586 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>
+
+COMP2041 Week 10 Tutorial Sample Answers
+
+</title>
+
+
+
+<link href="/~cs2041/flask.cgi/static/bootstrap.min.css?121200" rel="stylesheet">
+<link href="/~cs2041/flask.cgi/static/course.css?6554" rel="stylesheet">
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/jquery.min.js?95992"></script>
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/bootstrap.min.js?37045"></script>
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/course.js?1631"></script>
+<link rel="canonical" href="https://cgi.cse.unsw.edu.au/~cs2041/" />
+</head>
+<body>
+
+
+
+
+<div class="container">
+
+<div id="heading">
+
+
+<a class="heading_link" target="_blank" id="left_heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/">COMP[29]041 17s2</a>
+
+
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Week 10
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/02/answers">Week 02</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/03/answers">Week 03</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/04/answers">Week 04</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/05/answers">Week 05</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/06/answers">Week 06</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/07/answers">Week 07</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/08/answers">Week 08</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/09/answers">Week 09</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/10/answers">Week 10</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/11/answers">Week 11</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/12/answers">Week 12</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/13/answers">Week 13</a></li>
+        
+        
+    </ul>
+</span>
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Tutorial
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/10/answers">Tutorial
+                
+            </a></li>
+            
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/10/answers">Laboratory
+                
+            </a></li>
+            
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/10/answers">Weekly Test
+                
+            </a></li>
+            
+        
+    </ul>
+</span>
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Sample Answers
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/10/questions">Questions
+            
+            </a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/10/answers">Sample Answers
+            
+            </a></li>
+        
+        
+    </ul>
+</span>
+
+
+
+
+<a class="heading_link" target="_blank" id="right_heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/">Software Construction</a>
+
+</div>
+
+</div>
+
+
+<div class="tutlab tut">
+<ol>
+
+<li>
+<p>
+Write a Perl program which reads from STDIN
+a username then a password (not both simultaneously).
+<p>
+It should then check the password matches one stored for user <i>username</i> in
+the file <code>users/</code><i>username</i><code>.password</code>.
+<p>
+It should print a message indicating the user is unknown  if this file does not exist
+otherwise print an appropiate message indicating whether the password matches.
+<p>
+For example:
+
+<pre class="command_line">
+<kbd class="shell">mkdir users</kbd>
+<kbd class="shell">echo 'correct horse battery staple' >users/andrewt.password</kbd>
+<kbd class="shell">login.pl</kbd>
+username: <kbd>jas</kbd>
+password: <kbd>beer</kbd>
+Unkown username!
+<kbd class="shell">login.pl</kbd>
+username: <kbd>andrewt</kbd>
+password: <kbd>42</kbd>
+Incorrect password!
+<kbd class="shell">login.pl</kbd>
+username: <kbd>andrewt</kbd>
+password: <kbd>correct horse battery staple</kbd>
+You are authenticated.
+</pre>
+
+<div class="answer">
+Sample Perl solution
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+print &#34;username: &#34;;
+$username = &lt;STDIN&gt;;
+chomp $username;
+print &#34;password: &#34;;
+$password = &lt;STDIN&gt;;
+chomp $password;
+
+# sanitize username
+$username = substr $username, 0, 256;
+$username =~ s/\W//g;
+$password_file = &#34;accounts/$username.password&#34;;
+if (!open F, &#34;&lt;$password_file&#34;) {
+    print &#34;Unknown username!\n&#34;;
+} else {
+    $correct_password = &lt;F&gt;;
+    chomp $correct_password;
+    if ($password eq $correct_password) {
+        print &#34;You are authenticated.\n&#34;;
+    } else {
+        print &#34;Incorrect password!\n&#34;;
+    }
+}
+
+</pre>
+
+
+</div>
+
+<li>
+
+How are CGI scripts run?
+
+<div class="answer">
+CGI script are run when a web server receives a request for a particular URL.
+<p>
+Web servers can be configured to run CGI scripts in response to
+any or all URLs.
+</div>
+
+<li>
+
+Write a shell CGI script which prints details of the context in which it is run.
+Here is an example implementation:
+
+<p>
+    <hr>
+    <div class="cgi_display">
+    <div class="cgi_display_title">
+    <a target="_blank" href="show_execution_context.sh.cgi">show_execution_context.sh.cgi</a>
+    </div>
+    <div class="cgi_output_panel">
+        <iframe class="cgi_output_display" src="show_execution_context.sh.cgi" onLoad="show_html_source(this)">
+        </iframe>
+    </div>
+    <div class="html_source_panel">
+        <div class="html_source_display">
+        </div>
+    </div>
+    </div>
+    <hr>
+    <p>
+
+Discuss how security concerns might have affected CSE's choices
+for configuring how student CGI scripts are run on its web server.
+
+<div class="answer">
+CSE web server includes a mechanism to runs student CGI scripts as the student's uid.
+<p>
+Otherwise students could gain privileges by constructing appropriate CGI scripts.
+<p>
+As CGI scripts are prone to externally accessible security holes.
+CGI script are run with only some files accessible - only as user's <code>public_html</code>
+is visible - mounted as <code>/web/<i>user</i></code>
+<p>
+CGI scripts are also run on separate servers.
+
+
+
+
+
+<pre class="program">
+
+#!/bin/sh
+# Simple CGI script written by andrewt@cse.unsw.edu.au
+# Print some HTML plus information about the environment
+# in which the CGI script has been run
+
+cat &lt;&lt;eof
+Content-type: text/html
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&#34;en&#34;&gt;
+&lt;head&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;h2&gt;Execution Environment&lt;/h2&gt;
+&lt;pre&gt;
+eof
+
+for command in pwd id hostname &#39;uname -a&#39;
+do
+    echo &#34;$command: `$command`&#34;
+done
+
+cat &lt;&lt;eof
+&lt;/pre&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+eof
+
+
+</pre>
+
+
+
+</div>
+
+<li>
+
+Web servers pass some useful information to CGI scripts as environment variables.
+<p>
+Write a shell CGI script which prints details of the environment variables it has been passed.
+Here is an example implementation:
+
+<p>
+    <hr>
+    <div class="cgi_display">
+    <div class="cgi_display_title">
+    <a target="_blank" href="show_environment_variables.sh.cgi">show_environment_variables.sh.cgi</a>
+    </div>
+    <div class="cgi_output_panel">
+        <iframe class="cgi_output_display" src="show_environment_variables.sh.cgi" onLoad="show_html_source(this)">
+        </iframe>
+    </div>
+    <div class="html_source_panel">
+        <div class="html_source_display">
+        </div>
+    </div>
+    </div>
+    <hr>
+    <p>
+
+Discuss what some of these environment variables might indicate.
+
+<div class="answer">
+Sample solution
+
+
+
+
+
+<pre class="program">
+
+#!/bin/sh
+# Simple CGI script written by andrewt@cse.unsw.edu.au
+# Print some HTML plus the environment
+# passed to CGI script by the web server
+# Note a &lt; character in environment variable values will be interpreted as a HTML tag
+
+cat &lt;&lt;eof
+Content-type: text/html
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&#34;en&#34;&gt;
+&lt;head&gt;&lt;/head&gt;
+&lt;body&gt;
+&lt;h2&gt;Environment Variables&lt;/h2&gt;
+&lt;pre&gt;
+`env`
+&lt;/pre&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+eof
+
+
+</pre>
+
+
+</div>
+
+<li>
+
+A HTTP request can pass parameters to a web server.  The web server passes
+these on to the CGI script typically in environment variable(s) for GET requests
+and on STDIN for POST requests.
+<p>
+Write a shell CGI script which prints whether it was invoked with a GET request
+or a POST request and prints details of the parameters it has been passed.
+Here is an example implementation:
+
+<p>
+    <hr>
+    <div class="cgi_display">
+    <div class="cgi_display_title">
+    <a target="_blank" href="show_input_parameters.sh.cgi?comp2041=best-course-ever">show_input_parameters.sh.cgi?comp2041=best-course-ever</a>
+    </div>
+    <div class="cgi_output_panel">
+        <iframe class="cgi_output_display" src="show_input_parameters.sh.cgi?comp2041=best-course-ever" onLoad="show_html_source(this)">
+        </iframe>
+    </div>
+    <div class="html_source_panel">
+        <div class="html_source_display">
+        </div>
+    </div>
+    </div>
+    <hr>
+    <p>
+
+<div class="answer">
+Sample solution
+
+
+
+
+
+<pre class="program">
+
+#!/bin/sh
+# Simple CGI script written by andrewt@cse.unsw.edu.au
+# Output some simple HTML and the input parameters
+# the web server has passed on to the CGI script.
+
+if test &#34;$REQUEST_METHOD&#34; = POST
+then
+    parameters=&#34;`cat`&#34;
+else
+    parameters=&#34;$QUERY_STRING&#34;
+fi
+
+cat &lt;&lt;eof
+Content-type: text/html
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&#34;en&#34;&gt;
+&lt;head&gt;&lt;/head&gt;
+&lt;body&gt;
+
+&lt;h2&gt;$REQUEST_METHOD Request - Input Parameters&lt;/h2&gt;
+&lt;pre&gt;
+$parameters
+&lt;/pre&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+eof
+
+
+
+</pre>
+
+
+
+</div>
+
+
+
+<h3>Revision questions</h3>
+
+The remaining tutorial questions are primarily intended for revision - either this week
+or later in session.
+<p>
+Your tutor may still choose to cover some of the questions time permitting.
+<p>
+
+
+<li>
+
+A HTTP request can pass pararmeters to a web server.  The web server passes
+these on to the CGI script typically in environment variable(s) for GET requests
+and on STDIN for POST requests
+<p>
+Write a shell CGI script which (given no parameters) prints a form allowing 2 numbers to be entered.
+The form should run the same CGI script, and the CGI script should
+print the sum of the numbers and a form allowing two more numbers to be entered and the script to
+be run again.
+Here is an example implementation:
+
+<p>
+    <hr>
+    <div class="cgi_display">
+    <div class="cgi_display_title">
+    <a target="_blank" href="sum_two_numbers.sh.cgi">sum_two_numbers.sh.cgi</a>
+    </div>
+    <div class="cgi_output_panel">
+        <iframe class="cgi_output_display" src="sum_two_numbers.sh.cgi" onLoad="show_html_source(this)">
+        </iframe>
+    </div>
+    <div class="html_source_panel">
+        <div class="html_source_display">
+        </div>
+    </div>
+    </div>
+    <hr>
+    <p>
+
+
+<div class="answer">
+Sample solution
+
+
+
+
+
+<pre class="program">
+
+#!/bin/sh
+# Simple CGI script written by andrewt@cse.unsw.edu.au
+# Sum two numbers and outputs a form which will rerun the script
+
+
+# Note removal of characters other than 0-9 . - + to avoid potential security problems
+
+if test $REQUEST_METHOD = &#34;GET&#34;
+then
+    parameters=&#34;$QUERY_STRING&#34;
+else
+    read parameters
+fi
+
+x=`echo $parameters|sed &#39;
+    s/.*x=//
+    s/&amp;.*//
+    s/[^0-9\-\.\+]//g
+    &#39;`
+y=`echo $parameters|sed &#39;
+    s/.*y=//
+    s/&amp;.*//
+    s/[^0-9\-\.\+]//g
+    &#39;`
+
+cat &lt;&lt;eof
+Content-type: text/html
+
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&#34;en&#34;&gt;
+&lt;head&gt;
+&lt;title&gt;Sum Two Numbers&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+eof
+
+sum=&#34;?&#34;
+test &#34;$x&#34; -a &#34;$y&#34; &amp;&amp; sum=`expr &#34;$x&#34; &#39;+&#39; &#34;$y&#34;`
+
+cat &lt;&lt;eof
+
+&lt;form method=&#34;GET&#34; action=&#34;&#34;&gt;
+&lt;input type=textfield name=x value=$x&gt;
++
+&lt;input type=textfield name=y value=$y&gt;
+=
+$sum
+&lt;input type=&#34;submit&#34; value=&#34;calculate&#34;&gt;
+&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+eof
+
+
+</pre>
+
+
+
+</div>
+
+</ol>
+</div>
+
+
+
+
+
+</div>
+
+
+<!--
+public_html_session_directory=/web/cs2041/17s2
+base_directory=/web/cs2041/17s2
+public_html_directory=/web/cs2041
+scripts_directory=/web/cs2041/17s2/scripts
+home_directory=/home/cs2041
+bin_directory=/home/cs2041/bin
+course_account=cs2041
+course_code=COMP2041
+course_number=2041
+postgraduate_course_code=COMP9041
+course_name=Software Construction
+unsw_session=17s2
+canonical_url=https://cgi.cse.unsw.edu.au/~cs2041/
+github_repo_url=https://github.com/COMP2041UNSW/course_materials
+course_forum_url=https://piazza.com/class/j5ji4vjjra62a3
+lecture_recordings_url=https://moodle.telt.unsw.edu.au/course/view.php?id=27708
+WORK=/web/cs2041/17s2/work
+OUT=/web/cs2041/17s2/work/.out
+MARKED=/web/cs2041/17s2/work/.out/.marked
+SMSDB=/web/cs2041/17s2/work/17s2db.sms
+tlb_directory=/web/cs2041/17s2/tlb
+lecture_directory=/web/cs2041/17s2/lec
+flask_cache_directory=/web/cs2041/17s2/flask_cache
+testing_results_file=/web/cs2041/17s2/work/testing_results.json
+enrollments_file=/web/cs2041/17s2/work/enrollments.json
+unsw_ldap_password_file=/web/cs2041/.unsw_ldap_password
+autotest_upload_url=https://cgi.cse.unsw.edu.au/~cs2041/cgi/autotest_upload.cgi
+PATH=/web/cs2041/17s2/scripts:/home/cs2041/bin:/bin/:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/home/class/bin:/home/give/stable/bin.:/bin:/usr/bin:/usr/local/bin
+directory_relative_pathname=tlb/10
+url=https://cgi.cse.unsw.edu.au/~cs2041/flask.cgi/tut/10/answers
+directory_url=https://cgi.cse.unsw.edu.au/~cs2041/tut/10/
+url_root=https://cgi.cse.unsw.edu.au/~cs2041/
+script_root=/~cs2041/flask.cgi
+current_lecture_topic=exam
+current_week=13
+week=10
+exercise_name=tut10
+tut_or_lab_or_test=tut
+questions_or_answers=answers
+programs=&lt;programs&gt;
+
+-->
+
+</body>
+</html>

@@ -1,0 +1,2167 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+<title>
+
+COMP2041 Week 07 Laboratory Sample Solutions
+
+</title>
+
+
+
+<link href="/~cs2041/flask.cgi/static/bootstrap.min.css?121200" rel="stylesheet">
+<link href="/~cs2041/flask.cgi/static/course.css?6554" rel="stylesheet">
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/jquery.min.js?95992"></script>
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/bootstrap.min.js?37045"></script>
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/course.js?1631"></script>
+<link rel="canonical" href="https://cgi.cse.unsw.edu.au/~cs2041/" />
+</head>
+<body>
+
+
+
+
+<div class="container">
+
+<div id="heading">
+
+
+<a class="heading_link" target="_blank" id="left_heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/">COMP[29]041 17s2</a>
+
+
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Week 07
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/02/answers">Week 02</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/03/answers">Week 03</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/04/answers">Week 04</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/05/answers">Week 05</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/06/answers">Week 06</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/07/answers">Week 07</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/08/answers">Week 08</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/09/answers">Week 09</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/10/answers">Week 10</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/11/answers">Week 11</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/13/answers">Week 13</a></li>
+        
+        
+    </ul>
+</span>
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Laboratory
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/07/answers">Tutorial
+                
+            </a></li>
+            
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/07/answers">Laboratory
+                
+            </a></li>
+            
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/07/answers">Weekly Test
+                
+            </a></li>
+            
+        
+    </ul>
+</span>
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Sample Solutions
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/07/questions">Exercises
+            
+            </a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/07/answers">Sample Solutions
+            
+            </a></li>
+        
+        
+    </ul>
+</span>
+
+
+
+
+<a class="heading_link" target="_blank" id="right_heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/">Software Construction</a>
+
+</div>
+
+</div>
+
+
+<div class="tutlab lab">
+
+
+
+<h3>Submission Summary</h3>
+Due
+
+Sunday midnight
+
+
+<pre class="command_line">
+<kbd class="shell">give cs2041 lab07 total_words.pl count_word.pl frequency.pl log_probability.pl identify_artist.pl total_words.py count_word.py frequency.py log_probability.py identify_artist.py</kbd>
+</pre>
+
+
+
+
+<h3>Objectives</h3>
+
+
+<ul>
+<li>
+Proficiency at text processing in Perl.
+<li>
+Understanding multi-dimensional hashes.
+<li>
+Explore a simple learning algorithm.
+</ul>
+
+
+
+
+
+<h3>Getting Started</h3>
+
+
+Create a new directory for this lab called <code>lab07</code> by typing:
+
+<pre class="command_line">
+<kbd class="shell">mkdir lab07</kbd>
+</pre>
+
+Change to this directory by typing:
+
+<pre class="command_line">
+<kbd class="shell">cd lab07</kbd>
+</pre>
+
+
+
+
+
+<h3>Perl</h3>
+
+We have covered only a small amount of Perl in lectures. In fact, to
+cover the whole language in detail would take a whole semester, so
+we're going to rely on you finding out about the language yourself
+in tutes, labs and assignments. A good place to start is
+the Perl documentation & tutorial links on the class home page
+For example you might find these useful:
+
+<ul>
+<li> <a target="doc" href="http://search.cpan.org/dist/perl/pod/perlsyn.pod">Perl language syntax</a>
+<li> <a target="doc" href="http://search.cpan.org/dist/perl/pod/perlsub.pod">Perl functions</a>
+<li> <a target="doc" href="http://search.cpan.org/dist/perl/pod/perlop.pod">Perl operators</a>
+</ul>
+
+<h3>Introduction</h3>
+
+In this lab you will write a Perl program which given the lyrics of a song, prints who the artist is.
+You will use a <a href="http://en.wikipedia.org/wiki/Naive_Bayes_classifier#Document_Classification">Naive Bayes Document classifier</a> to do this.
+Naive Bayes Document classifiers are used widely for applications such as spam filtering and
+language recognition.
+
+<h3>Dataset</h3>
+
+This <a href="https://cgi.cse.unsw.edu.au/~cs2041/lab/07/lyrics.zip">zip file</a> contains
+the lyrics of the songs of 10 well known artists.
+
+<pre class="command_line">
+<kbd class="shell">wget -q https://cgi.cse.unsw.edu.au/~cs2041/lab/07/lyrics.zip</kbd>
+<kbd class="shell">unzip lyrics.zip</kbd>
+Archive:  lyrics.zip
+   creating: lyrics/
+  inflating: lyrics/David_Bowie.txt
+  inflating: lyrics/Adele.txt
+  inflating: lyrics/Metallica.txt
+  inflating: lyrics/Rage_Against_The_Machine.txt
+  inflating: lyrics/Taylor_Swift.txt
+  inflating: lyrics/Keith_Urban.txt
+  inflating: lyrics/Ed_Sheeran.txt
+  inflating: lyrics/Justin_Bieber.txt
+  inflating: lyrics/Rihanna.txt
+  inflating: lyrics/Leonard_Cohen.txt
+  inflating: song0.txt
+  inflating: song1.txt
+  inflating: song2.txt
+  inflating: song3.txt
+  inflating: song4.txt
+</pre>
+
+The lyrics for each song have been re-ordered to avoid copyright concerns.
+<p>
+The zip file also contains lyrics from 5 songs where we don't know the artists.
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">cat song0.txt</kbd>
+I&#39;ve made up my mind,  Don&#39;t need to think it over,  
+If I&#39;m wrong I am right,  
+Don&#39;t need to look no further,  
+This ain&#39;t lust,  
+I know this is love but,  
+  
+If I tell the world,  
+I&#39;ll never say enough,  
+Cause it was not said to you,  
+And that&#39;s exactly what I need to do,  
+If I&#39;m in love with you,  
+<kbd class="shell">cat song1.txt</kbd>
+Come Mr. DJ song pon de replay  
+Come Mr. DJ won&#39;t you turn the music up  
+All the gal pon the dance floor wantin&#39; some more what  
+Come Mr. DJ won&#39;t you turn the music up  
+<kbd class="shell">cat song2.txt</kbd>
+And they say  
+She&#39;s in the class A team  
+Stuck in her daydream  
+Been this way since eighteen  
+But lately her face seems  
+Slowly sinking, wasting  
+Crumbling like pastries  
+<kbd class="shell">cat song3.txt</kbd>
+Ooh whoa, ooh whoa, ooh whoa  You know you love me, you know you care  
+Just shout whenever and I&#39;ll be there  
+You are my love, you are my heart  
+And we will never, ever, ever be apart  
+  
+Are we an item? Girl quit playin&#39;  
+We&#39;re just friends, what are you sayin&#39;  
+Said there&#39;s another, look right in my eyes  
+My first love, broke my heart for the first time  
+  
+And I was like baby, baby, baby oh  
+Like baby, baby, baby no  
+Like baby, baby, baby oh  
+I thought you&#39;d always be mine (Mine)  
+Baby, baby, baby oh  
+Like baby, baby, baby no  
+Like baby, baby, baby ooh  
+I thought you&#39;d always be mine  
+  
+Oh for you, I would have done whatever  
+And I just can&#39;t believe we ain&#39;t together  
+And I wanna play it cool  
+But I&#39;m losin&#39; you  
+I&#39;ll buy you anything  
+I&#39;ll buy you any ring  
+And I&#39;m in pieces, baby fix me  
+And just shake me, til you wake me from this bad dream  
+I&#39;m goin&#39; down, down, down, down  
+And I can&#39;t believe my first love won&#39;t be around  
+<kbd class="shell">cat song4.txt</kbd>
+The birds they sang  At the break of day  
+Start again  
+I heard them say  
+Don&#39;t dwell on what  
+Has passed away  
+Or what is yet to be.  
+Ah the wars they will  
+Be fought again  
+The holy dove  
+She will be caught again  
+Bought and sold  
+And bought again  
+The dove is never free.  
+  
+Ring the bells that still can ring  
+Forget your perfect offering  
+There is a crack in everything  
+That&#39;s how the light gets in.  
+</pre>
+
+They are each from one of the artists in the dataset but they are not from
+a song in the dataset.
+
+<h3>Exercise: Total Words</h3>
+
+Write a Perl script <code>total_words.pl</code> which counts the total number of words
+found in its input (<code>STDIN</code>).
+<p>
+For the purposes of this program and the following programs we will define a word to
+be maximal non-empty contiguous sequences of alphabetic characters (<code>[a-zA-Z]</code>).
+<p>
+Any characters other than <code>[a-zA-Z]</code> separate words.
+<p>
+So for example the phrase "<code>The soul's desire</code>" contains 4 words: <code>("The", "soul", "s", "desire")</code>
+<p>
+For example:
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./total_words.pl &lt;lyrics/Justin_Bieber.txt</kbd>
+46589 words
+<kbd class="shell">./total_words.pl &lt;lyrics/Metallica.txt</kbd>
+38096 words
+<kbd class="shell">./total_words.pl &lt;lyrics/Rihanna.txt</kbd>
+53157 words
+</pre>
+
+<b>Hint</b>: if your word counts are out a little you might be counting empty strings (split can return these).
+As usual:
+
+
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+<pre class="command_line">
+<kbd class="shell">2041 autotest lab07 total_words.pl</kbd>
+</pre>
+
+
+    
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Automarking Results</h4>
+        <span class="autotest_results_emphasis">98%</span>
+        
+        of <span class="autotest_results_emphasis">428</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">total_words.pl</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+                <ul>
+                
+                    <li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>total_words_0</i>
+                
+                    <li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>total_words_1</i>
+                
+                    <li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>total_words_2</i>
+                
+                    <li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>total_words_3</i>
+                
+                    <li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>total_words_4</i>
+                
+                    <li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>total_words_5</i>
+                
+                    <li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>total_words_6</i>
+                
+                    <li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>total_words_7</i>
+                
+                    <li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>total_words_8</i>
+                
+                    <li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>total_words_9</i>
+                
+                </ul>
+                </div>
+            
+        
+    </div>
+
+
+<div class="answer">
+Straight-forward solution using split for total_words.pl
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+$count = 0;
+while ($line = &lt;STDIN&gt;) {
+    my @words = split /[^a-zA-Z]+/, $line;
+    foreach $word (@words) {
+        $count++ if $word ne &#39;&#39;;
+    }
+}
+print &#34;$count words\n&#34;
+</pre>
+
+
+
+More concise solution for total_words.pl
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+$count = 0;
+while (&lt;STDIN&gt;) {
+    foreach (/[a-z]+/ig) {
+        $count++;
+    }
+}
+print &#34;$count words\n&#34;
+</pre>
+
+
+
+</div>
+
+
+
+
+
+<h3>Exercise: Count Word</h3>
+
+Write a Perl script <code>count_word.pl</code> which counts the number of times
+a specified word is found in its input (<code>STDIN</code>).
+<p>
+A word is as defined for the previous exercise.
+<p>
+The word you should count will be specified as a command line argument.
+<p>
+You program should ignore the case of words.
+<p>
+For example:
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./count_word.pl death &lt;lyrics/Metallica.txt</kbd>
+death occurred 69 times
+<kbd class="shell">./count_word.pl death &lt;lyrics/Justin_Bieber.txt</kbd>
+death occurred 0 times
+<kbd class="shell">./count_word.pl love &lt;lyrics/Ed_Sheeran.txt</kbd>
+love occurred 218 times
+<kbd class="shell">./count_word.pl love &lt;lyrics/Rage_Against_The_Machine.txt</kbd>
+love occurred 4 times
+</pre>
+
+<b>Hint</b>: modify the code from the last exercise.
+<p>
+<b>Hint</b>: the Perl functions <code>uc</code> & <code>lc</code> convert strings to lowercase & uppercase respectively.
+<p>
+
+
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+<pre class="command_line">
+<kbd class="shell">2041 autotest lab07 count_word.pl</kbd>
+</pre>
+
+
+    
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Automarking Results</h4>
+        <span class="autotest_results_emphasis">96%</span>
+        
+        of <span class="autotest_results_emphasis">426</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">count_word.pl</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+                <ul>
+                
+                    <li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>count_word_0</i>
+                
+                    <li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>count_word_1</i>
+                
+                    <li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>count_word_2</i>
+                
+                    <li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>count_word_3</i>
+                
+                    <li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>count_word_4</i>
+                
+                    <li><span class="autotest_results_emphasis">96%</span>
+                    
+                    passed test <i>count_word_5</i>
+                
+                    <li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>count_word_6</i>
+                
+                    <li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>count_word_7</i>
+                
+                    <li><span class="autotest_results_emphasis">96%</span>
+                    
+                    passed test <i>count_word_8</i>
+                
+                    <li><span class="autotest_results_emphasis">98%</span>
+                    
+                    passed test <i>count_word_9</i>
+                
+                </ul>
+                </div>
+            
+        
+    </div>
+
+
+<div class="answer">
+Sample solution for count_word.pl
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+die &#34;Usage: $0 &lt;word&gt;\n&#34; if @ARGV != 1;
+$specified_word = lc $ARGV[0];
+$count = 0;
+while ($line = &lt;STDIN&gt;) {
+    $line = lc $line;
+    my @words = split /[^a-z]+/i, $line;
+    foreach $word (@words) {
+        $count++ if $word eq $specified_word;
+    }
+}
+print &#34;$specified_word occurred $count times\n&#34;
+</pre>
+
+
+
+</div>
+
+
+<h3>Exercise: Word Frequency</h3>
+
+Write a Perl script <code>frequency.pl</code>
+which prints the frequency with which each artist uses a  word specified as an argument.
+<p>
+So if Justin Bieber  uses the word <b>"love"</b> 493 times in the 46583 words of his songs, then its frequency is <code>493/46583 = 0.0105832599875491</code>.
+<p>
+For example:
+
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./frequency.pl love</kbd>
+ 165/ 16359 = 0.010086191 Adele
+ 189/ 34080 = 0.005545775 David Bowie
+ 218/ 18207 = 0.011973417 Ed Sheeran
+ 493/ 46589 = 0.010581897 Justin Bieber
+ 217/ 27016 = 0.008032277 Keith Urban
+ 212/ 26192 = 0.008094075 Leonard Cohen
+  57/ 38096 = 0.001496220 Metallica
+   4/ 18985 = 0.000210693 Rage Against The Machine
+ 494/ 53157 = 0.009293226 Rihanna
+  89/ 26188 = 0.003398503 Taylor Swift
+</pre>
+
+So of these artists, Ed Sheeran uses the word <b>"love"</b> most frequently.
+If you choose a word a randomly from an Ed Sheeran song the probability it will be "love"
+is just over in 1 in a hundred (1%).
+<p>
+Make sure your Perl script produces exactly the output above (the printf format is <code>"%4d/%6d = %.9f %s\n"</code>).
+<p>
+Note you should ignore case (change A-Z to a-z).
+<p>
+You should treat as a word any sequence of alphabetic characters.
+<p>
+You should treat non-alphabetic characters (characters other than a-z) as spaces.
+<p>
+<b>Hint</b>: use a hash table of hash tables indexed by artist and word to store the word counts.
+<p>
+<b>Hint</b>: this loop executes once for each <code>.txt</code> file in the directory <code>lyrics</code>.
+<pre class="program">
+    foreach $file (glob "lyrics/*.txt") {
+        print "$file\n";
+    }
+</pre>
+<p>
+<b>Hint</b>: reuse code from the last exercise.
+
+
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+<pre class="command_line">
+<kbd class="shell">2041 autotest lab07 frequency.pl</kbd>
+</pre>
+
+
+    
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Automarking Results</h4>
+        <span class="autotest_results_emphasis">97%</span>
+        
+        of <span class="autotest_results_emphasis">411</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">frequency.pl</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+                <ul>
+                
+                    <li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>frequency_0</i>
+                
+                    <li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>frequency_1</i>
+                
+                    <li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>frequency_2</i>
+                
+                    <li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>frequency_3</i>
+                
+                    <li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>frequency_4</i>
+                
+                    <li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>frequency_5</i>
+                
+                    <li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>frequency_6</i>
+                
+                    <li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>frequency_8</i>
+                
+                    <li><span class="autotest_results_emphasis">97%</span>
+                    
+                    passed test <i>frequency_9</i>
+                
+                </ul>
+                </div>
+            
+        
+    </div>
+
+
+<div class="answer">
+
+Sample solution for frequency.pl
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+
+foreach $file (glob &#34;lyrics/*&#34;) {
+    my $artist = $file;
+    $artist =~ s/.*\///;
+    $artist =~ s/\.txt$//;
+    $artist =~ s/_/ /g;
+    open my $f, &#39;&lt;&#39;, $file or die &#34;can not open $file: $!&#34;;
+    while ($line = &lt;$f&gt;) {
+        $line = lc $line;
+        foreach $word ($line =~ /[a-z]+/g) {
+            $frequency{$artist}{$word}++;
+            $n_words{$artist}++;
+        }
+    }
+    close $f;
+}
+
+foreach $word (@ARGV) {
+    $word = lc $word;
+    foreach $artist (sort keys %frequency) {
+        my $f = $frequency{$artist}{$word}||0;
+        my $n = $n_words{$artist};
+        printf &#34;%4d/%6d = %.9f %s\n&#34;, $f, $n, $f/$n, $artist;
+    }
+}
+</pre>
+
+
+
+</div>
+
+<h3>Exercise: Word Log Probability</h3>
+
+Now suppose we have the song line <b>"truth is beauty"</b>. If David Bowie uses the
+word <b>"truth"</b> with frequency 0.000146727 and the
+word <b>"is"</b> with frequency 0.005898407, the word <b>"beauty"</b> with frequency 0.000264108.
+We can estimate the probability of Bowie writing the phrase <b>"truth is beauty"</b>
+as:
+
+<pre class="program">
+0.000146727 * 0.005898407 * 0.000264108 == 2.28573738067596e-10
+</pre>
+
+We could similarly estimate probabilities for each of the other 9 artists, and
+then determine which of the 10 artists is most likely to sing <b>"truth is beauty"</b> (it's Leonard Cohen).
+<p>
+A sidenote: we are actually making a large simplifying assumption in calculating this probability. It is
+often  called the <a href="http://en.wikipedia.org/wiki/Bag_of_words_model"><b>bag of words model</b></a>.
+<p>
+Multiplying probabilities like this quickly leads to very small numbers and may result in
+arithmetic underflow of our floating point representation.
+A common solution to this underflow is instead to  work with the <b>log</b> of the numbers.
+<p>
+So instead we will calculate the the log of the probability of the phrase.
+You this by adding the log of the probabilities of each word. For example,
+you calculate the log-probability of Bowie singing the phrase <b>"Truth is beauty."</b> like this:
+
+<pre class="program">
+log(0.000146727) + log(0.005898407) + log(0.000264108) == -22.1991622527613 == log(2.28573738067596e-10)
+</pre>
+
+Log-probabilities can be used directly to determine the most likely artist, as the artist
+with the highest log-probability will also have the highest probability.
+<p>
+Another problem is that we might be given a word that an artist has not used in the dataset we
+have.  For example:
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./frequency.pl fear</kbd>
+   2/ 16359 = 0.000122257 Adele
+  13/ 34080 = 0.000381455 David Bowie
+   0/ 18207 = 0.000000000 Ed Sheeran
+  10/ 46589 = 0.000214643 Justin Bieber
+   0/ 27016 = 0.000000000 Keith Urban
+   4/ 26192 = 0.000152718 Leonard Cohen
+  39/ 38096 = 0.001023730 Metallica
+  26/ 18985 = 0.001369502 Rage Against The Machine
+   3/ 53157 = 0.000056437 Rihanna
+   3/ 26188 = 0.000114556 Taylor Swift
+</pre>
+
+It is not useful to assume there is zero probability that <b>Ed Sheeran</b> would use the word <b>fear</b>
+in a song even though he hasn't used it previously.
+<p>
+You should avoid this when estimating probabilities by adding 1 to the count of occurrences
+of each word. So for example we'd estimate the probability of Ed Sheeran using the word
+<b>fear</b> as (0+1)/18205 and the probability of Metallica using the word
+<b>fear</b> as (39+1)/38082.
+This is a simple version of <a href="http://en.wikipedia.org/wiki/Additive_smoothing">Additive smoothing</a>.
+<p>
+Write a perl script <code>log_probability.pl</code> which given an argument prints the estimate
+log of the probability that an artist would use this word. For example:
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./log_probability.pl fear</kbd>
+log((2+1)/ 16359) =  -8.6039 Adele
+log((13+1)/ 34080) =  -7.7974 David Bowie
+log((0+1)/ 18207) =  -9.8096 Ed Sheeran
+log((10+1)/ 46589) =  -8.3512 Justin Bieber
+log((0+1)/ 27016) = -10.2042 Keith Urban
+log((4+1)/ 26192) =  -8.5638 Leonard Cohen
+log((39+1)/ 38096) =  -6.8590 Metallica
+log((26+1)/ 18985) =  -6.5556 Rage Against The Machine
+log((3+1)/ 53157) =  -9.4947 Rihanna
+log((3+1)/ 26188) =  -8.7868 Taylor Swift
+</pre>
+
+You will only need to copy your <code>frequency.pl</code> and make a small modification.
+Make sure your output matches the above exactly (the printf format is <code>"log((%d+1)/%6d) = %8.4f %s\n"</code>)
+
+
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+<pre class="command_line">
+<kbd class="shell">2041 autotest lab07 log_probability.pl</kbd>
+</pre>
+
+
+    
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Automarking Results</h4>
+        <span class="autotest_results_emphasis">99%</span>
+        
+        of <span class="autotest_results_emphasis">401</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">log_probability.pl</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+                <ul>
+                
+                    <li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>log_probability_0</i>
+                
+                    <li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>log_probability_1</i>
+                
+                    <li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>log_probability_2</i>
+                
+                    <li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>log_probability_3</i>
+                
+                    <li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>log_probability_4</i>
+                
+                    <li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>log_probability_5</i>
+                
+                    <li><span class="autotest_results_emphasis">99%</span>
+                    
+                    passed test <i>log_probability_6</i>
+                
+                </ul>
+                </div>
+            
+        
+    </div>
+
+
+<div class="answer">
+Sample solution for log_probability.pl
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+
+foreach $file (glob &#34;lyrics/*&#34;) {
+    my $artist = $file;
+    $artist =~ s/.*\///;
+    $artist =~ s/\.txt$//;
+    $artist =~ s/_/ /g;
+    open my $f, &#39;&lt;&#39;, $file or die &#34;can not open $file: $!&#34;;
+    while ($line = &lt;$f&gt;) {
+        $line = lc $line;
+        foreach $word ($line =~ /[a-z]+/g) {
+            $frequency{$artist}{$word}++;
+            $n_words{$artist}++;
+        }
+    }
+    close $f;
+}
+
+foreach $word (@ARGV) {
+    $word = lc $word;
+    foreach $artist (sort keys %frequency) {
+        my $f = $frequency{$artist}{$word}||0;
+        my $n = $n_words{$artist};
+        printf &#34;log((%d+1)/%6d) = %8.4f %s\n&#34;, $f, $n, log(($f+1)/$n), $artist;
+    }
+}
+</pre>
+
+
+
+</div>
+
+<h3>Exercise: Identifying the Artist</h3>
+
+Write a Perl script <code>identify_artist.pl</code> that given 1 or more files, each containing   part of song),
+prints the most likely artist to have sung those words.
+<p>
+In other words, for each file given as argument you should go through all (10) artists calculating
+the log-probability that the artist sung those words  by summing the
+log-probability of that artist using each word in the file.
+You should print the artist with the highest log-probability.
+<p>
+Your program should produce exactly this output:
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./identify_artist.pl song?.txt</kbd>
+song0.txt most resembles the work of Adele (log-probability=-352.4)
+song1.txt most resembles the work of Rihanna (log-probability=-254.9)
+song2.txt most resembles the work of Ed Sheeran (log-probability=-206.6)
+song3.txt most resembles the work of Justin Bieber (log-probability=-1089.8)
+song4.txt most resembles the work of Leonard Cohen (log-probability=-493.8)
+</pre>
+
+<b>Hint:</b> only read each file once.  Store the data in a (2-dimensional) hash.
+If you read the files many times your program will be very slow and exceed autotest time limits.
+
+<p>
+You may find it helpful to add a '-d' flag which provides debugging information (this is optional),
+for example:
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./identify_artist.pl -d song2.txt</kbd>
+song2.txt: log_probability of -206.6 for Ed Sheeran
+song2.txt: log_probability of -210.8 for Adele
+song2.txt: log_probability of -211.5 for Taylor Swift
+song2.txt: log_probability of -211.7 for Keith Urban
+song2.txt: log_probability of -215.0 for Leonard Cohen
+song2.txt: log_probability of -215.4 for Rage Against The Machine
+song2.txt: log_probability of -215.7 for David Bowie
+song2.txt: log_probability of -217.2 for Justin Bieber
+song2.txt: log_probability of -222.2 for Metallica
+song2.txt: log_probability of -223.4 for Rihanna
+song2.txt most resembles the work of Ed Sheeran (log-probability=-206.6)
+</pre>
+
+<b>Hint:</b> you may like to create simpler input to use in debugging, for example:
+
+<pre class="command_line">
+<kbd class="shell">echo Andrew Rocks &gt;andrew_rocks.txt</kbd>
+</pre>
+
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">./log_probability.pl Andrew</kbd>
+log((0+1)/ 16359) =  -9.7025 Adele
+log((0+1)/ 34080) = -10.4365 David Bowie
+log((0+1)/ 18207) =  -9.8096 Ed Sheeran
+log((0+1)/ 46589) = -10.7491 Justin Bieber
+log((0+1)/ 27016) = -10.2042 Keith Urban
+log((0+1)/ 26192) = -10.1732 Leonard Cohen
+log((0+1)/ 38096) = -10.5479 Metallica
+log((0+1)/ 18985) =  -9.8514 Rage Against The Machine
+log((0+1)/ 53157) = -10.8810 Rihanna
+log((0+1)/ 26188) = -10.1731 Taylor Swift
+<kbd class="shell">./log_probability.pl Rocks</kbd>
+log((0+1)/ 16359) =  -9.7025 Adele
+log((10+1)/ 34080) =  -8.0386 David Bowie
+log((0+1)/ 18207) =  -9.8096 Ed Sheeran
+log((1+1)/ 46589) = -10.0560 Justin Bieber
+log((0+1)/ 27016) = -10.2042 Keith Urban
+log((0+1)/ 26192) = -10.1732 Leonard Cohen
+log((1+1)/ 38096) =  -9.8547 Metallica
+log((0+1)/ 18985) =  -9.8514 Rage Against The Machine
+log((2+1)/ 53157) =  -9.7824 Rihanna
+log((6+1)/ 26188) =  -8.2271 Taylor Swift
+<kbd class="shell">./identify_artist.pl -d andrew_rocks.txt</kbd>
+andrew_rocks.txt: log_probability of -18.4 for Taylor Swift
+andrew_rocks.txt: log_probability of -18.5 for David Bowie
+andrew_rocks.txt: log_probability of -19.4 for Adele
+andrew_rocks.txt: log_probability of -19.6 for Ed Sheeran
+andrew_rocks.txt: log_probability of -19.7 for Rage Against The Machine
+andrew_rocks.txt: log_probability of -20.3 for Leonard Cohen
+andrew_rocks.txt: log_probability of -20.4 for Metallica
+andrew_rocks.txt: log_probability of -20.4 for Keith Urban
+andrew_rocks.txt: log_probability of -20.7 for Rihanna
+andrew_rocks.txt: log_probability of -20.8 for Justin Bieber
+andrew_rocks.txt most resembles the work of Taylor Swift (log-probability=-18.4)
+</pre>
+
+<b>Hint:</b> if a word appears multiple times its log-probability needs to be summed multiple times.
+
+<pre class="command_line">
+<kbd class="shell">echo echo echo &gt;echo.txt</kbd>
+</pre>
+
+
+    
+        
+    
+
+
+
+
+
+
+<pre class="command_line" style="max-height: 32em;overflow:  auto;">
+<kbd class="shell">cat echo.txt</kbd>
+echo echo
+<kbd class="shell">./log_probability.pl echo</kbd>
+log((0+1)/ 16359) =  -9.7025 Adele
+log((0+1)/ 34080) = -10.4365 David Bowie
+log((0+1)/ 18207) =  -9.8096 Ed Sheeran
+log((0+1)/ 46589) = -10.7491 Justin Bieber
+log((0+1)/ 27016) = -10.2042 Keith Urban
+log((0+1)/ 26192) = -10.1732 Leonard Cohen
+log((0+1)/ 38096) = -10.5479 Metallica
+log((14+1)/ 18985) =  -7.1434 Rage Against The Machine
+log((0+1)/ 53157) = -10.8810 Rihanna
+log((1+1)/ 26188) =  -9.4799 Taylor Swift
+<kbd class="shell">./identify_artist.pl -d echo.txt</kbd>
+echo.txt: log_probability of -14.3 for Rage Against The Machine
+echo.txt: log_probability of -19.0 for Taylor Swift
+echo.txt: log_probability of -19.4 for Adele
+echo.txt: log_probability of -19.6 for Ed Sheeran
+echo.txt: log_probability of -20.3 for Leonard Cohen
+echo.txt: log_probability of -20.4 for Keith Urban
+echo.txt: log_probability of -20.9 for David Bowie
+echo.txt: log_probability of -21.1 for Metallica
+echo.txt: log_probability of -21.5 for Justin Bieber
+echo.txt: log_probability of -21.8 for Rihanna
+echo.txt most resembles the work of Rage Against The Machine (log-probability=-14.3)
+</pre>
+
+
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+<pre class="command_line">
+<kbd class="shell">2041 autotest lab07 identify_artist.pl</kbd>
+</pre>
+
+
+    
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Automarking Results</h4>
+        <span class="autotest_results_emphasis">74%</span>
+        
+        of <span class="autotest_results_emphasis">322</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">identify_artist.pl</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+                <ul>
+                
+                    <li><span class="autotest_results_emphasis">87%</span>
+                    
+                    passed test <i>identify_artist_0</i>
+                
+                    <li><span class="autotest_results_emphasis">79%</span>
+                    
+                    passed test <i>identify_artist_1</i>
+                
+                    <li><span class="autotest_results_emphasis">87%</span>
+                    
+                    passed test <i>identify_artist_2</i>
+                
+                    <li><span class="autotest_results_emphasis">87%</span>
+                    
+                    passed test <i>identify_artist_3</i>
+                
+                    <li><span class="autotest_results_emphasis">87%</span>
+                    
+                    passed test <i>identify_artist_4</i>
+                
+                    <li><span class="autotest_results_emphasis">89%</span>
+                    
+                    passed test <i>identify_artist_5</i>
+                
+                    <li><span class="autotest_results_emphasis">89%</span>
+                    
+                    passed test <i>identify_artist_6</i>
+                
+                    <li><span class="autotest_results_emphasis">88%</span>
+                    
+                    passed test <i>identify_artist_7</i>
+                
+                </ul>
+                </div>
+            
+        
+    </div>
+
+
+<div class="answer">
+Sample solution for identify_artist.pl
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/perl -w
+$debug = 0;
+
+foreach $file (glob &#34;lyrics/*&#34;) {
+    my $artist = $file;
+    $artist =~ s/.*\///;
+    $artist =~ s/\.txt$//;
+    $artist =~ s/_/ /g;
+    open my $f, &#39;&lt;&#39;, $file or die &#34;can not open $file: $!&#34;;;
+    while (&lt;$f&gt;) {
+        tr/A-Z/a-z/;
+        foreach (/[a-z]+/g) {
+            $frequency{$artist}{$_}++;
+            $n_words{$artist}++;
+        }
+    }
+    close $f;
+}
+
+@artists = keys %frequency;
+foreach $file (@ARGV) {
+    my %log_probability;
+    if ($file eq &#39;-d&#39;) {
+        $debug = 1;
+        next;
+    }
+    open my $f, &#39;&lt;&#39;, $file or die &#34;can not open $file: $!&#34;;
+    while (&lt;$f&gt;) {
+        tr/A-Z/a-z/;
+        foreach $word (/[a-z]+/g) {
+            foreach $artist (@artists) {
+                $log_probability{$artist} += log((($frequency{$artist}{$word}||0) + 1)/$n_words{$artist});
+            }
+        }
+    }
+    close $f;
+    @sorted_artists = sort {$log_probability{$b} &lt;=&gt; $log_probability{$a}} @artists;
+    if ($debug) {
+        foreach $artist (@sorted_artists) {
+            printf &#34;%s: log_probability of %.1f for %s\n&#34;, $file, $log_probability{$artist}, $artist;
+        }
+    }
+    printf &#34;%s most resembles the work of %s (log-probability=%.1f)\n&#34;, $file, $sorted_artists[0], $log_probability{$sorted_artists[0]};
+}
+
+</pre>
+
+
+
+</div>
+
+
+<h3>Challenge Exercise: Introduction</h3>
+
+Re-implement the above exercises in Python.
+<p>
+The <a href="../../code/python">example Python scripts</a> and links
+to external Python resources should help - but you will need more info - Google is your friend.
+<p>
+<b>Hints</b> for <code>total_words.py</code> &amp;  <code>count_word.py</code>:
+<p>
+This loop executes for each line of stdin:
+
+<pre class="program">
+import sys
+for line in sys.stdin:
+    print line
+</pre>
+
+The function <code>re.split</code> or the function <code>re.findall</code> could be used to separate words.
+<p>
+<b>Hints</b> for <code>frequency.py</code>, <code>log_probability.py</code> & <code>identify_artist.py</code>:
+<p>
+Beware Python dicts need a slightly different approach to Perl hashes, and also
+Perl & Python division have different semantics.
+<p>
+This loop executes once for each <code>.txt</code> file in the directory <code>artists</code>.
+
+<pre class="program">
+import glob
+for file in glob.glob("lyrics/*.txt"):
+    print file
+</pre>
+
+<p>
+You might find <code>math.log</code>, <code>sorted</code>, <code>re.sub</code> and  <code>collections.defaultdict</code> useful.
+
+<h3>Challenge Exercise: Total Words in Python</h3>
+
+
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+<pre class="command_line">
+<kbd class="shell">2041 autotest lab07 total_words.py</kbd>
+</pre>
+
+
+    
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Automarking Results</h4>
+        <span class="autotest_results_emphasis">92%</span>
+        
+        of <span class="autotest_results_emphasis">170</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">total_words.py</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+                <ul>
+                
+                    <li><span class="autotest_results_emphasis">92%</span>
+                    
+                    passed test <i>challenge_total_words_0</i>
+                
+                    <li><span class="autotest_results_emphasis">92%</span>
+                    
+                    passed test <i>challenge_total_words_1</i>
+                
+                    <li><span class="autotest_results_emphasis">92%</span>
+                    
+                    passed test <i>challenge_total_words_2</i>
+                
+                    <li><span class="autotest_results_emphasis">92%</span>
+                    
+                    passed test <i>challenge_total_words_3</i>
+                
+                    <li><span class="autotest_results_emphasis">92%</span>
+                    
+                    passed test <i>challenge_total_words_4</i>
+                
+                    <li><span class="autotest_results_emphasis">92%</span>
+                    
+                    passed test <i>challenge_total_words_5</i>
+                
+                    <li><span class="autotest_results_emphasis">92%</span>
+                    
+                    passed test <i>challenge_total_words_6</i>
+                
+                    <li><span class="autotest_results_emphasis">92%</span>
+                    
+                    passed test <i>challenge_total_words_7</i>
+                
+                    <li><span class="autotest_results_emphasis">92%</span>
+                    
+                    passed test <i>challenge_total_words_8</i>
+                
+                    <li><span class="autotest_results_emphasis">92%</span>
+                    
+                    passed test <i>challenge_total_words_9</i>
+                
+                </ul>
+                </div>
+            
+        
+    </div>
+
+
+<div class="answer">
+Solution for total_words.py using re.split
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python
+
+import re, sys
+
+count = 0
+for line in sys.stdin:
+    words = re.split(r&#39;[^a-zA-Z]+&#39;, line)
+    for word in words:
+        if word:
+            count += 1
+
+print(&#34;%d words&#34; % count)
+
+</pre>
+
+
+
+Solution for total_words.py using re.findall
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python
+
+import re, sys
+
+count = 0
+for line in sys.stdin:
+    for word in re.findall(r&#39;[a-z]+&#39;, line, re.I):
+        count += 1
+
+print(&#34;%d words&#34; % count)
+
+</pre>
+
+
+
+More Pythonic solution for total_words.py using re.findall
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python
+
+import sys, re
+
+lines = &#34;&#34;.join(l for l in sys.stdin).lower()
+words = re.findall(r&#39;[a-z]+&#39;, lines, flags=re.I)
+print(&#34;%d words&#34; % len(words))
+
+</pre>
+
+
+</div>
+<h3>Challenge Exercise: Count Word in Python</h3>
+
+
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+<pre class="command_line">
+<kbd class="shell">2041 autotest lab07 count_word.py</kbd>
+</pre>
+
+
+    
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Automarking Results</h4>
+        <span class="autotest_results_emphasis">90%</span>
+        
+        of <span class="autotest_results_emphasis">163</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">count_word.py</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+                <ul>
+                
+                    <li><span class="autotest_results_emphasis">93%</span>
+                    
+                    passed test <i>challenge_count_word_0</i>
+                
+                    <li><span class="autotest_results_emphasis">91%</span>
+                    
+                    passed test <i>challenge_count_word_1</i>
+                
+                    <li><span class="autotest_results_emphasis">93%</span>
+                    
+                    passed test <i>challenge_count_word_2</i>
+                
+                    <li><span class="autotest_results_emphasis">91%</span>
+                    
+                    passed test <i>challenge_count_word_3</i>
+                
+                    <li><span class="autotest_results_emphasis">91%</span>
+                    
+                    passed test <i>challenge_count_word_4</i>
+                
+                    <li><span class="autotest_results_emphasis">90%</span>
+                    
+                    passed test <i>challenge_count_word_5</i>
+                
+                    <li><span class="autotest_results_emphasis">92%</span>
+                    
+                    passed test <i>challenge_count_word_6</i>
+                
+                    <li><span class="autotest_results_emphasis">91%</span>
+                    
+                    passed test <i>challenge_count_word_7</i>
+                
+                    <li><span class="autotest_results_emphasis">91%</span>
+                    
+                    passed test <i>challenge_count_word_8</i>
+                
+                    <li><span class="autotest_results_emphasis">92%</span>
+                    
+                    passed test <i>challenge_count_word_9</i>
+                
+                </ul>
+                </div>
+            
+        
+    </div>
+
+
+<div class="answer">
+Sample solution for count_word.py
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python
+
+import re, sys
+
+if len(sys.argv) != 2:
+    sys.stderr.write(&#34;Usage %s: &lt;word&gt;\n&#34; % sys.argv[0])
+    sys.exit(1)
+
+specified_word = sys.argv[1].lower()
+
+count = 0
+for line in sys.stdin:
+    line = line.lower()
+    words = re.split(r&#39;[^a-z]+&#39;, line)
+    for word in words:
+        if word == specified_word:
+            count += 1
+
+print(&#34;%s occurred %d times&#34; % (specified_word, count))
+
+</pre>
+
+
+
+More Pythonic solution for count_word.py using re.findall
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python
+
+import sys, re
+
+word = sys.argv[1].lower()
+lines = &#34;&#34;.join(l for l in sys.stdin).lower()
+words = re.findall(r&#39;[a-z]+&#39;, lines, flags=re.I)
+print(&#34;%s occurred %d times&#34; % (word, words.count(word)))
+
+</pre>
+
+
+</div>
+<h3>Challenge Exercise: Word Frequency in Python</h3>
+
+
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+<pre class="command_line">
+<kbd class="shell">2041 autotest lab07 frequency.py</kbd>
+</pre>
+
+
+    
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Automarking Results</h4>
+        <span class="autotest_results_emphasis">86%</span>
+        
+        of <span class="autotest_results_emphasis">137</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">frequency.py</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+                <ul>
+                
+                    <li><span class="autotest_results_emphasis">86%</span>
+                    
+                    passed test <i>challenge_frequency_0</i>
+                
+                    <li><span class="autotest_results_emphasis">86%</span>
+                    
+                    passed test <i>challenge_frequency_1</i>
+                
+                    <li><span class="autotest_results_emphasis">86%</span>
+                    
+                    passed test <i>challenge_frequency_2</i>
+                
+                    <li><span class="autotest_results_emphasis">86%</span>
+                    
+                    passed test <i>challenge_frequency_3</i>
+                
+                    <li><span class="autotest_results_emphasis">86%</span>
+                    
+                    passed test <i>challenge_frequency_4</i>
+                
+                    <li><span class="autotest_results_emphasis">86%</span>
+                    
+                    passed test <i>challenge_frequency_5</i>
+                
+                    <li><span class="autotest_results_emphasis">86%</span>
+                    
+                    passed test <i>challenge_frequency_6</i>
+                
+                    <li><span class="autotest_results_emphasis">86%</span>
+                    
+                    passed test <i>challenge_frequency_8</i>
+                
+                    <li><span class="autotest_results_emphasis">86%</span>
+                    
+                    passed test <i>challenge_frequency_9</i>
+                
+                </ul>
+                </div>
+            
+        
+    </div>
+
+
+<div class="answer">
+Sample solution for frequency.py
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python
+import sys, glob, re, collections
+
+frequency = {}
+n_words = collections.defaultdict(int)
+for file in glob.glob(&#34;lyrics/*&#34;):
+    artist = re.sub(r&#39;.*/&#39;, &#39;&#39;, file)
+    artist = re.sub(r&#39;.txt$&#39;, &#39;&#39;, artist)
+    artist = re.sub(r&#39;_&#39;, &#39; &#39;, artist)
+    frequency[artist] = collections.defaultdict(int)
+    for line in open(file):
+        line = line.lower()
+        for word in re.findall(r&#39;[a-z]+&#39;, line, re.I):
+            frequency[artist][word] += 1
+            n_words[artist] += 1
+
+for word in sys.argv[1:]:
+    word = word.lower()
+    for artist in sorted(frequency.keys()):
+        f = frequency[artist][word]
+        n = n_words[artist]
+        print(&#34;%4d/%6d = %.9f %s&#34; % (f, n, f/float(n), artist))
+
+</pre>
+
+
+
+More Pythonic solution for frequency.py
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python
+
+import sys, glob, re, collections, os
+
+frequency = {}
+n_words = collections.Counter()
+for f in glob.glob(&#34;lyrics/*.txt&#34;):
+    # remove directory, extension, and fix the underscores
+    artist = os.path.splitext(os.path.basename(f))[0].replace(&#39;_&#39;, &#39; &#39;)
+    lines = open(f).read().lower()
+    words = re.findall(r&#39;[a-z]+&#39;, lines, flags=re.I)
+    frequency[artist] = collections.Counter(words)
+    n_words[artist] = len(words)
+
+for word in sys.argv[1:]:
+    for artist in sorted(frequency):
+        f = frequency[artist][word.lower()]
+        n = n_words[artist]
+        print(&#34;%4d/%6d = %.9f %s&#34; % (f, n, float(f) / n, artist))
+
+</pre>
+
+
+
+</div>
+
+<h3>Challenge Exercise: Word Log Probability in Python</h3>
+
+
+
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+<pre class="command_line">
+<kbd class="shell">2041 autotest lab07 log_probability.py</kbd>
+</pre>
+
+
+    
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Automarking Results</h4>
+        <span class="autotest_results_emphasis">89%</span>
+        
+        of <span class="autotest_results_emphasis">128</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">log_probability.py</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+                <ul>
+                
+                    <li><span class="autotest_results_emphasis">89%</span>
+                    
+                    passed test <i>challenge_log_probability_0</i>
+                
+                    <li><span class="autotest_results_emphasis">89%</span>
+                    
+                    passed test <i>challenge_log_probability_1</i>
+                
+                    <li><span class="autotest_results_emphasis">89%</span>
+                    
+                    passed test <i>challenge_log_probability_2</i>
+                
+                    <li><span class="autotest_results_emphasis">89%</span>
+                    
+                    passed test <i>challenge_log_probability_3</i>
+                
+                    <li><span class="autotest_results_emphasis">89%</span>
+                    
+                    passed test <i>challenge_log_probability_4</i>
+                
+                    <li><span class="autotest_results_emphasis">89%</span>
+                    
+                    passed test <i>challenge_log_probability_5</i>
+                
+                    <li><span class="autotest_results_emphasis">89%</span>
+                    
+                    passed test <i>challenge_log_probability_6</i>
+                
+                </ul>
+                </div>
+            
+        
+    </div>
+
+
+<div class="answer">
+Sample solution for log_probability.py
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python
+import sys, glob, re, collections, math
+
+frequency = {}
+n_words = collections.defaultdict(int)
+for file in glob.glob(&#34;lyrics/*&#34;):
+    artist = re.sub(r&#39;.*/&#39;, &#39;&#39;, file)
+    artist = re.sub(r&#39;.txt$&#39;, &#39;&#39;, artist)
+    artist = re.sub(r&#39;_&#39;, &#39; &#39;, artist)
+    frequency[artist] = collections.defaultdict(int)
+    for line in open(file):
+        line = line.lower()
+        for word in re.findall(r&#39;[a-z]+&#39;, line, re.I):
+            frequency[artist][word] += 1
+            n_words[artist] += 1
+
+for word in sys.argv[1:]:
+    word = word.lower()
+    for artist in sorted(frequency.keys()):
+        f = frequency[artist][word]
+        n = n_words[artist]
+        print(&#34;log((%d+1)/%6d) = %8.4f %s&#34; % (f, n, math.log((f+1)/float(n)), artist))
+
+</pre>
+
+
+
+More Pythonic solution for log_probability.py
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python
+
+import sys, glob, re, collections, os, math
+
+frequency = {}
+n_words = {}
+for f in glob.glob(&#34;lyrics/*.txt&#34;):
+    # remove directory, extension, and fix the underscores
+    artist = os.path.splitext(os.path.basename(f))[0].replace(&#39;_&#39;, &#39; &#39;)
+    lines = open(f).read().lower()
+    words = re.findall(r&#39;[a-z]+&#39;, lines, flags=re.I)
+    frequency[artist] = collections.Counter(words)
+    n_words[artist] = len(words)
+
+for word in sys.argv[1:]:
+    for artist in sorted(frequency):
+        f = frequency[artist][word.lower()]
+        n = n_words[artist]
+        print(&#34;log((%d+1)/%6d) = %8.4f %s&#34; % (f, n, math.log(float(f + 1) / n), artist))
+
+</pre>
+
+
+</div>
+
+<h3>Challenge Exercise: Identifying the Artist in Python</h3>
+
+
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+<pre class="command_line">
+<kbd class="shell">2041 autotest lab07 identify_artist.py</kbd>
+</pre>
+
+
+    
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Automarking Results</h4>
+        <span class="autotest_results_emphasis">78%</span>
+        
+        of <span class="autotest_results_emphasis">101</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">identify_artist.py</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+                <ul>
+                
+                    <li><span class="autotest_results_emphasis">84%</span>
+                    
+                    passed test <i>challenge_identify_artist_0</i>
+                
+                    <li><span class="autotest_results_emphasis">80%</span>
+                    
+                    passed test <i>challenge_identify_artist_1</i>
+                
+                    <li><span class="autotest_results_emphasis">85%</span>
+                    
+                    passed test <i>challenge_identify_artist_2</i>
+                
+                    <li><span class="autotest_results_emphasis">82%</span>
+                    
+                    passed test <i>challenge_identify_artist_3</i>
+                
+                    <li><span class="autotest_results_emphasis">84%</span>
+                    
+                    passed test <i>challenge_identify_artist_4</i>
+                
+                    <li><span class="autotest_results_emphasis">85%</span>
+                    
+                    passed test <i>challenge_identify_artist_5</i>
+                
+                    <li><span class="autotest_results_emphasis">85%</span>
+                    
+                    passed test <i>challenge_identify_artist_6</i>
+                
+                    <li><span class="autotest_results_emphasis">85%</span>
+                    
+                    passed test <i>challenge_identify_artist_7</i>
+                
+                </ul>
+                </div>
+            
+        
+    </div>
+
+
+<div class="answer">
+
+Sample solution for identify_artist.py
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python
+import sys, glob, re, collections, math
+
+frequency = {}
+n_words = collections.defaultdict(int)
+for file in glob.glob(&#34;lyrics/*&#34;):
+    artist = re.sub(r&#39;.*/&#39;, &#39;&#39;, file)
+    artist = re.sub(r&#39;.txt$&#39;, &#39;&#39;, artist)
+    artist = re.sub(r&#39;_&#39;, &#39; &#39;, artist)
+    frequency[artist] = collections.defaultdict(int)
+    for line in open(file):
+        line = line.lower()
+        for word in re.findall(r&#39;[a-z]+&#39;, line, re.I):
+            frequency[artist][word] += 1
+            n_words[artist] += 1
+
+artists = list(frequency.keys())
+debug = 0
+for file in sys.argv[1:]:
+    if file == &#39;-d&#39;:
+        debug = 1
+        continue
+    log_probability = collections.defaultdict(float)
+    for line in open(file):
+        line = line.lower()
+        for word in re.findall(r&#39;[a-z]+&#39;, line, re.I):
+            for artist in artists:
+                log_probability[artist] += math.log(((frequency[artist][word] + 1)/float(n_words[artist])))
+    sorted_artists = sorted(artists, key=lambda p: -log_probability[p])
+    if debug:
+        for artist in sorted_artists:
+            print(&#34;%s: log_probability of %.1f for %s&#34; % (file, log_probability[artist], artist))
+    print(&#34;%s most resembles the work of %s (log-probability=%.1f)&#34; % (file, sorted_artists[0], log_probability[sorted_artists[0]]))
+
+</pre>
+
+
+
+More Pythonic solution for identify_artist.py
+
+
+
+
+
+<pre class="program">
+
+#!/usr/bin/python
+
+import sys, glob, re, collections, os, math
+
+frequency = {}
+for f in glob.glob(&#34;lyrics/*.txt&#34;):
+    lines = open(f).read().lower()
+    author = os.path.splitext(os.path.basename(f))[0].replace(&#39;_&#39;, &#39; &#39;)
+    words = re.findall(r&#39;[a-z]+&#39;, lines, flags=re.S | re.M | re.I)
+    count = collections.Counter(words)
+    # we need to use a default value to capture at creation time, not runtime
+    # the following line just says the dictionary defaults to log(1/|words|)
+    frequency[author] = collections.defaultdict(lambda x=math.log(float(1) / len(words)): x)
+    for word, occurances in count.items():
+        frequency[author][word] = math.log(float((occurances + 1)) / len(words))
+
+for f in sys.argv[1:]:
+    lines = open(f).read().lower()
+    words = re.findall(r&#39;[a-z]+&#39;, lines, flags=re.I)
+    prob = {}
+    for author, freq in frequency.items():
+        prob[author] = sum(freq[word] for word in words)
+    likely = max(prob, key=prob.get) # this is how you sort hashes by value in python
+    print(&#34;%s most resembles the work of %s (log-probability=%.1f)&#34; % (f, likely, prob[likely]))
+
+</pre>
+
+
+</div>
+
+
+
+
+
+<h3>Submission</h3>
+
+When you are finished submit your work by running:
+<pre class="command_line">
+<kbd class="shell">give cs2041 lab07 total_words.pl count_word.pl frequency.pl log_probability.pl identify_artist.pl total_words.py count_word.py frequency.py log_probability.py identify_artist.py</kbd>
+</pre>
+<p>
+Don't submit any exercises you haven't attempted.
+
+If you are working at home, you may find it more convenient
+to upload your work via
+ <a href="https://cgi.cse.unsw.edu.au/~give/code/login.php?app=/~give/Student/give.php&amp;debug=get_authuser">give's web interface</a>.
+<p>
+Remember you have until
+
+Sunday midnight
+
+
+to submit your work.
+
+
+
+
+<h3>Assessment</h3>
+
+This lab exercises is worth 1 mark.
+<p>
+Labs exercise are either automarked or peer assessed.
+This is to allow tutors' time to be used to assist students.
+<p>
+After the automarking is complete you should be able to view it by running
+this command on a CSE machine:
+
+<pre class="command_line">
+<kbd class="shell">2041 classrun -collect lab07
+</pre>
+
+You can inspect marks for this lab and other assessment components via <a href="https://cgi.cse.unsw.edu.au/~give/code/login.php?app=/~give/Student/give.php&amp;debug=get_authuser">give's web interface</a> or by running
+
+<pre class="command_line">
+<kbd class="shell">2041 classrun -sturec
+</pre>
+
+<p>
+Reminder: lab marks contribute 9% to your final COMP[29]041 final mark.
+<p>
+The 11 lab marks will be summed at the end of session and the sum capped at 9 marks.
+<p>
+Hence you can obtain full marks for the 9% lab component without obtaining full marks every week.
+
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+<!--
+public_html_session_directory=/web/cs2041/17s2
+base_directory=/web/cs2041/17s2
+public_html_directory=/web/cs2041
+scripts_directory=/web/cs2041/17s2/scripts
+home_directory=/home/cs2041
+bin_directory=/home/cs2041/bin
+course_account=cs2041
+course_code=COMP2041
+course_number=2041
+postgraduate_course_code=COMP9041
+course_name=Software Construction
+unsw_session=17s2
+canonical_url=https://cgi.cse.unsw.edu.au/~cs2041/
+github_repo_url=https://github.com/COMP2041UNSW/course_materials
+course_forum_url=https://piazza.com/class/j5ji4vjjra62a3
+lecture_recordings_url=https://moodle.telt.unsw.edu.au/course/view.php?id=27708
+WORK=/web/cs2041/17s2/work
+OUT=/web/cs2041/17s2/work/.out
+MARKED=/web/cs2041/17s2/work/.out/.marked
+SMSDB=/web/cs2041/17s2/work/17s2db.sms
+tlb_directory=/web/cs2041/17s2/tlb
+lecture_directory=/web/cs2041/17s2/lec
+flask_cache_directory=/web/cs2041/17s2/flask_cache
+testing_results_file=/web/cs2041/17s2/work/testing_results.json
+enrollments_file=/web/cs2041/17s2/work/enrollments.json
+unsw_ldap_password_file=/web/cs2041/.unsw_ldap_password
+autotest_upload_url=https://cgi.cse.unsw.edu.au/~cs2041/cgi/autotest_upload.cgi
+PATH=/web/cs2041/17s2/scripts:/home/cs2041/bin:/bin/:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/home/class/bin:/home/give/stable/bin.:/bin:/usr/bin:/usr/local/bin
+directory_relative_pathname=tlb/07
+url=https://cgi.cse.unsw.edu.au/~cs2041/flask.cgi/lab/07/answers
+directory_url=https://cgi.cse.unsw.edu.au/~cs2041/lab/07/
+url_root=https://cgi.cse.unsw.edu.au/~cs2041/
+script_root=/~cs2041/flask.cgi
+current_lecture_topic=exam
+current_week=13
+week=07
+exercise_name=lab07
+tut_or_lab_or_test=lab
+questions_or_answers=answers
+programs=&lt;programs&gt;
+
+-->
+
+</body>
+</html>

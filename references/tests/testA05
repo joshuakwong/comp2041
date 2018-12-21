@@ -1,0 +1,637 @@
+
+
+<!doctype html>
+<html lang="en">
+<head>
+<title>
+
+COMP2041 Week 05 Weekly Test Sample Solutions
+
+</title>
+
+
+
+<link href="/~cs2041/flask.cgi/static/bootstrap.min.css?121200" rel="stylesheet">
+<link href="/~cs2041/flask.cgi/static/course.css?6554" rel="stylesheet">
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/jquery.min.js?95992"></script>
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/bootstrap.min.js?37045"></script>
+<script type="text/javascript" src="/~cs2041/flask.cgi/static/course.js?1631"></script>
+<link rel="canonical" href="https://cgi.cse.unsw.edu.au/~cs2041/" />
+</head>
+<body>
+
+
+
+
+<div class="container">
+
+<div id="heading">
+
+
+<a class="heading_link" target="_blank" id="left_heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/">COMP[29]041 17s2</a>
+
+
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Week 05
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/05/answers">Week 05</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/06/answers">Week 06</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/07/answers">Week 07</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/08/answers">Week 08</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/09/answers">Week 09</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/10/answers">Week 10</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/11/answers">Week 11</a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/13/answers">Week 13</a></li>
+        
+        
+    </ul>
+</span>
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Weekly Test
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/tut/05/answers">Tutorial
+                
+            </a></li>
+            
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/lab/05/answers">Laboratory
+                
+            </a></li>
+            
+        
+            
+                <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/05/answers">Weekly Test
+                
+            </a></li>
+            
+        
+    </ul>
+</span>
+
+<span class="dropdown">
+    <button class="btn dropdown-toggle heading_button" type="button" data-toggle="dropdown">
+        Sample Solutions
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/05/questions">Questions
+            
+            </a></li>
+        
+            <li><a HREF="https://cgi.cse.unsw.edu.au/~cs2041/test/05/answers">Sample Solutions
+            
+            </a></li>
+        
+        
+    </ul>
+</span>
+
+
+
+
+<a class="heading_link" target="_blank" id="right_heading_link" href="http://www.cse.unsw.edu.au/~cs2041/17s2/">Software Construction</a>
+
+</div>
+
+</div>
+
+
+<div class="tutlab lab">
+
+
+
+<h3>Test Conditions</h3>
+
+These questions must be completed under self-administered exam-like conditions.
+
+<ul>
+<li> You may complete this test in CSE labs or elsewhere using your own machine
+<li> You may complete this test at any time before 
+<li> The maximum time allowed for this test is 1 hour
+<li> After starting this test you must complete the test within 1 hour and submit your
+answers with give.
+<li> you must complete the questions alone - you can not get help in any way from any person
+<li> you can not access web pages or use the internet in any way
+<li> you can not access books, notes or other written or online materials
+<li> you can not access your own files, programs, code ...
+<li> you can not access COMP[29]041 course materials except for language documentation linked above.
+</ul>
+
+<hr>
+You may access this <b>language documentation</b> while attemting this test:
+<ul>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041//exam/shell_perl_cheatsheet.pdf">Shell/Regex/Perl quick reference</a>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041//exam/python_cheatsheet.pdf">Python quick reference</a>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041//exam/C_cheatsheet.pdf">C quick reference</a>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041//exam/java_cheatsheet.pdf">Java quick reference</a>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041//doc/perldoc-html-5.14.0/index.html">full Perl documentation</a>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041//doc/python-3.5.2-docs-html/index.html">full Python 3.5 documentation</a>
+<li><a href="https://cgi.cse.unsw.edu.au/~cs2041//doc/python-2.7.2-docs-html/index.html">full Python 2.7 documentation</a>
+</ul>
+<hr>
+
+You may also access manual entries (the man command)
+
+<p>
+Any violation of the test conditions will results in a mark of zero for the entire weekly test component.
+
+
+
+<h3>Exercise: Most Common First Name</h3>
+
+We need to know the most common first name for each year's COMP[29]041 students.
+<p>
+We have  <a href="https://cgi.cse.unsw.edu.au/~cs2041/test/05/enrollments.txt">enrollment data</a> in this format:
+
+<pre class="command_line">
+<kbd class="shell">wget https://cgi.cse.unsw.edu.au/~cs2041/test/05/enrollments.txt</kbd>
+<kbd class="shell">head enrollments.txt</kbd>
+COMP1511|5013566|Xin, Mackenzie Darren                             |3648/2|COMPI1 MTRNAH|071.800|17s2|19910428|M
+COMP9902|5079970|Park, Xue Hannah Vanessa                          |8543  |ELECAH       |079.333|17s2|19900209|F
+COMP1511|5059072|Chung, Michael Jia Tianyu                         |3778/1|COMPCS       |057.250|17s2|19990801|M
+COMP1521|5060774|Lim, Stephanie Lauren                             |3785/1|COMPA1       |000.000|17s2|19890113|F
+COMP1531|5060774|Lim, Stephanie Lauren                             |3785/1|COMPA1       |000.000|17s2|19890113|F
+COMP2521|5060774|Lim, Stephanie Lauren                             |3785/1|COMPA1       |000.000|17s2|19890113|F
+COMP9020|5060538|Bi, Samuel Shiyu                                  |6021  |COMPA1       |078.125|17s2|19911004|M
+COMP9021|5060538|Bi, Samuel Shiyu                                  |6021  |COMPA1       |078.125|17s2|19911004|M
+COMP9902|5072116|Hu, Kai Zhi Patrick                               |3707/1|SENGAH       |070.750|17s2|19930424|M
+COMP1511|5036926|Fang, Rebecca Lauren                              |8543  |COMPCS       |000.000|17s2|20000921|F
+</pre>
+
+Write a shell script <code>first_name.sh</code> which takes the name of a file as a command-line argument,
+The file will contain enrolment data in the above format.   <code>first_name.sh</code> should print a single
+line of output. This line should contain only the most common first name for COMP[29]041 students in the enrollment data. For example:
+<p>
+<pre class="command_line">
+<kbd class="shell">./first_name.sh enrollments.txt</kbd>
+Vanessa
+</pre>
+
+You can assume there will not be multiple first names which are equally common.
+<p>
+No error checking is necessary.
+<p>
+
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+<pre class="command_line">
+<kbd class="shell">2041 autotest test05 first_name.sh</kbd>
+</pre>
+
+
+    
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Automarking Results</h4>
+        <span class="autotest_results_emphasis">78%</span>
+        
+        of <span class="autotest_results_emphasis">393</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">first_name.sh</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+                <ul>
+                
+                    <li><span class="autotest_results_emphasis">88%</span>
+                    
+                    passed test <i>first_name_0</i>
+                
+                    <li><span class="autotest_results_emphasis">83%</span>
+                    
+                    passed test <i>first_name_1</i>
+                
+                    <li><span class="autotest_results_emphasis">83%</span>
+                    
+                    passed test <i>first_name_2</i>
+                
+                </ul>
+                </div>
+            
+        
+    </div>
+
+
+<div class="answer">
+Sample solution for first_name.sh
+
+
+
+
+
+<pre class="program">
+
+#!/bin/sh
+
+grep COMP[29]041 &#34;$1&#34;|
+cut -d\| -f3|
+cut -d, -f2|
+cut -d\  -f2|
+sort|
+uniq -c|
+sort -nr|
+head -1|
+sed &#39;s/.* //&#39;
+
+</pre>
+
+
+</div>
+
+<h3>Exercise: converting .htm to .html</h3>
+
+Our new web server requires all HTML files have the suffix <code>.html</code>.
+Unfortunately we have many  HTML files named with the suffix <code>.htm</code>.
+<p>
+Write a shell script <code>htm2html.sh</code> which changes the name of all files with the suffix
+<code>.htm</code>  in the current directory to have the suffix <code>.html</code>.
+For example:
+
+<pre class="command_line">
+<kbd class="shell">touch index.htm small.htm large.htm</kbd>
+<kbd class="shell">ls *.htm*</kbd>
+index.htm  large.htm  small.htm
+<kbd class="shell">./htm2html.sh</kbd>
+<kbd class="shell">ls *.htm*</kbd>
+index.html  large.html  small.html
+</pre>
+
+Your script should stop with EXACTLY the error message shown below and exit status 1 if the <code>.html</code> file already exists.
+For example:
+
+<pre class="command_line">
+<kbd class="shell">touch andrew.htm andrew.html</kbd>
+<kbd class="shell">./htm2html.sh </kbd>
+andrew.html exists
+</pre>
+
+You can assume the current directory contains at last one <code>.htm</code> file
+<p>
+No error checking other then described above is necessary.
+
+
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+<pre class="command_line">
+<kbd class="shell">2041 autotest test05 htm2html.sh</kbd>
+</pre>
+
+
+    
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Automarking Results</h4>
+        <span class="autotest_results_emphasis">82%</span>
+        
+        of <span class="autotest_results_emphasis">392</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">htm2html.sh</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+                <ul>
+                
+                    <li><span class="autotest_results_emphasis">95%</span>
+                    
+                    passed test <i>htm2html_0</i>
+                
+                    <li><span class="autotest_results_emphasis">89%</span>
+                    
+                    passed test <i>htm2html_1</i>
+                
+                    <li><span class="autotest_results_emphasis">95%</span>
+                    
+                    passed test <i>htm2html_2</i>
+                
+                    <li><span class="autotest_results_emphasis">94%</span>
+                    
+                    passed test <i>htm2html_3</i>
+                
+                    <li><span class="autotest_results_emphasis">87%</span>
+                    
+                    passed test <i>htm2html_4</i>
+                
+                </ul>
+                </div>
+            
+        
+    </div>
+
+
+<div class="answer">
+Sample solution for htm2html.sh
+
+
+
+
+
+<pre class="program">
+
+#!/bin/sh
+
+for file in *.htm
+do
+    new_file_name=&#34;$file&#34;l
+    if test -e &#34;$new_file_name&#34;
+    then
+        echo &#34;$new_file_name exists&#34;
+        exit 1
+    else
+        mv &#34;$file&#34; &#34;$new_file_name&#34;
+    fi
+done
+exit 0
+
+</pre>
+
+
+</div>
+
+<h3>Exercise: Missing Include Files</h3>
+
+We need check a large number of C programs for missing include files.
+<p>
+Write a shell script <code>missing_include.sh</code> which is give
+one of more filenames as argument.  The files will contain C code.
+<p>
+<code>missing_include.sh</code> should print a message if any
+file included by the C program is not present in the current directory.
+<p>
+Reminder C include lines are of this form:
+
+<pre>
+#include "file.h"
+</pre>
+
+For example:
+
+<pre class="command_line">
+<kbd class="shell">wget https://cgi.cse.unsw.edu.au/~cs2041/test/05/c_files.zip</kbd>
+<kbd class="shell">ls *.[ch]</kbd>
+a.c  a.h  b.c  c.h
+<kbd class="shell">cat a.c</kbd>
+#include &lt;stdio.h>
+
+#include "a.h"
+#include "b.h"
+#include "input.h"
+
+int a(void){
+    return 42;
+}
+<kbd class="shell">cat b.c</kbd>
+#include &lt;stdio.h>
+
+#include "b.h"
+#include "c.h"
+#include "d.h"
+#include &lt;string.h>
+
+int b(void){
+    return b.c;
+}
+<kbd class="shell">./missing_include.sh a.c</kbd>
+b.h included into a.c does not exist
+input.h included into a.c does not exist
+<kbd class="shell">./missing_include.sh b.c</kbd>
+b.h included into b.c does not exist
+d.h included into b.c does not exist
+<kbd class="shell">./missing_include.sh a.c b.c</kbd>
+b.h included into a.c does not exist
+input.h included into a.c does not exist
+b.h included into b.c does not exist
+d.h included into b.c does not exist
+</pre>
+
+
+You can assume filenames do not contain spaces.
+<p>
+You do not have to check files for the C library with angle brackets (&lt;>).
+For example you do not have to check this line:
+
+<pre>
+#include &lt;stdio.h>
+</pre>
+
+No error checking is necessary.
+<p>
+
+
+<p>
+As usual use <code>autotest</code> to assist in testing your code (do your own testing too!):
+
+<pre class="command_line">
+<kbd class="shell">2041 autotest test05 missing_include.sh</kbd>
+</pre>
+
+
+    
+
+
+
+    
+    
+    <div class="autotest_results">
+    <h4>Automarking Results</h4>
+        <span class="autotest_results_emphasis">91%</span>
+        
+        of <span class="autotest_results_emphasis">351</span> students
+        
+            who submitted
+            <span class="autotest_results_emphasis">missing_include.sh</span>
+            (that could be marked)
+        
+        
+            passed all automarking tests.
+            
+                <div class="autotest_results_individual">
+                <ul>
+                
+                    <li><span class="autotest_results_emphasis">93%</span>
+                    
+                    passed test <i>missing_include_0</i>
+                
+                    <li><span class="autotest_results_emphasis">92%</span>
+                    
+                    passed test <i>missing_include_1</i>
+                
+                    <li><span class="autotest_results_emphasis">91%</span>
+                    
+                    passed test <i>missing_include_2</i>
+                
+                </ul>
+                </div>
+            
+        
+    </div>
+
+
+<div class="answer">
+Sample solution for missing_include.sh
+
+
+
+
+
+<pre class="program">
+
+#!/bin/sh
+
+for c_file in &#34;$@&#34;
+do
+	for include_file in `grep &#39;^#include *&#34;&#39; &#34;$c_file&#34;|sed &#39;s/&#34; *$//;s/.*&#34;//&#39;`
+	do
+		if test ! -r &#34;$include_file&#34;
+		then
+			echo &#34;$include_file included into $c_file does not exist&#34;
+		fi
+	done
+done
+</pre>
+
+
+</div>
+
+
+
+
+<h3>Submission</h3>
+
+
+When you are finished submit your work by running:
+
+<pre class="command_line">
+<kbd class="shell">give cs2041 test05 htm2html.sh missing_include.sh first_name.sh</kbd>
+</pre>
+<p>
+Don't submit any exercises you haven't attempted.
+
+If you are working at home, you may find it more convenient
+to upload your work via
+ <a href="https://cgi.cse.unsw.edu.au/~give/code/login.php?app=/~give/Student/give.php&amp;debug=get_authuser">give's web interface</a>.
+<p>
+Remember you have until <b>Wednesday 30 August 23:59</b> to submit your work.
+
+
+
+
+<h3>Assessment</h3>
+
+This test is worth 1 mark. It will be automarked.
+<p>
+After the automarking is complete you should be able to view it by running
+this command on a CSE machine:
+
+<pre class="command_line">
+<kbd class="shell">2041 classrun -collect test05
+</pre>
+
+You can inspect marks for this lab and other assessment components via <a href="https://cgi.cse.unsw.edu.au/~give/code/login.php?app=/~give/Student/give.php&amp;debug=get_authuser">give's web interface</a> or by running
+
+<pre class="command_line">
+<kbd class="shell">2041 classrun -sturec
+</pre>
+
+<p>
+Reminder: weekly tests contribute 6% to your final COMP[29]041 final mark.
+<p>
+Your mark for the test component will be the sum of your best 6 of 8 test marks.
+<p>
+Hence you can obtain full marks for the 6% weekly test component without obtaining full marks every week.
+<p>
+Reminder: any violation of the test conditions will results in a mark of zero for the entire programming test component.
+
+
+</div>
+
+
+
+
+
+</div>
+
+
+<!--
+public_html_session_directory=/web/cs2041/17s2
+base_directory=/web/cs2041/17s2
+public_html_directory=/web/cs2041
+scripts_directory=/web/cs2041/17s2/scripts
+home_directory=/home/cs2041
+bin_directory=/home/cs2041/bin
+course_account=cs2041
+course_code=COMP2041
+course_number=2041
+postgraduate_course_code=COMP9041
+course_name=Software Construction
+unsw_session=17s2
+canonical_url=https://cgi.cse.unsw.edu.au/~cs2041/
+github_repo_url=https://github.com/COMP2041UNSW/course_materials
+course_forum_url=https://piazza.com/class/j5ji4vjjra62a3
+lecture_recordings_url=https://moodle.telt.unsw.edu.au/course/view.php?id=27708
+WORK=/web/cs2041/17s2/work
+OUT=/web/cs2041/17s2/work/.out
+MARKED=/web/cs2041/17s2/work/.out/.marked
+SMSDB=/web/cs2041/17s2/work/17s2db.sms
+tlb_directory=/web/cs2041/17s2/tlb
+lecture_directory=/web/cs2041/17s2/lec
+flask_cache_directory=/web/cs2041/17s2/flask_cache
+testing_results_file=/web/cs2041/17s2/work/testing_results.json
+enrollments_file=/web/cs2041/17s2/work/enrollments.json
+unsw_ldap_password_file=/web/cs2041/.unsw_ldap_password
+autotest_upload_url=https://cgi.cse.unsw.edu.au/~cs2041/cgi/autotest_upload.cgi
+PATH=/web/cs2041/17s2/scripts:/home/cs2041/bin:/bin/:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/home/class/bin:/home/give/stable/bin.:/bin:/usr/bin:/usr/local/bin
+directory_relative_pathname=tlb/05
+url=https://cgi.cse.unsw.edu.au/~cs2041/flask.cgi/test/05/answers
+directory_url=https://cgi.cse.unsw.edu.au/~cs2041/test/05/
+url_root=https://cgi.cse.unsw.edu.au/~cs2041/
+script_root=/~cs2041/flask.cgi
+current_lecture_topic=exam
+current_week=13
+week=05
+exercise_name=test05
+tut_or_lab_or_test=test
+questions_or_answers=answers
+programs=&lt;programs&gt;
+
+-->
+
+</body>
+</html>
